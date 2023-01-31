@@ -1,0 +1,85 @@
+{
+    "pools": [
+        {
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "quality": 0,
+                    "name": "minecraft:nether_star"
+                }
+            ]
+        },
+        {
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.25
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:overworld_valuable"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.25
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:overworld_treasure"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.4
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:runic_weapons"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.15
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:overworld_artifacts"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.5
+			},
+			"entries": [
+				{
+					"type": "item",
+					"weight": 1,
+					"name": "simplyswords:soulrender"
+				}
+			]
+		}
+    ]
+}

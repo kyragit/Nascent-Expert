@@ -1,0 +1,12 @@
+{
+	"group": "custom",
+	"displayName": {
+		"text": "Dame Fortuna Treasure Bag"
+	},
+	"lootTable": "custom:dame_fortuna_bag",
+	"rarity": "rare",
+	"dropsFromGroups": [],
+	"bagColor": "#FF0000",
+	"bagOverlayColor": "#FFFFFF",
+	"bagStringColor": "#FFFFFF"
+}

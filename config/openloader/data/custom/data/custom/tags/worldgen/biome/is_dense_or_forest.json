@@ -1,0 +1,7 @@
+{
+    "replace": true,
+    "values": [
+        "#forge:is_dense/overworld",
+        "#minecraft:is_forest"
+    ]
+}

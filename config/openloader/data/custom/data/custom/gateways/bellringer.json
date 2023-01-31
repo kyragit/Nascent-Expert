@@ -1,0 +1,375 @@
+{
+	"size": "medium",
+	"color": "#FFD900",
+	"completion_xp": 2000,
+	"spawn_range": 8,
+	"leash_range": 512,
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "minecraft:pillager"
+				},
+				{
+					"entity": "minecraft:pillager"
+				},
+				{
+					"entity": "minecraft:pillager"
+				},
+				{
+					"entity": "minecraft:vindicator"
+				},
+				{
+					"entity": "savage_and_ravage:executioner"
+				},
+				{
+					"entity": "minecraft:illusioner"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 4.0
+				},
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				}
+			],
+			"rewards": [
+
+			],
+			"max_wave_time": 6000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "savage_and_ravage:iceologer",
+					"nbt": "{ActiveEffects:[{Id:24,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				},
+				{
+					"entity": "savage_and_ravage:iceologer",
+					"nbt": "{ActiveEffects:[{Id:24,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				},
+				{
+					"entity": "savage_and_ravage:griefer"
+				},
+				{
+					"entity": "minecraft:pillager"
+				},
+				{
+					"entity": "minecraft:pillager"
+				},
+				{
+					"entity": "minecraft:vindicator"
+				},
+				{
+					"entity": "savage_and_ravage:executioner"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 5.0
+				},
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.25
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.1
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				}
+			],
+			"rewards": [
+			
+			],
+			"max_wave_time": 6000,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "minecraft:ravager",
+					"nbt": "{ActiveEffects:[{Id:24,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}],Passengers:[{id:'savage_and_ravage:iceologer'}]}"
+				},
+				{
+					"entity": "minecraft:vindicator"
+				},
+				{
+					"entity": "minecraft:vindicator"
+				},
+				{
+					"entity": "minecraft:vindicator"
+				},
+				{
+					"entity": "savage_and_ravage:griefer"
+				},
+				{
+					"entity": "savage_and_ravage:griefer"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 6.0
+				},
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.5
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.25
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				}
+			],
+			"rewards": [
+				{
+					"type": "command",
+					"command": "gamerule sendCommandFeedback false",
+					"desc": "..."
+				},
+				{
+					"type": "command",
+					"command": "time set midnight",
+					"desc": "..."
+				},
+				{
+					"type": "command",
+					"command": "effect give @a[distance=0..50] minecraft:blindness 7 0 true",
+					"desc": "..."
+				},
+				{
+					"type": "command",
+					"command": "tellraw @a [{\"text\": \"You feel something breathing down your neck, \", \"color\": \"red\"}, {\"text\": \"<summoner>\", \"color\": \"dark_red\"}]",
+					"desc": "..."
+				}
+			],
+			"max_wave_time": 6000,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "whisperwoods:hidebehind"
+				},
+				{
+					"entity": "whisperwoods:hidebehind"
+				},
+				{
+					"entity": "minecraft:spider"
+				},
+				{
+					"entity": "minecraft:spider"
+				},
+				{
+					"entity": "minecraft:spider"
+				},
+				{
+					"entity": "minecraft:phantom",
+					"nbt": "{ActiveEffects:[{Id:24,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				},
+				{
+					"entity": "minecraft:phantom",
+					"nbt": "{ActiveEffects:[{Id:24,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				}
+			],
+			"rewards": [
+				{
+					"type": "command",
+					"command": "time set midnight",
+					"desc": "..."
+				},
+				{
+					"type": "command",
+					"command": "effect give @a[distance=0..50] minecraft:blindness 7 0 true",
+					"desc": "..."
+				},
+				{
+					"type": "command",
+					"command": "effect give @a[distance=0..50] minecraft:darkness 35 0 true",
+					"desc": "..."
+				},
+				{
+					"type": "command",
+					"command": "tellraw @a [{\"text\": \"<<summoner>> \"}, {\"text\": \"I can hear them behind me...\", \"color\": \"dark_red\"}]",
+					"desc": "..."
+				}
+			],
+			"max_wave_time": 6000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "whisperwoods:hidebehind"
+				},
+				{
+					"entity": "whisperwoods:hidebehind"
+				},
+				{
+					"entity": "minecraft:spider",
+					"nbt": "{ActiveEffects:[{Id:14,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:1b}]}"
+				},
+				{
+					"entity": "minecraft:spider",
+					"nbt": "{ActiveEffects:[{Id:1,Duration:999999,Amplifier:1,Ambient:0b,ShowParticles:1b}]}"
+				},
+				{
+					"entity": "minecraft:spider",
+					"nbt": "{ActiveEffects:[{Id:5,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:1b},{Id:11,Duration:999999,Amplifier:1,Ambient:0b,ShowParticles:1b}]}"
+				},
+				{
+					"entity": "minecraft:phantom",
+					"nbt": "{ActiveEffects:[{Id:24,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				},
+				{
+					"entity": "minecraft:phantom",
+					"nbt": "{ActiveEffects:[{Id:24,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.5
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				}
+			],
+			"rewards": [
+				{
+					"type": "command",
+					"command": "time set midnight",
+					"desc": "..."
+				},
+				{
+					"type": "command",
+					"command": "effect give @a minecraft:blindness 15 0 true",
+					"desc": "..."
+				},
+				{
+					"type": "command",
+					"command": "effect give @a[distance=0..50] minecraft:darkness 15 0 true",
+					"desc": "..."
+				},
+				{
+					"type": "command",
+					"command": "schedule function custom:bellringer_awaken 15s append",
+					"desc": "..."
+				},
+				{
+					"type": "command",
+					"command": "function custom:bell_sounds",
+					"desc": "..."
+				},
+				{
+					"type": "command",
+					"command": "tellraw @a {\"text\": \"The sound of bells ring in the distance...\", \"color\": \"aqua\"}",
+					"desc": "..."
+				}
+			],
+			"max_wave_time": 6000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "meetyourfight:bellringer",
+					"nbt": "{ActiveEffects:[{Id:24,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 4.5
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				}
+			],
+			"rewards": [
+			
+			],
+			"max_wave_time": 24000,
+			"setup_time": 300
+		}
+	],
+	"rewards": [
+		{
+			"type": "command",
+			"command": "tellraw @a {\"text\": \"Bellringer has been defeated!\", \"color\": \"gold\"}",
+			"desc": "..."
+		},
+		{
+			"type": "loot_table",
+			"loot_table": "custom:bellringer_gate",
+			"rolls": 1
+		}
+	],
+	"failures": [
+		{
+			"type": "summon",
+			"entity": "minecraft:item",
+			"count": 1,
+			"nbt": "{Age:-32768,Health:32767,Item:{Count:1,id:\"gateways:gate_pearl\",tag:{gateway:\"custom:bellringer\"}}}"
+		}
+	]
+}

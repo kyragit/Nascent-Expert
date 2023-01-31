@@ -1,0 +1,12 @@
+{
+	"group": "custom",
+	"displayName": {
+		"text": "Bellringer Treasure Bag"
+	},
+	"lootTable": "custom:bellringer_bag",
+	"rarity": "rare",
+	"dropsFromGroups": [],
+	"bagColor": "#FFD900",
+	"bagOverlayColor": "#00FAF8",
+	"bagStringColor": "#00FAF8"
+}

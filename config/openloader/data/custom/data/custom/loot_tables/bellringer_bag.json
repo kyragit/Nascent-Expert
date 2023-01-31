@@ -1,0 +1,166 @@
+{
+	"pools": [
+		{
+			"rolls": {
+				"type": "uniform",
+				"min": 4,
+				"max": 8
+			},
+			"entries": [
+				{
+					"type": "item",
+					"weight": 1,
+					"quality": 0,
+					"name": "meetyourfight:phantoplasm"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"weight": 1,
+					"quality": 0,
+					"name": "kubejs:ethereal_bell"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 3,
+				"p": 0.5
+			},
+			"entries": [
+				{
+					"type": "item",
+					"weight": 1,
+					"quality": 0,
+					"name": "minecraft:potion",
+					"functions": [
+						{
+							"function": "set_potion",
+							"id": "alexsmobs:strong_soulsteal"
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 20,
+				"p": 0.1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"weight": 3,
+					"name": "minecraft:diamond",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"type": "uniform",
+								"min": 5,
+								"max": 11
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"weight": 3,
+					"name": "minecraft:emerald",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"type": "uniform",
+								"min": 10,
+								"max": 30
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"weight": 3,
+					"name": "minecraft:amethyst_shard",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"type": "uniform",
+								"min": 10,
+								"max": 30
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"weight": 2,
+					"name": "quark:diamond_heart"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.25
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:overworld_valuable"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.15
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:overworld_treasure"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.15
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:runic_weapons"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.07
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:overworld_artifacts"
+				}
+			]
+		}
+	]
+}

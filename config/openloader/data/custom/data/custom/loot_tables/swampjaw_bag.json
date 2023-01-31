@@ -1,0 +1,145 @@
+{
+	"pools": [
+		{
+			"rolls": {
+				"type": "uniform",
+				"min": 4,
+				"max": 8
+			},
+			"entries": [
+				{
+					"type": "item",
+					"weight": 1,
+					"quality": 0,
+					"name": "meetyourfight:mossy_tooth"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"weight": 1,
+					"quality": 0,
+					"name": "kubejs:swampjaw_rib"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 20,
+				"p": 0.1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"weight": 3,
+					"name": "minecraft:diamond",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"type": "uniform",
+								"min": 1,
+								"max": 4
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"weight": 3,
+					"name": "minecraft:emerald",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"type": "uniform",
+								"min": 1,
+								"max": 16
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"weight": 3,
+					"name": "minecraft:amethyst_shard",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"type": "uniform",
+								"min": 1,
+								"max": 16
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"weight": 1,
+					"name": "quark:diamond_heart"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.25
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:overworld_valuable"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.15
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:overworld_treasure"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.15
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:runic_weapons"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "binomial",
+				"n": 1,
+				"p": 0.05
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:overworld_artifacts"
+				}
+			]
+		}
+	]
+}

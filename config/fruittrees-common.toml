@@ -1,0 +1,10 @@
+growingSpeed = 5
+fruitDropModeSingleplayer = "INDEPENDENT"
+fruitDropModeMultiplayer = "ONE_BY_ONE"
+appleSaplingFromHeroOfTheVillage = true
+villageAppleTreeWorldGen = true
+
+[modules]
+farmersdelight = true
+hybridization = true
+food = true

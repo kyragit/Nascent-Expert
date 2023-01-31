@@ -1,0 +1,55 @@
+{
+    "type": "geolosys:deposit_layer",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "geolosys:azurite_ore",
+            "chance": 0.1
+          },
+          {
+            "block": "minecraft:copper_ore",
+            "chance": 0.3
+          },
+          {
+            "block": "geolosys:sphalerite_ore",
+            "chance": 0.1
+          },
+          {
+            "block": null,
+            "chance": 0.5
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "geolosys:deepslate_azurite_ore",
+            "chance": 0.1
+          },
+          {
+            "block": "minecraft:deepslate_copper_ore",
+            "chance": 0.3
+          },
+          {
+            "block": "geolosys:deepslate_sphalerite_ore",
+            "chance": 0.1
+          },
+          {
+            "block": null,
+            "chance": 0.5
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:copper_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": -10,
+      "yMax": 55,
+      "radius": 90,
+      "depth": 9,
+      "biomeTag": "#custom:is_temperate",
+      "generationWeight": 2
+    }
+}

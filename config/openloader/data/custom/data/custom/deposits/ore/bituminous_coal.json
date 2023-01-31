@@ -1,0 +1,38 @@
+{
+    "type": "geolosys:deposit_dike",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "geolosys:bituminous_coal_ore",
+            "chance": 0.55
+          },
+          {
+            "block": null,
+            "chance": 0.45
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "geolosys:deepslate_bituminous_coal_ore",
+            "chance": 0.6
+          },
+          {
+            "block": null,
+            "chance": 0.4
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:bituminous_coal_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": -32,
+      "yMax": 12,
+      "baseRadius": 20,
+      "biomeTag": "#minecraft:is_ocean",
+      "generationWeight": 2
+    }
+}

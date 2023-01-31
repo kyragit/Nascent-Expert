@@ -1,0 +1,47 @@
+{
+    "type": "geolosys:deposit_sparse",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "immersiveengineering:ore_lead",
+            "chance": 0.40
+          },
+          {
+            "block": "immersiveengineering:ore_silver",
+            "chance": 0.35
+          },
+          {
+            "block": null,
+            "chance": 0.25
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "immersiveengineering:deepslate_ore_lead",
+            "chance": 0.40
+          },
+          {
+            "block": "immersiveengineering:deepslate_ore_silver",
+            "chance": 0.35
+          },
+          {
+            "block": null,
+            "chance": 0.25
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:galena_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": -32,
+      "yMax": 32,
+      "size": 45,
+      "spread": 17,
+      "biomeTag": "#forge:is_cold/overworld",
+      "generationWeight": 2
+    }
+}

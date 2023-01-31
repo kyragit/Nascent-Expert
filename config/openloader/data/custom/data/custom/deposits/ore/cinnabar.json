@@ -1,0 +1,47 @@
+{
+    "type": "geolosys:deposit_layer",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "geolosys:cinnabar_ore",
+            "chance": 0.25
+          },
+          {
+            "block": "create:scorchia",
+            "chance": 0.15
+          },
+          {
+            "block": null,
+            "chance": 0.6
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "geolosys:deepslate_cinnabar_ore",
+            "chance": 0.25
+          },
+          {
+            "block": "create:scorchia",
+            "chance": 0.15
+          },
+          {
+            "block": null,
+            "chance": 0.6
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": null,
+          "chance": 1.0
+        }
+      ],
+      "yMin": 0,
+      "yMax": 65,
+      "radius": 70,
+      "depth": 3,
+      "biomeTag": "#minecraft:is_ocean",
+      "generationWeight": 2
+    }
+}

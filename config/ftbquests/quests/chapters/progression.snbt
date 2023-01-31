@@ -1,0 +1,269 @@
+{
+	id: "5658CC0093FF9CC1"
+	group: "36C3CA17FE4F12AD"
+	order_index: 1
+	filename: "progression"
+	title: "Progression"
+	icon: "kubejs:star_of_quintessence"
+	subtitle: ["Progressing through the Medieval Age."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: 0.0d
+			y: 1.0d
+			description: ["You have proven yourself capable. With this alloy, great technology will be constructed."]
+			dependencies: ["2F56A483E8CF2367"]
+			id: "7B2817643B1C1080"
+			tasks: [{
+				id: "04164AD84D144867"
+				type: "item"
+				item: "create:andesite_alloy"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -2.0d
+			description: ["The zenith of perfection, a glowing star, a singularity. Will it be enough?"]
+			dependencies: [
+				"5B98B03795706A78"
+				"34F3EA58E776103E"
+				"50495DF13D4A3590"
+				"256A6AF62DB872DD"
+			]
+			id: "20BD8541D53F6B51"
+			tasks: [{
+				id: "3CB9AD7A737092A1"
+				type: "item"
+				item: "kubejs:star_of_quintessence"
+			}]
+		}
+		{
+			x: -2.0d
+			y: -3.0d
+			dependencies: ["7716B343B0B187BA"]
+			id: "5B98B03795706A78"
+			tasks: [{
+				id: "7BD9C19DCC9E4A82"
+				type: "item"
+				item: "meetyourfight:mossy_tooth"
+			}]
+		}
+		{
+			x: -1.0d
+			y: -4.0d
+			dependencies: ["2ADC2356E08232BF"]
+			id: "256A6AF62DB872DD"
+			tasks: [{
+				id: "69E7EF9F7922637D"
+				type: "item"
+				item: "meetyourfight:phantoplasm"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -4.0d
+			dependencies: ["79A84972F2690DEB"]
+			id: "34F3EA58E776103E"
+			tasks: [{
+				id: "116E3872C196ACFB"
+				type: "item"
+				item: "meetyourfight:fortunes_favor"
+			}]
+		}
+		{
+			x: 2.0d
+			y: -3.0d
+			dependencies: ["0066B11FD09BF2F9"]
+			id: "50495DF13D4A3590"
+			tasks: [{
+				id: "5D5300696E2DB433"
+				type: "item"
+				item: "minecraft:nether_star"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -4.0d
+			description: ["Open a gateway and summon the Swampjaw, a bony beast from a moss-filled place."]
+			id: "7716B343B0B187BA"
+			tasks: [{
+				id: "2F2408B49478A4A6"
+				type: "item"
+				item: {
+					id: "gateways:gate_pearl"
+					Count: 1b
+					tag: {
+						gateway: "custom:swampjaw"
+					}
+				}
+				match_nbt: true
+			}]
+		}
+		{
+			x: -2.0d
+			y: -6.0d
+			description: ["Something about this Gate Pearl is unsettling. You're not sure what, though..."]
+			id: "2ADC2356E08232BF"
+			tasks: [{
+				id: "022C95A5AA9BFE38"
+				type: "item"
+				item: {
+					id: "gateways:gate_pearl"
+					Count: 1b
+					tag: {
+						gateway: "custom:bellringer"
+					}
+				}
+				match_nbt: true
+			}]
+		}
+		{
+			x: 2.0d
+			y: -6.0d
+			description: [
+				"Why is the recipe a seemingly random assortment of items? Why, because it *is* random!"
+				""
+				"The recipe(s) for the Dame Fortuna Gate Pearl are randomly generated per-world. "
+			]
+			id: "79A84972F2690DEB"
+			tasks: [{
+				id: "18981E6A91F9C905"
+				type: "item"
+				item: {
+					id: "gateways:gate_pearl"
+					Count: 1b
+					tag: {
+						gateway: "custom:dame_fortuna"
+					}
+				}
+				match_nbt: true
+			}]
+		}
+		{
+			x: 4.0d
+			y: -4.0d
+			description: ["You're so close now."]
+			dependencies: [
+				"19111802285ABD62"
+				"23D512FAF297B1FF"
+				"65D11DBE1125314B"
+			]
+			id: "0066B11FD09BF2F9"
+			tasks: [{
+				id: "5004CA088044210F"
+				type: "item"
+				item: {
+					id: "gateways:gate_pearl"
+					Count: 1b
+					tag: {
+						gateway: "custom:wither"
+					}
+				}
+				match_nbt: true
+			}]
+		}
+		{
+			x: 6.0d
+			y: -5.0d
+			hide_dependency_lines: true
+			dependencies: ["2ADC2356E08232BF"]
+			id: "23D512FAF297B1FF"
+			tasks: [{
+				id: "473BA16136F318B9"
+				type: "item"
+				item: "kubejs:ethereal_bell"
+			}]
+		}
+		{
+			x: 5.0d
+			y: -6.5d
+			hide_dependency_lines: true
+			dependencies: ["7716B343B0B187BA"]
+			id: "19111802285ABD62"
+			tasks: [{
+				id: "566038B978AFB352"
+				type: "item"
+				item: "kubejs:swampjaw_rib"
+			}]
+		}
+		{
+			x: 7.0d
+			y: -3.5d
+			hide_dependency_lines: true
+			dependencies: ["79A84972F2690DEB"]
+			id: "65D11DBE1125314B"
+			tasks: [{
+				id: "47E5752F55E1287B"
+				type: "item"
+				item: "kubejs:queen_of_diamonds"
+			}]
+		}
+		{
+			title: "The Summoning Altar"
+			icon: "summoningrituals:altar"
+			x: 0.0d
+			y: -9.0d
+			description: [
+				"The Summoning Altar is vital to creating the powerful artifacts required to progress."
+				""
+				"To use it, simply place all the required items into the altar, then right-click with the catalyst item."
+				""
+				"Some recipes will require mobs to be sacrificed. Do NOT kill them yourself; they will be killed if within range when the catalyst is inserted."
+				""
+				"Additionally, some recipes may have other requirements, like a certain block below the altar. These can be seen in JEI."
+			]
+			id: "430FEF82D170AAD1"
+			tasks: [{
+				id: "48EEABF85E0AA66C"
+				type: "item"
+				item: "summoningrituals:altar"
+			}]
+		}
+		{
+			icon: {
+				id: "gateways:gate_pearl"
+				Count: 1b
+				tag: {
+					gateway: "custom:swampjaw"
+				}
+			}
+			x: 2.0d
+			y: -9.0d
+			description: [
+				"Using a Gate Pearl will summon powerful enemies from another place and time."
+				""
+				"A few things to note: First, if the Gateway is failed, usually by running out of time, your Gate Pearl will be returned for reuse. (It may look like the item got destroyed, but it didn't)."
+				""
+				"Secondly, it's worth noting that these enemies are MUCH more powerful than you may be used to. It will take preparation and determination to be successful."
+				""
+				"A Gateway will fail to materialize if it cannot find anywhere to safely summon, so don't try any funny business."
+			]
+			id: "740430433073DBE8"
+			tasks: [{
+				id: "076F31C64951EA9B"
+				type: "checkmark"
+				title: "Gateways to Eternity"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -0.5d
+			description: [
+				"With the force of an explosion, the star has been crushed into a brilliant powder."
+				""
+				"It feels as though it has a mind of its own... a feeling of pulling upon the mind. \"Andesite\", it whispers."
+				""
+				"You feel a strong urge to sprinkle it on some andesite."
+			]
+			dependencies: ["20BD8541D53F6B51"]
+			id: "2F56A483E8CF2367"
+			tasks: [{
+				id: "3259AB4CA1A2C494"
+				type: "item"
+				item: "kubejs:powdered_determination"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

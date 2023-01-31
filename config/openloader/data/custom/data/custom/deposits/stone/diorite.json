@@ -1,0 +1,25 @@
+{
+    "type": "geolosys:deposit_layer",
+    "config": {
+        "blocks": {
+            "default": [
+                {
+                    "block": "minecraft:diorite",
+                    "chance": 1.0
+                }
+            ]
+        },
+        "samples": [
+            {
+                "block": null,
+                "chance": 1.0
+            }
+        ],
+        "generationWeight": 6,
+        "yMin": -30,
+        "yMax": 20,
+        "biomeTag": "#forge:is_cold/overworld",
+        "radius": 40,
+        "depth": 5
+    }
+}

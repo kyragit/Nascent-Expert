@@ -1,0 +1,47 @@
+{
+    "type": "geolosys:deposit_sparse",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "geolosys:cinnabar_ore",
+            "chance": 0.1
+          },
+          {
+            "block": "minecraft:redstone_ore",
+            "chance": 0.4
+          },
+          {
+            "block": "create:crimsite",
+            "chance": 0.6
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "geolosys:deepslate_cinnabar_ore",
+            "chance": 0.1
+          },
+          {
+            "block": "minecraft:deepslate_redstone_ore",
+            "chance": 0.4
+          },
+          {
+            "block": "create:crimsite",
+            "chance": 0.6
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:redstone_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": -40,
+      "yMax": 10,
+      "size": 100,
+      "spread": 15,
+      "biomeTag": "#forge:is_hot/overworld",
+      "generationWeight": 3
+    }
+}

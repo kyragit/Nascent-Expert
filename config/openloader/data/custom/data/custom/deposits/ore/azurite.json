@@ -1,0 +1,47 @@
+{
+    "type": "geolosys:deposit_sparse",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "geolosys:azurite_ore",
+            "chance": 0.33
+          },
+          {
+            "block": "geolosys:lapis_ore",
+            "chance": 0.33
+          },
+          {
+            "block": null,
+            "chance": 0.34
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "geolosys:deepslate_azurite_ore",
+            "chance": 0.33
+          },
+          {
+            "block": "geolosys:deepslate_lapis_ore",
+            "chance": 0.33
+          },
+          {
+            "block": null,
+            "chance": 0.34
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:azurite_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": -20,
+      "yMax": 10,
+      "size": 45,
+      "spread": 16,
+      "biomeTag": "#forge:is_cold/overworld",
+      "generationWeight": 2
+    }
+}

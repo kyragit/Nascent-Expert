@@ -1,0 +1,39 @@
+{
+    "type": "geolosys:deposit_layer",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "geolosys:lignite_ore",
+            "chance": 0.25
+          },
+          {
+            "block": null,
+            "chance": 0.75
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "geolosys:deepslate_lignite_ore",
+            "chance": 0.3
+          },
+          {
+            "block": null,
+            "chance": 0.7
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:lignite_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": 50,
+      "yMax": 75,
+      "radius": 50,
+      "depth": 4,
+      "biomeTag": "#custom:is_dense_or_forest",
+      "generationWeight": 2
+    }
+}

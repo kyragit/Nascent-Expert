@@ -1,0 +1,14 @@
+{
+    "type": "relics:relic_gen",
+    "conditions": [
+      {
+        "condition": "random_chance",
+        "chance": 0.0
+      }
+    ],
+    "entry": {
+      "type": "minecraft:item",
+      "name": "minecraft:air"
+    },
+    "functions": []
+}

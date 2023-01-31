@@ -1,0 +1,11 @@
+{
+	"custom.swampjaw": "Swampjaw Gate",
+	"custom.bellringer": "Bellringer Gate",
+	"custom.dame_fortuna": "Dame Fortuna Gate",
+	"custom.wither": "Wither Gate",
+	"tooltip.gateways.list1": "- ???",
+	"tooltip.gateways.list2": "- ???",
+	"enchantment.create.potato_recovery.desc": "Chance to recover fired vegetables.",
+	"enchantment.create.capacity.desc": "Increased air capacity.",
+	"enchantment.feathers.lightweight.desc": "Makes your armor weigh less."
+}

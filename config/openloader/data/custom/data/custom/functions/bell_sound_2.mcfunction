@@ -1,0 +1,1 @@
+execute at @e[type=gateways:gateway] run playsound minecraft:block.bell.use master @a ~-10 ~-5 ~-30 20 0.964

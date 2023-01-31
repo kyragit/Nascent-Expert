@@ -1,0 +1,87 @@
+{
+    "weight": 60,
+    "quality": 5,
+    "mainhands": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "alexsmobs:blood_sprayer"
+            }
+        }
+    ],
+    "offhands": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "alexsmobs:shield_of_the_deep"
+            }
+        }
+    ],
+    "boots": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "alexsmobs:roadrunner_boots"
+            }
+        }
+    ],
+    "leggings": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "alexsmobs:centipede_leggings"
+            }
+        },
+        {
+            "weight": 1,
+            "stack": {
+                "item": "alexsmobs:emu_leggings"
+            }
+        }
+    ],
+    "chestplates": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "alexsmobs:unsettling_kimono"
+            }
+        },
+        {
+            "weight": 1,
+            "stack": {
+                "item": "alexsmobs:crocodile_chestplate"
+            }
+        },
+        {
+            "weight": 1,
+            "stack": {
+                "item": "alexsmobs:rocky_chestplate"
+            }
+        }
+    ],
+    "helmets": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "alexsmobs:froststalker_helmet"
+            }
+        },
+        {
+            "weight": 1,
+            "stack": {
+                "item": "alexsmobs:frontier_cap"
+            }
+        },
+        {
+            "weight": 1,
+            "stack": {
+                "item": "alexsmobs:fedora"
+            }
+        }
+    ],
+    "tags": [
+        "overworld_bow",
+        "the_nether_bow",
+        "the_end_bow"
+    ]
+}

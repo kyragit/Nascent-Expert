@@ -1,0 +1,81 @@
+{
+    "weight": 70,
+    "quality": 5,
+    "mainhands": [
+        {
+            "weight": 15,
+            "stack": {
+                "item": "minecraft:iron_axe"
+            }
+        },
+        {
+            "weight": 12,
+            "stack": {
+                "item": "minecraft:golden_axe"
+            }
+        },
+        {
+            "weight": 2,
+            "stack": {
+                "item": "dungeons_plus:warped_axe"
+            }
+        },
+        {
+            "weight": 1,
+            "stack": {
+                "item": "byg:pendorite_battleaxe"
+            }
+        }
+    ],
+    "offhands": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "minecraft:shield"
+            }
+        },
+        {
+            "weight": 1,
+            "stack": {
+                "item": "farmersdelight:iron_knife"
+            }
+        }
+    ],
+    "boots": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:warrior_boots"
+            }
+        }
+    ],
+    "leggings": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:warrior_leggings"
+            }
+        }
+    ],
+    "chestplates": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:warrior_chestplate"
+            }
+        }
+    ],
+    "helmets": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:warrior_helmet"
+            }
+        }
+    ],
+    "tags": [
+        "overworld",
+        "the_nether",
+        "the_end"
+    ]
+}

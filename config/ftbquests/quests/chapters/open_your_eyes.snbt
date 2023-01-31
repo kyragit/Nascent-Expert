@@ -1,0 +1,232 @@
+{
+	id: "1CF007EFA8A818EB"
+	group: ""
+	order_index: 0
+	filename: "open_your_eyes"
+	title: "Open Your Eyes"
+	icon: {
+		id: "enigmaticlegacy:extradimensional_eye"
+		Count: 1b
+		tag: { }
+	}
+	subtitle: ["An introduction to Nascent: Expert."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			icon: {
+				id: "enigmaticlegacy:extradimensional_eye"
+				Count: 1b
+				tag: { }
+			}
+			x: 0.0d
+			y: 0.0d
+			description: [
+				"Welcome, Child. The world awaits."
+				""
+				"First things first, I would recommend closing this book and getting some charcoal, making torches, and finding a safe place to hide. You'll notice coal is not so easy to find."
+				""
+				"Oh, also, please don't put on the ring."
+			]
+			id: "54AABF574DEEFF57"
+			tasks: [{
+				id: "712440114ED31450"
+				type: "checkmark"
+				title: "The World Awaits"
+			}]
+		}
+		{
+			icon: "enigmaticlegacy:cursed_ring"
+			x: 3.0d
+			y: 0.0d
+			description: [
+				"This cursed ring seems to worm its way into the hands of all of your kin. "
+				""
+				"Equipping this ring will make the game VASTLY more difficult. You will deal less and take more damage, neutral mobs will be hostile, and most importantly, you will lose maximum health every time you die (unless you return to retrieve your soul). Oh, and did I mention that once equipped it is bound to you forever?"
+				""
+				"That being said, bearers of the Curses are granted access to artifacts of the gods themselves - if they can survive the challenge."
+			]
+			dependencies: ["54AABF574DEEFF57"]
+			id: "562B95C0055CD04A"
+			tasks: [{
+				id: "42496719AB96F302"
+				type: "checkmark"
+				title: "The Ring of the Seven Curses"
+			}]
+		}
+		{
+			icon: "quark:tiny_potato"
+			x: 5.0d
+			y: 0.0d
+			description: [
+				"Did you not read the f-nevermind. Firstly, pause the game for a few minutes to think about what you did."
+				""
+				"No, really, do it."
+				""
+				"You're back? Okay. Let this be a lesson in thinking before acting. You have a couple options at this point: One, you could continue playing. The game will be very, very hard, and you may find yourself getting frustrated. However, there is a way to unequip the ring, once you have proven yourself. "
+				""
+				"Alternatively, you could simply make a new world. I'd recommend this if you don't like being in constant fear of death."
+			]
+			dependencies: ["562B95C0055CD04A"]
+			id: "5D87BB6E600BCD6D"
+			tasks: [{
+				id: "2BC07A6B445101A7"
+				type: "checkmark"
+				title: "Help, I equipped the ring"
+			}]
+		}
+		{
+			title: "Where's my minimap??"
+			x: -3.0d
+			y: 0.0d
+			description: [
+				"There's no built-in map in this world. Instead, you'll have to craft one yourself."
+				""
+				"The Atlas uses the vanilla map mechanics for your navigational needs. The book holds empty maps and automatically fills them as you explore. Thus, make sure to keep it topped up on fresh maps (you'll notice the map recipe is easier than you're used to). "
+				""
+				"The size of the maps in the atlas is determined by the size of map you crafted it with. "
+				""
+				"Also, cartography tables can be used to copy atlases or to add many empty maps at once. "
+			]
+			dependencies: ["54AABF574DEEFF57"]
+			id: "62C2B185DB1EF0E8"
+			tasks: [{
+				id: "039A8DBC4F44D860"
+				type: "item"
+				item: "map_atlases:atlas"
+			}]
+		}
+		{
+			icon: "minecraft:white_banner"
+			x: -5.0d
+			y: 0.0d
+			description: [
+				"Waypoints are made in the atlas in the same way as vanilla maps. Right-clicking a banner with the atlas will mark it on your map. Also, naming the banner in an anvil will let you name your waypoints."
+				""
+				"If you don't like that method, there are some other blocks you can use similarly: sign posts, beds, beacons, nether portals, conduits, lodestones, respawn anchors, and flags."
+			]
+			dependencies: ["62C2B185DB1EF0E8"]
+			id: "010A5BC1F599E6F3"
+			tasks: [{
+				id: "1AEE08B4A653EB73"
+				type: "checkmark"
+				title: "Making Waypoints"
+			}]
+		}
+		{
+			icon: "minecraft:raw_iron"
+			x: 0.0d
+			y: -3.0d
+			description: [
+				"Ore generation is completely different from what you may be used to. Ores spawn in huge veins, spread out in different biomes. "
+				""
+				"Large ore veins usually spawn samples on the surface. These can be mined for some nuggets if you wish. "
+			]
+			dependencies: ["54AABF574DEEFF57"]
+			id: "4CEDF008AD0F1A20"
+			tasks: [{
+				id: "34E370284FBEF08C"
+				type: "checkmark"
+				title: "I can't find any ores!"
+			}]
+		}
+		{
+			icon: "minecraft:stone_bricks"
+			x: 0.0d
+			y: 3.0d
+			description: [
+				"Exploring this realm will be key to your progression. Great megastructures await your discovery; but beware, they do not go unguarded."
+				""
+				"Great treasures can be found in dungeons across the world. Some even have unique loot found nowhere else."
+			]
+			dependencies: ["54AABF574DEEFF57"]
+			id: "06B37B0B9B130678"
+			tasks: [{
+				id: "55D62D8D2F8D996E"
+				type: "checkmark"
+				title: "Great Structures"
+			}]
+		}
+		{
+			title: "Mobile Bases"
+			x: 2.0d
+			y: -2.0d
+			description: [
+				"The Nomadic Tents mod allows for true movable bases with no hassle. Tents can be upgraded to be larger, and to allow digging down further."
+				""
+				"To build a tent, hold right-click on the ground while holding a tent. It needs enough space to place the structure. Then use the tent mallet to construct the tent."
+				""
+				"You may have several questions; is it safe to store my stuff in there? What happens if the tent is picked up with someone inside?"
+				""
+				"Don't worry, these tents are completely safe to use. You can upgrade them with your things inside. If you're wondering something like, \"is it safe to do x with the tent?\" the answer is probably yes."
+				""
+				"Careful not to lose the tent item, of course. It's technically possible to get it back, but go to the mod's page for help with that."
+			]
+			dependencies: ["54AABF574DEEFF57"]
+			id: "2CBF848E2C9CEE46"
+			tasks: [{
+				id: "15604501FABA952E"
+				type: "item"
+				item: {
+					id: "nomadictents:mallet"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			title: "Sea Travel, in Style"
+			x: -2.0d
+			y: -2.0d
+			description: [
+				"Want something better than a rinky-dink regular boat? Use the Small Ships mod to sail the high seas in style!"
+				""
+				"These boats have a few keybinds associated with them, so take a look at those and set them to whatever you like. They also have a large inventory for all the booty you've collected!"
+				""
+				"You can make cannons for your ship if you'd like. Simply right-click to place them in your ship, then put cannonballs and gunpowder inside the ship's inventory."
+			]
+			dependencies: ["54AABF574DEEFF57"]
+			id: "0C9C9DD103A82BB1"
+			tasks: [{
+				id: "7C05A4656B65F65C"
+				type: "item"
+				item: "smallships:sail_item"
+			}]
+		}
+		{
+			icon: "minecraft:grass_block"
+			x: 2.0d
+			y: 2.0d
+			description: ["World generation is a bit different than normal. As well as a whole host of new biomes to explore, landmasses now generate in distinct continents with large oceans in between. You'll find smaller islands dotted around the seas as well."]
+			dependencies: ["54AABF574DEEFF57"]
+			id: "6DC1F7E52A81599A"
+			tasks: [{
+				id: "1430C33107A014F7"
+				type: "checkmark"
+				title: "World Generation"
+			}]
+		}
+		{
+			icon: "minecraft:oak_wood"
+			x: -2.0d
+			y: 2.0d
+			description: [
+				"In order to proceed, you'll need a summoning altar, which requires a wither skeleton skull. I'd recommend exploring until you find a structure to raid for gear before venturing into the nether."
+				""
+				"You'll need to visit many biomes and gather some exotic animal parts as well. Make sure you mark things on your map as you go."
+				""
+				"You will face great enemies before progressing, so getting adequate weaponry and armor should be a priority."
+			]
+			dependencies: ["54AABF574DEEFF57"]
+			id: "046D3FE44220C22B"
+			tasks: [{
+				id: "3A0E7F7C5BFBCCF6"
+				type: "checkmark"
+				title: "What should I do?"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

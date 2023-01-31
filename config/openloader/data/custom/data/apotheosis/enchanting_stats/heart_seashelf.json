@@ -1,0 +1,10 @@
+{
+	"block": "apotheosis:heart_seashelf",
+	"stats": {
+		"maxEterna": 30,
+		"eterna": 2.0,
+		"quanta": 0,
+		"arcana": 5.0,
+		"rectification": -5.0
+	}
+}

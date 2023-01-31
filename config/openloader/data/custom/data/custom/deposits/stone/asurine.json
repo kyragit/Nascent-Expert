@@ -1,0 +1,24 @@
+{
+    "type": "geolosys:deposit_dense",
+    "config": {
+        "blocks": {
+            "default": [
+                {
+                    "block": "create:asurine",
+                    "chance": 1.0
+                }
+            ]
+        },
+        "samples": [
+            {
+                "block": null,
+                "chance": 1.0
+            }
+        ],
+        "generationWeight": 6,
+        "yMin": -20,
+        "yMax": 10,
+        "biomeTag": "#forge:is_cold/overworld",
+        "size": 100
+    }
+}

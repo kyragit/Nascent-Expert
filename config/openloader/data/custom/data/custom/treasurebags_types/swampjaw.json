@@ -1,0 +1,12 @@
+{
+	"group": "custom",
+	"displayName": {
+		"text": "Swampjaw Treasure Bag"
+	},
+	"lootTable": "custom:swampjaw_bag",
+	"rarity": "rare",
+	"dropsFromGroups": [],
+	"bagColor": "#2A5026",
+	"bagOverlayColor": "#F6F8E7",
+	"bagStringColor": "#000000"
+}

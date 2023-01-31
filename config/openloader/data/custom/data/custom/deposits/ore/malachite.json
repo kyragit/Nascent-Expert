@@ -1,0 +1,47 @@
+{
+    "type": "geolosys:deposit_sparse",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "geolosys:malachite_ore",
+            "chance": 0.4
+          },
+          {
+            "block": "minecraft:iron_ore",
+            "chance": 0.1
+          },
+          {
+            "block": null,
+            "chance": 0.5
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "geolosys:deepslate_malachite_ore",
+            "chance": 0.5
+          },
+          {
+            "block": "minecraft:deepslate_iron_ore",
+            "chance": 0.1
+          },
+          {
+            "block": null,
+            "chance": 0.4
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:malachite_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": -20,
+      "yMax": 40,
+      "size": 50,
+      "spread": 16,
+      "biomeTag": "#custom:is_hot_or_wet",
+      "generationWeight": 2
+    }
+}

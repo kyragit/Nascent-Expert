@@ -1,0 +1,18 @@
+{
+    "structures": [
+      {
+        "structure": "betterdeserttemples:desert_temple",
+        "weight": 1
+      }
+    ],
+    "placement": {
+      "salt": 92746251,
+      "spacing": 30,
+      "separation": 20,
+      "type": "minecraft:random_spread",
+      "exclusion_zone": {
+        "chunk_count": 16,
+        "other_set": "dungeons_arise:major_structures"
+      }
+    }
+  }

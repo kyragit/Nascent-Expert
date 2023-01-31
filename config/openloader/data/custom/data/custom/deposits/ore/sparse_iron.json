@@ -1,0 +1,55 @@
+{
+    "type": "geolosys:deposit_layer",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "geolosys:limonite_ore",
+            "chance": 0.01
+          },
+          {
+            "block": "minecraft:iron_ore",
+            "chance": 0.005
+          },
+          {
+            "block": "geolosys:sphalerite_ore",
+            "chance": 0.005
+          },
+          {
+            "block": null,
+            "chance": 0.98
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "geolosys:deepslate_limonite_ore",
+            "chance": 0.01
+          },
+          {
+            "block": "minecraft:deepslate_iron_ore",
+            "chance": 0.005
+          },
+          {
+            "block": "geolosys:deepslate_sphalerite_ore",
+            "chance": 0.005
+          },
+          {
+            "block": null,
+            "chance": 0.98
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": null,
+          "chance": 1.0
+        }
+      ],
+      "yMin": -50,
+      "yMax": 30,
+      "radius": 50,
+      "depth": 30,
+      "biomeTag": "#minecraft:is_overworld",
+      "generationWeight": 8
+    }
+}

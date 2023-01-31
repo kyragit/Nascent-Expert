@@ -1,0 +1,46 @@
+{
+    "type": "geolosys:deposit_dense",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "minecraft:iron_ore",
+            "chance": 0.15
+          },
+          {
+            "block": "immersiveengineering:ore_nickel",
+            "chance": 0.35
+          },
+          {
+            "block": "create:scoria",
+            "chance": 0.5
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "minecraft:deepslate_iron_ore",
+            "chance": 0.15
+          },
+          {
+            "block": "immersiveengineering:deepslate_ore_nickel",
+            "chance": 0.35
+          },
+          {
+            "block": "create:scoria",
+            "chance": 0.5
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:nickel_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": -45,
+      "yMax": 0,
+      "size": 110,
+      "biomeTag": "#custom:is_temperate",
+      "generationWeight": 2
+    }
+}

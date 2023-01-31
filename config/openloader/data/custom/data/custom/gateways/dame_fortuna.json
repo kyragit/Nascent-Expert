@@ -1,0 +1,341 @@
+{
+	"size": "medium",
+	"color": "#FF0000",
+	"completion_xp": 3000,
+	"spawn_range": 8,
+	"leash_range": 512,
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "minecraft:zombie",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:zombie_head'}]}"
+				},
+				{
+					"entity": "minecraft:zombie",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:zombie_head'}]}"
+				},
+				{
+					"entity": "minecraft:skeleton",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:skeleton_skull'}]}"
+				},
+				{
+					"entity": "minecraft:skeleton",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:skeleton_skull'}]}"
+				},
+				{
+					"entity": "rottencreatures:burned"
+				},
+				{
+					"entity": "rottencreatures:burned"
+				},
+				{
+					"entity": "rottencreatures:glacial_hunter"
+				},
+				{
+					"entity": "rottencreatures:glacial_hunter"
+				},
+				{
+					"entity": "rottencreatures:mummy"
+				},
+				{
+					"entity": "rottencreatures:mummy"
+				},
+				{
+					"entity": "rottencreatures:undead_miner"
+				},
+				{
+					"entity": "rottencreatures:undead_miner"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 4.0
+				}
+			],
+			"rewards": [
+				{
+					"type": "command",
+					"command": "gamerule sendCommandFeedback false",
+					"desc": "..."
+				}
+			],
+			"max_wave_time": 6000,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "minecraft:pillager"
+				},
+				{
+					"entity": "minecraft:pillager"
+				},
+				{
+					"entity": "minecraft:vindicator"
+				},
+				{
+					"entity": "minecraft:vindicator"
+				},
+				{
+					"entity": "minecraft:evoker"
+				},
+				{
+					"entity": "minecraft:evoker"
+				},
+				{
+					"entity": "savage_and_ravage:executioner"
+				},
+				{
+					"entity": "savage_and_ravage:executioner"
+				},
+				{
+					"entity": "savage_and_ravage:trickster"
+				},
+				{
+					"entity": "savage_and_ravage:griefer"
+				},
+				{
+					"entity": "savage_and_ravage:griefer"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 4.0
+				}
+			],
+			"rewards": [
+			
+			],
+			"max_wave_time": 6000,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "minecraft:phantom",
+					"nbt": "{ActiveEffects:[{Id:12,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				},
+				{
+					"entity": "minecraft:phantom",
+					"nbt": "{ActiveEffects:[{Id:12,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				},
+				{
+					"entity": "minecraft:phantom",
+					"nbt": "{ActiveEffects:[{Id:12,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				},
+				{
+					"entity": "minecraft:vex",
+					"nbt": "{HandItems:[{Count:1,id:'minecraft:diamond_sword'},{Count:1,id:'minecraft:shield'}],AbsorptionAmount:40}"
+				},
+				{
+					"entity": "minecraft:vex",
+					"nbt": "{HandItems:[{Count:1,id:'minecraft:diamond_sword'},{Count:1,id:'minecraft:shield'}],AbsorptionAmount:40}"
+				},
+				{
+					"entity": "minecraft:vex",
+					"nbt": "{HandItems:[{Count:1,id:'minecraft:diamond_sword'},{Count:1,id:'minecraft:shield'}],AbsorptionAmount:40}"
+				},
+				{
+					"entity": "alexsmobs:crimson_mosquito",
+					"nbt": "{ActiveEffects:[{Id:2,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				},
+				{
+					"entity": "alexsmobs:crimson_mosquito",
+					"nbt": "{ActiveEffects:[{Id:2,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				},
+				{
+					"entity": "alexsmobs:crimson_mosquito",
+					"nbt": "{ActiveEffects:[{Id:2,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 4.0
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				}
+			],
+			"rewards": [
+			
+			],
+			"max_wave_time": 6000,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "minecraft:blaze"
+				},
+				{
+					"entity": "minecraft:blaze"
+				},
+				{
+					"entity": "minecraft:magma_cube",
+					"nbt": "{Size:3}"
+				},
+				{
+					"entity": "minecraft:magma_cube",
+					"nbt": "{Size:3}"
+				},
+				{
+					"entity": "minecraft:piglin_brute",
+					"nbt": "{IsImmuneToZombification:1b, HandItems:[{Count:1,id:'minecraft:diamond_axe'}, {}]}"
+				},
+				{
+					"entity": "minecraft:piglin_brute",
+					"nbt": "{IsImmuneToZombification:1b, HandItems:[{Count:1,id:'minecraft:diamond_axe'}, {}]}"
+				},
+				{
+					"entity": "alexsmobs:straddler"
+				},
+				{
+					"entity": "alexsmobs:straddler"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.5
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 4.0
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				}
+			],
+			"rewards": [
+				{
+					"type": "command",
+					"command": "schedule function custom:dame_fortuna_awaken 20s append",
+					"desc": "..."
+				}
+			],
+			"max_wave_time": 6000,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "meetyourfight:dame_fortuna"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 4.0
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.5
+				}
+			],
+			"rewards": [
+				{
+					"type": "command",
+					"command": "tellraw @a {\"text\":\"Dame Fortuna has been defeated!\",\"color\":\"dark_red\"}",
+					"desc": "..."
+				}
+			],
+			"max_wave_time": 24000,
+			"setup_time": 400
+		}
+	],
+	"rewards": [
+		{
+			"type": "command",
+			"command": "effect give @a[distance=0..50] minecraft:luck 1200 1 true",
+			"desc": "Good fortune"
+		},
+		{
+			"type": "loot_table",
+			"loot_table": "custom:dame_fortuna_gate",
+			"rolls": 1
+		}
+	],
+	"failures": [
+		{
+			"type": "summon",
+			"entity": "minecraft:item",
+			"count": 1,
+			"nbt": "{Age:-32768,Health:32767,Item:{Count:1,id:\"gateways:gate_pearl\",tag:{gateway:\"custom:dame_fortuna\"}}}"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+    "type": "geolosys:deposit_layer",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "immersiveengineering:ore_aluminum",
+            "chance": 0.2
+          },
+          {
+            "block": "minecraft:basalt",
+            "chance": 0.3
+          },
+          {
+            "block": null,
+            "chance": 0.5
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "immersiveengineering:deepslate_ore_aluminum",
+            "chance": 0.65
+          },
+          {
+            "block": "geolosys:deepslate_beryl_ore",
+            "chance": 0.1
+          },
+          {
+            "block": null,
+            "chance": 0.25
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:bauxite_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": 0,
+      "yMax": 32,
+      "radius": 110,
+      "depth": 5,
+      "biomeTag": "#custom:is_temperate",
+      "generationWeight": 2
+    }
+}

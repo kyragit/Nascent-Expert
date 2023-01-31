@@ -1,0 +1,12 @@
+{
+	"group": "custom",
+	"displayName": {
+		"text": "Elder Guardian Treasure Bag"
+	},
+	"lootTable": "custom:elder_guardian_bag",
+	"rarity": "uncommon",
+	"dropsFromGroups": [],
+	"bagColor": "#00FFBE",
+	"bagOverlayColor": "#00FFE3",
+	"bagStringColor": "#FFFFFF"
+}

@@ -1,0 +1,8 @@
+{
+    "block": "quark:crimson_bookshelf",
+    "stats": {
+        "maxEterna": 15,
+        "eterna": 0.25,
+        "quanta": 1
+    }
+}

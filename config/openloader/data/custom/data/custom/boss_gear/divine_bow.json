@@ -1,0 +1,69 @@
+{
+    "weight": 40,
+    "quality": 5,
+    "mainhands": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "minecraft:crossbow"
+            }
+        }
+    ],
+    "offhands": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "archers_paradox:blaze_arrow"
+            }
+        },
+        {
+            "weight": 1,
+            "stack": {
+                "item": "minecraft:arrow"
+            }
+        },
+        {
+            "weight": 1,
+            "stack": {
+                "item": "archers_paradox:frost_arrow"
+            }
+        }
+    ],
+    "boots": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:divine_boots"
+            }
+        }
+    ],
+    "leggings": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:divine_leggings"
+            }
+        }
+    ],
+    "chestplates": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:divine_chestplate"
+            }
+        }
+    ],
+    "helmets": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:divine_helmet"
+            }
+        }
+    ],
+    "tags": [
+        "overworld_bow",
+        "the_nether_bow",
+        "the_end_bow"
+    ]
+}

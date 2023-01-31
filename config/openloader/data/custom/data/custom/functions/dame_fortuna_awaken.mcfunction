@@ -1,0 +1,1 @@
+tellraw @a {"text": "Dame Fortuna has awoken!", "color": "dark_red"}

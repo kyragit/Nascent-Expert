@@ -1,0 +1,46 @@
+{
+    "type": "geolosys:deposit_dike",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "geolosys:limonite_ore",
+            "chance": 0.35
+          },
+          {
+            "block": "immersiveengineering:ore_nickel",
+            "chance": 0.15
+          },
+          {
+            "block": null,
+            "chance": 0.5
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "geolosys:deepslate_limonite_ore",
+            "chance": 0.45
+          },
+          {
+            "block": "immersiveengineering:deepslate_ore_nickel",
+            "chance": 0.15
+          },
+          {
+            "block": null,
+            "chance": 0.4
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:limonite_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": -20,
+      "yMax": 55,
+      "baseRadius": 8,
+      "biomeTag": "#forge:is_cold/overworld",
+      "generationWeight": 2
+    }
+}

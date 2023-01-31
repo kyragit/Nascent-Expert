@@ -1,0 +1,47 @@
+{
+    "type": "geolosys:deposit_layer",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "immersiveengineering:ore_silver",
+            "chance": 0.005
+          },
+          {
+            "block": "geolosys:gold_ore",
+            "chance": 0.005
+          },
+          {
+            "block": null,
+            "chance": 0.99
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "immersiveengineering:deepslate_ore_silver",
+            "chance": 0.005
+          },
+          {
+            "block": "geolosys:deepslate_gold_ore",
+            "chance": 0.005
+          },
+          {
+            "block": null,
+            "chance": 0.99
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": null,
+          "chance": 1.0
+        }
+      ],
+      "yMin": -50,
+      "yMax": 10,
+      "radius": 50,
+      "depth": 30,
+      "biomeTag": "#minecraft:is_overworld",
+      "generationWeight": 6
+    }
+}

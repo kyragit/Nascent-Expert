@@ -1,0 +1,12 @@
+{
+    "group": "custom",
+    "displayName": {
+        "text": "Wither Treasure Bag"
+    },
+    "lootTable": "custom:wither_bag",
+    "rarity": "rare",
+    "dropsFromGroups": [],
+    "bagColor": "#333333",
+    "bagOverlayColor": "#000000",
+    "bagStringColor": "#000000"
+}

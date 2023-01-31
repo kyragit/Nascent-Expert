@@ -1,0 +1,1 @@
+tellraw @a {"text": "\u00A7oIt seems you really are what I thought you were.", "color": "dark_purple"}

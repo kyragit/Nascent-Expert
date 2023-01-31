@@ -1,0 +1,119 @@
+[
+  {
+    "user": {
+      "type": "player",
+      "name": "kyracraft",
+      "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
+    },
+    "time": 1673302175006,
+    "type": "Heap dump summary",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/N9rEwVgDA7"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "kyracraft",
+      "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
+    },
+    "time": 1673301567052,
+    "type": "Heap dump",
+    "data": {
+      "type": "file",
+      "value": "C:\\Users\\Cyrus\\Desktop\\unnamed_expert_pack\\config\\spark\\heap-2023-01-09_13.59.15.hprof"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "kyracraft",
+      "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
+    },
+    "time": 1673301521161,
+    "type": "Heap dump summary",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/HlPLFUkQp0"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "kyracraft",
+      "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
+    },
+    "time": 1673301339600,
+    "type": "Heap dump summary",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/u5Lyhj1Tdi"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "kyracraft",
+      "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
+    },
+    "time": 1673299342936,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/xkrP4ZvVSl"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "kyracraft",
+      "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
+    },
+    "time": 1673298960657,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/9H3tVvSJAa"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "kyracraft",
+      "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
+    },
+    "time": 1673297727396,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/vrXCQtPAGt"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "kyracraft",
+      "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
+    },
+    "time": 1673297659764,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/w4o67h97M6"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "kyracraft",
+      "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
+    },
+    "time": 1673297363973,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/3MGNQrh4e1"
+    }
+  }
+]

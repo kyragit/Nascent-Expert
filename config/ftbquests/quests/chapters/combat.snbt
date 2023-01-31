@@ -1,0 +1,37 @@
+{
+	id: "60C6E8A4AC0E8493"
+	group: "36C3CA17FE4F12AD"
+	order_index: 0
+	filename: "combat"
+	title: "Combat"
+	icon: {
+		id: "minecraft:iron_sword"
+		Count: 1b
+		tag: {
+			Damage: 0
+		}
+	}
+	subtitle: ["How to avoid dying horribly."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [{
+		title: "Enchanting with... Tetris?"
+		x: 0.0d
+		y: 0.0d
+		description: [
+			"The enchanting process has changed somewhat. Put in your item and some lapis, then click the \"+\" button."
+			"You can add potential enchantments as much as your enchanting power allows."
+			""
+			"A colored shape will appear on the side. This is a potential enchantment; click to pick it up and place it somewhere on the grid. This applies that enchantment to the item."
+			""
+			"You then continue until you either run out of enchantments or run out of grid space. Enchantments of the same type can be stacked on top of each other, taking up no more space. "
+		]
+		id: "2FB72F6D78C297AD"
+		tasks: [{
+			id: "4C12CAD18FBD75F1"
+			type: "item"
+			item: "minecraft:enchanting_table"
+		}]
+	}]
+	quest_links: [ ]
+}

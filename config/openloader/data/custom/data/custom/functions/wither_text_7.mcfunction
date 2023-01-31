@@ -1,0 +1,1 @@
+tellraw @a {"text": "\u00A7l\u00A7oThe evil of this world has been purged.", "color": "dark_gray"}

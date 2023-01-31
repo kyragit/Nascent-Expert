@@ -1,0 +1,161 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "type": "binomial",
+                "n": 1,
+                "p": 0.75
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "quality": 0,
+                    "name": "enigmaticlegacy:ocean_stone"
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "type": "binomial",
+                "n": 1,
+                "p": 0.25
+            },
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "quality": 0,
+                    "name": "custom:overworld_valuable"
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "type": "binomial",
+                "n": 1,
+                "p": 0.07
+            },
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "quality": 0,
+                    "name": "custom:overworld_treasure"
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "type": "binomial",
+                "n": 1,
+                "p": 0.07
+            },
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "quality": 0,
+                    "name": "custom:runic_weapons"
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "type": "binomial",
+                "n": 1,
+                "p": 0.05
+            },
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "quality": 0,
+                    "name": "custom:overworld_artifacts"
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "type": "uniform",
+                "min": 8,
+                "max": 16
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "quality": 0,
+                    "name": "minecraft:sponge"
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "alternatives",
+                    "children": [
+                        {
+                            "conditions": [
+                                {
+                                    "condition": "random_chance",
+                                    "chance": 0.5
+                                }
+                            ],
+                            "type": "item",
+                            "weight": 1,
+                            "name": "minecraft:seagrass",
+                            "functions": [
+                                {
+                                    "function": "set_count",
+                                    "count": {
+                                        "type": "uniform",
+                                        "min": 8,
+                                        "max": 16
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "conditions": [
+                                {
+                                    "condition": "random_chance",
+                                    "chance": 0.5
+                                }
+                            ],
+                            "type": "item",
+                            "weight": 1,
+                            "name": "minecraft:sea_pickle",
+                            "functions": [
+                                {
+                                    "function": "set_count",
+                                    "count": {
+                                        "type": "uniform",
+                                        "min": 8,
+                                        "max": 16
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "item",
+                            "weight": 1,
+                            "name": "ecologics:seashell",
+                            "functions": [
+                                {
+                                    "function": "set_count",
+                                    "count": {
+                                        "type": "uniform",
+                                        "min": 8,
+                                        "max": 16
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]   
+}

@@ -1,0 +1,25 @@
+{
+    "type": "geolosys:deposit_layer",
+    "config": {
+        "blocks": {
+            "default": [
+                {
+                    "block": "byg:travertine",
+                    "chance": 1.0
+                }
+            ]
+        },
+        "samples": [
+            {
+                "block": null,
+                "chance": 1.0
+            }
+        ],
+        "generationWeight": 6,
+        "yMin": 40,
+        "yMax": 70,
+        "biomeTag": "#minecraft:is_overworld",
+        "radius": 110,
+        "depth": 10
+    }
+}

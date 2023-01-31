@@ -1,0 +1,25 @@
+{
+    "type": "geolosys:deposit_layer",
+    "config": {
+        "blocks": {
+            "default": [
+                {
+                    "block": "create:limestone",
+                    "chance": 1.0
+                }
+            ]
+        },
+        "samples": [
+            {
+                "block": null,
+                "chance": 1.0
+            }
+        ],
+        "generationWeight": 6,
+        "yMin": 0,
+        "yMax": 65,
+        "biomeTag": "#forge:is_underground",
+        "radius": 150,
+        "depth": 6
+    }
+}

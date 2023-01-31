@@ -1,0 +1,230 @@
+To refresh this file, delete it and run /reload command again! Last updated: Jan 6, 2023, 4:01:20 PM
+
+#the_bumblezone:no_dungeons
+- the_bumblezone:cell_maze (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:hive_temple (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+
+#the_bumblezone:no_caves
+- the_bumblezone:throne_pillar (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:hanging_garden (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:candle_parkour (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:battle_cubes (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:honey_fountain (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:stinger_spear_shrine (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:pirate_ship (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:dance_floor (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:cannon_range (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:honitel (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+
+#the_bumblezone:wrath_causing
+- the_bumblezone:cell_maze (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+
+#minecraft:cats_spawn_in
+- minecraft:swamp_hut (from Default)
+
+#the_bumblezone:no_honeycomb_holes_piecewise
+- the_bumblezone:throne_pillar (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:hanging_garden (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+
+#betterdungeons:better_dungeons
+- betterdungeons:small_dungeon (from YungsBetterDungeons-1.19.2-Forge-3.2.2.jar)
+- betterdungeons:spider_dungeon (from YungsBetterDungeons-1.19.2-Forge-3.2.2.jar)
+- betterdungeons:skeleton_dungeon (from YungsBetterDungeons-1.19.2-Forge-3.2.2.jar)
+- betterdungeons:zombie_dungeon (from YungsBetterDungeons-1.19.2-Forge-3.2.2.jar)
+- betterdungeons:small_nether_dungeon (from YungsBetterDungeons-1.19.2-Forge-3.2.2.jar)
+
+#quark:soul_bead_target
+- minecraft:fortress (from Quark-3.3-377.jar)
+
+#bettermineshafts:better_mineshafts
+- bettermineshafts:mineshaft_acacia (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_desert (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_dripstone (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_ice (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_jungle (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_lush (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_mesa (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_mushroom (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_oak (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_overgrown (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_red_desert (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_spruce (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_spruce_snowy (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+
+#minecraft:pillager_outpost
+- towns_and_towers:exclusives/pillager_outpost_classic (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/pillager_outpost_iberian (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/pillager_outpost_mediterranean (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/pillager_outpost_swedish (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/pillager_outpost_tudor (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/pillager_outpost_oriental (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/pillager_outpost_rustic (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_badlands (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_beach (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_birch_forest (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_flower_forest (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_forest (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_grove (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_jungle (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_meadow (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_mushroom_fields (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_ocean (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_old_growth_taiga (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_snowy_beach (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_snowy_plains (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_snowy_slopes (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_sparse_jungle (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_sunflower_plains (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_swamp (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_taiga (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_snowy_taiga (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:pillager_outpost_wooded_badlands (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+
+#the_bumblezone:honey_compass/default_locating
+- the_bumblezone:cell_maze (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+
+#minecraft:shipwreck
+- minecraft:shipwreck (from Default)
+- minecraft:shipwreck_beached (from Default)
+
+#betteroceanmonuments:better_ocean_monuments
+- betteroceanmonuments:ocean_monument (from YungsBetterOceanMonuments-1.19.2-Forge-2.1.0.jar)
+
+#minecraft:on_ocean_explorer_maps
+- minecraft:monument (from Default)
+- betteroceanmonuments:ocean_monument (from YungsBetterOceanMonuments-1.19.2-Forge-2.1.0.jar)
+
+#minecraft:on_treasure_maps
+- minecraft:buried_treasure (from Default)
+
+#morevillagers:on_mineshaft_explorer_maps
+- #bettermineshafts:better_mineshafts (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+
+#minecraft:ruined_portal
+- minecraft:ruined_portal_desert (from Default)
+- minecraft:ruined_portal_jungle (from Default)
+- minecraft:ruined_portal_mountain (from Default)
+- minecraft:ruined_portal_nether (from Default)
+- minecraft:ruined_portal_ocean (from Default)
+- minecraft:ruined_portal (from Default)
+- minecraft:ruined_portal_swamp (from Default)
+
+#the_bumblezone:bee_queen_mining_fatigue
+- the_bumblezone:throne_pillar (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+
+#minecraft:village
+- minecraft:village_plains (from Default)
+- minecraft:village_desert (from Default)
+- minecraft:village_savanna (from Default)
+- minecraft:village_snowy (from Default)
+- minecraft:village_taiga (from Default)
+- towns_and_towers:exclusives/village_classic (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_iberian (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_mediterranean (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_nilotic (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_rustic (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_swedish (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_tudor (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_wandering_trader_camp (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_badlands (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_beach (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_birch_forest (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_flower_forest (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_forest (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_snowy_slopes (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_jungle (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_grove (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_meadow (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_mushroom_fields (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_ocean (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_old_growth_taiga (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_sparse_jungle (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_sunflower_plains (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_snowy_taiga (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_swamp (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_wooded_badlands (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+
+#minecraft:ocean_ruin
+- minecraft:ocean_ruin_cold (from Default)
+- minecraft:ocean_ruin_warm (from Default)
+
+#the_bumblezone:honey_compass/throne_locating
+- the_bumblezone:throne_pillar (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+
+#minecraft:mineshaft
+- minecraft:mineshaft (from Default)
+- minecraft:mineshaft_mesa (from Default)
+- bettermineshafts:mineshaft_acacia (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_desert (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_ice (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_jungle (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_lush (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_mesa (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_mushroom (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_oak (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_red_desert (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_spruce (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_spruce_snowy (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_overgrown (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+- bettermineshafts:mineshaft_dripstone (from YungsBetterMineshafts-1.19.2-Forge-3.2.0.jar)
+
+#minecraft:on_woodland_explorer_maps
+- minecraft:mansion (from Default)
+
+#the_bumblezone:no_honeycomb_holes
+- the_bumblezone:candle_parkour (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:battle_cubes (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:honey_fountain (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:stinger_spear_shrine (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:pirate_ship (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:dance_floor (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:cannon_range (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:honitel (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+
+#minecraft:cats_spawn_as_black
+- minecraft:swamp_hut (from Default)
+
+#the_bumblezone:honey_compass/misc_locating
+- the_bumblezone:hanging_garden (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:battle_cubes (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:overgrown_flower (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+- the_bumblezone:honitel (from the_bumblezone_forge-6.6.0+1.19.2.jar)
+
+#minecraft:eye_of_ender_located
+- minecraft:stronghold (from Default)
+
+#alexsmobs:spawns_underminers
+- #minecraft:mineshaft (from alexsmobs-1.21.1.jar)
+
+#towns_and_towers:town
+- towns_and_towers:exclusives/village_classic (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_iberian (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_mediterranean (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_nilotic (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_rustic (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_swedish (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_tudor (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:exclusives/village_wandering_trader_camp (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_badlands (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_beach (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_birch_forest (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_flower_forest (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_forest (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_snowy_slopes (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_jungle (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_grove (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_meadow (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_mushroom_fields (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_ocean (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_old_growth_taiga (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_sparse_jungle (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_sunflower_plains (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_snowy_taiga (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_swamp (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:village_wooded_badlands (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+
+#minecraft:dolphin_located
+- #minecraft:ocean_ruin (from Default)
+- #minecraft:shipwreck (from Default)
+- towns_and_towers:village_ocean (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)
+- towns_and_towers:wreckage_ocean (from Towns-and-Towers-v.1.10-_FORGE-1.19.2_.jar)

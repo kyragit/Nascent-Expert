@@ -1,0 +1,46 @@
+{
+    "type": "geolosys:deposit_dike",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "geolosys:sphalerite_ore",
+            "chance": 0.35
+          },
+          {
+            "block": "immersiveengineering:ore_aluminum",
+            "chance": 0.15
+          },
+          {
+            "block": "create:asurine",
+            "chance": 0.5
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "geolosys:deepslate_sphalerite_ore",
+            "chance": 0.35
+          },
+          {
+            "block": "immersiveengineering:deepslate_ore_aluminum",
+            "chance": 0.15
+          },
+          {
+            "block": "create:asurine",
+            "chance": 0.5
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:sphalerite_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": -32,
+      "yMax": 40,
+      "baseRadius": 8,
+      "biomeTag": "#custom:is_dense_or_forest",
+      "generationWeight": 2
+    }
+}

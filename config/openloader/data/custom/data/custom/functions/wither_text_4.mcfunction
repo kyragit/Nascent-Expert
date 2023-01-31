@@ -1,0 +1,1 @@
+tellraw @a {"text": "\u00A7k\u00A7lqfowifj3489fjnefn3wfnweiufnwefnwekfhwekfjn", "color": "dark_gray"}

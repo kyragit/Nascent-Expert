@@ -1,0 +1,314 @@
+{
+	"size": "medium",
+	"color": "#2a5026",
+	"completion_xp": 1000,
+	"spawn_range": 8,
+	"leash_range": 512,
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:leather_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:leather_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:leather_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:leather_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:leather_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.5
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.33
+				}
+			],
+			"rewards": [
+				{
+					"type": "command",
+					"command": "gamerule sendCommandFeedback false",
+					"desc": "..."
+				}
+			],
+			"max_wave_time": 6000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:iron_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:iron_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:iron_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:iron_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:iron_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "minecraft:slime"
+				},
+				{
+					"entity": "minecraft:slime"
+				},
+				{
+					"entity": "minecraft:slime"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.375
+				}
+			],
+			"rewards": [
+			
+			],
+			"max_wave_time": 6000,
+			"setup_time": 300
+		},
+		{
+			"entities": [
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:iron_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:iron_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:iron_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:iron_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "minecraft:slime"
+				},
+				{
+					"entity": "minecraft:slime"
+				},
+				{
+					"entity": "minecraft:slime"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.425
+				}
+			],
+			"rewards": [
+			
+			],
+			"max_wave_time": 6000,
+			"setup_time": 300
+		},
+		{
+			"entities": [
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:diamond_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:diamond_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{},{},{},{Count:1,id:'minecraft:diamond_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0]}"
+				},
+				{
+					"entity": "rottencreatures:swampy",
+					"nbt": "{ArmorItems:[{Count:1,id:'minecraft:diamond_boots'},{Count:1,id:'minecraft:diamond_leggings'},{Count:1,id:'minecraft:diamond_chestplate'},{Count:1,id:'minecraft:diamond_helmet'}],ArmorDropChances:[0.0,0.0,0.0,0.0],HandItems:[{Count:1,id:'minecraft:diamond_sword'},{Count:1,id:'minecraft:shield'}],HandDropChances:[0.0,0.0],ActiveEffects:[{Id:5,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:1b}]}"
+				},
+				{
+					"entity": "minecraft:slime"
+				},
+				{
+					"entity": "minecraft:slime"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.5
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.3
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.25
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				}
+			],
+			"rewards": [
+				{
+					"type": "command",
+					"command": "schedule function custom:swampjaw_awaken 20s append",
+					"desc": "..."
+				}
+			],
+			"max_wave_time": 6000,
+			"setup_time": 300
+		},
+		{
+			"entities": [
+				{
+					"entity": "meetyourfight:swampjaw",
+					"nbt": "{ActiveEffects:[{Id:24,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
+				},
+				{
+					"entity": "minecraft:phantom",
+					"nbt": "{ActiveEffects:[{Id:12,Duration:999999,Amplifier:0,ShowParticles:0b}]}"
+				},
+				{
+					"entity": "minecraft:phantom",
+					"nbt": "{ActiveEffects:[{Id:12,Duration:999999,Amplifier:0,ShowParticles:0b}]}"
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 3.0
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				}
+			],
+			"rewards": [
+				{
+					"type": "command",
+					"command": "tellraw @a {\"text\": \"Swampjaw has been defeated!\", \"color\": \"dark_green\"}",
+					"desc": "..."
+				}
+			],
+			"max_wave_time": 24000,
+			"setup_time": 400
+		}
+	],
+	"rewards": [
+		{
+			"type": "loot_table",
+			"loot_table": "custom:swampjaw_gate",
+			"rolls": 1
+		}
+	],
+	"failures": [
+		{
+			"type": "summon",
+			"entity": "minecraft:item",
+			"count": 1,
+			"nbt": "{Age:-32768,Health:32767,Item:{Count:1,id:\"gateways:gate_pearl\",tag:{gateway:\"custom:swampjaw\"}}}"
+		}
+	]
+}

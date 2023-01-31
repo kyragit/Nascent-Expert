@@ -1,0 +1,47 @@
+{
+    "type": "geolosys:deposit_dense",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "minecraft:diamond_ore",
+            "chance": 0.05
+          },
+          {
+            "block": "minecraft:coal_ore",
+            "chance": 0.45
+          },
+          {
+            "block": null,
+            "chance": 0.5
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "minecraft:deepslate_diamond_ore",
+            "chance": 0.05
+          },
+          {
+            "block": "minecraft:deepslate_coal_ore",
+            "chance": 0.45
+          },
+          {
+            "block": null,
+            "chance": 0.5
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:coal_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": -64,
+      "yMax": -50,
+      "size": 75,
+      "density": 1.0,
+      "biomeTag": "#forge:is_mountain",
+      "generationWeight": 1
+    }
+}

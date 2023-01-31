@@ -1,0 +1,8 @@
+{
+    "parent": "geolosys:block/ore_sample",
+    "textures": {
+        "particle": "minecraft:block/gravel",
+        "ore": "immersiveengineering:block/metal/ore_uranium",
+        "stone": "minecraft:block/gravel"
+    }
+}

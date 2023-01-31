@@ -1,0 +1,52 @@
+{
+    "weight": 40,
+    "quality": 5,
+    "mainhands": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "simplyswords:runic_chakram"
+            }
+        }
+    ],
+    "offhands": [
+
+    ],
+    "boots": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:divine_boots"
+            }
+        }
+    ],
+    "leggings": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:divine_leggings"
+            }
+        }
+    ],
+    "chestplates": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:divine_chestplate"
+            }
+        }
+    ],
+    "helmets": [
+        {
+            "weight": 1,
+            "stack": {
+                "item": "immersive_armors:divine_helmet"
+            }
+        }
+    ],
+    "tags": [
+        "overworld",
+        "the_nether",
+        "the_end"
+    ]
+}

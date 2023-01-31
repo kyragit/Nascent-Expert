@@ -1,0 +1,39 @@
+{
+    "type": "geolosys:deposit_dense",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "immersiveengineering:ore_uranium",
+            "chance": 0.35
+          },
+          {
+            "block": "minecraft:granite",
+            "chance": 0.65
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "immersiveengineering:deepslate_ore_uranium",
+            "chance": 0.45
+          },
+          {
+            "block": "minecraft:granite",
+            "chance": 0.55
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": "kubejs:uranium_sample",
+          "chance": 1.0
+        }
+      ],
+      "yMin": -40,
+      "yMax": 12,
+      "size": 100,
+      "density": 1.0,
+      "biomeTag": "#forge:is_dense/overworld",
+      "generationWeight": 1
+    }
+}
