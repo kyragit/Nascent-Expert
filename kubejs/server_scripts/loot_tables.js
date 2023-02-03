@@ -135,6 +135,8 @@ function createUniversalLootTables(event) {
         ['quark:brown_rune', 1],
         ['quark:rainbow_rune', 1],
         ['dimdungeons:item_portal_key', 2],
+        ['paraglider:paraglider', 2],
+        ['paraglider:deku_leaf', 2],
     ]
 
     const VALUABLE_CHARMS = [

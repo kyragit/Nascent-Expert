@@ -7,5 +7,6 @@
 	"tooltip.gateways.list2": "- ???",
 	"enchantment.create.potato_recovery.desc": "Chance to recover fired vegetables.",
 	"enchantment.create.capacity.desc": "Increased air capacity.",
-	"enchantment.feathers.lightweight.desc": "Makes your armor weigh less."
+	"enchantment.feathers.lightweight.desc": "Makes your armor weigh less.",
+	"nethersdelight.block.feast.use_knife": "This requires a knife to eat!"
 }

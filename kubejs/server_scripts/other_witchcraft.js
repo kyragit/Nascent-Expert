@@ -69,107 +69,32 @@ ItemEvents.rightClicked('kubejs:powdered_determination', event => {
     event.server.runCommand(`tellraw ${event.player.username} {"text":"As you sprinkle the dust upon the andesite, it melts and solidifies into something else. A new material, perhaps? Or a gift from the future...","color":"#BA00FC"}`)
 })
 
-ServerEvents.lowPriorityData(event => {
-    const SIMPLY_SWORD_TYPES = [
-        ['longsword', 'SWORD'],
-        ['twinblade', 'SWORD'],
-        ['rapier', 'TRIDENT'],
-        ['katana', 'SWORD'],
-        ['sai', 'SWORD'],
-        ['spear', 'TRIDENT'],
-        ['glaive', 'SWORD'],
-        ['warglaive', 'SWORD'],
-        ['cutlass', 'SWORD'],
-        ['claymore', 'SWORD'],
-        ['greathammer', 'HEAVY_WEAPON'],
-        ['greataxe', 'HEAVY_WEAPON'],
-        ['chakram', 'SWORD'],
-        ['scythe', 'SWORD'],
-    ]
+const PlayerMovement = Java.loadClass('tictim.paraglider.capabilities.PlayerMovement')
+const FeathersHelper = Java.loadClass('com.elenai.feathers.api.FeathersHelper')
 
-    for (let weapon of SIMPLY_SWORD_TYPES) {
-        for (let mat of ['iron', 'gold']) {
-            event.addJson(`custom:affix_loot_entries/${mat}_${weapon[0]}`, {
-                weight: 60,
-                quality: 3.0,
-                stack: {
-                    item: `simplyswords:${mat}_${weapon[0]}`,
-                    count: 1,
-                    nbt: '{Damage:0}'
-                },
-                type: weapon[1],
-                dimensions: [
-                    'minecraft:overworld',
-                    'minecraft:the_nether',
-                    'minecraft:the_end'
-                ],
-                max_rarity: 'rare'
-            })
-        }
-        for (let mat of ['diamond', 'netherite']) {
-            event.addJson(`custom:affix_loot_entries/${mat}_${weapon[0]}`, {
-                weight: 60,
-                quality: 3.0,
-                stack: {
-                    item: `simplyswords:${mat}_${weapon[0]}`,
-                    count: 1,
-                    nbt: '{Damage:0}'
-                },
-                type: weapon[1],
-                dimensions: [
-                    'minecraft:the_nether',
-                    'minecraft:the_end'
-                ],
-                max_rarity: 'rare'
-            })
-        }
-        event.addJson(`custom:affix_loot_entries/runic_${weapon[0]}`, {
-            weight: 30,
-            quality: 3.0,
-            stack: {
-                item: `simplyswords:runic_${weapon[0]}`,
-                count: 1
-            },
-            type: weapon[1],
-            dimensions: [
-                'minecraft:overworld',
-                'minecraft:the_nether',
-                'minecraft:the_end'
-            ],
-            max_rarity: 'epic'
-        })
-    }
-
-    const ARMOR_TYPES = [
-        ['bone', 80],
-        ['wither', 60],
-        ['warrior', 70],
-        ['heavy', 60],
-        ['robe', 60],
-        ['slime', 55],
-        ['divine', 40],
-        ['prismarine', 65],
-        ['wooden', 85],
-        ['steampunk', 35],
-    ]
-
-    for (let mat of ARMOR_TYPES) {
-        for (let piece of ['helmet', 'chestplate', 'leggings', 'boots']) {
-            event.addJson(`custom:affix_loot_entries/${mat[0]}_${piece}`, {
-                weight: mat[1],
-                quality: 3.0,
-                stack: {
-                    item: `immersive_armors:${mat[0]}_${piece}`,
-                    count: 1
-                },
-                type: 'ARMOR',
-                dimensions: [
-                    'minecraft:overworld',
-                    'minecraft:the_nether',
-                    'minecraft:the_end'
-                ],
-                max_rarity: 'rare'
-            })
+PlayerEvents.tick(event => {
+    let h = PlayerMovement.of(event.player)
+    if (h != null) {
+        if (h.isParagliding()) {
+            if (event.player.data.getOrDefault('paragliderFeatherTimer', 0) >= 20) {
+                event.player.data.add('paragliderFeatherTimer', 0)
+                if (!FeathersHelper.spendFeathers(event.player, 1)) {
+                    event.player.potionEffects.add('feathers:cold', 200, 0, true, true)
+                    h.setStamina(0)
+                    h.setDepleted(true)
+                    return
+                } 
+            }
+            let timer = event.player.data.get('paragliderFeatherTimer')
+            timer = timer == null ? 0 : timer
+            timer++
+            event.player.data.add('paragliderFeatherTimer', timer)
         }
     }
+})
+
+const BossMusic = Java.loadClass('lykrast.meetyourfight.misc.BossMusic')
+
+EntityEvents.spawned('minecraft:wither', event => {
+    Client.soundManager.play(new BossMusic(event.entity, Utils.getSound('kubejs:music.wither')))
 })

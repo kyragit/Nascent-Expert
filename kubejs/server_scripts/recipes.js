@@ -15,6 +15,8 @@ ServerEvents.recipes(event => {
     miscRemovals(event)
     kubejsRecipes(event)
     simpleStorageRecipes(event)
+    paragliderRecipes(event)
+    immersiveAircraftRecipes(event)
 })
 
 // Blow up amethyst shards to get amethyst dust
@@ -3331,6 +3333,7 @@ function miscRemovals(event) {
     event.remove({output: 'immersiveengineering:nugget_copper'})
     event.remove({output: 'minecraft:ender_eye'})
     event.remove({id:'minecraft:pressing/zinc_sheet'})
+    event.remove({mod:'immersive_armors'})
 }
 
 function kubejsRecipes(event) {
@@ -3583,4 +3586,236 @@ function simpleStorageRecipes(event) {
             A: 'create:andesite_casing'
         }
     ).id('kubejs:inventory_proxy')
+}
+
+function paragliderRecipes(event) {
+    event.remove({mod:'paraglider'})
+    event.shaped(
+        'paraglider:paraglider',
+        [
+            'LHL',
+            'LSL',
+            '   '
+        ],
+        {
+            L: '#forge:leather',
+            H: '#custom:backpack_hides',
+            S: 'minecraft:stick'
+        }
+    ).id('kubejs:paraglider')
+    event.shaped(
+        'paraglider:deku_leaf',
+        [
+            'LLL',
+            'LPL',
+            'LLL'
+        ],
+        {
+            L: '#minecraft:leaves',
+            P: 'paraglider:paraglider'
+        }
+    ).id('kubejs:deku_leaf')
+}
+
+function immersiveAircraftRecipes(event) {
+    event.remove({mod:'immersive_aircraft'})
+    event.custom({
+        type: 'create:compacting',
+        heatRequirement: 'heated',
+        ingredients: [
+            {
+                tag: 'forge:treated_wood'
+            },
+            {
+                tag: 'forge:treated_wood'
+            },
+            {
+                tag: 'forge:treated_wood'
+            },
+            {
+                tag: 'forge:treated_wood'
+            },
+            {
+                item: 'immersiveengineering:plate_steel'
+            },
+            {
+                item: 'immersiveengineering:plate_steel'
+            },
+            {
+                item: 'immersiveengineering:plate_steel'
+            },
+            {
+                item: 'immersiveengineering:plate_steel'
+            }
+        ],
+        results: [
+            {
+                item: 'immersive_aircraft:hull'
+            }
+        ]
+    }).id('kubejs:hull_compacting')
+    event.custom({
+        type: 'create:mechanical_crafting',
+        pattern: [
+            ' PRP ',
+            'PSCSP',
+            'PMBMP',
+            ' PPP '
+        ],
+        key: {
+            P: {
+                item: 'immersiveengineering:plate_steel'
+            },
+            R: {
+                item: 'immersiveengineering:stick_steel'
+            },
+            S: {
+                item: 'create:steam_engine'
+            },
+            C: {
+                item: 'create:brass_casing'
+            },
+            M: {
+                item: 'create:precision_mechanism'
+            },
+            B: {
+                item: 'immersive_aircraft:boiler'
+            }
+        },
+        result: {
+            item: 'immersive_aircraft:engine'
+        }
+    }).id('kubejs:engine_mech_crafting')
+    event.custom({
+        type: 'create:mechanical_crafting',
+        pattern: [
+            'BBB',
+            'BCB',
+            'BBB'
+        ],
+        key: {
+            C: {
+                item: 'create:copper_casing'
+            },
+            B: {
+                item: 'kubejs:high_temperature_brick'
+            }
+        },
+        result: {
+            item: 'immersive_aircraft:boiler'
+        }
+    }).id('kubejs:boiler_mech_crafting')
+    event.custom({
+        type: 'create:mechanical_crafting',
+        pattern: [
+            'HHHH',
+            'HHHH',
+            'HHHH',
+            'HHHH'
+        ],
+        key: {
+            H: {
+                item: 'immersiveengineering:hemp_fabric'
+            }
+        },
+        result: {
+            item: 'immersive_aircraft:sail'
+        }
+    }).id('kubejs:sail_mech_crafting')
+    event.custom({
+        type: 'create:mechanical_crafting',
+        pattern: [
+            'PPRPP'
+        ],
+        key: {
+            R: {
+                item: 'immersiveengineering:stick_steel'
+            },
+            P: {
+                item: 'immersiveengineering:plate_steel'
+            }
+        },
+        result: {
+            item: 'immersive_aircraft:propeller'
+        }
+    }).id('kubejs:propeller_mech_crafting')
+    event.custom({
+        type: 'create:mechanical_crafting',
+        pattern: [
+            ' SSS ',
+            ' S S ',
+            'H E H',
+            ' HHH '
+        ],
+        key: {
+            S: {
+                item: 'immersive_aircraft:sail'
+            },
+            H: {
+                item: 'immersive_aircraft:hull'
+            },
+            E: {
+                item: 'immersive_aircraft:engine'
+            }
+        },
+        result: {
+            item: 'immersive_aircraft:airship'
+        }
+    }).id('kubejs:airship_mech_crafting')
+    event.custom({
+        type: 'create:mechanical_crafting',
+        pattern: [
+            '   P   ',
+            'HHHEHHH',
+            ' HHSHH ',
+            '   H   ',
+            '  HHH  '
+        ],
+        key: {
+            S: {
+                tag: 'create:seats'
+            },
+            H: {
+                item: 'immersive_aircraft:hull'
+            },
+            E: {
+                item: 'immersive_aircraft:engine'
+            },
+            P: {
+                item: 'immersive_aircraft:propeller'
+            }
+        },
+        result: {
+            item: 'immersive_aircraft:biplane'
+        }
+    }).id('kubejs:biplane_mech_crafting')
+    event.custom({
+        type: 'create:mechanical_crafting',
+        pattern: [
+            '   P   ',
+            '   R   ',
+            'HS R SH',
+            ' HHMHH '
+        ],
+        key: {
+            S: {
+                item: 'immersive_aircraft:sail'
+            },
+            H: {
+                item: 'immersive_aircraft:hull'
+            },
+            R: {
+                item: 'immersiveengineering:stick_steel'
+            },
+            P: {
+                item: 'immersive_aircraft:propeller'
+            },
+            M: {
+                item: 'create:precision_mechanism'
+            }
+        },
+        result: {
+            item: 'immersive_aircraft:gyrodyne'
+        }
+    }).id('kubejs:gyrodyne_mech_crafting')
 }

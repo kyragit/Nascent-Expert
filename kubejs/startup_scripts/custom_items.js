@@ -135,3 +135,7 @@ StartupEvents.registry('fluid', event => {
         .bucketColor(Color.rgba(147, 147, 147, 255))
         .displayName('Mortar')
 })
+
+StartupEvents.registry('sound_event', event => {
+    event.create('music.wither')
+})

@@ -27,6 +27,16 @@ const ITEMS = [
     'structure_gel:dynamic_spawner',
     'structure_gel:building_tool',
     'quark:backpack',
+    'paraglider:heart_container',
+    'paraglider:stamina_vessel',
+    'paraglider:spirit_orb',
+    'paraglider:anti_vessel',
+    'paraglider:essence',
+    'paraglider:goddess_statue',
+    'paraglider:kakariko_goddess_statue',
+    'paraglider:goron_goddess_statue',
+    'paraglider:rito_goddess_statue',
+    'paraglider:horned_statue',
 ]
 
 const TEPEE_WALLS = [
@@ -137,6 +147,7 @@ JEIEvents.hideItems(event => {
     event.hide('geolosys:peat')
     event.hide('geolosys:rhododendron')
     event.hide('geolosys:prospectors_pick')
+    event.hide('#fantasyfurniture:craftable')
 })
 
 JEIEvents.information(event => {
