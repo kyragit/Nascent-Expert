@@ -17,6 +17,7 @@ ServerEvents.recipes(event => {
     simpleStorageRecipes(event)
     paragliderRecipes(event)
     immersiveAircraftRecipes(event)
+    aquacultureRecipes(event)
 })
 
 // Blow up amethyst shards to get amethyst dust
@@ -3818,4 +3819,10 @@ function immersiveAircraftRecipes(event) {
             item: 'immersive_aircraft:gyrodyne'
         }
     }).id('kubejs:gyrodyne_mech_crafting')
+}
+
+function aquacultureRecipes(event) {
+    for (let mat of ['wooden', 'stone', 'iron', 'gold', 'diamond']) {
+        event.remove({id: `aquaculture:${mat}_fillet_knife`})
+    }
 }

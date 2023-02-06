@@ -1,0 +1,153 @@
+{
+	id: "2A123BE92C8C8D9E"
+	group: "36C3CA17FE4F12AD"
+	order_index: 5
+	filename: "decoration"
+	title: "Decoration"
+	icon: "create:cut_andesite_bricks"
+	subtitle: ["Turning your house into a home!"]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "Block Carpentry"
+			x: 0.0d
+			y: 0.0d
+			description: [
+				"Ever wished this one particular block had a slab variant? Or wanted more fence types? Block Carpentry lets you do this and much, much more!"
+				""
+				"The mod is easy to use; simply craft some frames, then craft whichever block you'd like. Then you can place them down and right-click them with the block you'd like them to look like."
+				""
+				"There are also a few tools to assist working with them: the hammer, texture wrench, chisel, and paintbrush. Look up these items in JEI to see what they do."
+			]
+			id: "0F2EADF997F2EF49"
+			tasks: [{
+				id: "33B84962F6D196DB"
+				type: "item"
+				item: "blockcarpentry:frameblock"
+			}]
+		}
+		{
+			title: "Fantasy's Furniture"
+			x: 2.0d
+			y: 0.0d
+			description: [
+				"Make a Furniture Station and create some beautiful medieval-style furniture! The Furniture Station uses wood, clay, and stone to craft all the different furnitures for simplicity's sake."
+				""
+				"Note: the Fantasy's Furniture blocks are hidden in JEI due to there being so many and them all being crafted in the same way."
+			]
+			id: "407761FFB25D9AED"
+			tasks: [{
+				id: "7317C6858B0FC193"
+				type: "item"
+				item: "fantasyfurniture:furniture_station"
+			}]
+		}
+		{
+			title: "Macaw's Roofs"
+			x: -2.0d
+			y: 0.0d
+			description: [
+				"Macaw's Roofs has hundreds of options for great looking roofing blocks, event supporting many modded wood types!"
+				""
+				"The roofing hammer can be used to rotate the roofs into whatever state you want in case they aren't behaving correctly."
+			]
+			id: "5AA9CA3842FD115A"
+			tasks: [{
+				id: "1BE5EF46E6A59FB4"
+				type: "item"
+				item: "mcwroofs:roofing_hammer"
+			}]
+		}
+		{
+			icon: "createdeco:worn_bricks"
+			x: 0.0d
+			y: -2.0d
+			description: ["The Create Deco mod has lots of different types of bricks for all your brick-laying needs."]
+			id: "050AEE52755C5305"
+			tasks: [{
+				id: "630BF59AD8FC118D"
+				type: "checkmark"
+				title: "Create Deco"
+			}]
+		}
+		{
+			title: "Fairy Lights"
+			x: 0.0d
+			y: 2.0d
+			description: [
+				"The Fairy Lights mod has a bunch of very cute hanging lights and flags! Simply place down the hanging lights and right-click with the light you want."
+				""
+				"Alternatively, you can craft them with multiple lights to make a custom pattern!"
+			]
+			id: "19F50EB317825DA0"
+			tasks: [{
+				id: "3F29AE96396B4AA2"
+				type: "item"
+				item: {
+					id: "fairylights:hanging_lights"
+					Count: 1b
+					tag: {
+						string: "fairylights:black_string"
+						pattern: [{
+							id: "fairylights:fairy_light"
+							Count: 1b
+							tag: {
+								color: 16383998
+							}
+						}]
+					}
+				}
+			}]
+		}
+		{
+			title: "ManyIdeas Doors"
+			icon: "manyideas_doors:door_special_end"
+			x: 2.0d
+			y: -2.0d
+			description: [
+				"Make a table saw and create some majestic doors from the ManyIdeas Doors mod."
+				""
+				"This mod has many door variants, and even some huge doors for your dramatic entrance."
+			]
+			id: "07641719203CC00A"
+			tasks: [{
+				id: "4E51DC074FF06C44"
+				type: "item"
+				item: {
+					id: "itemfilters:or"
+					Count: 1b
+					tag: {
+						items: [
+							{
+								id: "manyideas_core:table_saw_diamond"
+								Count: 1b
+							}
+							{
+								id: "manyideas_core:table_saw_iron"
+								Count: 1b
+							}
+							{
+								id: "manyideas_core:table_saw_stone"
+								Count: 1b
+							}
+						]
+					}
+				}
+			}]
+		}
+		{
+			icon: "cfm:spruce_bedside_cabinet"
+			x: -2.0d
+			y: -2.0d
+			description: ["MrCrayfish's Furniture Mod has tons of great furniture options for all sorts of styles! It even has mailboxes and a post office that let you send items to your friends :)"]
+			id: "637C90A4356C37F9"
+			tasks: [{
+				id: "5121D63858960D14"
+				type: "checkmark"
+				title: "MrCrayfish's Furniture Mod"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

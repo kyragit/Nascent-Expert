@@ -1,7 +1,7 @@
 {
 	id: "60C6E8A4AC0E8493"
 	group: "36C3CA17FE4F12AD"
-	order_index: 0
+	order_index: 1
 	filename: "combat"
 	title: "Combat"
 	icon: {
@@ -14,24 +14,164 @@
 	subtitle: ["How to avoid dying horribly."]
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
-	quests: [{
-		title: "Enchanting with... Tetris?"
-		x: 0.0d
-		y: 0.0d
-		description: [
-			"The enchanting process has changed somewhat. Put in your item and some lapis, then click the \"+\" button."
-			"You can add potential enchantments as much as your enchanting power allows."
-			""
-			"A colored shape will appear on the side. This is a potential enchantment; click to pick it up and place it somewhere on the grid. This applies that enchantment to the item."
-			""
-			"You then continue until you either run out of enchantments or run out of grid space. Enchantments of the same type can be stacked on top of each other, taking up no more space. "
-		]
-		id: "2FB72F6D78C297AD"
-		tasks: [{
-			id: "4C12CAD18FBD75F1"
-			type: "item"
-			item: "minecraft:enchanting_table"
-		}]
-	}]
+	quests: [
+		{
+			icon: "minecraft:feather"
+			x: 0.0d
+			y: 0.0d
+			description: [
+				"You may have noticed the new bar above your hunger bar. These are your feathers."
+				""
+				"Feathers are used to dodge and paraglide, and your maximum feathers is determined by the weight of your armor."
+				""
+				"To dodge, set the dodge keybind to whatever you'd like. "
+			]
+			id: "22A99DA61F14A375"
+			tasks: [{
+				id: "4B3FE8647C4AA327"
+				type: "checkmark"
+				title: "Feathers"
+			}]
+		}
+		{
+			icon: {
+				id: "simplyswords:iron_scythe"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: 2.0d
+			y: 0.0d
+			description: [
+				"Gone are the days of the janky point-and-click adventure game that is minecraft combat. Weapons now actually take time to swing, and you cannot attack faster than your weapon's attack speed."
+				""
+				"Weapons are also no longer reliant on what exactly you are aiming at; swinging a weapon hits everything in front of you within range. "
+				""
+				"Different weapons also have unique movesets, which affects how they swing and hit enemies. For example, a hammer might swing at everything nearby, whereas a spear might require more precision."
+			]
+			id: "20C1E18D03E42151"
+			tasks: [{
+				id: "1C895969A0844731"
+				type: "checkmark"
+				title: "No more spam clicking?"
+			}]
+		}
+		{
+			title: "New Arrows"
+			icon: "archers_paradox:lightning_arrow"
+			x: -2.0d
+			y: 0.0d
+			description: ["A whole host of new arrows are now available. They can be made in a fletching table, as can normal arrows at a reduced cost!"]
+			id: "12FFF7177F4DC3F3"
+			tasks: [{
+				id: "50E718480F39401F"
+				type: "item"
+				item: "minecraft:fletching_table"
+			}]
+		}
+		{
+			title: "Runic Weapons"
+			x: 0.0d
+			y: 2.0d
+			description: [
+				"Ah, I see you've found a runic weapon from another time. These weapons, aside from being made from a fabulously strong material, each have a unique power when used. "
+				""
+				"It is said that the Forgemasters would put a piece of their very being into each one of these weapons. Treat it with respect, Traveller."
+			]
+			invisible: true
+			id: "0C60F762C1E42070"
+			tasks: [{
+				id: "12E3A139EC9A8911"
+				type: "item"
+				title: "Any Runic Weapon"
+				item: {
+					id: "itemfilters:id_regex"
+					Count: 1b
+					tag: {
+						value: "simplyswords:runic_.*"
+					}
+				}
+			}]
+		}
+		{
+			title: "Affixes"
+			icon: {
+				id: "minecraft:netherite_sword"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: 0.0d
+			y: -2.0d
+			description: [
+				"Sometimes, especially when exploring places of great power, you will find items infused with the very Aether itself. These are known as Affixes."
+				""
+				"Affixes enhance the properties of the item or the wielder, and range from minor upgrades to world-ending artifacts, depending on the concentration of Aether."
+			]
+			id: "1FB231D52BC63B73"
+			tasks: [{
+				id: "1EB2A858488DD89C"
+				type: "checkmark"
+				title: "Affixes"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 0.0d
+			description: ["The quiver makes it much less of a hassle to use multiple different arrow types. Simply right-click a stack of arrows onto the quiver in your inventory to put them inside. Then, put the quiver in your 'back' slot and press the 'quiver' keybind ('v' by default). You can then select which arrow to use!"]
+			dependencies: ["12FFF7177F4DC3F3"]
+			id: "2AF41D3980176EFB"
+			tasks: [{
+				id: "0F55CCA7F21AE529"
+				type: "item"
+				item: {
+					id: "supplementaries:quiver"
+					Count: 1b
+					ForgeCaps: {
+						Parent: {
+							Size: 6
+							Items: [ ]
+							SelectedSlot: 0
+						}
+					}
+				}
+			}]
+		}
+		{
+			icon: {
+				id: "simplyswords:netherite_warglaive"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: 4.0d
+			y: 0.0d
+			description: ["Weapons that are not two-handed can be dual wielded in lieu of a shield. Any two one-handed weapons may be dual wielded, but weapons with the same moveset will have unique attacks."]
+			dependencies: ["20C1E18D03E42151"]
+			id: "4FBFC600E415ABAD"
+			tasks: [{
+				id: "123B77D0F773EDAA"
+				type: "checkmark"
+				title: "Dual Wielding"
+			}]
+		}
+		{
+			title: "Gems \\& Socketing"
+			x: 0.0d
+			y: -4.0d
+			description: ["Affix items will sometimes have a gem socket. This allows you to insert special gems to augment the item's power even more."]
+			dependencies: ["1FB231D52BC63B73"]
+			id: "092CFEEF555357FA"
+			tasks: [{
+				id: "6FD5C93B9E14C8E4"
+				type: "advancement"
+				advancement: "apotheosis:affix/gem"
+				criterion: ""
+			}]
+		}
+	]
 	quest_links: [ ]
 }

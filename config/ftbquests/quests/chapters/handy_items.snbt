@@ -1,0 +1,90 @@
+{
+	id: "42B3A9B56C722391"
+	group: "36C3CA17FE4F12AD"
+	order_index: 2
+	filename: "handy_items"
+	title: "Handy Items"
+	icon: {
+		id: "chalk:light_gray_chalk"
+		Count: 1b
+		tag: {
+			Damage: 0
+		}
+	}
+	subtitle: ["Some useful items you should know about."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "Chalk"
+			x: 0.0d
+			y: 0.0d
+			description: [
+				"Getting lost in a dungeon? Can't figure out if you've already been down this hallway before? Make some chalk!"
+				""
+				"Right-click to draw an arrow based on where you clicked, and shift-right-click to draw an 'X'. You can also right-click with glowstone dust to make the chalk glow."
+				""
+				"If you'd like to store many different pieces of chalk, make a chalk box! It holds quite a few, and can hold glowstone to automatically place glowing chalk."
+			]
+			id: "3BB3EE59823E9EDC"
+			tasks: [{
+				id: "12BD4337C0382C75"
+				type: "item"
+				title: "Any #chalk:chalk"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "chalk:chalk"
+					}
+				}
+			}]
+		}
+		{
+			x: 2.0d
+			y: 0.0d
+			description: ["Throw bees at your enemies! Make a bunch of these and gear up in the Bumblezone and you'll really bee on your way to something unbeelievable."]
+			id: "3E78BE3906130AD3"
+			tasks: [{
+				id: "7FDCFB0660A186E8"
+				type: "item"
+				item: "potionofbees:splash_potion_of_bees"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 0.0d
+			description: [
+				"Create a backpack for all that loot you can't carry! Backpacks have a wide variety of upgrades, both to their storage capacity and functionality."
+				""
+				"Backpacks can also be dyed just like leather armor."
+			]
+			id: "0E77EBC1B6011503"
+			tasks: [{
+				id: "52A798A24B00FE4C"
+				type: "item"
+				item: "sophisticatedbackpacks:backpack"
+			}]
+		}
+		{
+			title: "Paragliders"
+			x: 0.0d
+			y: -2.0d
+			description: ["Make (or find) a paraglider to gracefully glide down to earth! Just make sure you're not wearing anything too heavy, since gliding now uses feathers!"]
+			id: "36869C5833105540"
+			tasks: [{
+				id: "46AD79C1E8ECEC22"
+				type: "item"
+				title: "Any #paraglider:paragliders"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "paraglider:paragliders"
+					}
+				}
+			}]
+		}
+	]
+	quest_links: [ ]
+}

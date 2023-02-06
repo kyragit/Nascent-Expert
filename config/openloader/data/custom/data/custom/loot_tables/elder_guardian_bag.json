@@ -16,62 +16,22 @@
             ]
         },
         {
-            "rolls": {
-                "type": "binomial",
-                "n": 1,
-                "p": 0.25
-            },
-            "entries": [
-                {
-                    "type": "loot_table",
-                    "weight": 1,
-                    "quality": 0,
-                    "name": "custom:overworld_valuable"
-                }
-            ]
-        },
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"weight": 1,
+					"name": "custom:loot_epic"
+				}
+			]
+		},
         {
-            "rolls": {
-                "type": "binomial",
-                "n": 1,
-                "p": 0.07
-            },
+            "rolls": 1,
             "entries": [
                 {
                     "type": "loot_table",
                     "weight": 1,
-                    "quality": 0,
-                    "name": "custom:overworld_treasure"
-                }
-            ]
-        },
-        {
-            "rolls": {
-                "type": "binomial",
-                "n": 1,
-                "p": 0.07
-            },
-            "entries": [
-                {
-                    "type": "loot_table",
-                    "weight": 1,
-                    "quality": 0,
-                    "name": "custom:runic_weapons"
-                }
-            ]
-        },
-        {
-            "rolls": {
-                "type": "binomial",
-                "n": 1,
-                "p": 0.05
-            },
-            "entries": [
-                {
-                    "type": "loot_table",
-                    "weight": 1,
-                    "quality": 0,
-                    "name": "custom:overworld_artifacts"
+                    "name": "aquaculture:box/neptunes_bounty"
                 }
             ]
         },

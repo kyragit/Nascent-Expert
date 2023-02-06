@@ -63,7 +63,8 @@ ItemEvents.rightClicked('kubejs:powdered_determination', event => {
         return
     }
     event.target.block.popItem('16x create:andesite_alloy')
-    event.server.runCommandSilent(`execute positioned ${event.target.block.x} ${event.target.block.y} ${event.target.block.z} run particle dust 1.0 0.0 0.95 1.0 ~ ~0.5 ~ 0.3 0.3 0.3 0.0 5 normal @a`)
+    event.player.stages.add('create')
+    event.server.runCommandSilent(`execute in ${event.level.dimension} positioned ${event.target.block.x} ${event.target.block.y} ${event.target.block.z} run particle dust 1.0 0.0 0.95 1.0 ~ ~0.5 ~ 0.3 0.3 0.3 0.0 5 normal @a`)
     event.target.block.setBlockState(Blocks.AIR.defaultBlockState(), 0)
     event.item.count -= 1
     event.server.runCommand(`tellraw ${event.player.username} {"text":"As you sprinkle the dust upon the andesite, it melts and solidifies into something else. A new material, perhaps? Or a gift from the future...","color":"#BA00FC"}`)
@@ -96,5 +97,34 @@ PlayerEvents.tick(event => {
 const BossMusic = Java.loadClass('lykrast.meetyourfight.misc.BossMusic')
 
 EntityEvents.spawned('minecraft:wither', event => {
-    Client.soundManager.play(new BossMusic(event.entity, Utils.getSound('kubejs:music.wither')))
+    if (event.entity.tags.contains('Music1')) {
+        Client.soundManager.play(new BossMusic(event.entity, Utils.getSound('kubejs:music.wither')))
+    }
+})
+
+PlayerEvents.advancement('custom:unlock_create', event => {
+    event.player.stages.add('create')
+})
+
+FTBQuestsEvents.completed('7B2817643B1C1080', event => {
+    event.player.unlockAdvancement('custom:unlock_create')
+})
+
+// Regex go brrrr
+// Stops players from mining any create machines before it's unlocked
+LootJS.modifiers(event => {
+    event.addBlockLootModifier(/^create:(?:(?!seat|glass|window|layered|small|cut|pillar|ore|zinc|shingle|tile|asurine|crimsite|limestone|ochrum|scorc*h*ia|veridium).)*$/)
+        .not(n => {
+            n.hasAnyStage('create')
+        })
+        .removeLoot(ItemFilter.ALWAYS_TRUE)
+})
+
+PlayerEvents.inventoryChanged('create:andesite_alloy', event => {
+    if (!event.hasGameStage('create')) {
+        event.server.runCommand(`tellraw ${event.player.username} {"text":"Sequence break prevention initiated!","color":"dark_red"}`)
+        event.player.drop(event.item, false)
+        event.server.runCommandSilent(`clear ${event.player.username} create:andesite_alloy`)
+        event.server.runCommand(`tellraw ${event.player.username} {"text":"If somehow you encountered this from the intended progression path, or you\'re a dirty cheater, click this message to disable sequence break detection (requires cheats to be enabled). If you found the item some other way, please submit a bug report <TODO: link>.","clickEvent":{"action":"run_command","value":"/advancement grant @s only custom:unlock_create"}}`)
+    }
 })

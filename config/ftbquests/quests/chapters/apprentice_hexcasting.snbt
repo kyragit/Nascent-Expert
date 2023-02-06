@@ -1,0 +1,174 @@
+{
+	id: "16D96E16D600EDE0"
+	group: "36C3CA17FE4F12AD"
+	order_index: 6
+	filename: "apprentice_hexcasting"
+	title: "Apprentice Hexcasting"
+	icon: "hexcasting:charged_amethyst"
+	subtitle: ["Try not to go insane..."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "The Beginning of a Tale"
+			x: 0.0d
+			y: 0.0d
+			description: [
+				"The amethyst in your hand tingles slightly. You sense something more lay ahead."
+				""
+				"Note: Hexcasting is an incredibly complicated magic mod. It is available early for those who have the determination, but it is entirely skippable if you wish. "
+				""
+				"For those willing to test themselves, I gift you this journal. It will explain the secrets of Media far better than I could."
+			]
+			invisible: true
+			id: "476B3F89A19F2F0E"
+			tasks: [{
+				id: "005CDB2D84CCBF06"
+				type: "item"
+				item: "minecraft:amethyst_shard"
+			}]
+			rewards: [{
+				id: "100CFBDEA98F23B0"
+				type: "item"
+				item: {
+					id: "patchouli:guide_book"
+					Count: 1b
+					tag: {
+						"patchouli:book": "hexcasting:thehexbook"
+					}
+				}
+			}]
+		}
+		{
+			x: 0.0d
+			y: -1.0d
+			description: ["In lieu of a better method, offer to the gods After to charge some Amethyst."]
+			dependencies: ["476B3F89A19F2F0E"]
+			id: "4DC2F0FB619D0587"
+			tasks: [{
+				id: "34D0612DA8B1B7FC"
+				type: "item"
+				item: "hexcasting:charged_amethyst"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 1.0d
+			description: ["Create some Amethyst dust by pulverizing Amethyst Shards with an explosion. "]
+			dependencies: ["476B3F89A19F2F0E"]
+			id: "2BE9BFEA37142DA2"
+			tasks: [{
+				id: "2800B95972B6A1FE"
+				type: "item"
+				item: "hexcasting:amethyst_dust"
+			}]
+		}
+		{
+			title: "Hexcaster's Staff"
+			x: 1.0d
+			y: -0.5d
+			description: [
+				"With this staff, you can siphon the Media brimming from After to draw upon the very fabric of reality itself."
+				""
+				"It would seem, however, that this is not such a simple task."
+			]
+			dependencies: ["4DC2F0FB619D0587"]
+			id: "3220DB366B78A172"
+			tasks: [{
+				id: "1D69D88579CFECD2"
+				type: "item"
+				title: "Any Staff"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "hexcasting:staves"
+					}
+				}
+			}]
+		}
+		{
+			x: -1.0d
+			y: 0.5d
+			description: ["A Scrying Lens is vital for performing more complex hexes. "]
+			dependencies: ["2BE9BFEA37142DA2"]
+			id: "76FEFD5780353032"
+			tasks: [{
+				id: "5F1A1FDA53C36F46"
+				type: "item"
+				item: "hexcasting:lens"
+			}]
+		}
+		{
+			title: "Casting Items"
+			x: -1.0d
+			y: -0.5d
+			description: [
+				"Create a Cypher, Trinket, or Artifact to ease the monotony of casting the same hex again and again."
+				""
+				"Perhaps there could be a way to use one of these to cast *any* spell with a spell storage medium..."
+			]
+			dependencies: ["76FEFD5780353032"]
+			id: "0999E115982C903B"
+			tasks: [{
+				id: "2128CD17B877AF88"
+				type: "item"
+				title: "Any Casting Item"
+				item: {
+					id: "itemfilters:or"
+					Count: 1b
+					tag: {
+						items: [
+							{
+								id: "hexcasting:cypher"
+								Count: 1b
+							}
+							{
+								id: "hexcasting:trinket"
+								Count: 1b
+							}
+							{
+								id: "hexcasting:artifact"
+								Count: 1b
+							}
+						]
+					}
+				}
+			}]
+		}
+		{
+			title: "Storing Iotas"
+			x: 1.0d
+			y: 0.5d
+			description: ["Create a Focus, or better yet, a Spellbook to store Iotas. Perhaps there could be a way to store entire spells in one Iota... all you would need then is a casting implement."]
+			dependencies: ["3220DB366B78A172"]
+			id: "12CE4FB371DB59C5"
+			tasks: [{
+				id: "51F8AF96A223B531"
+				type: "item"
+				title: "Focus or Spellbook"
+				item: {
+					id: "itemfilters:or"
+					Count: 1b
+					tag: {
+						items: [
+							{
+								id: "hexcasting:focus"
+								Count: 1b
+							}
+							{
+								id: "hexcasting:spellbook"
+								Count: 1b
+								tag: {
+									page_idx: 0
+									page_names: { }
+								}
+							}
+						]
+					}
+				}
+			}]
+		}
+	]
+	quest_links: [ ]
+}

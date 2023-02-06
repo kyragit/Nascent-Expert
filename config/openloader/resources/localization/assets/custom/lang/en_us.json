@@ -8,5 +8,9 @@
 	"enchantment.create.potato_recovery.desc": "Chance to recover fired vegetables.",
 	"enchantment.create.capacity.desc": "Increased air capacity.",
 	"enchantment.feathers.lightweight.desc": "Makes your armor weigh less.",
-	"nethersdelight.block.feast.use_knife": "This requires a knife to eat!"
+	"nethersdelight.block.feast.use_knife": "This requires a knife to eat!",
+	"affix.custom:vampiric": "Vampiric",
+	"affix.custom:vampiric.suffix": "of Blood",
+	"affix.custom:energizing": "Energizing",
+	"affix.custom:energizing.suffix": "of the Feather"
 }

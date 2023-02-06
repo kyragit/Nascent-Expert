@@ -124,7 +124,8 @@
         {
             "entities": [
                 {
-                    "entity": "minecraft:wither"
+                    "entity": "minecraft:wither",
+                    "nbt": "{Tags:[\"Music1\"]}"
                 }
             ],
             "modifiers": [
@@ -155,7 +156,8 @@
                     "entity": "minecraft:wither"
                 },
                 {
-                    "entity": "minecraft:wither"
+                    "entity": "minecraft:wither",
+                    "nbt": "{Tags:[\"Music1\"]}"
                 },
                 {
                     "entity": "minecraft:wither"

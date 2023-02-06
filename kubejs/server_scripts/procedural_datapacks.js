@@ -6,6 +6,7 @@ ServerEvents.lowPriorityData(event => {
     affixLootEntries(event)
     affixes(event)
     weaponAttributes(event)
+    advancements(event)
 })
 
 function affixLootEntries(event) {
@@ -72,6 +73,58 @@ function affixLootEntries(event) {
                 count: 1
             },
             type: weapon[1],
+            dimensions: [
+                'minecraft:overworld',
+                'minecraft:the_nether',
+                'minecraft:the_end'
+            ],
+            max_rarity: 'epic'
+        })
+    }
+
+    event.addJson('custom:affix_loot_entries/spatula', {
+        weight: 10,
+        quality: 3.0,
+        stack: {
+            item: `cfm:spatula`,
+            count: 1
+        },
+        type: 'SWORD',
+        dimensions: [
+            'minecraft:overworld',
+            'minecraft:the_nether',
+            'minecraft:the_end'
+        ],
+        max_rarity: 'mythic'
+    })
+
+    for (let armor of ['helmet', 'leggings', 'chestplate', 'boots']) {
+        event.addJson(`custom:affix_loot_entries/neptunium_${armor}`, {
+            weight: 18,
+            quality: 3.0,
+            stack: {
+                item: `aquaculture:neptunium_${armor}`,
+                count: 1
+            },
+            type: 'ARMOR',
+            dimensions: [
+                'minecraft:overworld',
+                'minecraft:the_nether',
+                'minecraft:the_end'
+            ],
+            max_rarity: 'epic'
+        })
+    }
+
+    for (let item of [['pickaxe', 'BREAKER'], ['shovel', 'BREAKER'], ['axe', 'HEAVY_WEAPON'], ['sword', 'SWORD'], ['bow', 'BOW']]) {
+        event.addJson(`custom:affix_loot_entries/neptunium_${item[0]}`, {
+            weight: 18,
+            quality: 3.0,
+            stack: {
+                item: `aquaculture:neptunium_${item[0]}`,
+                count: 1
+            },
+            type: item[1],
             dimensions: [
                 'minecraft:overworld',
                 'minecraft:the_nether',
@@ -161,7 +214,7 @@ function affixes(event) {
                 'TRIDENT'
             ]
         })
-        
+
         event.addJson('custom:affixes/energizing', {
             type: 'apotheosis:mob_effect',
             mob_effect: 'feathers:energized',
@@ -216,4 +269,38 @@ function weaponAttributes(event) {
     event.addJson('pyromancer:weapon_attributes/schmelzstern', {parent: 'simplyswords:hearthflame'})
     event.addJson('pyromancer:weapon_attributes/firelink', {parent: 'simplyswords:emberblade'})
     event.addJson('pyromancer:weapon_attributes/flammenklinge', {parent: 'bettercombat:claymore'})
+    event.addJson('cfm:weapon_attributes/spatula', {parent: 'bettercombat:mace'})
+}
+
+function advancements(event) {
+    event.addJson('custom:advancements/unlock_create', {
+        criteria: {
+            only_cheats: {
+                trigger: 'minecraft:impossible'
+            }
+        }
+    })
+    // Hides other mod's stupid advancement showing in chat
+    event.addJson('idas:advancements/idas_root', {
+        display: {
+            icon: {
+                item: 'minecraft:filled_map'
+            }
+        },
+        title: {
+            translate: 'Integrated Dungeons and Structures'
+        },
+        description: {
+            translate: 'Start exploring for structures!'
+        },
+        show_toast: false,
+        announce_to_chat: false,
+        hidden: true,
+        background: 'minecraft:textures/block/purple_terracotta.png',
+        citeria: {
+            always: {
+                trigger: 'minecraft:tick'
+            }
+        }
+    })
 }

@@ -1,0 +1,201 @@
+{
+	id: "093925FD17179C97"
+	group: "36C3CA17FE4F12AD"
+	order_index: 4
+	filename: "artifacts"
+	title: "Artifacts"
+	icon: "enigmaticlegacy:enigmatic_item"
+	subtitle: ["Catalogue your legendary discoveries."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "Spellstones"
+			icon: "enigmaticlegacy:the_cube"
+			x: 0.0d
+			y: 0.0d
+			description: [
+				"You have discovered a hidden Spellstone, a pearl of crystallized energy from another plane."
+				""
+				"Each spellstone has a unique and powerful effect, and some have an active ability that can be activated using the \"spellstone active ability\" keybind."
+			]
+			invisible: true
+			id: "1388F5F86DFEF300"
+			tasks: [{
+				id: "63E10C63CE43D0FF"
+				type: "advancement"
+				advancement: "enigmaticlegacy:main/discover_spellstone"
+				criterion: ""
+			}]
+		}
+		{
+			x: -2.0d
+			y: -2.0d
+			description: [
+				"Deep in the oceans of the Overworld, in a grand underwater monument, you have found the Will of the Ocean."
+				""
+				"It pulsates like flowing water, and when you wear it you can feel the primal magic from Within flow through you."
+				""
+				"It would seem that it works in much the same way as enchanting with seashelves, but letting the energy pass through your body instead of an item. "
+			]
+			dependencies: ["1388F5F86DFEF300"]
+			invisible: true
+			id: "1172FA0499AA6DAE"
+			tasks: [{
+				id: "5CA5F636025DE948"
+				type: "item"
+				item: "enigmaticlegacy:ocean_stone"
+			}]
+		}
+		{
+			x: 2.0d
+			y: -2.0d
+			description: [
+				"Miles underground, you have discovered the legendary Heart of the Golem. It appears ancient, so ancient as to appear timeless. "
+				""
+				"It is said that the Golems of Before would sometimes stumble out of their plane only to land somehere - or somewhen? - else. One can only imagine what these great Golems looked like."
+				""
+				"Being from Before, it seems to slow time around the wearer's body, causing weapons and projectiles to slow to near-harmless speeds. This effect seems less potent when wearing armor, however."
+			]
+			dependencies: ["1388F5F86DFEF300"]
+			invisible: true
+			id: "1D8E3CC69CB268E8"
+			tasks: [{
+				id: "48AA38995594729C"
+				type: "item"
+				item: "enigmaticlegacy:golem_heart"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 2.0d
+			description: [
+				"High above the clouds, in stunning aircraft from another time, you have found the Angel's Blessing."
+				""
+				"Just being near it, you can feel its accelerating power; it seems to speed up time around it, at the whim of the wielder."
+				""
+				"This indescribable artifact seems to be from After, a time and place alien to our own. It seems to bring a bit of this plane along with it, resulting in vortices of time itself."
+				""
+				"By expending a bit of energy from the stone, you can accelerate very quickly for a moment, resulting in something like a double jump."
+			]
+			dependencies: ["1388F5F86DFEF300"]
+			invisible: true
+			id: "2C6B884D6FF6E926"
+			tasks: [{
+				id: "5AB2757E8A8F3571"
+				type: "item"
+				item: "enigmaticlegacy:angel_blessing"
+			}]
+		}
+		{
+			x: 2.0d
+			y: 2.0d
+			description: [
+				"You have searched through the bowels of Hell, and found the Blazing Core. It is uncomfortable hot, and it appears to vibrate violently with the energy from Beyond."
+				""
+				"Wielding it seems to shield the wearer from other sources of heat; it seems like it redirects that heat to Beyond from whence it came. "
+			]
+			dependencies: ["1388F5F86DFEF300"]
+			invisible: true
+			id: "74F37D0FC5DBAEDE"
+			tasks: [{
+				id: "19FA127800BD8BB2"
+				type: "item"
+				item: "enigmaticlegacy:blazing_core"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -3.0d
+			dependencies: ["1388F5F86DFEF300"]
+			invisible: true
+			id: "1CA24F9721F822B5"
+			tasks: [{
+				id: "33FDCD4659849BC5"
+				type: "item"
+				item: "enigmaticlegacy:eye_of_nebula"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 3.0d
+			dependencies: ["1388F5F86DFEF300"]
+			invisible: true
+			id: "573D1BB425FE1D7C"
+			tasks: [{
+				id: "127D7A5067184037"
+				type: "item"
+				item: "enigmaticlegacy:void_pearl"
+			}]
+		}
+		{
+			x: 3.0d
+			y: 0.0d
+			invisible: true
+			id: "07A6D4920F1EE551"
+			tasks: [{
+				id: "655E50962AB99D1F"
+				type: "item"
+				item: {
+					id: "simplyswords:soulrender"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -3.0d
+			y: 0.0d
+			invisible: true
+			id: "4928A981087D6076"
+			tasks: [{
+				id: "35572844D948B02C"
+				type: "item"
+				item: {
+					id: "simplyswords:soulpyre"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -5.0d
+			y: 0.0d
+			invisible: true
+			id: "6E47947DF88CE614"
+			tasks: [{
+				id: "1ECBCE0C5862505C"
+				type: "item"
+				item: {
+					id: "simplyswords:molten_edge"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 5.0d
+			y: 0.0d
+			invisible: true
+			id: "5F9BC06EA8548C29"
+			tasks: [{
+				id: "40EF4EF0D44C8F97"
+				type: "item"
+				item: {
+					id: "simplyswords:thunderbrand"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+	]
+	quest_links: [ ]
+}

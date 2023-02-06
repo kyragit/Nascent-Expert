@@ -22,7 +22,7 @@
 			x: 0.0d
 			y: 0.0d
 			description: [
-				"Welcome, Child. The world awaits."
+				"Welcome, Traveller. The world awaits."
 				""
 				"First things first, I would recommend closing this book and getting some charcoal, making torches, and finding a safe place to hide. You'll notice coal is not so easy to find."
 				""
@@ -214,8 +214,6 @@
 			y: 2.0d
 			description: [
 				"In order to proceed, you'll need a summoning altar, which requires a wither skeleton skull. I'd recommend exploring until you find a structure to raid for gear before venturing into the nether."
-				""
-				"You'll need to visit many biomes and gather some exotic animal parts as well. Make sure you mark things on your map as you go."
 				""
 				"You will face great enemies before progressing, so getting adequate weaponry and armor should be a priority."
 			]

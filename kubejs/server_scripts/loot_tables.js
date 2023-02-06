@@ -8,6 +8,8 @@ ServerEvents.genericLootTables(event => {
     bygLootTables(event)
     apotheosisLootTables(event)
     lostCastleLootTables(event)
+    idasLootTables(event)
+    minecraftLootTables(event)
 })
 
 ServerEvents.blockLootTables(event => {
@@ -21,7 +23,7 @@ ServerEvents.entityLootTables(event => {
 LootJS.modifiers(event => {
     event.disableWitherStarDrop()
     // Stops all eyes of ender generating as loot, anywhere
-    event.addLootTableModifier(/.*/).removeLoot('minecraft:ender_eye')
+    event.addLootTableModifier(/.*/).removeLoot('minecraft:ender_eye').removeLoot(/create:(?:andesite_alloy|goggles|wrench|gearbox|large_cogwheel|cogwheel|shaft)/)
 })
 
 const PLENTIFUL = 'custom:loot_plentiful'
@@ -54,6 +56,12 @@ function createUniversalLootTables(event) {
         ['simplyswords:hearthflame', 2],
         ['simplyswords:soulkeeper', 2],
         ['simplyswords:arcanethyst', 2],
+        ['artifacts:snorkel', 1],
+        ['artifacts:vampiric_glove', 1],
+        ['artifacts:bunny_hoppers', 1],
+        ['artifacts:power_glove', 1],
+        ['artifacts:feral_claws', 1],
+        ['artifacts:crystal_heart', 1],
     ]
 
     const ARTIFACT_CHARMS = [
@@ -83,6 +91,28 @@ function createUniversalLootTables(event) {
         ['relics:arrow_quiver', 1],
         ['relics:wool_mitten', 1],
         ['relics:leather_belt', 1],
+        ['artifacts:plastic_drinking_hat', 1],
+        ['artifacts:novelty_drinking_hat', 1],
+        ['artifacts:night_vision_goggles', 1],
+        ['artifacts:villager_hat', 1],
+        ['artifacts:cloud_in_a_bottle', 1],
+        ['artifacts:cross_necklace', 1],
+        ['artifacts:panic_necklace', 1],
+        ['artifacts:shock_pendant', 1],
+        ['artifacts:flame_pendant', 1],
+        ['artifacts:thorn_pendant', 1],
+        ['artifacts:charm_of_sinking', 1],
+        ['artifacts:helium_flamingo', 1],
+        ['artifacts:digging_claws', 1],
+        ['artifacts:fire_gauntlet', 1],
+        ['artifacts:pocket_piston', 1],
+        ['artifacts:golden_hook', 1],
+        ['artifacts:steadfast_spikes', 1],
+        ['artifacts:flippers', 1],
+        ['artifacts:whoopee_cushion', 1],
+        ['artifacts:umbrella', 1],
+        ['artifacts:superstitious_hat', 1],
+        ['artifacts:lucky_scarf', 1],
     ]
 
     const TREASURE_CHARMS = [
@@ -137,6 +167,7 @@ function createUniversalLootTables(event) {
         ['dimdungeons:item_portal_key', 2],
         ['paraglider:paraglider', 2],
         ['paraglider:deku_leaf', 2],
+        ['aquaculture:neptunium_ingot', 1],
     ]
 
     const VALUABLE_CHARMS = [
@@ -699,4 +730,82 @@ function vanillaEntityLootTables(event) {
             })
         })
     })
+    event.modify('artifacts:mimic', loot => {
+        loot.clearPools()
+        loot.addPool(pool => {
+            pool.addEntry({
+                type: 'loot_table',
+                weight: 1,
+                name: 'custom:loot_epic'
+            })
+        })
+    })
+}
+
+function idasLootTables(event) {
+    function idas(e, table, loot) {
+        addToLootTable(e, `idas:chests/${table}`, loot, 1, 1)
+    }
+    idas(event, 'abandonedhouse/abandonedhouse', COMMON)
+    idas(event, 'abandonedhouse/abandonedhouse_create', COMMON)
+    idas(event, 'abandonedhouse/abandonedhouse_library', UNCOMMON)
+    idas(event, 'ancient_mines/minesbasic', COMMON)
+    idas(event, 'ancient_mines/minescreate', UNCOMMON)
+    idas(event, 'ancient_mines/mineshall', EPIC)
+    addItemToLootTable(event, 'idas:chests/ancient_mines/mineshall', 'enigmaticlegacy:golem_heart', 0.5, 1)
+    idas(event, 'ancient_portal/ancient_portal_nether', RARE)
+    idas(event, 'ancient_portal/ancient_portal_overworld', RARE)
+    idas(event, 'ancient_statue/ancient_statue_jungle', UNCOMMON)
+    idas(event, 'ancient_statue/ancient_statue_treasure_jungle', RARE)
+    idas(event, 'ancient_statue/ancient_statue_treasure_desert', RARE)
+    idas(event, 'ancient_statue/ancient_statue_treasure_plains', RARE)
+    idas(event, 'apothecary_abode/apothecary_abode', UNCOMMON)
+    idas(event, 'apothecary_abode/apothecary_abode_books', UNCOMMON)
+    idas(event, 'bazaar/bazaar', COMMON)
+    idas(event, 'bazaar/bazaar_food', PLENTIFUL)
+    idas(event, 'bazaar/bazaar_tools', COMMON)
+    idas(event, 'bearclaw_inn/bearclaw_inn_food', PLENTIFUL)
+    idas(event, 'bearclaw_inn/bearclaw_inn_bedroom', COMMON)
+    idas(event, 'beekeepers_house/beekeepers_food', PLENTIFUL)
+    idas(event, 'beekeepers_house/beekeepers_bedroom', COMMON)
+    idas(event, 'beekeepers_house/beekeepers_tools', UNCOMMON)
+    idas(event, 'castle/castle', COMMON)
+    idas(event, 'castle/castle_library', UNCOMMON)
+    idas(event, 'castle/castle_throne', EPIC)
+    idas(event, 'cottage/cottage', COMMON)
+    idas(event, 'enchantingtower/enchantingtower_basic', COMMON)
+    idas(event, 'enchantingtower/enchantingtower_library', UNCOMMON)
+    idas(event, 'enchantingtower/enchantingtower_top', RARE)
+    idas(event, 'haunted_manor/haunted_manor', COMMON)
+    idas(event, 'haunted_manor/haunted_manor_tools', UNCOMMON)
+    idas(event, 'haunted_manor/haunted_manor_library', UNCOMMON)
+    idas(event, 'haunted_manor/haunted_manor_treasure', EPIC)
+    idas(event, 'hauntedhouse/hauntedhouse', RARE)
+    idas(event, 'labyrinth/labyrinth', UNCOMMON)
+    idas(event, 'labyrinth/labyrinth_croc', RARE)
+    idas(event, 'labyrinth/labyrinth_library', UNCOMMON)
+    idas(event, 'labyrinth/labyrinth_tomb', EPIC)
+    idas(event, 'labyrinth/labyrinth_treasure', LEGENDARY)
+    idas(event, 'necromancers_spire/necromancers_spire', RARE)
+    idas(event, 'pillager_fortress/pillager_basic', COMMON)
+    idas(event, 'pillager_fortress/pillager_bedroom', UNCOMMON)
+    idas(event, 'pillager_fortress/pillager_jail', RARE)
+    idas(event, 'pillager_fortress/pillager_library', UNCOMMON)
+    idas(event, 'sunken_ship/sunken_ship_supply', UNCOMMON)
+    idas(event, 'sunken_ship/sunken_ship_treasure', RARE)
+    idas(event, 'tinkers_workshop/tinkers_workshop', COMMON)
+    idas(event, 'tinkers_workshop/tinkers_workshop_basic', PLENTIFUL)
+    idas(event, 'tinkers_workshop/tinkers_workshop_bedroom', UNCOMMON)
+    idas(event, 'tinkers_workshop/tinkers_workshop_tools', RARE)
+    idas(event, 'tinkers_workshop/tinkers_workshop_vault', LEGENDARY)
+    idas(event, 'witches_treestump/witches_treestump', RARE)
+    idas(event, 'wizardtower/wizardtower_basic', COMMON)
+    idas(event, 'wizardtower/wizardtower_library', UNCOMMON)
+    idas(event, 'wizardtower/wizardtower_top', RARE)
+}
+
+function minecraftLootTables(event) {
+    addToLootTable(event, 'minecraft:chests/ancient_city', RARE, 0.5, 1)
+    addToLootTable(event, 'minecraft:chests/ancient_city', EPIC, 0.2, 1)
+    addToLootTable(event, 'minecraft:chests/ancient_city', LEGENDARY, 0.05, 1)
 }
