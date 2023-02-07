@@ -822,6 +822,20 @@ function createRecipes(event) {
             }
         ]
     }).id('kubejs:limestone_milling')
+    event.custom({
+        type: 'create:milling',
+        ingredients: [
+            {
+                item: 'minecraft:netherrack'
+            }
+        ],
+        processingTime: 250,
+        results: [
+            {
+                item: 'create:cinder_flour'
+            }
+        ]
+    }).id('kubejs:cinder_flour_milling')
 
     event.remove({id:'create:mixing/andesite_alloy_from_zinc'})
     event.remove({id:'create:mixing/andesite_alloy'})
@@ -2572,11 +2586,11 @@ function gatewayRecipes(event) {
     const RANDOM_ITEMS_1 = ['3x minecraft:rabbit_foot', '16x minecraft:prismarine_shard', '16x minecraft:prismarine_crystals', '2x minecraft:nautilus_shell', '16x minecraft:honeycomb', '3x minecraft:name_tag']
     const RANDOM_ITEMS_2 = ['4x minecraft:poisonous_potato', '8x minecraft:golden_carrot', '4x minecraft:pumpkin_pie', '8x minecraft:glistering_melon_slice', '4x minecraft:pufferfish', '4x minecraft:beetroot_soup', '8x minecraft:glow_berries']
     const RANDOM_ITEMS_3 = ['#quark:runes', '2x #forge:heads', '#minecraft:music_discs', '2x minecraft:totem_of_undying']
-    const RANDOM_ITEMS_4 = ['minecraft:trident', 'savage_and_ravage:wand_of_freezing', 'alexsmobs:tendon_whip', 'alexsmobs:blood_sprayer', 'savage_and_ravage:cleaver_of_beheading']
+    const RANDOM_ITEMS_4 = ['minecraft:trident', /*'savage_and_ravage:wand_of_freezing',*/ 'alexsmobs:tendon_whip', 'alexsmobs:blood_sprayer', /*'savage_and_ravage:cleaver_of_beheading'*/]
     const RANDOM_ITEMS_5 = ['64x ecologics:azalea_log', '64x minecraft:mangrove_log', '64x byg:aspen_log', '64x byg:cherry_log', '64x byg:jacaranda_log', '64x byg:maple_log', '64x byg:holly_log', '64x byg:fir_log']
     const RANDOM_ITEMS_6 = ['3x minecraft:netherite_ingot', '8x #forge:storage_blocks/iron', '8x #forge:storage_blocks/gold', '8x #forge:storage_blocks/copper', '4x #forge:storage_blocks/diamond', '8x #forge:storage_blocks/aluminum', '8x #forge:storage_blocks/silver', '8x #forge:storage_blocks/lead', '8x #forge:storage_blocks/nickel', '4x #forge:storage_blocks/uranium']
     const RANDOM_ITEMS_7 = ['16x #minecraft:candles', '64x #forge:stained_glass_panes', '64x #minecraft:wool_carpets', '64x #forge:concrete', '64x #forge:dyes', '16x #quark:corundum', '8x #the_bumblezone:super_candles', '16x #fairylights:lights', '8x #cfm:general']
-    const RANDOM_ITEMS_8 = ['8x farmersdelight:rice_roll_medley_block', '8x farmersdelight:sheperds_pie_block', '8x farmersdelight:honey_glazed_ham_block', '8x farmersdelight:stuffed_pumpkin_block', '16x farmersdelight:grilled_salmon', '16x farmersdelight:squid_ink_pasta', '16x farmersdelight:steak_and_potatoes', '16x farmersdelight:hamburger', '16x farmersdelight:chicken_sandwich', '16x farmersdelight:roasted_mutton_chops', '16x farmersdelight:chocolate_pie', '16x farmersdelight:apple_pie']
+    const RANDOM_ITEMS_8 = ['8x farmersdelight:rice_roll_medley_block', '8x farmersdelight:shepherds_pie_block', '8x farmersdelight:honey_glazed_ham_block', '8x farmersdelight:stuffed_pumpkin_block', '16x farmersdelight:grilled_salmon', '16x farmersdelight:squid_ink_pasta', '16x farmersdelight:steak_and_potatoes', '16x farmersdelight:hamburger', '16x farmersdelight:chicken_sandwich', '16x farmersdelight:roasted_mutton_chops', '16x farmersdelight:chocolate_pie', '16x farmersdelight:apple_pie']
 
     const RANDOM_ITEMS_LIST = [RANDOM_ITEMS_1, RANDOM_ITEMS_2, RANDOM_ITEMS_3, RANDOM_ITEMS_3, RANDOM_ITEMS_4, RANDOM_ITEMS_5, RANDOM_ITEMS_6, RANDOM_ITEMS_7, RANDOM_ITEMS_7, RANDOM_ITEMS_8, RANDOM_ITEMS_8]
 

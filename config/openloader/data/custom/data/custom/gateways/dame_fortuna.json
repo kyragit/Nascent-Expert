@@ -101,19 +101,7 @@
 					"entity": "minecraft:evoker"
 				},
 				{
-					"entity": "savage_and_ravage:executioner"
-				},
-				{
-					"entity": "savage_and_ravage:executioner"
-				},
-				{
-					"entity": "savage_and_ravage:trickster"
-				},
-				{
-					"entity": "savage_and_ravage:griefer"
-				},
-				{
-					"entity": "savage_and_ravage:griefer"
+					"entity": "minecraft:illusioner"
 				}
 			],
 			"modifiers": [

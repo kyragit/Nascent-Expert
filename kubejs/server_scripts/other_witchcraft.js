@@ -94,11 +94,17 @@ PlayerEvents.tick(event => {
     }
 })
 
-const BossMusic = Java.loadClass('lykrast.meetyourfight.misc.BossMusic')
+const TargetingConditions = Java.loadClass('net.minecraft.world.entity.ai.targeting.TargetingConditions')
 
 EntityEvents.spawned('minecraft:wither', event => {
     if (event.entity.tags.contains('Music1')) {
-        Client.soundManager.play(new BossMusic(event.entity, Utils.getSound('kubejs:music.wither')))
+        let dummy = event.level.createEntity('minecraft:bat')
+        dummy.setFullNBT('{CustomName:\'{"text":"music_dummy"}\',CustomNameVisible:0b,Invulnerable:1b,NoGravity:1b,Silent:1b,NoAI:1b,PersistenceRequired:1b,ActiveEffects:[{Id:14,ShowParticles:0b,Duration:999999,Amplifier:0,Ambient:0b}]}')
+        dummy.setPos(event.entity.position())
+        event.level.addFreshEntity(dummy)
+        event.level.getNearbyPlayers(TargetingConditions.forNonCombat(), event.entity, AABB.ofSize(event.entity.position(), 512, 512, 512)).forEach(player => {
+            player.sendData('trigger_music_1', {entity: dummy.getStringUuid()})
+        })
     }
 })
 

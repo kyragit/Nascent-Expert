@@ -148,6 +148,18 @@
 				title: "MrCrayfish's Furniture Mod"
 			}]
 		}
+		{
+			icon: "simplylight:illuminant_block_on"
+			x: 2.0d
+			y: 2.0d
+			description: ["The Simply Light mod provides a bunch of very clean, neutral-looking lights for any occasion."]
+			id: "562427B7C25EF079"
+			tasks: [{
+				id: "49BA23B623B61792"
+				type: "checkmark"
+				title: "Simply Lights"
+			}]
+		}
 	]
 	quest_links: [ ]
 }

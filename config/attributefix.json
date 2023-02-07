@@ -55,17 +55,6 @@
         "value": 10000000
       }
     },
-    "forge:nametag_distance": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 64,
-        "value": 10000000
-      }
-    },
     "doggytalents:generic.crit_bonus": {
       "enabled": false,
       "min": {
@@ -74,6 +63,17 @@
       },
       "max": {
         "default": 1,
+        "value": 10000000
+      }
+    },
+    "forge:nametag_distance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 64,
         "value": 10000000
       }
     },

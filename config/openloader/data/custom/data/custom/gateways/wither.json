@@ -145,6 +145,11 @@
                     "type": "command",
                     "command": "function custom:wither_after_fight_1",
                     "desc": "..."
+                },
+                {
+                    "type": "command",
+                    "command": "kill @e[type=minecraft:bat,name=music_dummy]",
+                    "desc": "..."
                 }
             ],
             "max_wave_time": 24000,
@@ -206,6 +211,11 @@
         {
             "type": "command",
             "command": "summon minecraft:lightning_bolt ~ ~ ~-5",
+            "desc": "..."
+        },
+        {
+            "type": "command",
+            "command": "kill @e[type=minecraft:bat,name=music_dummy]",
             "desc": "..."
         }
     ],

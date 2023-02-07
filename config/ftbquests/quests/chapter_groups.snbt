@@ -1,3 +1,6 @@
 {
-	chapter_groups: [{ id: "36C3CA17FE4F12AD", title: "Medieval" }]
+	chapter_groups: [
+		{ id: "36C3CA17FE4F12AD", title: "Medieval" }
+		{ id: "52DC2EC078E51292", title: "Industrial" }
+	]
 }

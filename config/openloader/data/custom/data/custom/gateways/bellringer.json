@@ -20,9 +20,6 @@
 					"entity": "minecraft:vindicator"
 				},
 				{
-					"entity": "savage_and_ravage:executioner"
-				},
-				{
 					"entity": "minecraft:illusioner"
 				}
 			],
@@ -47,15 +44,12 @@
 		{
 			"entities": [
 				{
-					"entity": "savage_and_ravage:iceologer",
+					"entity": "minecraft:illusioner",
 					"nbt": "{ActiveEffects:[{Id:24,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
 				},
 				{
-					"entity": "savage_and_ravage:iceologer",
+					"entity": "minecraft:illusioner",
 					"nbt": "{ActiveEffects:[{Id:24,Duration:999999,Amplifier:0,Ambient:0b,ShowParticles:0b}]}"
-				},
-				{
-					"entity": "savage_and_ravage:griefer"
 				},
 				{
 					"entity": "minecraft:pillager"
@@ -65,9 +59,6 @@
 				},
 				{
 					"entity": "minecraft:vindicator"
-				},
-				{
-					"entity": "savage_and_ravage:executioner"
 				}
 			],
 			"modifiers": [
@@ -112,12 +103,6 @@
 				},
 				{
 					"entity": "minecraft:vindicator"
-				},
-				{
-					"entity": "savage_and_ravage:griefer"
-				},
-				{
-					"entity": "savage_and_ravage:griefer"
 				}
 			],
 			"modifiers": [
