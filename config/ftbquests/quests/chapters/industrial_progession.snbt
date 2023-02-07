@@ -2,8 +2,8 @@
 	id: "7EBB9DA5ABB12D5D"
 	group: "52DC2EC078E51292"
 	order_index: 0
-	filename: "progression"
-	title: "Progression"
+	filename: "industrial_progression"
+	title: "Industrial Progression"
 	icon: "create:andesite_alloy"
 	subtitle: ["Progressing through the Industrial age."]
 	default_quest_shape: ""
@@ -15,7 +15,6 @@
 			x: 0.0d
 			y: 0.0d
 			description: ["The alloy looks so mundane, yet - sublime. There must be a way to make more."]
-			dependencies: ["7B2817643B1C1080"]
 			invisible: true
 			id: "565F912E89EE0425"
 			tasks: [{
