@@ -1,3 +1,6 @@
+const LivingEntity = Java.loadClass('net.minecraft.world.entity.LivingEntity')
+const TargetingConditions = Java.loadClass('net.minecraft.world.entity.ai.targeting.TargetingConditions')
+
 StartupEvents.registry('item', event => {
     // event.create('natural_binding').tooltip('A sticky mixture of natural materials.')
     // event.create('natural_alloy').tooltip('A tough alloy made from animal parts.')
@@ -41,6 +44,16 @@ StartupEvents.registry('item', event => {
     event.create('lavaproof_brick')
     event.create('unfinished_blast_brick')
     event.create('ingot_mold')
+    event.create('industrial_fuel')
+        .burnTime(6400)
+    event.create('blaze_coated_charcoal')
+        .burnTime(1600)
+
+    event.create('portable_black_hole')
+        .rarity('rare')
+        .glow(true)
+        .tooltip({text:"This seems like a bad idea...",color:"dark_purple"})
+        .unstackable()
 })
 
 ItemEvents.modification(event => {

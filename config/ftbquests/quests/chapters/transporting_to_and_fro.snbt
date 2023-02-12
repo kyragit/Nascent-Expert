@@ -1,0 +1,93 @@
+{
+	id: "13662E651588A17C"
+	group: "52DC2EC078E51292"
+	order_index: 2
+	filename: "transporting_to_and_fro"
+	title: "Transporting To and Fro"
+	icon: "create:track"
+	subtitle: ["Getting all that X from point A to point B."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "Little Logistics"
+			icon: "littlelogistics:seater_car"
+			x: 0.0d
+			y: 0.0d
+			description: [
+				"The Little Logistics mod will be your first foray into automated transportation. It provides simple, yet powerful tools for creating minecart and boat networks."
+				""
+				"This manual will explain the basics of the mod, but if you are still confused, many Little Logistic items can be \"pondered\" by holding 'w' on them."
+			]
+			dependencies: ["1C329DDA761BAD72"]
+			hide: true
+			id: "5E27DA8FE0B6F18B"
+			tasks: [{
+				id: "7A335FA1B9C10F56"
+				type: "item"
+				item: "littlelogistics:conductors_wrench"
+			}]
+			rewards: [{
+				id: "4A877684B3643143"
+				type: "item"
+				item: {
+					id: "patchouli:guide_book"
+					Count: 1b
+					tag: {
+						"patchouli:book": "littlelogistics:guide"
+					}
+				}
+			}]
+		}
+		{
+			title: "Locomotives"
+			x: 0.0d
+			y: -2.0d
+			description: [
+				"Locomotives are the ground-based medium distance transport system of choice. To get started, place some rails, and then a locomotive docking rail where you'd like to load/unload. "
+				""
+				"Then, right-click the docking rails with a locomotive route, and insert it into the train. Locomotives require fuel to run."
+			]
+			dependencies: ["5E27DA8FE0B6F18B"]
+			id: "5DE84E3DF972346F"
+			tasks: [{
+				id: "54AA07F0A3BB4864"
+				type: "item"
+				item: "littlelogistics:steam_locomotive"
+			}]
+		}
+		{
+			title: "Barges"
+			x: 0.0d
+			y: 2.0d
+			description: [
+				"Sometimes, you need to transport over water, and it would be inconvenient to build a bridge. Barges are ideal for this purpose."
+				""
+				"To get started, place a tug dock on the shore on the level of the water. Then, right-click it with a tug route to add it as a destination, and put it into the tug. Tugs require fuel to function."
+				""
+				"One major benefit of using barges is that they don't require any infrastructure to run; they will pathfind to each of their destinations automatically."
+			]
+			dependencies: ["5E27DA8FE0B6F18B"]
+			id: "0325B3F849B8B173"
+			tasks: [{
+				id: "20BB77E83D5075B1"
+				type: "item"
+				item: "littlelogistics:tug"
+			}]
+		}
+		{
+			icon: "minecraft:ender_eye"
+			x: -2.0d
+			y: 0.0d
+			description: ["Barges and Locomotives have the ability to load chunks as to run without anyone nearby. To do this, simply right-click and click the \"register\" button. Each player can only have a limited number of registered vehicles."]
+			dependencies: ["5E27DA8FE0B6F18B"]
+			id: "5D3969A5BEFE9F25"
+			tasks: [{
+				id: "5294FDF949C0C43E"
+				type: "checkmark"
+				title: "Loading Chunks with Barges/Locomotives"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

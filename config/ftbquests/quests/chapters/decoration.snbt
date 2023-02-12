@@ -160,6 +160,18 @@
 				title: "Simply Lights"
 			}]
 		}
+		{
+			title: "Macaw's Bridges"
+			x: -2.0d
+			y: 2.0d
+			description: ["Make beautiful bridges with the Macaw's Bridges mod! Perfect for treehouses or towers."]
+			id: "75E3C34D7AB783CD"
+			tasks: [{
+				id: "07CB2A7FB07A22D2"
+				type: "item"
+				item: "mcwbridges:pliers"
+			}]
+		}
 	]
 	quest_links: [ ]
 }

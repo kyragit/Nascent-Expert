@@ -62,6 +62,7 @@ function createUniversalLootTables(event) {
         ['artifacts:power_glove', 1],
         ['artifacts:feral_claws', 1],
         ['artifacts:crystal_heart', 1],
+        ['kubejs:portable_black_hole', 1]
     ]
 
     const ARTIFACT_CHARMS = [
@@ -181,6 +182,18 @@ function createUniversalLootTables(event) {
         ['alexsmobs:poison_resistance', false, 1],
     ]
 
+    const LORE_BOOKS = [
+        Item.of('minecraft:written_book', '{author:"Unknown",pages:[\'{"text":">AUTOMATIC LOG ENTRY\\\\n>14:30:34 7/3/9727\\\\n>SUBSYSTEM 366E\\\\n>\\\\n>OVERWORLD INFRACTIONS DETECTED: 1\\\\n>NETHER INFRACTIONS DETECTED: 0\\\\n>END INFRACTIONS DETECTED: 0\\\\n>BEFORE INFRACTIONS DETECTED: 0\\\\n"}\',\'{"text":">BEYOND INFRACTIONS DETECTED: 0\\\\n>WITHIN INFRACTIONS DETECTED: 0\\\\n>AFTER INFRACTIONS DETECTED: 1,802\\\\n>OTHER INFRACTIONS DETECTED: 0\\\\n>DETERMINED THREAT PRIORITY: LOW\\\\n>ACTIONS TAKEN: 5\\\\n>ACTIONS SUCCESSFUL: 5"}\',\'{"text":">LOG ENTRY DESCRIPTION AGENT: A-376-B\\\\n>DESCRIPTION:\\\\n1,798 Threats in After determined non-actionable. The 4 remaining threats in After were forwarded to subsystem 13A. One overworld threat estimated to be an attempted unauthorized entry"}\',\'{"text":"into After United Minds spacetime. Entry was successfully blocked and countermeasures were taken, including automated electric strikes at the estimated area of infraction and deployment of AUM vehicles. Threat determined to be terminated.\\\\n>END LOG"}\'],title:"LOG ENTRY"}'),
+    ]
+
+    event.addGeneric('custom:lore_book', loot => {
+        loot.addPool(pool => {
+            for (let book of LORE_BOOKS) {
+                pool.addItem(book, 1, 1)
+            }
+        })
+    })
+
     event.addGeneric('custom:overworld_valuable', loot => {
         loot.addPool(pool => {
             for (let item of OVERWORLD_VALUABLE) {
@@ -189,6 +202,7 @@ function createUniversalLootTables(event) {
             for (let potion of VALUABLE_CHARMS) {
                 pool.addItem(Item.of('apotheosis:potion_charm', `{Potion:"${potion[0]}",Unbreakable:${potion[1] ? '1b' : '0b'}}`), potion[2], 1)
             }
+            pool.addLootTable('custom:lore_book').weight(1)
         })
     })
     event.addGeneric('custom:overworld_treasure', loot => {
@@ -200,6 +214,7 @@ function createUniversalLootTables(event) {
                 pool.addItem(Item.of('apotheosis:potion_charm', `{Potion:"${potion[0]}",Unbreakable:${potion[1] ? '1b' : '0b'}}`), potion[2], 1)
             }
             pool.addLootTable('custom:random_scroll').weight(3)
+            pool.addLootTable('custom:secret_book').weight(1)
         })
     })
     event.addGeneric('custom:runic_weapons', loot => {
@@ -218,6 +233,7 @@ function createUniversalLootTables(event) {
                 pool.addItem(Item.of('apotheosis:potion_charm', `{Potion:"${potion[0]}",Unbreakable:${potion[1] ? '1b' : '0b'}}`), potion[2], 1)
             }
             pool.addLootTable('custom:random_scroll').weight(1)
+            pool.addLootTable('custom:secret_book').weight(1)
         })
     })
 

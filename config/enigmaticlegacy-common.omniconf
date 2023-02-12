@@ -514,6 +514,13 @@
     S:GolemHeartExcludedArmor <
         minecraft:elytra
         enigmaticlegacy:enigmatic_elytra
+        create:goggles
+        sophisticatedbackpacks:backpack
+        sophisticatedbackpacks:iron_backpack
+        sophisticatedbackpacks:gold_backpack
+        sophisticatedbackpacks:diamond_backpack
+        sophisticatedbackpacks:netherite_backpack
+        alexsmobs:tarantula_hawk_elytra
      >
 
     # Resistance to explosion damage provided by Heart of the Golem. Defined as percentage. [range: 0 ~ 100, default: 40, synchronized: yes]
@@ -741,7 +748,7 @@
     I:CursedRingLootingBonus=1
 
     # How much damage monsters receive from bearers of the ring will be decreased, in percents. [range: 0 ~ 32768, default: 50, synchronized: yes]
-    I:CursedRingMonsterDamageDebuff=50
+    I:CursedRingMonsterDamageDebuff=80
 
     # List of entities that should never be affected by the Second Curse of Ring of the Seven Curses. Examples: minecraft:iron_golem, minecraft:zombified_piglin. Changing this option required game restart to take effect. [default: , synchronized: no]
     S:CursedRingNeutralAngerBlacklist <

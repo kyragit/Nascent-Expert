@@ -13,6 +13,7 @@
 			title: "The Beginning of a Tale"
 			x: 0.0d
 			y: 0.0d
+			shape: "hexagon"
 			description: [
 				"The amethyst in your hand tingles slightly. You sense something more lay ahead."
 				""
@@ -40,8 +41,9 @@
 			}]
 		}
 		{
-			x: 0.0d
+			x: 0.5d
 			y: -1.0d
+			shape: "hexagon"
 			description: ["In lieu of a better method, offer to the gods After to charge some Amethyst."]
 			dependencies: ["476B3F89A19F2F0E"]
 			id: "4DC2F0FB619D0587"
@@ -52,8 +54,9 @@
 			}]
 		}
 		{
-			x: 0.0d
+			x: -0.5d
 			y: 1.0d
+			shape: "hexagon"
 			description: ["Create some Amethyst dust by pulverizing Amethyst Shards with an explosion. "]
 			dependencies: ["476B3F89A19F2F0E"]
 			id: "2BE9BFEA37142DA2"
@@ -66,7 +69,8 @@
 		{
 			title: "Hexcaster's Staff"
 			x: 1.0d
-			y: -0.5d
+			y: 0.0d
+			shape: "hexagon"
 			description: [
 				"With this staff, you can siphon the Media brimming from After to draw upon the very fabric of reality itself."
 				""
@@ -89,7 +93,8 @@
 		}
 		{
 			x: -1.0d
-			y: 0.5d
+			y: 0.0d
+			shape: "hexagon"
 			description: ["A Scrying Lens is vital for performing more complex hexes. "]
 			dependencies: ["2BE9BFEA37142DA2"]
 			id: "76FEFD5780353032"
@@ -101,8 +106,9 @@
 		}
 		{
 			title: "Casting Items"
-			x: -1.0d
-			y: -0.5d
+			x: -0.5d
+			y: -1.0d
+			shape: "hexagon"
 			description: [
 				"Create a Cypher, Trinket, or Artifact to ease the monotony of casting the same hex again and again."
 				""
@@ -138,8 +144,9 @@
 		}
 		{
 			title: "Storing Iotas"
-			x: 1.0d
-			y: 0.5d
+			x: 0.5d
+			y: 1.0d
+			shape: "hexagon"
 			description: ["Create a Focus, or better yet, a Spellbook to store Iotas. Perhaps there could be a way to store entire spells in one Iota... all you would need then is a casting implement."]
 			dependencies: ["3220DB366B78A172"]
 			id: "12CE4FB371DB59C5"

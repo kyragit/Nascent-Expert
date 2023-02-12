@@ -225,6 +225,11 @@
 			"entity": "minecraft:item",
 			"count": 1,
 			"nbt": "{Age:-32768,Health:32767,Item:{Count:1,id:\"gateways:gate_pearl\",tag:{gateway:\"custom:wither\"}}}"
-		}
+		},
+        {
+            "type": "command",
+            "command":"kill @e[type=minecraft:bat,name=music_dummy]",
+            "desc": "..."
+        }
 	]
 }

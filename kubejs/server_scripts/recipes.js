@@ -18,6 +18,7 @@ ServerEvents.recipes(event => {
     paragliderRecipes(event)
     immersiveAircraftRecipes(event)
     aquacultureRecipes(event)
+    chunkLoaderRecipes(event)
 })
 
 // Blow up amethyst shards to get amethyst dust
@@ -29,6 +30,9 @@ LevelEvents.afterExplosion(event => {
             }
             if (entity.item.id == 'kubejs:star_of_quintessence') {
                 entity.block.popItem('kubejs:powdered_determination')
+            }
+            if (entity.item.id == 'treasurebags:treasure_bag' || entity.item.id == 'gateways:gate_pearl') {
+                event.removeAffectedEntity(entity)
             }
         }
     }
@@ -282,6 +286,34 @@ function createRecipes(event) {
             }
         ]
     })
+    event.custom({
+        type: 'create:crushing',
+        ingredients: [
+            {
+                item: 'create:crushed_aluminum_ore'
+            }
+        ],
+        processingTime: 250,
+        results: [
+            {
+                item: 'immersiveengineering:dust_aluminum'
+            }
+        ]
+    }).id('kubejs:crushed_aluminum_crushing')
+    event.custom({
+        type: 'create:crushing',
+        ingredients: [
+            {
+                item: 'immersiveengineering:ingot_aluminum'
+            }
+        ],
+        processingTime: 250,
+        results: [
+            {
+                item: 'immersiveengineering:dust_aluminum'
+            }
+        ]
+    }).id('kubejs:aluminum_ingot_crushing')
 
     const CRUSHED_ORES = [
         'iron',
@@ -766,34 +798,6 @@ function createRecipes(event) {
             }
         ]
     }).id('kubejs:diorite_milling')
-    event.custom({
-        type: 'create:milling',
-        ingredients: [
-            {
-                item: 'create:crushed_aluminum_ore'
-            }
-        ],
-        processingTime: 250,
-        results: [
-            {
-                item: 'immersiveengineering:dust_aluminum'
-            }
-        ]
-    }).id('kubejs:crushed_aluminum_milling')
-    event.custom({
-        type: 'create:milling',
-        ingredients: [
-            {
-                item: 'immersiveengineering:ingot_aluminum'
-            }
-        ],
-        processingTime: 250,
-        results: [
-            {
-                item: 'immersiveengineering:dust_aluminum'
-            }
-        ]
-    }).id('kubejs:aluminum_ingot_milling')
     event.custom({
         type: 'create:milling',
         ingredients: [
@@ -2213,6 +2217,13 @@ function immersiveEngineeringRecipes(event) {
         },
         time: 1800
     })
+    event.custom({
+        type: 'immersiveengineering:blast_furnace_fuel',
+        input: {
+            item: 'kubejs:industrial_fuel'
+        },
+        time: 600
+    })
 }
 
 function sophisticatedBackpacksRecipes(event) {
@@ -3349,6 +3360,7 @@ function miscRemovals(event) {
     event.remove({output: 'minecraft:ender_eye'})
     event.remove({id:'minecraft:pressing/zinc_sheet'})
     event.remove({mod:'immersive_armors'})
+    event.remove({mod:'laserio'})
 }
 
 function kubejsRecipes(event) {
@@ -3438,6 +3450,44 @@ function kubejsRecipes(event) {
         creosote: 500,
         time: 1800
     }).id('kubejs:bituminous_coal_coke_oven')
+    event.custom({
+        type: 'immersiveengineering:coke_oven',
+        result: {
+            item: 'kubejs:industrial_fuel'
+        },
+        input: {
+            item: 'kubejs:blaze_coated_charcoal'
+        },
+        creosote: 500,
+        time: 1800
+    }).id('kubejs:industrial_fuel_coke_oven')
+
+    event.custom({
+        type: 'create:mixing',
+        heatRequirement: 'heated',
+        ingredients: [
+            {
+                item: 'minecraft:charcoal'
+            },
+            {
+                item: 'minecraft:blaze_powder'
+            },
+            {
+                item: 'minecraft:blaze_powder'
+            },
+            {
+                item: 'minecraft:blaze_powder'
+            },
+            {
+                item: 'minecraft:blaze_powder'
+            }
+        ],
+        results: [
+            {
+                item: 'kubejs:blaze_coated_charcoal'
+            }
+        ]
+    }).id('kubejs:blaze_coated_charcoal_mixing')
 }
 
 function simpleStorageRecipes(event) {
@@ -3839,4 +3889,58 @@ function aquacultureRecipes(event) {
     for (let mat of ['wooden', 'stone', 'iron', 'gold', 'diamond']) {
         event.remove({id: `aquaculture:${mat}_fillet_knife`})
     }
+}
+
+function chunkLoaderRecipes(event) {
+    for (let type of ['basic', 'advanced', 'ultimate']) {
+        event.remove({id: `chunkloaders:${type}_chunk_loader`})
+    }
+    event.shaped(
+        'chunkloaders:basic_chunk_loader',
+        [
+            'AOA',
+            'OEO',
+            'AOA'
+        ],
+        {
+            A: 'create:andesite_alloy',
+            O: 'minecraft:obsidian',
+            E: 'minecraft:ender_pearl'
+        }
+    ).id('kubejs:basic_chunk_loader')
+    event.custom({
+        type: 'create:filling',
+        ingredients: [
+            {
+                item: 'chunkloaders:basic_chunk_loader'
+            },
+            {
+                fluid: 'kubejs:molten_brass',
+                amount: 144
+            }
+        ],
+        results: [
+            {
+                item: 'chunkloaders:advanced_chunk_loader'
+            }
+        ]
+    }).id('kubejs:advanced_chunk_loader')
+    event.custom({
+        type: 'create:filling',
+        ingredients: [
+            {
+                item: 'chunkloaders:advanced_chunk_loader'
+            },
+            {
+                fluid: 'create:potion',
+                nbt: '{Potion:"minecraft:swiftness"}',
+                amount: 1000
+            }
+        ],
+        results: [
+            {
+                item: 'chunkloaders:ultimate_chunk_loader'
+            }
+        ]
+    }).id('kubejs:ultimate_chunk_loader')
 }

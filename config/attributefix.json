@@ -55,14 +55,14 @@
         "value": 10000000
       }
     },
-    "doggytalents:generic.crit_bonus": {
+    "dungeons_gear:roll_limit": {
       "enabled": false,
       "min": {
         "default": 0,
         "value": 0
       },
       "max": {
-        "default": 1,
+        "default": 1024,
         "value": 10000000
       }
     },
@@ -74,6 +74,17 @@
       },
       "max": {
         "default": 64,
+        "value": 10000000
+      }
+    },
+    "doggytalents:generic.crit_bonus": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
         "value": 10000000
       }
     },
@@ -100,6 +111,17 @@
       }
     },
     "apotheosis:cold_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "dungeons_libraries:artifact_cooldown_multiplier": {
       "enabled": false,
       "min": {
         "default": 0,
@@ -187,6 +209,39 @@
         "value": 10000000
       }
     },
+    "dungeons_libraries:soul_cap": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "dungeons_libraries:magic_damage_multiplier": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "dungeons_libraries:life_steal": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
     "minecraft:generic.flying_speed": {
       "enabled": true,
       "min": {
@@ -199,6 +254,28 @@
       }
     },
     "forge:reach_distance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "dungeons_libraries:summon_cap": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "dungeons_gear:attack_reach": {
       "enabled": false,
       "min": {
         "default": 0,
@@ -297,6 +374,17 @@
         "value": 10000000
       }
     },
+    "dungeons_libraries:ranged_damage_multiplier": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
     "minecraft:zombie.spawn_reinforcements": {
       "enabled": true,
       "min": {
@@ -363,6 +451,17 @@
         "value": 10000000
       }
     },
+    "dungeons_libraries:soul_gathering": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
     "savage_and_ravage:explosive_damage_reduction": {
       "enabled": false,
       "min": {
@@ -404,6 +503,17 @@
       },
       "max": {
         "default": 20,
+        "value": 10000000
+      }
+    },
+    "dungeons_gear:roll_cooldown": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
         "value": 10000000
       }
     },

@@ -114,6 +114,7 @@
 			y: 0.0d
 			description: ["Infusing the Hellshelf seems to have only magnified its chaotic power. It seems to vibrate ever so slightly, as if being pushed from energies Beyond."]
 			dependencies: ["264E3CD91A0BC3C6"]
+			hide: true
 			id: "4E0F9A7A1E75F2DF"
 			tasks: [{
 				id: "04956E35D47B77AE"
@@ -126,6 +127,7 @@
 			y: -1.0d
 			description: ["Now one with the soul of a Blaze, the power of this shelf is frightening. It seems to create a sort of channel between the Overworld and beyond the Aether. One can only imagine what sort of beings must thrive in a place so full of Quanta."]
 			dependencies: ["4E0F9A7A1E75F2DF"]
+			hide: true
 			id: "1B9F9D1BBFD24E73"
 			tasks: [{
 				id: "497185F0FF15FAB9"
@@ -138,6 +140,7 @@
 			y: 1.0d
 			description: ["By reflecting Quantum energy off of glowstone, it's possible to magnify the Quanta to even greater heights. This seems to have a detrimental effect on Eterna, however. Perhaps it's somehow being burned away in the heat of all that Quanta."]
 			dependencies: ["4E0F9A7A1E75F2DF"]
+			hide: true
 			id: "5B9CB64285544223"
 			tasks: [{
 				id: "5052D3681731AA53"
@@ -180,6 +183,7 @@
 			y: 0.0d
 			description: ["By filtering out any Quanta during the Infusion process, the prismarine in the seashelf can be made even more... \"sticky\" to any passing Arcana. It acts something like a filter, only allowing Arcana to pass through."]
 			dependencies: ["67B9B09A5211E422"]
+			hide: true
 			id: "134BE35DCD086C14"
 			tasks: [{
 				id: "779B9FC386C40BE4"
@@ -192,6 +196,7 @@
 			y: -1.0d
 			description: ["By dissolving the soul of a Guardian, this shelf has truly staggering magical energy. It feels barely solid, almost like water held in place. This seems to magnify its ability to accept Arcana; it merely acts as a vessel for the energies from Within."]
 			dependencies: ["134BE35DCD086C14"]
+			hide: true
 			id: "03D4843910238343"
 			tasks: [{
 				id: "4EB15690D0046D68"
@@ -204,6 +209,7 @@
 			y: 1.0d
 			description: ["Prismarine crystals have a different behavior, it would seem. They reflect Arcana, directing it more strongly into a single point. This seems to have the opposite effect for Eterna, however... evidently the forces Within aren't pleased when meddled with like this."]
 			dependencies: ["134BE35DCD086C14"]
+			hide: true
 			id: "4D8CEB7537842876"
 			tasks: [{
 				id: "356D792FE5C043FF"

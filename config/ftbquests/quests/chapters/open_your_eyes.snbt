@@ -45,6 +45,8 @@
 				"Equipping this ring will make the game VASTLY more difficult. You will deal less and take more damage, neutral mobs will be hostile, and most importantly, you will lose maximum health every time you die (unless you return to retrieve your soul). Oh, and did I mention that once equipped it is bound to you forever?"
 				""
 				"That being said, bearers of the Curses are granted access to artifacts of the gods themselves - if they can survive the challenge."
+				""
+				"(Currently, most of the special rewards for the ring are unimplemented. Only equip it if you enjoy torturing yourself.)"
 			]
 			dependencies: ["54AABF574DEEFF57"]
 			id: "562B95C0055CD04A"

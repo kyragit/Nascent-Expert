@@ -1,7 +1,7 @@
 {
 	id: "5658CC0093FF9CC1"
 	group: "36C3CA17FE4F12AD"
-	order_index: 1
+	order_index: 0
 	filename: "medieval_progression"
 	title: "Medieval Progression"
 	icon: "summoningrituals:altar"
@@ -12,9 +12,11 @@
 		{
 			x: 0.0d
 			y: 3.0d
+			shape: "diamond"
 			description: ["You have proven yourself capable. With this alloy, great technology will be constructed."]
 			dependencies: ["2F56A483E8CF2367"]
 			hide: true
+			size: 1.25d
 			id: "7B2817643B1C1080"
 			tasks: [{
 				id: "04164AD84D144867"
@@ -95,6 +97,7 @@
 			x: -3.5d
 			y: -7.0d
 			description: ["Open a gateway and summon the Swampjaw, a bony beast from a moss-filled place."]
+			size: 1.25d
 			id: "7716B343B0B187BA"
 			tasks: [{
 				id: "2F2408B49478A4A6"
@@ -113,6 +116,7 @@
 			x: 0.0d
 			y: -7.0d
 			description: ["Something about this Gate Pearl is unsettling. You're not sure what, though..."]
+			size: 1.25d
 			id: "2ADC2356E08232BF"
 			tasks: [{
 				id: "022C95A5AA9BFE38"
@@ -135,6 +139,7 @@
 				""
 				"The recipe(s) for the Dame Fortuna Gate Pearl are randomly generated per-world. "
 			]
+			size: 1.25d
 			id: "79A84972F2690DEB"
 			tasks: [{
 				id: "18981E6A91F9C905"

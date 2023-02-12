@@ -1,0 +1,5 @@
+autoJump:false
+key_key.elenaidodge2.dodge:key.keyboard.left.alt
+key_key.ftbquests.quests:key.keyboard.grave.accent
+key_create.keyinfo.toolmenu:key.keyboard.unknown
+key_create.keyinfo.toolbelt:key.keyboard.unknown

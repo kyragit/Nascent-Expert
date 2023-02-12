@@ -1,0 +1,30 @@
+{
+	id: "107663CAA48E8258"
+	group: "52DC2EC078E51292"
+	order_index: 1
+	filename: "generating_resources"
+	title: "Generating Resources"
+	icon: "create:crushed_iron_ore"
+	subtitle: ["Producing everything, automatically."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [{
+		icon: "minecraft:cobblestone"
+		x: 0.0d
+		y: 0.0d
+		description: [
+			"Many basic resources originate from some sort of stone. Each stone type has specific conditions to generate, such as biome or blocks nearby. This information can be found in JEI."
+			""
+			"You will need to find ways to collect and transport these back to your base."
+		]
+		dependencies: ["1C329DDA761BAD72"]
+		hide: true
+		id: "4774EB5A4FC967B1"
+		tasks: [{
+			id: "7C6A2DD00AD506DF"
+			type: "checkmark"
+			title: "Generating Stone Types"
+		}]
+	}]
+	quest_links: [ ]
+}
