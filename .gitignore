@@ -19,3 +19,4 @@ servers.dat_old
 usercache.json
 usernamecache.json
 *.bak
+*.log

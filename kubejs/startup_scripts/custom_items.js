@@ -44,6 +44,22 @@ StartupEvents.registry('item', event => {
     event.create('lavaproof_brick')
     event.create('unfinished_blast_brick')
     event.create('ingot_mold')
+    event.create('soul_of_a_pirate')
+        .rarity('rare')
+        .glow(true)
+    event.create('effervescent_snowflake')
+        .rarity('rare')
+        .glow(true)
+    event.create('pharaohs_ankh')
+        .rarity('rare')
+        .glow(true)
+        .displayName('Pharaoh\'s Ankh')
+    event.create('mark_of_the_accursed')
+        .rarity('rare')
+        .glow(true)
+    event.create('eye_of_revelation')
+        .rarity('epic')
+        .glow(true)
     event.create('industrial_fuel')
         .burnTime(6400)
     event.create('blaze_coated_charcoal')
@@ -54,6 +70,53 @@ StartupEvents.registry('item', event => {
         .glow(true)
         .tooltip({text:"This seems like a bad idea...",color:"dark_purple"})
         .unstackable()
+    event.create('staff_of_gaea')
+        .rarity('rare')
+        .tooltip({text:"The power of life at your fingertips. Consumes leaves or seeds to function.", color:"#00930C"})
+        .unstackable()
+        .useAnimation('bow')
+        .useDuration(item => 72000)
+        .use((level, player, hand) => {
+            let tryTakeLeaves = function(p) {
+                let slot = p.inventory.find('#minecraft:leaves')
+                if (slot == -1) {
+                    if (p.inventory.find('#forge:seeds') != -1) {
+                        slot = p.inventory.find('#forge:seeds')
+                    } else {
+                        return false
+                    }
+                }
+                p.inventory.extractItem(slot, 1, false)
+                return true
+            }
+            if (tryTakeLeaves(player)) {
+                player.data.add('gaea_blessing_active', true)
+                let recurse = function(p) {
+                    if (p.data.getOrDefault('gaea_blessing_active', false)) {
+                        if (tryTakeLeaves(p)) {
+                            Utils.server.scheduleInTicks(15, later => {
+                                Utils.server.runCommandSilent(`execute at ${p.username} run summon insanelib:area_effect_cloud_3d ~ ~ ~ {ReapplicationDelay:30,Particle:"minecraft:dust 0.25 1.0 0.25 0.5",CustomName:\'{"text":"Gaea\\\'s Blessing"}\',Radius:10.0f,Duration:15,Effects:[{"forge:id":"minecraft:regeneration",Duration:60,Amplifier:1,Ambient:0b,ShowParticles:1b,ShowIcon:1b}]}`)
+                                recurse(p)
+                            })
+                        } else {
+                            p.stopUsingItem()
+                        }
+                    }
+                }
+                recurse(player)
+                return true
+            } else {
+                return false
+            }
+        })
+        .finishUsing((itemstack, level, entity) => {
+            return itemstack
+        })
+        .releaseUsing((itemstack, level, entity, tick) => {
+            if (entity.player) {
+                entity.data.add('gaea_blessing_active', false)
+            }
+        })
 })
 
 ItemEvents.modification(event => {

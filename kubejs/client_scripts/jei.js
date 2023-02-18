@@ -172,6 +172,12 @@ JEIEvents.information(event => {
     event.addItem('hexcasting:amethyst_dust', 'Can be created by exploding amethyst shards.')
     event.addItem('kubejs:star_of_quintessence', 'Can be powderized with an explosion.')
     event.addItem('create:andesite_alloy', 'They say that with enough determination, anything is possible...')
+    event.addItem('endrem:nether_eye', 'In the nether, right click a block of netherite with an eye of ender while having the blessing of a fire shrine.')
+    event.addItem('endrem:undead_eye', 'Give a zombie villager an eye of ender.')
+    event.addItem('endrem:guardian_eye', 'Right click a guardian with an eye of ender while having the blessing of a water shrine.')
+
+    event.addItem('kubejs:mark_of_the_accursed', [Text.string('Equip an item with the ').append(Text.red('Curse of Binding')).append('.').component()])
+    event.addItem('kubejs:eye_of_revelation', [Text.string('Decrypt the ').append(Text.green('writings of the ancients')).append('.').component()])
 })
 
 ItemEvents.tooltip(event => {

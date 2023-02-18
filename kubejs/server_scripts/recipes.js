@@ -19,6 +19,7 @@ ServerEvents.recipes(event => {
     immersiveAircraftRecipes(event)
     aquacultureRecipes(event)
     chunkLoaderRecipes(event)
+    endRemRecipes(event)
 })
 
 // Blow up amethyst shards to get amethyst dust
@@ -2597,7 +2598,7 @@ function gatewayRecipes(event) {
     const RANDOM_ITEMS_1 = ['3x minecraft:rabbit_foot', '16x minecraft:prismarine_shard', '16x minecraft:prismarine_crystals', '2x minecraft:nautilus_shell', '16x minecraft:honeycomb', '3x minecraft:name_tag']
     const RANDOM_ITEMS_2 = ['4x minecraft:poisonous_potato', '8x minecraft:golden_carrot', '4x minecraft:pumpkin_pie', '8x minecraft:glistering_melon_slice', '4x minecraft:pufferfish', '4x minecraft:beetroot_soup', '8x minecraft:glow_berries']
     const RANDOM_ITEMS_3 = ['#quark:runes', '2x #forge:heads', '#minecraft:music_discs', '2x minecraft:totem_of_undying']
-    const RANDOM_ITEMS_4 = ['minecraft:trident', /*'savage_and_ravage:wand_of_freezing',*/ 'alexsmobs:tendon_whip', 'alexsmobs:blood_sprayer', /*'savage_and_ravage:cleaver_of_beheading'*/]
+    const RANDOM_ITEMS_4 = ['minecraft:trident', 'savage_and_ravage:wand_of_freezing', 'alexsmobs:tendon_whip', 'alexsmobs:blood_sprayer', 'savage_and_ravage:cleaver_of_beheading']
     const RANDOM_ITEMS_5 = ['64x ecologics:azalea_log', '64x minecraft:mangrove_log', '64x byg:aspen_log', '64x byg:cherry_log', '64x byg:jacaranda_log', '64x byg:maple_log', '64x byg:holly_log', '64x byg:fir_log']
     const RANDOM_ITEMS_6 = ['3x minecraft:netherite_ingot', '8x #forge:storage_blocks/iron', '8x #forge:storage_blocks/gold', '8x #forge:storage_blocks/copper', '4x #forge:storage_blocks/diamond', '8x #forge:storage_blocks/aluminum', '8x #forge:storage_blocks/silver', '8x #forge:storage_blocks/lead', '8x #forge:storage_blocks/nickel', '4x #forge:storage_blocks/uranium']
     const RANDOM_ITEMS_7 = ['16x #minecraft:candles', '64x #forge:stained_glass_panes', '64x #minecraft:wool_carpets', '64x #forge:concrete', '64x #forge:dyes', '16x #quark:corundum', '8x #the_bumblezone:super_candles', '16x #fairylights:lights', '8x #cfm:general']
@@ -3361,6 +3362,7 @@ function miscRemovals(event) {
     event.remove({id:'minecraft:pressing/zinc_sheet'})
     event.remove({mod:'immersive_armors'})
     event.remove({mod:'laserio'})
+    event.remove({mod:'endrem'})
 }
 
 function kubejsRecipes(event) {
@@ -3488,6 +3490,38 @@ function kubejsRecipes(event) {
             }
         ]
     }).id('kubejs:blaze_coated_charcoal_mixing')
+
+    event.custom({
+        type: 'create:mixing',
+        heatRequirement: 'heated',
+        ingredients: [
+            {
+                item: 'minecraft:ender_pearl'
+            },
+            {
+                item: 'minecraft:blaze_powder'
+            },
+            {
+                item: 'minecraft:blaze_powder'
+            },
+            {
+                item: 'minecraft:blaze_powder'
+            },
+            {
+                item: 'minecraft:blaze_powder'
+            },
+            {
+                fluid: 'create:potion',
+                amount: 1000,
+                nbt: '{Potion:"minecraft:long_invisibility"}'
+            }
+        ],
+        results: [
+            {
+                item: 'minecraft:ender_eye'
+            }
+        ]
+    }).id('kubejs:ender_eye_mixing')
 }
 
 function simpleStorageRecipes(event) {
@@ -3943,4 +3977,89 @@ function chunkLoaderRecipes(event) {
             }
         ]
     }).id('kubejs:ultimate_chunk_loader')
+}
+
+function endRemRecipes(event) {
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('kubejs:soul_of_a_pirate'))
+        .itemOutput(Item.of('endrem:black_eye'))
+        .input(Ingredient.of('minecraft:ender_eye', 4))
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('kubejs:effervescent_snowflake'))
+        .itemOutput(Item.of('endrem:cold_eye'))
+        .input(Ingredient.of('minecraft:ender_eye', 4))
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('kubejs:pharaohs_ankh'))
+        .itemOutput(Item.of('endrem:old_eye'))
+        .input(Ingredient.of('minecraft:ender_eye', 4))
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('kubejs:mark_of_the_accursed'))
+        .itemOutput(Item.of('endrem:cursed_eye'))
+        .input(Ingredient.of('minecraft:ender_eye', 4))
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('bygonenether:warped_ender_pearl'))
+        .itemOutput(Item.of('endrem:corrupted_eye'))
+        .input(Ingredient.of('minecraft:ender_eye', 4))
+        .input(Ingredient.of('minecraft:gilded_blackstone', 4))
+        .input(Ingredient.of('minecraft:netherite_ingot', 4))
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('minecraft:rabbit_foot'))
+        .itemOutput(Item.of('endrem:evil_eye'))
+        .input(Ingredient.of('minecraft:ender_eye', 4))
+        .sacrifice('minecraft:rabbit', 16)
+        .sacrifice('minecraft:villager', 4)
+        .sacrificeRegion(10, 3)
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('hexcasting:uuid_colorizer'))
+        .itemOutput(Item.of('endrem:magical_eye'))
+        .input(Ingredient.of('minecraft:ender_eye', 4))
+        .input(Ingredient.of('hexcasting:edified_log', 4))
+        .blockBelow('minecraft:budding_amethyst')
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('minecraft:nether_star'))
+        .itemOutput(Item.of('endrem:wither_eye'))
+        .input(Ingredient.of('minecraft:ender_eye', 4))
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('minecraft:spider_eye'))
+        .itemOutput(Item.of('endrem:witch_eye'))
+        .input(Ingredient.of('minecraft:ender_eye', 4))
+        .sacrifice('minecraft:witch', 4)
+        .sacrificeRegion(5, 3)
+        .mobOutput(
+            SummoningOutput.mob('minecraft:potion')
+                .data({Item:{Count:1,id:"minecraft:potion",tag:{CustomPotionEffects:[{Id:19,Amplifier:2,Duration:600,Ambient:0,ShowParticles:1,ShowIcon:1}],CustomPotionColor:2212428}}})
+        )
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('minecraft:conduit'))
+        .itemOutput(Item.of('endrem:exotic_eye'))
+        .input(Ingredient.of('minecraft:ender_eye', 4))
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('kubejs:eye_of_revelation'))
+        .itemOutput(Item.of('endrem:cryptic_eye'))
+        .input(Ingredient.of('minecraft:ender_eye', 4))
+
+    event.recipes.minecraft.smithing(
+        'endrem:lost_eye',
+        'minecraft:ender_eye',
+        '#custom:artifact_weapons'
+    ).id('kubejs:lost_eye_smithing')
+
+    event.custom({
+        type: 'create:filling',
+        ingredients: [
+            {
+                item: 'minecraft:ender_eye'
+            },
+            {
+                fluid: 'create:potion',
+                amount: 1000,
+                nbt: '{Potion:"alexsmobs:poison_resistance"}'
+            }
+        ],
+        results: [
+            {
+                item: 'endrem:rogue_eye'
+            }
+        ]
+    }).id('kubejs:rogue_eye_filling')
 }

@@ -451,17 +451,6 @@
         "value": 10000000
       }
     },
-    "dungeons_libraries:soul_gathering": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 10000000
-      }
-    },
     "savage_and_ravage:explosive_damage_reduction": {
       "enabled": false,
       "min": {
@@ -470,6 +459,17 @@
       },
       "max": {
         "default": 1,
+        "value": 10000000
+      }
+    },
+    "dungeons_libraries:soul_gathering": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
         "value": 10000000
       }
     },

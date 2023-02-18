@@ -37,9 +37,6 @@ ServerEvents.tags('item', event => {
     //     event.add('forge:natural_alloy_gem', item)
     // }
 
-    event.add('savage_and_ravage:explosion_immune', 'treasurebags:treasure_bag')
-    event.add('savage_and_ravage:explosion_immune', 'gateways:gate_pearl')
-
     event.remove('forge:ores/nickel', ['geolosys:limonite_ore', 'geolosys:deepslate_limonite_ore'])
     event.remove('forge:ores/emerald', ['geolosys:teallite_ore', 'geolosys:deepslate_teallite_ore'])
     event.remove('forge:ores/osmium', ['geolosys:platinum_ore', 'geolosys:deepslate_platinum_ore'])
@@ -51,6 +48,34 @@ ServerEvents.tags('item', event => {
 
     for (let id of Ingredient.of('#regions_unexplored:logs').getItemIds()) {
         event.add('minecraft:logs', id)
+    }
+    for (let id of Ingredient.of(/^regions_unexplored:.*leaves/).getItemIds()) {
+        event.add('minecraft:leaves', id)
+    }
+    let swords = [
+        'watcher_claymore',
+        'storms_edge',
+        'stormbringer',
+        'bramblethorn',
+        'watching_warglaive',
+        'toxic_longsword',
+        'emberblade',
+        'hearthflame',
+        'soulkeeper',
+        'twisted_blade',
+        'soulstealer',
+        'soulrender',
+        'soulpyre',
+        'frostfall',
+        'molten_edge',
+        'livyatan',
+        'icewhisper',
+        'arcanethyst',
+        'thunderbrand',
+        'mjolnir',
+    ]
+    for (let sword of swords) {
+        event.add('custom:artifact_weapons', `simplyswords:${sword}`)
     }
 })
 

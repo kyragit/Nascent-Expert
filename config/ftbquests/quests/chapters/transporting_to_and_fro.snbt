@@ -88,6 +88,77 @@
 				title: "Loading Chunks with Barges/Locomotives"
 			}]
 		}
+		{
+			title: "Trains"
+			x: 2.0d
+			y: 0.0d
+			description: [
+				"Soon, you will need to transport thousands of items across the lands. You will need more permanent infrastructure."
+				""
+				"Create's trains are perfect. They can store very large amounts of items or fluids, and can be part of complex logistics networks."
+				""
+				"Make a train casing to get started. "
+			]
+			dependencies: ["3398AA7353EEC6C8"]
+			id: "5CC96150E830E856"
+			tasks: [{
+				id: "2A94E1231D958602"
+				type: "item"
+				item: "create:railway_casing"
+			}]
+		}
+		{
+			title: "Deep Storage"
+			x: 2.0d
+			y: -2.0d
+			description: ["While not exclusive to trains, item vaults are particularly useful for them. They can store many stacks of one kind of item, perfect for all that stone."]
+			dependencies: ["5CC96150E830E856"]
+			id: "797951E905A4B09F"
+			tasks: [{
+				id: "69C72BF34D076406"
+				type: "item"
+				item: "create:item_vault"
+			}]
+		}
+		{
+			title: "Train Basics"
+			icon: "create:track"
+			x: 4.0d
+			y: 0.0d
+			description: [
+				"Create has excellent tutorials with its \"ponder\" feature, so this will be brief. "
+				""
+				"First, place down some tracks. Then, click the track with a train station and place it down. You can now create a new train."
+				""
+				"Right-click the track with a train casing to make a new bogey. You can now build the train off of that (super glue will be useful). Then put some train controls on the train."
+				""
+				"You can either drive the trains manually or seat a mob of some variety behind the controls and give them a schedule."
+			]
+			dependencies: ["5CC96150E830E856"]
+			id: "730CCCAB340DAE71"
+			tasks: [{
+				id: "6F123A3CD36C3FC7"
+				type: "checkmark"
+				title: "Train Basics"
+			}]
+		}
+		{
+			icon: "create:train_door"
+			x: 2.0d
+			y: 2.0d
+			description: [
+				"To all the talented builders out there, trains can be decorated to your heart's content. Train doors placed on them will open when the train stops."
+				""
+				"Any steam whistles on it will also go off when the train stops. Make your boring logistics lively!"
+			]
+			dependencies: ["5CC96150E830E856"]
+			id: "361CDCC4F417E304"
+			tasks: [{
+				id: "4A1365E899600D32"
+				type: "checkmark"
+				title: "Beautify"
+			}]
+		}
 	]
 	quest_links: [ ]
 }

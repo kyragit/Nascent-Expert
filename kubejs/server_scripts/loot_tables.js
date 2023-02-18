@@ -10,6 +10,9 @@ ServerEvents.genericLootTables(event => {
     lostCastleLootTables(event)
     idasLootTables(event)
     minecraftLootTables(event)
+    bygoneNetherLootTables(event)
+    graveyardLootTables(event)
+    dungeonsEnhancedLootTables(event)
 })
 
 ServerEvents.blockLootTables(event => {
@@ -24,6 +27,7 @@ LootJS.modifiers(event => {
     event.disableWitherStarDrop()
     // Stops all eyes of ender generating as loot, anywhere
     event.addLootTableModifier(/.*/).removeLoot('minecraft:ender_eye').removeLoot(/create:(?:andesite_alloy|goggles|wrench|gearbox|large_cogwheel|cogwheel|shaft)/)
+    event.addLootTableModifier(/^endrem:.*/).removeLoot(/.*/)
 })
 
 const PLENTIFUL = 'custom:loot_plentiful'
@@ -62,7 +66,8 @@ function createUniversalLootTables(event) {
         ['artifacts:power_glove', 1],
         ['artifacts:feral_claws', 1],
         ['artifacts:crystal_heart', 1],
-        ['kubejs:portable_black_hole', 1]
+        ['kubejs:portable_black_hole', 3],
+        ['kubejs:staff_of_gaea', 3],
     ]
 
     const ARTIFACT_CHARMS = [
@@ -184,6 +189,8 @@ function createUniversalLootTables(event) {
 
     const LORE_BOOKS = [
         Item.of('minecraft:written_book', '{author:"Unknown",pages:[\'{"text":">AUTOMATIC LOG ENTRY\\\\n>14:30:34 7/3/9727\\\\n>SUBSYSTEM 366E\\\\n>\\\\n>OVERWORLD INFRACTIONS DETECTED: 1\\\\n>NETHER INFRACTIONS DETECTED: 0\\\\n>END INFRACTIONS DETECTED: 0\\\\n>BEFORE INFRACTIONS DETECTED: 0\\\\n"}\',\'{"text":">BEYOND INFRACTIONS DETECTED: 0\\\\n>WITHIN INFRACTIONS DETECTED: 0\\\\n>AFTER INFRACTIONS DETECTED: 1,802\\\\n>OTHER INFRACTIONS DETECTED: 0\\\\n>DETERMINED THREAT PRIORITY: LOW\\\\n>ACTIONS TAKEN: 5\\\\n>ACTIONS SUCCESSFUL: 5"}\',\'{"text":">LOG ENTRY DESCRIPTION AGENT: A-376-B\\\\n>DESCRIPTION:\\\\n1,798 Threats in After determined non-actionable. The 4 remaining threats in After were forwarded to subsystem 13A. One overworld threat estimated to be an attempted unauthorized entry"}\',\'{"text":"into After United Minds spacetime. Entry was successfully blocked and countermeasures were taken, including automated electric strikes at the estimated area of infraction and deployment of AUM vehicles. Threat determined to be terminated.\\\\n>END LOG"}\'],title:"LOG ENTRY"}'),
+        Item.of('minecraft:written_book', '{author:"Unknown Explorer",pages:[\'{"text":"1st Full Moon,\\\\n2599\\\\n\\\\nThe scorching desert heat gives way to fleeting comfort as the sun sets. The days have been long and draining, but my determination is undeterred. If I am to verify these rumors, I must adapt to these harsh conditions."}\',\'{"text":"1st Waning Gibbous,\\\\n2599\\\\n\\\\nA miracle or a mirage? In the distance, a faint outline; hope. If my eyes do not decieve me, a structure on the horizon. Tomorrow will bring answers."}\',\'{"text":"1st Last Quarter,\\\\n2599\\\\n\\\\nIt is no mirage. Before me is the grandest palace this side of the Alles; pristinely maintained with chromatic paint and lush trees. It is raised very far above the ground and vastly oversized, as if not built for my kind."}\',\'{"text":"The architecture is supremely advanced, with towers capped in bulbous domes and golden spires. It looks as though it was dropped here from another time. My heart races at the thought of exploring its every crevice."}\',\'{"text":"1st Waning Crescent,\\\\n2599\\\\n\\\\nI write this hidden in one of the many corners of this grand palace, for it seems it was not as unguarded as I had hoped. I am lucky to be well-prepared for such an encounter, but I will have to explore carefully."}\',\'{"text":"Already, I have stumbled across masterfully crafted and enchanted weapons and armor; if only I could carry it all back home. Nevertheless, my exploration will continue."}\',\'{"text":"2nd New Moon,\\\\n2599\\\\n\\\\nI have discovered something truly awful and marvelous. At the very peak of one of its mighty towers, a weapon unlike any I have seen. It is a halberd, and it surges with the power of thunder itself! Not only that, when wielded"}\',\'{"text":"and charged, it vaults me forward and through any foes in my path, killing them near instantly. I cannot risk losing such an artifact; I will bring it back immediately, along with a story unlike any other."}\'],title:"Lost Journal"}'),
+        Item.of('minecraft:written_book', '{author:"A.C.P.C.G.",pages:[\'{"text":"Analysis on the Origin and Composition of the Spellstones\\\\n\\\\n\\\\nReport by the Alleq City Planar Communications Guild\\\\n\\\\n\\\\n\\\\n\\\\n\\\\nPublished 3991"}\',\'{"text":"Much discussion has been had regarding the Spellstones that the Guild has recently acquired from an unknown donor. Until recently, these were only known about from ancient writings and oral history (with one exception). This analysis hopes to demystify these items and their origin."}\',\'{"text":"The Guild now has three of these Spellstones, though it is now deemed probable that at least four exist. The following pages will describe each in detail."}\',\'{"text":"Will of the Ocean\\\\n\\\\nThis is the Spellstone with the earliest known written evidence of its existence, due to its relatively straightforward location. Its first appearance in the Overworld was very likely deep in the ocean, in the now-ruined ancient"}\',\'{"text":"monuments. Who created these monuments remains a mystery, though some oral accounts claim a group called the \\\\"guardians\\\\" were responsible. Regardless, what is known about this artifact is what it is made of; highly concentrated prismarine. It almost"}\',\'{"text":"certainly has some sort of power source in the center, but the Guild has elected not to destroy it to find out. The artifact has a very strong connection to Within, and it is hypothesized that the Spellstone itself is a conscious being, though this remains controversial. Little more is known of"}\',\'{"text":"its creation because of the difficulty inherent to studying Within. "}\',\'{"text":"Blazing Core\\\\n\\\\nThis Spellstone was first created in Beyond, and as such extra care had to be taken when handling it. It was likely crafted by the Beyond Mind itself, for the express purpose of luring in treasure hunters. And lure it did, for its first "}\',\'{"text":"documented discovery was in the Nether (during the Beyond occupation period). Its construction is not known exactly, but it seems to be made of some biological material. Perhaps it is best left unknown. "}\',\'{"text":"Heart of the Golem\\\\n\\\\nThis Spellstone is certainly the most well-known due to the public nature of its discovery and theft. Of course, it was first found in the Zamir Forest incident of 2656, before going missing for centuries. The Guild will not comment on the "}\',\'{"text":"controversy surrounding this event. This artifact is from Before, as it is a Golem\\\'s power source. It is made from what has now been dubbed \\\\"golemite\\\\". Many more of these likely exist, as it is now known that the Golems were prolific planar travellers. "}\',\'{"text":"Hypothesized Fourth Spellstone\\\\n\\\\nIt seems very likely that another Spellstone with connections to After exists. However, due to the current political climate, the Guild has elected not to publish any unverified hypotheses."}\'],title:"On Spellstones"}'),
     ]
 
     event.addGeneric('custom:lore_book', loot => {
@@ -503,14 +510,17 @@ function dungeonsAriseLootTables(event) {
     dungeonsAriseLoot(event, 'heavenly_rider/heavenly_rider_treasure', EPIC)
     addItemToLootTable(event, 'dungeons_arise:chests/heavenly_conqueror/heavenly_conqueror_treasure', 'enigmaticlegacy:angel_blessing', 0.5, 1)
     dungeonsAriseLoot(event, 'illager_corsair/illager_corsair_treasure', EPIC)
+    addItemToLootTable(event, 'dungeons_arise:chests/illager_corsair/illager_corsair_treasure', 'kubejs:soul_of_a_pirate', 0.5, 1)
     dungeonsAriseLoot(event, 'illager_fort/illager_fort_barrels', PLENTIFUL)
     dungeonsAriseLoot(event, 'illager_fort/illager_fort_normal', COMMON)
     dungeonsAriseLoot(event, 'illager_fort/illager_fort_treasure', EPIC)
     dungeonsAriseLoot(event, 'illager_galley/illager_galley_treasure', RARE)
+    addItemToLootTable(event, 'dungeons_arise:chests/illager_galley/illager_galley_treasure', 'kubejs:soul_of_a_pirate', 0.5, 1)
     dungeonsAriseLoot(event, 'illager_windmill/illager_windmill_barrels', COMMON)
     dungeonsAriseLoot(event, 'illager_windmill/illager_windmill_treasure', EPIC)
     dungeonsAriseLoot(event, 'infested_temple/infested_temple_top_treasure', EPIC)
     addItemToLootTable(event, 'dungeons_arise:chests/infested_temple/infested_temple_top_treasure', 'simplyswords:bramblethorn', 0.17, 1)
+    addItemToLootTable(event, 'dungeons_arise:chests/infested_temple/infested_temple_top_treasure', 'kubejs:effervescent_snowflake', 0.2, 1)
     dungeonsAriseLoot(event, 'infested_temple/infested_temple_room_bookshelf', UNCOMMON)
     dungeonsAriseLoot(event, 'infested_temple/infested_temple_room_forge', RARE)
     dungeonsAriseLoot(event, 'infested_temple/infested_temple_room_garden', COMMON)
@@ -542,8 +552,12 @@ function dungeonsAriseLootTables(event) {
     dungeonsAriseLoot(event, 'keep_kayra/keep_kayra_normal', COMMON)
     dungeonsAriseLoot(event, 'keep_kayra/keep_kayra_treasure', EPIC)
     dungeonsAriseLoot(event, 'keep_kayra/keep_kayra_library_normal', UNCOMMON)
+    addToLootTable(event, 'dungeons_arise:chests/keep_kayra/keep_kayra_library_normal', 'custom:secret_book', 0.03, 1)
+    addToLootTable(event, 'dungeons_arise:chests/keep_kayra/keep_kayra_library_normal', 'custom:lore_book', 0.1, 1)
     dungeonsAriseLoot(event, 'keep_kayra/keep_kayra_library_treasure', EPIC)
     addItemToLootTable(event, 'dungeons_arise:chests/keep_kayra/keep_kayra_library_treasure', 'simplyswords:soulpyre', 0.25, 1)
+    addToLootTable(event, 'dungeons_arise:chests/keep_kayra/keep_kayra_library_treasure', 'custom:secret_book', 0.1, 1)
+    addToLootTable(event, 'dungeons_arise:chests/keep_kayra/keep_kayra_library_treasure', 'custom:lore_book', 0.1, 1)
     dungeonsAriseLoot(event, 'keep_kayra/keep_kayra_garden_normal', RARE)
     addItemToLootTable(event, 'dungeons_arise:chests/keep_kayra/keep_kayra_garden_normal', 'enigmaticlegacy:animal_guidebook', 0.2, 1)
     dungeonsAriseLoot(event, 'keep_kayra/keep_kayra_garden_treasure', LEGENDARY)
@@ -552,6 +566,8 @@ function dungeonsAriseLootTables(event) {
     dungeonsAriseLoot(event, 'shiraz_palace/shiraz_palace_normal', COMMON)
     dungeonsAriseLoot(event, 'shiraz_palace/shiraz_palace_rooms', UNCOMMON)
     dungeonsAriseLoot(event, 'shiraz_palace/shiraz_palace_library', RARE)
+    addToLootTable(event, 'dungeons_arise:chests/shiraz_palace/shiraz_palace_library', 'custom:secret_book', 0.1, 1)
+    addToLootTable(event, 'dungeons_arise:chests/shiraz_palace/shiraz_palace_library', 'custom:lore_book', 0.1, 1)
     dungeonsAriseLoot(event, 'shiraz_palace/shiraz_palace_gardens', UNCOMMON)
     dungeonsAriseLoot(event, 'shiraz_palace/shiraz_palace_towers', UNCOMMON)
     dungeonsAriseLoot(event, 'shiraz_palace/shiraz_palace_treasure', LEGENDARY)
@@ -569,6 +585,7 @@ function dungeonsAriseLootTables(event) {
     addItemToLootTable(event, 'dungeons_arise:chests/thornborn_towers/thornborn_towers_top_treasure', 'enigmaticlegacy:animal_guidebook', 0.25, 1)
     dungeonsAriseLoot(event, 'typhon/typhon_treasure', EPIC)
     dungeonsAriseLoot(event, 'undead_pirate_ship/undead_pirate_ship_treasure', EPIC)
+    addItemToLootTable(event, 'dungeons_arise:chests/undead_pirate_ship/undead_pirate_ship_treasure', 'kubejs:soul_of_a_pirate', 0.5, 1)
 }
 
 function dimDungeonsLootTables(event) {
@@ -600,11 +617,15 @@ function yungsLootTables(event) {
     addToLootTable(event, 'betterdeserttemples:chests/food_storage', COMMON, 1, 1)
     addToLootTable(event, 'betterdeserttemples:chests/lab', RARE, 1, 1)
     addToLootTable(event, 'betterdeserttemples:chests/library', UNCOMMON, 1, 1)
+    addToLootTable(event, 'betterdeserttemples:chests/library', 'custom:secret_book', 0.05, 1)
+    addToLootTable(event, 'betterdeserttemples:chests/library', 'custom:lore_book', 0.1, 1)
     addToLootTable(event, 'betterdeserttemples:chests/pharaoh_hidden', LEGENDARY, 1, 1)
+    addItemToLootTable(event, 'betterdeserttemples:chests/pharaoh_hidden', 'kubejs:pharaohs_ankh', 0.67, 1)
     addToLootTable(event, 'betterdeserttemples:chests/statue', RARE, 1, 1)
     addToLootTable(event, 'betterdeserttemples:chests/storage', PLENTIFUL, 1, 1)
     addToLootTable(event, 'betterdeserttemples:chests/tomb', RARE, 1, 1)
     addToLootTable(event, 'betterdeserttemples:chests/tomb_pharaoh', EPIC, 1, 1)
+    addItemToLootTable(event, 'betterdeserttemples:chests/tomb_pharaoh', 'kubejs:pharaohs_ankh', 0.25, 1)
 }
 
 function dugeonsPlusLootTables(event) {
@@ -612,6 +633,7 @@ function dugeonsPlusLootTables(event) {
     addToLootTable(event, 'dungeons_plus:chests/leviathan/rare', EPIC, 1, 1)
     addToLootTable(event, 'dungeons_plus:chests/snowy_temple/common', COMMON, 1, 1)
     addToLootTable(event, 'dungeons_plus:chests/snowy_temple/rare', EPIC, 1, 1)
+    addItemToLootTable(event, 'dungeons_plus:chests/snowy_temple/rare', 'kubejs:effervescent_snowflake', 0.45, 1)
     addToLootTable(event, 'dungeons_plus:chests/soul_prison/common', UNCOMMON, 1, 1)
     addToLootTable(event, 'dungeons_plus:chests/soul_prison/golden_armor', RARE, 1, 1)
     addToLootTable(event, 'dungeons_plus:chests/soul_prison/rare', EPIC, 1, 1)
@@ -765,6 +787,8 @@ function idasLootTables(event) {
     idas(event, 'abandonedhouse/abandonedhouse', COMMON)
     idas(event, 'abandonedhouse/abandonedhouse_create', COMMON)
     idas(event, 'abandonedhouse/abandonedhouse_library', UNCOMMON)
+    addToLootTable(event, 'idas:chests/abandonedhouse/abandonedhouse_library', 'custom:secret_book', 0.05, 1)
+    addToLootTable(event, 'idas:chests/abandonedhouse/abandonedhouse_library', 'custom:lore_book', 0.1, 1)
     idas(event, 'ancient_mines/minesbasic', COMMON)
     idas(event, 'ancient_mines/minescreate', UNCOMMON)
     idas(event, 'ancient_mines/mineshall', EPIC)
@@ -795,20 +819,28 @@ function idasLootTables(event) {
     idas(event, 'haunted_manor/haunted_manor', COMMON)
     idas(event, 'haunted_manor/haunted_manor_tools', UNCOMMON)
     idas(event, 'haunted_manor/haunted_manor_library', UNCOMMON)
+    addToLootTable(event, 'idas:chests/haunted_manor/haunted_manor_library', 'custom:secret_book', 0.05, 1)
+    addToLootTable(event, 'idas:chests/haunted_manor/haunted_manor_library', 'custom:lore_book', 0.1, 1)
     idas(event, 'haunted_manor/haunted_manor_treasure', EPIC)
     idas(event, 'hauntedhouse/hauntedhouse', RARE)
     idas(event, 'labyrinth/labyrinth', UNCOMMON)
     idas(event, 'labyrinth/labyrinth_croc', RARE)
     idas(event, 'labyrinth/labyrinth_library', UNCOMMON)
+    addToLootTable(event, 'idas:chests/labyrinth/labyrinth_library', 'custom:secret_book', 0.05, 1)
+    addToLootTable(event, 'idas:chests/labyrinth/labyrinth_library', 'custom:lore_book', 0.1, 1)
     idas(event, 'labyrinth/labyrinth_tomb', EPIC)
     idas(event, 'labyrinth/labyrinth_treasure', LEGENDARY)
+    addItemToLootTable(event, 'idas:chests/labyrinth/labyrinth_treasure', 'kubejs:pharaohs_ankh', 1, 1)
     idas(event, 'necromancers_spire/necromancers_spire', RARE)
     idas(event, 'pillager_fortress/pillager_basic', COMMON)
     idas(event, 'pillager_fortress/pillager_bedroom', UNCOMMON)
     idas(event, 'pillager_fortress/pillager_jail', RARE)
     idas(event, 'pillager_fortress/pillager_library', UNCOMMON)
+    addToLootTable(event, 'idas:chests/pillager_fortress/pillager_library', 'custom:secret_book', 0.05, 1)
+    addToLootTable(event, 'idas:chests/pillager_fortress/pillager_library', 'custom:lore_book', 0.1, 1)
     idas(event, 'sunken_ship/sunken_ship_supply', UNCOMMON)
     idas(event, 'sunken_ship/sunken_ship_treasure', RARE)
+    addItemToLootTable(event, 'idas:chests/sunken_ship/sunken_ship_treasure', 'kubejs:soul_of_a_pirate', 0.2, 1)
     idas(event, 'tinkers_workshop/tinkers_workshop', COMMON)
     idas(event, 'tinkers_workshop/tinkers_workshop_basic', PLENTIFUL)
     idas(event, 'tinkers_workshop/tinkers_workshop_bedroom', UNCOMMON)
@@ -824,4 +856,57 @@ function minecraftLootTables(event) {
     addToLootTable(event, 'minecraft:chests/ancient_city', RARE, 0.5, 1)
     addToLootTable(event, 'minecraft:chests/ancient_city', EPIC, 0.2, 1)
     addToLootTable(event, 'minecraft:chests/ancient_city', LEGENDARY, 0.05, 1)
+    addToLootTable(event, 'minecraft:chests/stronghold_library', 'custom:secret_book', 0.02, 1)
+    addToLootTable(event, 'minecraft:chests/stronghold_library', 'custom:lore_book', 0.07, 1)
+}
+
+function bygoneNetherLootTables(event) {
+    addToLootTable(event, 'bygonenether:chests/catacomb/treasure_rib', EPIC, 1, 1)
+    addToLootTable(event, 'bygonenether:chests/citadel', EPIC, 1, 1)
+}
+
+function graveyardLootTables(event) {
+    addToLootTable(event, 'graveyard:chests/crypt_loot', PLENTIFUL, 1, 1)
+    addToLootTable(event, 'graveyard:chests/great_crypt_loot', EPIC, 1, 1)
+    addToLootTable(event, 'graveyard:chests/large_loot', RARE, 1, 1)
+    addToLootTable(event, 'graveyard:chests/medium_loot', UNCOMMON, 1, 1)
+    addToLootTable(event, 'graveyard:chests/small_loot', COMMON, 1, 1)
+}
+
+function dungeonsEnhancedLootTables(event) {
+    addToLootTable(event, 'dungeons_enhanced:chests/castle/armory', COMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/castle/bedroom', COMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/castle/cellar', RARE, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/castle/coffin', UNCOMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/castle/library', 'custom:secret_book', 0.1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/castle/library', 'custom:lore_book', 0.1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/castle/quarters', COMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/castle/spring', EPIC, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/castle/throne', EPIC, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/deep_crypt', COMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/desert_tomb', COMMON, 1, 1)
+    addItemToLootTable(event, 'dungeons_enhanced:chests/desert_tomb', 'kubejs:pharaohs_ankh', 0.2, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/elders_temple/elder_room', EPIC, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/elders_temple/main', COMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/flying_dutchman', RARE, 1, 1)
+    addItemToLootTable(event, 'dungeons_enhanced:chests/flying_dutchman', 'kubejs:soul_of_a_pirate', 0.33, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/ice_pit/armory', UNCOMMON, 1, 1)
+    addItemToLootTable(event, 'dungeons_enhanced:chests/ice_pit/armory', 'kubejs:effervescent_snowflake', 0.33, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/jungle_monument/treasure', EPIC, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/large_dungeon', RARE, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/miners_house', COMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/monster_maze/brewery', RARE, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/monster_maze/church', UNCOMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/monster_maze/prison', COMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/monster_maze/treasure', EPIC, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/mushroom_house', COMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/pillager_camp/general', UNCOMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/pirate_ship', RARE, 1, 1)
+    addItemToLootTable(event, 'dungeons_enhanced:chests/pirate_ship', 'kubejs:soul_of_a_pirate', 0.33, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/ruined/house', COMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/ruined_building', COMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/sunken_shrine', RARE, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/tower_of_the_undead/treasure', RARE, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/watch_tower', UNCOMMON, 1, 1)
+    addToLootTable(event, 'dungeons_enhanced:chests/witch_tower', UNCOMMON, 1, 1)
 }

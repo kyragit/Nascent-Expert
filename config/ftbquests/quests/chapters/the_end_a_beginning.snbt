@@ -1,0 +1,302 @@
+{
+	id: "59A0E06E96B537C7"
+	group: "52DC2EC078E51292"
+	order_index: 3
+	filename: "the_end_a_beginning"
+	title: "The End, a Beginning"
+	icon: "minecraft:ender_eye"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "The Beginning of the End"
+			x: 0.0d
+			y: 0.0d
+			description: [
+				"Reaching the End will be no simple task. You will need at least 12 of the 16 unique eyes to fill the portal."
+				""
+				"The stronghold cannot be located with a standard eye of ender either. You must use one of the unique eyes (do not worry, they will never break)."
+			]
+			dependencies: ["7F492ECCA9E3A777"]
+			id: "6CC755A226C041F6"
+			tasks: [{
+				id: "07BF6E7DB01190A8"
+				type: "item"
+				item: "minecraft:ender_eye"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -4.0d
+			dependencies: ["6CC755A226C041F6"]
+			id: "38E73D589E53D20D"
+			tasks: [{
+				id: "18A5725F08099656"
+				type: "item"
+				item: {
+					id: "endrem:black_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 1.5d
+			y: -3.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "71E96DDDD4024B0C"
+			tasks: [{
+				id: "5E1039FEE3745F2B"
+				type: "item"
+				item: {
+					id: "endrem:cold_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 2.5d
+			y: -2.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "13728A4433A186F3"
+			tasks: [{
+				id: "5E1512ACB049E44C"
+				type: "item"
+				item: {
+					id: "endrem:corrupted_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 3.5d
+			y: -1.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "425A4E00CB67B789"
+			tasks: [{
+				id: "3519920A714CD9EF"
+				type: "item"
+				item: {
+					id: "endrem:cryptic_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 0.0d
+			y: 4.0d
+			dependencies: ["6CC755A226C041F6"]
+			id: "5D207D23AE68857A"
+			tasks: [{
+				id: "61ADDEBFC7FCF201"
+				type: "item"
+				item: {
+					id: "endrem:lost_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -2.5d
+			y: 2.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "674C298F5DCDF850"
+			tasks: [{
+				id: "273FCF8810DA8476"
+				type: "item"
+				item: {
+					id: "endrem:nether_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -3.5d
+			y: 1.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "54D7C8AE3582FF76"
+			tasks: [{
+				id: "3EB3446020646376"
+				type: "item"
+				item: {
+					id: "endrem:old_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -4.0d
+			y: 0.0d
+			dependencies: ["6CC755A226C041F6"]
+			id: "2311E277A6C0B085"
+			tasks: [{
+				id: "4F99E2A19D8309E0"
+				type: "item"
+				item: {
+					id: "endrem:rogue_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 4.0d
+			y: 0.0d
+			dependencies: ["6CC755A226C041F6"]
+			id: "148D71D0565E98D4"
+			tasks: [{
+				id: "14A1F3EEB546525D"
+				type: "item"
+				item: {
+					id: "endrem:cursed_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 3.5d
+			y: 1.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "09F81E4CA219281F"
+			tasks: [{
+				id: "14D7BA8BE90918E1"
+				type: "item"
+				item: {
+					id: "endrem:evil_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 1.5d
+			y: 3.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "146B151755B190C9"
+			tasks: [{
+				id: "526C482E864958B0"
+				type: "item"
+				item: {
+					id: "endrem:guardian_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -1.5d
+			y: 3.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "7B4B693B12496D95"
+			tasks: [{
+				id: "477EBF0EA160E588"
+				type: "item"
+				item: {
+					id: "endrem:magical_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -3.5d
+			y: -1.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "7797F26C117883E7"
+			tasks: [{
+				id: "2A9DB69B44DB768C"
+				type: "item"
+				item: {
+					id: "endrem:wither_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -2.5d
+			y: -2.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "19C105C619775B79"
+			tasks: [{
+				id: "2C56DD50183C2A25"
+				type: "item"
+				item: {
+					id: "endrem:witch_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -1.5d
+			y: -3.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "6C75A0510804FD0D"
+			tasks: [{
+				id: "284387E61674AE36"
+				type: "item"
+				item: {
+					id: "endrem:undead_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 2.5d
+			y: 2.5d
+			dependencies: ["6CC755A226C041F6"]
+			id: "1D4AA3D6C5198418"
+			tasks: [{
+				id: "518E068B848BAED0"
+				type: "item"
+				item: {
+					id: "endrem:exotic_eye"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+	]
+	quest_links: [ ]
+}

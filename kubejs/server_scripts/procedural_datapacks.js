@@ -265,7 +265,7 @@ function weaponAttributes(event) {
     event.addJson('mahoutsukai:weapon_attributes/caliburn', {parent: 'bettercombat:coral_blade'})
     event.addJson('mahoutsukai:weapon_attributes/morgan', {parent: 'bettercombat:coral_blade'})
     event.addJson('mahoutsukai:weapon_attributes/clarent', {parent: 'bettercombat:sword'})
-    //event.addJson('savage_and_ravage:weapon_attributes/cleaver_of_beheading', {parent: 'bettercombat:claymore'})
+    event.addJson('savage_and_ravage:weapon_attributes/cleaver_of_beheading', {parent: 'bettercombat:claymore'})
     event.addJson('pyromancer:weapon_attributes/schmelzstern', {parent: 'simplyswords:hearthflame'})
     event.addJson('pyromancer:weapon_attributes/firelink', {parent: 'simplyswords:emberblade'})
     event.addJson('pyromancer:weapon_attributes/flammenklinge', {parent: 'bettercombat:claymore'})

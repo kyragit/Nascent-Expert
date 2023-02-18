@@ -196,6 +196,34 @@
 				}
 			}]
 		}
+		{
+			x: 0.0d
+			y: -5.0d
+			description: [
+				"A truly terrifying artifact, this device creates a portal to... somewhere, before intentionally collapsing it. This results in an explosion of spacetime."
+				""
+				"While its power is devastating, it cares not if it kills its user; which it most likely will."
+			]
+			invisible: true
+			id: "48C312D6014E32A3"
+			tasks: [{
+				id: "22BA81C74063FCB4"
+				type: "item"
+				item: "kubejs:portable_black_hole"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 5.0d
+			description: ["A wholly Overworldian creation, this staff dissolves leaves and seeds into their pure life essence and distributes it in a wide area around the user."]
+			invisible: true
+			id: "27404F1A21AF173D"
+			tasks: [{
+				id: "701151D93E7EE71A"
+				type: "item"
+				item: "kubejs:staff_of_gaea"
+			}]
+		}
 	]
 	quest_links: [ ]
 }
