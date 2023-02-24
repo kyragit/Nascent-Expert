@@ -1,0 +1,25 @@
+{
+    "type": "geolosys:deposit_layer",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": null,
+            "chance": 1.0
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": null,
+          "chance": 1.0
+        }
+      ],
+      "yMin": -50,
+      "yMax": 30,
+      "radius": 50,
+      "depth": 30,
+      "biomeTag": "#minecraft:is_nether",
+      "generationWeight": 40
+    }
+}

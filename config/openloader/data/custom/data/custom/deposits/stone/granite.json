@@ -15,7 +15,7 @@
                 "chance": 1.0
             }
         ],
-        "generationWeight": 6,
+        "generationWeight": 18,
         "yMin": -50,
         "yMax": 10,
         "biomeTag": "#forge:is_hot/overworld",

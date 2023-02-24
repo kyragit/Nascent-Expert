@@ -15,7 +15,7 @@
                 "chance": 1.0
             }
         ],
-        "generationWeight": 6,
+        "generationWeight": 18,
         "yMin": 40,
         "yMax": 70,
         "biomeTag": "#minecraft:is_overworld",

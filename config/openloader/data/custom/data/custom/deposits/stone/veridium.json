@@ -15,7 +15,7 @@
                 "chance": 1.0
             }
         ],
-        "generationWeight": 6,
+        "generationWeight": 18,
         "yMin": -30,
         "yMax": 0,
         "biomeTag": "#forge:is_mountain",

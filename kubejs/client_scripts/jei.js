@@ -37,6 +37,7 @@ const ITEMS = [
     'paraglider:goron_goddess_statue',
     'paraglider:rito_goddess_statue',
     'paraglider:horned_statue',
+    'campanion:rope_bridge_planks',
 ]
 
 const TEPEE_WALLS = [

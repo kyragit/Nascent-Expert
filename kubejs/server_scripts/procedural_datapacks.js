@@ -7,6 +7,7 @@ ServerEvents.lowPriorityData(event => {
     affixes(event)
     weaponAttributes(event)
     advancements(event)
+    worldGen(event)
 })
 
 function affixLootEntries(event) {
@@ -27,6 +28,7 @@ function affixLootEntries(event) {
         ['greataxe', 'HEAVY_WEAPON'],
         ['chakram', 'SWORD'],
         ['scythe', 'SWORD'],
+        ['halberd', 'SWORD'],
     ]
 
     for (let weapon of SIMPLY_SWORD_TYPES) {
@@ -168,6 +170,40 @@ function affixLootEntries(event) {
             })
         }
     }
+
+    for (let piece of ['helmet', 'chestplate', 'leggings', 'boots']) {
+        event.addJson(`custom:affix_loot_entries/brimsteel_${piece}`, {
+            weight: 40,
+            quality: 3.0,
+            stack: {
+                item: `blazegear:brimsteel_${piece}`,
+                count: 1
+            },
+            type: 'ARMOR',
+            dimensions: [
+                'minecraft:the_nether',
+                'minecraft:the_end'
+            ],
+            max_rarity: 'epic'
+        })
+    }
+
+    for (let item of [['pickaxe', 'BREAKER'], ['shovel', 'BREAKER'], ['axe', 'HEAVY_WEAPON'], ['sword', 'SWORD']]) {
+        event.addJson(`custom:affix_loot_entries/brimsteel_${item[0]}`, {
+            weight: 40,
+            quality: 3.0,
+            stack: {
+                item: `blazegear:brimsteel_${item[0]}`,
+                count: 1
+            },
+            type: item[1],
+            dimensions: [
+                'minecraft:the_nether',
+                'minecraft:the_end'
+            ],
+            max_rarity: 'epic'
+        })
+    }
 }
 
 function affixes(event) {
@@ -303,4 +339,26 @@ function advancements(event) {
             }
         }
     })
+}
+
+function worldGen(event) {
+    event.addJson('minecraft:worldgen/density_function/overworld/base_continents', {
+        type:"add",
+        argument1:{
+            argument: {
+              xz_scale: 0.18,
+              y_scale: 0.0,
+              noise: "minecraft:continentalness",
+              shift_x: "minecraft:shift_x",
+              shift_y: 0.0,
+              shift_z: "minecraft:shift_z",
+              type: "minecraft:shifted_noise"
+            },
+            type: "minecraft:flat_cache"
+        },
+        argument2: "continents:continent_bias"
+    })
+    for (let name of ['andesite', 'basalt', 'blackstone', 'calcite', 'crying_obsidian', 'diorite', 'granite', 'magma_block', 'smooth_basalt', 'terracotta', 'tuff']) {
+        event.addJson(`immersive_weathering:fluid_generators/${name}`, {})
+    }
 }

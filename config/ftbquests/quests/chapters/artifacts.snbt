@@ -131,6 +131,24 @@
 		{
 			x: 3.0d
 			y: 0.0d
+			description: [
+				"The price he asked; The cost of death:"
+				""
+				"A single drop"
+				"Still glistening wet"
+				"A drop of crystal'd pain"
+				"To pay a debt"
+				""
+				". . ."
+				""
+				"Can you hear those mournful, helpless cries?"
+				"The sound which has no name"
+				"Open your eyes"
+				""
+				"The blackened fog has blinded you"
+				"And with this darkness you have shrouded"
+				"Our deep and wooded home"
+			]
 			invisible: true
 			id: "07A6D4920F1EE551"
 			tasks: [{
@@ -148,6 +166,7 @@
 		{
 			x: -3.0d
 			y: 0.0d
+			description: ["Keep Kayra's enormity hid a weapon truly legendary. Its opposing energies are somehow entwined, Before and After colliding within itself. It's a miracle it doesn't tear itself apart from its own power."]
 			invisible: true
 			id: "4928A981087D6076"
 			tasks: [{
@@ -165,6 +184,7 @@
 		{
 			x: -5.0d
 			y: 0.0d
+			description: ["The restless workers of the Foundry have constructed a weapon out of the flame itself. Its energy empowers the wielder, making them an unstoppable vortex from Beyond."]
 			invisible: true
 			id: "6E47947DF88CE614"
 			tasks: [{

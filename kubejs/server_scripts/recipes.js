@@ -20,6 +20,8 @@ ServerEvents.recipes(event => {
     aquacultureRecipes(event)
     chunkLoaderRecipes(event)
     endRemRecipes(event)
+    davesPotioneeringRecipes(event)
+    enchantableStaffsRecipes(event)
 })
 
 // Blow up amethyst shards to get amethyst dust
@@ -250,10 +252,6 @@ function createRecipes(event) {
         processingTime: 400,
         results: [
             {
-                chance: 0.25,
-                item: 'minecraft:flint'
-            },
-            {
                 chance: 0.1,
                 item: 'minecraft:iron_nugget'
             },
@@ -280,13 +278,9 @@ function createRecipes(event) {
             {
                 chance: 0.1,
                 item: 'immersiveengineering:nugget_nickel'
-            },
-            {
-                chance: 0.1,
-                item: 'immersiveengineering:nugget_aluminum'
             }
         ]
-    })
+    }).id('kubejs:tuff_crushing')
     event.custom({
         type: 'create:crushing',
         ingredients: [
@@ -1098,10 +1092,6 @@ function createRecipes(event) {
             {
                 amount: 16,
                 fluid: 'kubejs:molten_lead'
-            },
-            {
-                amount: 16,
-                fluid: 'kubejs:molten_copper'
             }
         ],
         results: [
@@ -1862,18 +1852,6 @@ function hexcastingRecipes(event) {
                 item: 'minecraft:redstone'
             },
             {
-                item: 'minecraft:redstone'
-            },
-            {
-                item: 'minecraft:redstone'
-            },
-            {
-                item: 'minecraft:glowstone_dust'
-            },
-            {
-                item: 'minecraft:glowstone_dust'
-            },
-            {
                 item: 'minecraft:glowstone_dust'
             },
             {
@@ -1904,7 +1882,7 @@ function vanillaRecipes(event) {
     event.remove({id: 'minecraft:map'})
     event.recipes.minecraft.crafting_shapeless(
         '4x minecraft:map',
-        ['4x minecraft:paper', 'minecraft:ink_sac']
+        ['4x minecraft:paper', '#forge:dyes']
     ).id('kubejs:map')
     event.recipes.minecraft.crafting_shaped(
         '3x minecraft:torch',
@@ -1930,6 +1908,36 @@ function vanillaRecipes(event) {
             S: '#forge:rods/wooden'
         }
     ).id('kubejs:torch_from_bituminous')
+    event.shaped(
+        'minecraft:chest',
+        [
+            'WWW',
+            'W W',
+            'WWW'
+        ],
+        {
+            W: '#minecraft:planks'
+        }
+    ).id('kubejs:chest_fixed')
+    event.shaped(
+        '4x minecraft:chest',
+        [
+            'WWW',
+            'W W',
+            'WWW'
+        ],
+        {
+            W: '#minecraft:logs'
+        }
+    ).id('kubejs:logs_to_chest_fixed')
+
+    for (let item of [['common', 8], ['uncommon', 4], ['rare', 2], ['epic', 1]]) {
+        event.recipes.summoningrituals
+            .altar(Ingredient.of('minecraft:glass_bottle'))
+            .itemOutput(Ingredient.of('minecraft:dragon_breath'))
+            .input(Ingredient.of('apotheosis:gem_dust', 4))
+            .input(Ingredient.of(`apotheosis:${item[0]}_material`, item[1]))
+    }
 }
 
 function smallShipsRecipes(event) {
@@ -3292,6 +3300,33 @@ function apotheosisRecipes(event) {
         ],
         recipe_time: 200
     }).id('kubejs:glowing_hellshelf')
+
+    event.custom({
+        type: 'apotheosis:enchanting',
+        input: {
+            item: 'simplyswords:slumbering_lichblade'
+        },
+        requirements: {
+            eterna: 20.0,
+            quanta: 100.0,
+            arcana: 0.0
+        },
+        max_requirements: {
+            eterna: 50.0,
+            quanta: 100.0,
+            arcana: 0.0
+        },
+        display_level: 5,
+        result: {
+            item: 'simplyswords:waking_lichblade',
+            count: 1
+        }
+    }).id('kubejs:waking_lichblade_enchanting')
+    event.recipes.minecraft.smithing(
+        'simplyswords:awakened_lichblade',
+        'simplyswords:waking_lichblade',
+        '#custom:lich_staves'
+    ).id('kubejs:awakened_lichblade_smithing')
 }
 
 function archersParadoxRecipes(event) {
@@ -3348,6 +3383,19 @@ function archersParadoxRecipes(event) {
             count: 12
         }
     }).id('kubejs:shark_tooth_arrow_fletching')
+
+    event.shaped(
+        'supplementaries:quiver',
+        [
+            'SL ',
+            'L L',
+            'LL '
+        ],
+        {
+            S: '#forge:string',
+            L: '#forge:leather'
+        }
+    ).id('kubejs:quiver')
 }
 
 function miscRemovals(event) {
@@ -3363,6 +3411,8 @@ function miscRemovals(event) {
     event.remove({mod:'immersive_armors'})
     event.remove({mod:'laserio'})
     event.remove({mod:'endrem'})
+    event.remove({mod:'magic_doorknob'})
+    event.remove({mod:'blazegear'})
 }
 
 function kubejsRecipes(event) {
@@ -4062,4 +4112,111 @@ function endRemRecipes(event) {
             }
         ]
     }).id('kubejs:rogue_eye_filling')
+}
+
+function davesPotioneeringRecipes(event) {
+    event.remove({id:'davespotioneering:potioneer_gauntlet'})
+    event.custom({
+        type: 'apotheosis:enchanting',
+        input: {
+            item: 'davespotioneering:netherite_gauntlet'
+        },
+        requirements: {
+            eterna: 20.0,
+            quanta: 50.0,
+            arcana: 57.5
+        },
+        max_requirements: {
+            eterna: 20.0,
+            quanta: 50.0,
+            arcana: 57.5
+        },
+        display_level: 5,
+        result: {
+            item: 'davespotioneering:potioneer_gauntlet',
+            count: 1
+        }
+    }).id('kubejs:potioneer_gauntlet_enchanting')
+
+    event.remove({id:'davespotioneering:potion_injector'})
+    event.shaped(
+        'davespotioneering:potion_injector',
+        [
+            'HIH',
+            'IBI',
+            'HIH'
+        ],
+        {
+            H: 'minecraft:hopper',
+            I: 'minecraft:iron_block',
+            B: 'minecraft:brewing_stand'
+        }
+    ).id('kubejs:potion_injector')
+}
+
+function enchantableStaffsRecipes(event) {
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('quark:rainbow_rune'))
+        .itemOutput(Ingredient.of('kubejs:staff_core'))
+        .input(Ingredient.of('minecraft:diamond'))
+        .input(Ingredient.of('minecraft:amethyst_shard'))
+        .input(Ingredient.of('minecraft:netherite_scrap'))
+        .input(Ingredient.of('minecraft:quartz'))
+        .input(Ingredient.of('apotheosis:gem_dust'))
+        .sacrifice('minecraft:enderman')
+        .sacrificeRegion(7, 3)
+    for (let staff of ['iron', 'reinforced_iron', 'gold', 'reinforced_gold', 'netherite', 'plated_netherite']) {
+        event.remove({id:`enchantable_staffs:${staff}_staff`})
+    }
+    event.shaped(
+        'enchantable_staffs:iron_staff',
+        [
+            '  B',
+            ' C ',
+            'B  '
+        ],
+        {
+            B: 'minecraft:iron_block',
+            C: 'kubejs:staff_core'
+        }
+    ).id('kubejs:iron_staff')
+    event.shaped(
+        'enchantable_staffs:gold_staff',
+        [
+            '  B',
+            ' C ',
+            'B  '
+        ],
+        {
+            B: 'minecraft:gold_block',
+            C: 'kubejs:staff_core'
+        }
+    ).id('kubejs:gold_staff')
+    event.shaped(
+        'enchantable_staffs:netherite_staff',
+        [
+            '  B',
+            ' C ',
+            'B  '
+        ],
+        {
+            B: 'minecraft:netherite_ingot',
+            C: 'kubejs:staff_core'
+        }
+    ).id('kubejs:netherite_staff')
+    event.recipes.minecraft.smithing(
+        'enchantable_staffs:reinforced_iron_staff',
+        'enchantable_staffs:iron_staff',
+        'minecraft:emerald_block'
+    ).id('kubejs:reinforced_iron_staff')
+    event.recipes.minecraft.smithing(
+        'enchantable_staffs:reinforced_gold_staff',
+        'enchantable_staffs:gold_staff',
+        'minecraft:diamond_block'
+    ).id('kubejs:reinforced_gold_staff')
+    event.recipes.minecraft.smithing(
+        'enchantable_staffs:plated_netherite_staff',
+        'enchantable_staffs:netherite_staff',
+        'minecraft:gold_block'
+    ).id('kubejs:plated_netherite_staff')
 }

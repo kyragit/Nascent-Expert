@@ -60,6 +60,9 @@ StartupEvents.registry('item', event => {
     event.create('eye_of_revelation')
         .rarity('epic')
         .glow(true)
+    event.create('staff_core')
+        .rarity('uncommon')
+        .glow(true)
     event.create('industrial_fuel')
         .burnTime(6400)
     event.create('blaze_coated_charcoal')
@@ -77,6 +80,9 @@ StartupEvents.registry('item', event => {
         .useAnimation('bow')
         .useDuration(item => 72000)
         .use((level, player, hand) => {
+            if (!level.server) {
+                return false
+            }
             let tryTakeLeaves = function(p) {
                 let slot = p.inventory.find('#minecraft:leaves')
                 if (slot == -1) {
@@ -94,8 +100,8 @@ StartupEvents.registry('item', event => {
                 let recurse = function(p) {
                     if (p.data.getOrDefault('gaea_blessing_active', false)) {
                         if (tryTakeLeaves(p)) {
-                            Utils.server.scheduleInTicks(15, later => {
-                                Utils.server.runCommandSilent(`execute at ${p.username} run summon insanelib:area_effect_cloud_3d ~ ~ ~ {ReapplicationDelay:30,Particle:"minecraft:dust 0.25 1.0 0.25 0.5",CustomName:\'{"text":"Gaea\\\'s Blessing"}\',Radius:10.0f,Duration:15,Effects:[{"forge:id":"minecraft:regeneration",Duration:60,Amplifier:1,Ambient:0b,ShowParticles:1b,ShowIcon:1b}]}`)
+                            level.server.scheduleInTicks(15, later => {
+                                later.server.runCommandSilent(`execute at ${p.username} run summon insanelib:area_effect_cloud_3d ~ ~ ~ {ReapplicationDelay:30,Particle:"minecraft:dust 0.25 1.0 0.25 0.5",CustomName:\'{"text":"Gaea\\\'s Blessing"}\',Radius:10.0f,Duration:15,Effects:[{"forge:id":"minecraft:regeneration",Duration:60,Amplifier:1,Ambient:0b,ShowParticles:1b,ShowIcon:1b}]}`)
                                 recurse(p)
                             })
                         } else {
@@ -125,6 +131,9 @@ ItemEvents.modification(event => {
     })
     event.modify('gateways:gate_pearl', item => {
         item.setFireResistant(true)
+    })
+    event.modify('enigmaticlegacy:recall_potion', item => {
+        item.setMaxStackSize(16)
     })
 })
 

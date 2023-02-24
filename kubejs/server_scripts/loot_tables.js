@@ -13,6 +13,7 @@ ServerEvents.genericLootTables(event => {
     bygoneNetherLootTables(event)
     graveyardLootTables(event)
     dungeonsEnhancedLootTables(event)
+    incendiumLootTables(event)
 })
 
 ServerEvents.blockLootTables(event => {
@@ -28,6 +29,9 @@ LootJS.modifiers(event => {
     // Stops all eyes of ender generating as loot, anywhere
     event.addLootTableModifier(/.*/).removeLoot('minecraft:ender_eye').removeLoot(/create:(?:andesite_alloy|goggles|wrench|gearbox|large_cogwheel|cogwheel|shaft)/)
     event.addLootTableModifier(/^endrem:.*/).removeLoot(/.*/)
+    event.addLootTableModifier(/^incendium:artifact.*/).randomChance(0.75).addLoot('enigmaticlegacy:blazing_core')
+    event.addLootTableModifier('dreamland:grant_book_on_first_join').removeLoot(/.*/)
+    event.addLootTableModifier('simplyswords:grant_book_on_first_join').removeLoot(/.*/)
 })
 
 const PLENTIFUL = 'custom:loot_plentiful'
@@ -37,6 +41,13 @@ const RARE = 'custom:loot_rare'
 const EPIC = 'custom:loot_epic'
 const LEGENDARY = 'custom:loot_legendary'
 const GODLY = 'custom:loot_godly'
+
+const NETHER_COMMON = 'custom:nether_loot_common'
+const NETHER_UNCOMMON = 'custom:nether_loot_uncommon'
+const NETHER_RARE = 'custom:nether_loot_rare'
+const NETHER_EPIC = 'custom:nether_loot_epic'
+const NETHER_LEGENDARY = 'custom:nether_loot_legendary'
+const NETHER_GODLY = 'custom:nether_loot_godly'
 
 function createUniversalLootTables(event) {
 
@@ -68,6 +79,8 @@ function createUniversalLootTables(event) {
         ['artifacts:crystal_heart', 1],
         ['kubejs:portable_black_hole', 3],
         ['kubejs:staff_of_gaea', 3],
+        ['davespotioneering:potioneer_gauntlet', 1],
+        ['simplyswords:slumbering_lichblade', 1],
     ]
 
     const ARTIFACT_CHARMS = [
@@ -119,6 +132,10 @@ function createUniversalLootTables(event) {
         ['artifacts:umbrella', 1],
         ['artifacts:superstitious_hat', 1],
         ['artifacts:lucky_scarf', 1],
+        ['magic_doorknob:magic_doorknob_iron', 1],
+        ['magic_doorknob:magic_doorknob_gold', 1],
+        ['magic_doorknob:magic_doorknob_diamond', 1],
+        ['kubejs:staff_core', 1],
     ]
 
     const TREASURE_CHARMS = [
@@ -174,6 +191,8 @@ function createUniversalLootTables(event) {
         ['paraglider:paraglider', 2],
         ['paraglider:deku_leaf', 2],
         ['aquaculture:neptunium_ingot', 1],
+        ['magic_doorknob:magic_doorknob_wood', 1],
+        ['magic_doorknob:magic_doorknob_stone', 1],
     ]
 
     const VALUABLE_CHARMS = [
@@ -185,6 +204,35 @@ function createUniversalLootTables(event) {
         ['rottencreatures:freeze', true, 1],
         ['ecologics:sliding', true, 1],
         ['alexsmobs:poison_resistance', false, 1],
+    ]
+
+    const NETHER_VALUABLE = [
+        ['enigmaticlegacy:golden_ring', 1],
+        ['pyromancer:blazing_quill', 1],
+        ['pyromancer:membrane_quill', 1],
+        ['pyromancer:fungus_quill', 1],
+        ['pyromancer:burrito', 1],
+        ['magic_doorknob:magic_doorknob_netherite', 1],
+    ]
+
+    const NETHER_TREASURE = [
+        ['enigmaticlegacy:monster_charm', 1],
+        ['enigmaticlegacy:mending_mixture', 1],
+        ['pyromancer:blazing_journal', 1],
+        ['pyromancer:smoldering_twig', 1],
+        ['pyromancer:sizzling_hand', 1],
+        ['pyromancer:call_of_flames', 1],
+    ]
+
+    const NETHER_ARTIFACTS = [
+        ['simplyswords:mjolnir', 1],
+        ['simplyswords:frostfall', 1],
+        ['simplyswords:soulstealer', 1],
+        ['simplyswords:watcher_claymore', 1],
+        ['pyromancer:hellblaze_quill', 1],
+        ['pyromancer:court_of_embers', 1],
+        ['pyromancer:schizoid_helm', 1],
+        ['pyromancer:lantern_of_blazing_souls', 1],
     ]
 
     const LORE_BOOKS = [
@@ -243,6 +291,28 @@ function createUniversalLootTables(event) {
             pool.addLootTable('custom:secret_book').weight(1)
         })
     })
+    event.addGeneric('custom:nether_valuable', loot => {
+        loot.addPool(pool => {
+            for (let item of NETHER_VALUABLE) {
+                pool.addItem(item[0], item[1], 1)
+            }
+        })
+    })
+    event.addGeneric('custom:nether_treasure', loot => {
+        loot.addPool(pool => {
+            for (let item of NETHER_TREASURE) {
+                pool.addItem(item[0], item[1], 1)
+            }
+        })
+    })
+    event.addGeneric('custom:nether_artifacts', loot => {
+        loot.addPool(pool => {
+            for (let item of NETHER_ARTIFACTS) {
+                pool.addItem(item[0], item[1], 1)
+            }
+        })
+    })
+
 
     event.addGeneric('custom:loot_plentiful', loot => {
         loot.addPool(pool => {
@@ -450,6 +520,85 @@ function createUniversalLootTables(event) {
             }).randomChance(0.95)
         })
     })
+
+    event.addGeneric('custom:nether_loot_common', loot => {
+        loot.addPool(pool => {
+            pool.addLootTable('custom:loot_uncommon')
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_valuable').randomChance(0.1)
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_treasure').randomChance(0.05)
+        })
+    })
+    event.addGeneric('custom:nether_loot_uncommon', loot => {
+        loot.addPool(pool => {
+            pool.addLootTable('custom:loot_rare')
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_valuable').randomChance(0.15)
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_treasure').randomChance(0.1)
+        })
+    })
+    event.addGeneric('custom:nether_loot_rare', loot => {
+        loot.addPool(pool => {
+            pool.addLootTable('custom:loot_epic')
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_valuable').randomChance(0.2)
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_treasure').randomChance(0.15)
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_artifacts').randomChance(0.02)
+        })
+    })
+    event.addGeneric('custom:nether_loot_epic', loot => {
+        loot.addPool(pool => {
+            pool.addLootTable('custom:loot_legendary')
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_valuable').randomChance(0.25)
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_treasure').randomChance(0.2)
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_artifacts').randomChance(0.05)
+        })
+    })
+    event.addGeneric('custom:nether_loot_legendary', loot => {
+        loot.addPool(pool => {
+            pool.addLootTable('custom:loot_godly')
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_valuable').randomChance(0.33)
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_treasure').randomChance(0.25)
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_artifacts').randomChance(0.1)
+        })
+    })
+    event.addGeneric('custom:nether_loot_godly', loot => {
+        loot.addPool(pool => {
+            pool.addLootTable('custom:loot_godly')
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_valuable').randomChance(0.5)
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_treasure').randomChance(0.35)
+        })
+        loot.addPool(pool => {
+            pool.addLootTable('custom:nether_artifacts').randomChance(0.25)
+        })
+    })
 }
 
 function addToLootTable(event, lootTable, tableToAdd, chance, count) {
@@ -626,6 +775,23 @@ function yungsLootTables(event) {
     addToLootTable(event, 'betterdeserttemples:chests/tomb', RARE, 1, 1)
     addToLootTable(event, 'betterdeserttemples:chests/tomb_pharaoh', EPIC, 1, 1)
     addItemToLootTable(event, 'betterdeserttemples:chests/tomb_pharaoh', 'kubejs:pharaohs_ankh', 0.25, 1)
+    addToLootTable(event, 'betterfortresses:chests/hall', NETHER_COMMON, 1, 1)
+    addToLootTable(event, 'betterfortresses:chests/keep', NETHER_COMMON, 1, 1)
+    addToLootTable(event, 'betterfortresses:chests/puzzle', NETHER_EPIC, 1, 1)
+    addItemToLootTable(event, 'betterfortresses:chests/puzzle', 'enigmaticlegacy:blazing_core', 0.75, 1)
+    addToLootTable(event, 'betterfortresses:chests/quarters', NETHER_COMMON, 1, 1)
+    addToLootTable(event, 'betterfortresses:chests/storage', NETHER_UNCOMMON, 1, 1)
+    addToLootTable(event, 'betterfortresses:chests/worship', NETHER_RARE, 1, 1)
+    addToLootTable(event, 'betterstrongholds:chests/armory', UNCOMMON, 1, 1)
+    addToLootTable(event, 'betterstrongholds:chests/common', COMMON, 1, 1)
+    addToLootTable(event, 'betterstrongholds:chests/crypt', UNCOMMON, 1, 1)
+    addToLootTable(event, 'betterstrongholds:chests/grand_library', UNCOMMON, 1, 1)
+    addToLootTable(event, 'betterstrongholds:chests/grand_library', 'custom:secret_book', 0.1, 1)
+    addToLootTable(event, 'betterstrongholds:chests/grand_library', 'custom:lore_book', 0.15, 1)
+    addToLootTable(event, 'betterstrongholds:chests/library_md', 'custom:secret_book', 0.05, 1)
+    addToLootTable(event, 'betterstrongholds:chests/library_md', 'custom:lore_book', 0.1, 1)
+    addToLootTable(event, 'betterstrongholds:chests/trap', EPIC, 1, 1)
+    addToLootTable(event, 'betterstrongholds:chests/treasure', RARE, 1, 1)
 }
 
 function dugeonsPlusLootTables(event) {
@@ -858,11 +1024,18 @@ function minecraftLootTables(event) {
     addToLootTable(event, 'minecraft:chests/ancient_city', LEGENDARY, 0.05, 1)
     addToLootTable(event, 'minecraft:chests/stronghold_library', 'custom:secret_book', 0.02, 1)
     addToLootTable(event, 'minecraft:chests/stronghold_library', 'custom:lore_book', 0.07, 1)
+    addToLootTable(event, 'minecraft:chests/bastion_treasure', NETHER_EPIC, 1, 1)
+    addToLootTable(event, 'minecraft:chests/bastion_bridge', NETHER_UNCOMMON, 1, 1)
+    addToLootTable(event, 'minecraft:chests/bastion_hoglin_stable', NETHER_UNCOMMON, 1, 1)
+    addToLootTable(event, 'minecraft:chests/bastion_other', NETHER_COMMON, 1, 1)
+    addToLootTable(event, 'minecraft:chests/nether_bridge', NETHER_COMMON, 0.33, 1)
+    addToLootTable(event, 'minecraft:chests/nether_bridge', NETHER_UNCOMMON, 0.1, 1)
+    addToLootTable(event, 'minecraft:chests/nether_bridge', NETHER_RARE, 0.05, 1)
 }
 
 function bygoneNetherLootTables(event) {
-    addToLootTable(event, 'bygonenether:chests/catacomb/treasure_rib', EPIC, 1, 1)
-    addToLootTable(event, 'bygonenether:chests/citadel', EPIC, 1, 1)
+    addToLootTable(event, 'bygonenether:chests/catacomb/treasure_rib', NETHER_EPIC, 1, 1)
+    addToLootTable(event, 'bygonenether:chests/citadel', NETHER_EPIC, 1, 1)
 }
 
 function graveyardLootTables(event) {
@@ -909,4 +1082,36 @@ function dungeonsEnhancedLootTables(event) {
     addToLootTable(event, 'dungeons_enhanced:chests/tower_of_the_undead/treasure', RARE, 1, 1)
     addToLootTable(event, 'dungeons_enhanced:chests/watch_tower', UNCOMMON, 1, 1)
     addToLootTable(event, 'dungeons_enhanced:chests/witch_tower', UNCOMMON, 1, 1)
+}
+
+function incendiumLootTables(event) {
+    addToLootTable(event, 'incendium:castle/barrel/alchemist', NETHER_UNCOMMON, 1, 1)
+    addToLootTable(event, 'incendium:castle/barrel/barracks', NETHER_RARE, 1, 1)
+    addToLootTable(event, 'incendium:castle/barrel/blacksmith', NETHER_UNCOMMON, 1, 1)
+    addToLootTable(event, 'incendium:castle/barrel/food', NETHER_COMMON, 1, 1)
+    addToLootTable(event, 'incendium:castle/barrel/generic', NETHER_COMMON, 1, 1)
+    addToLootTable(event, 'incendium:castle/barrel/generic_big', NETHER_UNCOMMON, 1, 1)
+    addToLootTable(event, 'incendium:castle/barrel/greenhouse_secret', NETHER_RARE, 1, 1)
+    addToLootTable(event, 'incendium:castle/barrel/library', 'custom:secret_book', 0.15, 1)
+    addToLootTable(event, 'incendium:castle/barrel/library', 'custom:lore_book', 0.25, 1)
+    addToLootTable(event, 'incendium:castle/barrel/library_low', 'custom:secret_book', 0.05, 1)
+    addToLootTable(event, 'incendium:castle/barrel/library_low', 'custom:lore_book', 0.1, 1)
+    addToLootTable(event, 'incendium:castle/king_statue', NETHER_RARE, 1, 1)
+    addToLootTable(event, 'incendium:castle/tower_barrel', NETHER_COMMON, 1, 1)
+    addToLootTable(event, 'incendium:castle/treasure/quartz', NETHER_EPIC, 1, 1)
+    addToLootTable(event, 'incendium:cvill/blacksmith', NETHER_UNCOMMON, 1, 1)
+    addToLootTable(event, 'incendium:cvill/medium', NETHER_UNCOMMON, 1, 1)
+    addToLootTable(event, 'incendium:lab/rare', NETHER_UNCOMMON, 1, 1)
+    addToLootTable(event, 'incendium:lab/treasure', NETHER_EPIC, 1, 1)
+    addToLootTable(event, 'incendium:quartz_flats/kitchen_extra_treasure', NETHER_RARE, 1, 1)
+    addToLootTable(event, 'incendium:quartz_flats/kitchen_treasure', NETHER_RARE, 1, 1)
+    addToLootTable(event, 'incendium:reactor/office', NETHER_COMMON, 1, 1)
+    addToLootTable(event, 'incendium:reactor/office_treasure', NETHER_RARE, 1, 1)
+    addToLootTable(event, 'incendium:reactor/treasure', NETHER_EPIC, 1, 1)
+    addItemToLootTable(event, 'incendium:reactor/treasure', 'enigmaticlegacy:blazing_core', 1, 1)
+    addToLootTable(event, 'incendium:sanctum/common_loot', NETHER_COMMON, 1, 1)
+    addToLootTable(event, 'incendium:sanctum/lower_loot', NETHER_COMMON, 1, 1)
+    addToLootTable(event, 'incendium:sanctum/tax_collector', NETHER_UNCOMMON, 1, 1)
+    addToLootTable(event, 'incendium:steam/rare', NETHER_UNCOMMON, 1, 1)
+    addToLootTable(event, 'incendium:steam/treasure', NETHER_RARE, 1, 1)
 }

@@ -1,41 +1,6 @@
 ServerEvents.tags('item', event => {
-    event.add('map_atlases:sticky_crafting_items', ['immersiveengineering:hemp_fiber'])
-
-    // const STICKY = ['alexsmobs:komodo_spit_bottle', 'alexsmobs:banana_slug_slime_block']
-    // const LIQUID = ['alexsmobs:fish_oil', 'alexsmobs:poison_bottle']
-    // const BINDING_NETHER = ['alexsmobs:blood_sac', 'alexsmobs:soul_heart']
-    // const SKIN = ['alexsmobs:tarantula_hawk_wing_fragment', 'alexsmobs:shed_snake_skin']
-
-    // const BONE = ['alexsmobs:moose_antler', 'alexsmobs:cachalot_whale_tooth', 'alexsmobs:serrated_shark_tooth', 'alexsmobs:gazelle_horn']
-    // const ALLOY_NETHER = ['alexsmobs:dropbear_claw', 'alexsmobs:bone_serpent_tooth', 'alexsmobs:straddlite']
-    // const HIDE = ['alexsmobs:spiked_scute', 'alexsmobs:kangaroo_hide', 'alexsmobs:crocodile_scute', 'minecraft:scute']
-    // const GEM = ['alexsmobs:guster_eye']
-
-    // for (let item of STICKY) {
-    //     event.add('forge:natural_binding_sticky', item)
-    // }
-    // for (let item of LIQUID) {
-    //     event.add('forge:natural_binding_liquid', item)
-    // }
-    // for (let item of BINDING_NETHER) {
-    //     event.add('forge:natural_binding_nether', item)
-    // }
-    // for (let item of SKIN) {
-    //     event.add('forge:natural_binding_skin', item)
-    // }
-
-    // for (let item of BONE) {
-    //     event.add('forge:natural_alloy_bone', item)
-    // }
-    // for (let item of ALLOY_NETHER) {
-    //     event.add('forge:natural_alloy_nether', item)
-    // }
-    // for (let item of HIDE) {
-    //     event.add('forge:natural_alloy_hide', item)
-    // }
-    // for (let item of GEM) {
-    //     event.add('forge:natural_alloy_gem', item)
-    // }
+    // This doesn't actually work :(
+    //event.add('map_atlases:sticky_crafting_items', ['immersiveengineering:hemp_fiber']) 
 
     event.remove('forge:ores/nickel', ['geolosys:limonite_ore', 'geolosys:deepslate_limonite_ore'])
     event.remove('forge:ores/emerald', ['geolosys:teallite_ore', 'geolosys:deepslate_teallite_ore'])
@@ -73,9 +38,16 @@ ServerEvents.tags('item', event => {
         'arcanethyst',
         'thunderbrand',
         'mjolnir',
+        'slumbering_lichblade',
+        'waking_lichblade',
+        'awakened_lichblade',
+        'shadowsting',
     ]
     for (let sword of swords) {
         event.add('custom:artifact_weapons', `simplyswords:${sword}`)
+    }
+    for (let color of ['white', 'black', 'red', 'cyan', 'purple']) {
+        event.add('custom:lich_staves', `graveyard:${color}_bone_staff`)
     }
 })
 

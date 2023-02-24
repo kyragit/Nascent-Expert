@@ -774,29 +774,29 @@ const LivingEntity = Java.loadClass('net.minecraft.world.entity.LivingEntity')
 const Projectile = Java.loadClass('net.minecraft.world.entity.projectile.Projectile')
 
 function revelation(event) {
-    Utils.server.runCommandSilent(`give ${event.player.username} kubejs:eye_of_revelation`)
-    Utils.server.runCommand(`tellraw ${event.player.username} {"text":"Your eyes have opened.","color":"#C7F845"}`)
+    event.server.runCommandSilent(`give ${event.player.username} kubejs:eye_of_revelation`)
+    event.server.runCommand(`tellraw ${event.player.username} {"text":"Your eyes have opened.","color":"#C7F845"}`)
     event.player.addTag('had_revelation')
 }
 
 PlayerEvents.chat(event => {
     switch (event.message) {
-        //case 'spoil me':
-        //    Utils.server.runCommand(`say ${secret_words.lightning}`)
-        //    Utils.server.runCommand(`say ${secret_words.fireball}`)
-        //    Utils.server.runCommand(`say ${secret_words.slow}`)
-        //    Utils.server.runCommand(`say ${secret_words.arrows}`)
-        //    event.cancel()
-        //    return
+        case 'spoil me':
+            event.server.runCommand(`say ${secret_words.lightning}`)
+            event.server.runCommand(`say ${secret_words.fireball}`)
+            event.server.runCommand(`say ${secret_words.slow}`)
+            event.server.runCommand(`say ${secret_words.arrows}`)
+            event.cancel()
+            return
         case secret_words.lightning:
             if (!event.player.getTags().contains('had_revelation')) {
                 revelation(event)
             }
             event.level.getNearbyEntities(LivingEntity, TargetingConditions.forCombat(), event.player, AABB.ofSize(event.player.position(), 20, 5, 20)).forEach(entity => {
-                Utils.server.scheduleInTicks(Utils.random.nextInt(1, 10), later => {
+                event.server.scheduleInTicks(Utils.random.nextInt(1, 10), later => {
                     later.server.runCommandSilent(`summon minecraft:lightning_bolt ${entity.x} ${entity.y} ${entity.z}`)
                 })
-                Utils.server.scheduleInTicks(Utils.random.nextInt(10, 20), later => {
+                event.server.scheduleInTicks(Utils.random.nextInt(10, 20), later => {
                     later.server.runCommandSilent(`summon minecraft:lightning_bolt ${entity.x} ${entity.y} ${entity.z}`)
                 })
             })
@@ -815,7 +815,7 @@ PlayerEvents.chat(event => {
             }
             if (Math.random() < 0.95) {
                 for (let i = 0; i < 6; i++) {
-                    Utils.server.scheduleInTicks(i * 2, later => {
+                    event.server.scheduleInTicks(i * 2, later => {
                         let offsetX = Math.random() * 5.0
                         if (Math.random() < 0.5) {
                             offsetX = -offsetX
@@ -830,14 +830,14 @@ PlayerEvents.chat(event => {
                 }
                 if (Math.random() < 0.33) {
                     if (Math.random() < 0.33) {
-                        Utils.server.runCommand(`tellraw @a [{"text":"<${event.player.username}> "},{"text":"BURN","color":"dark_red"}]`)
+                        event.server.runCommand(`tellraw @a [{"text":"<${event.player.username}> "},{"text":"BURN","color":"dark_red"}]`)
                     } else {
-                        Utils.server.runCommand(`tellraw @a "<${event.player.username}> BURN"`)
+                        event.server.runCommand(`tellraw @a "<${event.player.username}> BURN"`)
                     }
                 }
             } else if (Math.random() < 0.75) {
                 for (let i = 0; i < 10; i++) {
-                    Utils.server.scheduleInTicks(i * 2, later => {
+                    event.server.scheduleInTicks(i * 2, later => {
                         let offsetX = Math.random() * 5.0
                         if (Math.random() < 0.5) {
                             offsetX = -offsetX
@@ -850,10 +850,10 @@ PlayerEvents.chat(event => {
                         later.server.runCommandSilent(`execute at ${target.getStringUuid()} run summon minecraft:wither_skull ~${offsetX} ~${offsetY} ~${offsetZ} {power:[${-offsetX * 0.1}, ${-offsetY * 0.1}, ${-offsetZ * 0.1}]}`)
                     })
                 }
-                Utils.server.runCommand(`tellraw @a [{"text":"<${event.player.username}> "},{"text":"ANNIHIL","color":"black"}]`)
+                event.server.runCommand(`tellraw @a [{"text":"<${event.player.username}> "},{"text":"ANNIHIL","color":"black"}]`)
             } else {
                 for (let i = 0; i < 100; i++) {
-                    Utils.server.scheduleInTicks(i * 2, later => {
+                    event.server.scheduleInTicks(i * 2, later => {
                         let offsetX = Math.random() * 5.0
                         if (Math.random() < 0.5) {
                             offsetX = -offsetX
@@ -867,14 +867,14 @@ PlayerEvents.chat(event => {
                     })
                 }
                 for (let i = 0; i < 10; i++) {
-                    Utils.server.runCommand(`tellraw @a [{"text":"<${Math.random() > 0.15 ? event.player.username : 'BEYOND'}> "},{"text":"ANNIHIL","color":"black"}]`)
-                    Utils.server.runCommand(`tellraw @a [{"text":"<${Math.random() > 0.15 ? event.player.username : 'BEYOND'}> "},{"text":"ANNIHIL","color":"dark_red"}]`)
+                    event.server.runCommand(`tellraw @a [{"text":"<${Math.random() > 0.15 ? event.player.username : 'BEYOND'}> "},{"text":"ANNIHIL","color":"black"}]`)
+                    event.server.runCommand(`tellraw @a [{"text":"<${Math.random() > 0.15 ? event.player.username : 'BEYOND'}> "},{"text":"ANNIHIL","color":"dark_red"}]`)
                 }
             }
             if (Math.random() < 0.01) {
-                Utils.server.runCommandSilent(`tellraw ${event.player.username} [{"text":"<BEYOND> "},{"text":"SUFFER","color":"dark_red"}]`)
+                event.server.runCommandSilent(`tellraw ${event.player.username} [{"text":"<BEYOND> "},{"text":"SUFFER","color":"dark_red"}]`)
                 for (let i = 5; i < 16; i += 5) {
-                    Utils.server.scheduleInTicks(i, later => {
+                    event.server.scheduleInTicks(i, later => {
                         later.server.runCommandSilent(`execute at ${event.player.username} run summon alexsmobs:crimson_mosquito ~ ~4 ~ {CustomName:\'{"text":"Servant of Beyond","color":"dark_red"}\',CustomNameVisible:1b,Attributes:[{Name:"generic.max_health",Base:500.0},{Name:"generic.armor",Base:20.0},{Name:"generic.attack_damage",Base:10.0}],Health:500.0}`)
                     })
                 }
@@ -882,7 +882,7 @@ PlayerEvents.chat(event => {
             event.cancel()
             return
         case secret_words.fireball.toLowerCase():
-            Utils.server.runCommand(`tellraw ${event.player.username} "<BEYOND> LOUDER"`)
+            event.server.runCommand(`tellraw ${event.player.username} "<BEYOND> LOUDER"`)
             event.cancel()
             return
         case secret_words.slow:
@@ -891,11 +891,11 @@ PlayerEvents.chat(event => {
             }
             let duration = 300
             let radius = 20
-            Utils.server.runCommandSilent(`execute at ${event.player.username} run summon insanelib:area_effect_cloud_3d ~ ~ ~ {CustomName:\'{"text":"Shard of Before"}\',ReapplicationDelay:0,Radius:${radius}.0f,Duration:${duration},Particle:"minecraft:ash",Effects:[{"forge:id":"minecraft:slowness",Duration:6,Amplifier:9,ShowIcon:0b,ShowParticles:0b,Ambient:0b},{"forge:id":"minecraft:weakness",Duration:6,Amplifier:9,ShowIcon:0b,ShowParticles:0b,Ambient:0b},{"forge:id":"minecraft:resistance",Duration:6,Amplifier:9,ShowIcon:0b,ShowParticles:0b,Ambient:0b},{"forge:id":"minecraft:mining_fatigue",Duration:6,Amplifier:9,ShowIcon:0b,ShowParticles:0b,Ambient:0b}]}`)
+            event.server.runCommandSilent(`execute at ${event.player.username} run summon insanelib:area_effect_cloud_3d ~ ~ ~ {CustomName:\'{"text":"Shard of Before"}\',ReapplicationDelay:0,Radius:${radius}.0f,Duration:${duration},Particle:"minecraft:ash",Effects:[{"forge:id":"minecraft:slowness",Duration:6,Amplifier:9,ShowIcon:0b,ShowParticles:0b,Ambient:0b},{"forge:id":"minecraft:weakness",Duration:6,Amplifier:9,ShowIcon:0b,ShowParticles:0b,Ambient:0b},{"forge:id":"minecraft:resistance",Duration:6,Amplifier:9,ShowIcon:0b,ShowParticles:0b,Ambient:0b},{"forge:id":"minecraft:mining_fatigue",Duration:6,Amplifier:9,ShowIcon:0b,ShowParticles:0b,Ambient:0b}]}`)
             let cast_pos = event.player.position()
             let affected_entities = {}
             for (let i = 0; i < duration; i++) {
-                Utils.server.scheduleInTicks(i, later => {
+                event.server.scheduleInTicks(i, later => {
                     event.player.level.getEntitiesOfClass(Projectile, AABB.ofSize(cast_pos, radius, radius, radius)).forEach(entity => {
                         if (affected_entities[entity.getStringUuid()] == undefined) {
                             affected_entities[entity.getStringUuid()] = [entity, entity.getDeltaMovement()]
@@ -906,7 +906,7 @@ PlayerEvents.chat(event => {
                         }
                     })
                 })
-                Utils.server.scheduleInTicks(duration + 1, later => {
+                event.server.scheduleInTicks(duration + 1, later => {
                     for (let entity in affected_entities) {
                         affected_entities[entity][0].setNoGravity(false)
                         affected_entities[entity][0].setDeltaMovement(affected_entities[entity][1])
@@ -925,27 +925,27 @@ PlayerEvents.chat(event => {
                 event.player.potionEffects.add('minecraft:levitation', 100, 2, false, false)
                 event.player.level.getEntitiesOfClass(LivingEntity, AABB.ofSize(event.player.position(), rad * 2, vert, rad * 2)).forEach(entity => {
                     if (entity.getStringUuid() != event.player.getStringUuid()) {
-                        Utils.server.runCommandSilent(`effect give ${entity.getStringUuid()} minecraft:levitation 5 4 true`)
-                        Utils.server.scheduleInTicks(100, later => {
+                        event.server.runCommandSilent(`effect give ${entity.getStringUuid()} minecraft:levitation 5 4 true`)
+                        event.server.scheduleInTicks(100, later => {
                             entity.addMotion(0.0, -2.0, 0.0)
                         })
                     }
                 })
                 let init_pos = [event.player.x, event.player.y, event.player.z]
                 for (let ticks = 0; ticks < 40; ticks++) {
-                    Utils.server.scheduleInTicks(ticks, later => {
+                    event.server.scheduleInTicks(ticks, later => {
                         for (let i = 0; i < 150; i++) {
                             let offset = [Utils.random.nextDouble(-rad, rad), Utils.random.nextDouble(-1.5, 0.0), Utils.random.nextDouble(-rad, rad)]
-                            Utils.server.runCommandSilent(`execute in ${event.player.level.dimension} run particle minecraft:reverse_portal ${init_pos[0] + offset[0]} ${init_pos[1] + offset[1]} ${init_pos[2] + offset[2]} 0 1 0 0.4 0 normal @a`)
+                            event.server.runCommandSilent(`execute in ${event.player.level.dimension} run particle minecraft:reverse_portal ${init_pos[0] + offset[0]} ${init_pos[1] + offset[1]} ${init_pos[2] + offset[2]} 0 1 0 0.4 0 normal @a`)
                         }
                     })
                 }
-                Utils.server.runCommandSilent(`playsound minecraft:entity.wither.ambient master @a ${init_pos[0]} ${init_pos[1]} ${init_pos[2]} 50 0.5`)
-                Utils.server.runCommandSilent(`playsound minecraft:block.amethyst_block.chime master @a ${init_pos[0]} ${init_pos[1]} ${init_pos[2]} 50 0.5`)
-                Utils.server.scheduleInTicks(100, later => {
+                event.server.runCommandSilent(`playsound minecraft:entity.wither.ambient master @a ${init_pos[0]} ${init_pos[1]} ${init_pos[2]} 50 0.5`)
+                event.server.runCommandSilent(`playsound minecraft:block.amethyst_block.chime master @a ${init_pos[0]} ${init_pos[1]} ${init_pos[2]} 50 0.5`)
+                event.server.scheduleInTicks(100, later => {
                     later.server.runCommandSilent(`playsound minecraft:entity.wither.shoot master @a ${init_pos[0]} ${init_pos[1]} ${init_pos[2]} 50 0.5`)
                 })
-                Utils.server.scheduleInTicks(40, later => {
+                event.server.scheduleInTicks(40, later => {
                     later.server.runCommandSilent(`playsound minecraft:entity.wither.shoot master @a ${init_pos[0]} ${init_pos[1]} ${init_pos[2]} 50 0.65`)
                     let randomTarget = function() {
                         let nearby = []
@@ -958,7 +958,7 @@ PlayerEvents.chat(event => {
                         return entity
                     }
                     for (let i = 0; i < 65; i++) {   
-                        Utils.server.scheduleInTicks(i, last => {
+                        event.server.scheduleInTicks(i, last => {
                             let entity = randomTarget()
                             if (entity) {
                                 let offset = [Utils.random.nextDouble(-3.0, 3.0), Utils.random.nextDouble(6.0, 12.0), Utils.random.nextDouble(-3.0, 3.0)]
@@ -973,22 +973,22 @@ PlayerEvents.chat(event => {
             } else {
                 let penalty = Utils.random.nextDouble(0.0, 1.0)
                 if (penalty < 0.65) {
-                    Utils.server.runCommand(`tellraw ${event.player.username} {"text":"Your mind stings from exhaustion...","color":"dark_purple"}`)
-                    Utils.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.wither.hurt master ${event.player.username} ~ ~ ~ 50 0.75`)
-                    Utils.server.runCommandSilent(`effect give ${event.player.username} minecraft:instant_damage 1 1 true`)
+                    event.server.runCommand(`tellraw ${event.player.username} {"text":"Your mind stings from exhaustion...","color":"dark_purple"}`)
+                    event.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.wither.hurt master ${event.player.username} ~ ~ ~ 50 0.75`)
+                    event.server.runCommandSilent(`effect give ${event.player.username} minecraft:instant_damage 1 1 true`)
                 } else if (penalty < 0.85) {
-                    Utils.server.runCommand(`tellraw ${event.player.username} {"text":"Your brain writhes in agony...","color":"dark_purple"}`)
-                    Utils.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.wither.hurt master ${event.player.username} ~ ~ ~ 50 0.5`)
+                    event.server.runCommand(`tellraw ${event.player.username} {"text":"Your brain writhes in agony...","color":"dark_purple"}`)
+                    event.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.wither.hurt master ${event.player.username} ~ ~ ~ 50 0.5`)
                     event.player.attack(19)
                     event.entity.addExhaustion(500)
                 } else if (penalty < 0.95) {
-                    Utils.server.runCommand(`tellraw ${event.player.username} {"text":"Your mind turns inside out...","color":"dark_purple"}`)
+                    event.server.runCommand(`tellraw ${event.player.username} {"text":"Your mind turns inside out...","color":"dark_purple"}`)
                     event.player.potionEffects.add('minecraft:levitation', 100, 2, false, false)
-                    Utils.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.wither.ambient master ${event.player.username} ~ ~ ~ 50 0.5`)
-                    Utils.server.scheduleInTicks(40, later => {
-                        Utils.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.wither.shoot master ${event.player.username} ~ ~ ~ 50 0.5`)
+                    event.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.wither.ambient master ${event.player.username} ~ ~ ~ 50 0.5`)
+                    event.server.scheduleInTicks(40, later => {
+                        event.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.wither.shoot master ${event.player.username} ~ ~ ~ 50 0.5`)
                         for (let i = 0; i < 65; i++) {   
-                            Utils.server.scheduleInTicks(i, last => {
+                            event.server.scheduleInTicks(i, last => {
                                 let offset = [Utils.random.nextDouble(-7.0, 7.0), Utils.random.nextDouble(-7.0, 7.0), Utils.random.nextDouble(-7.0, 7.0)]
                                 let arrow = Utils.randomOf(Utils.random, ['archers_paradox:lightning_arrow', 'minecraft:arrow', 'archers_paradox:blaze_arrow', 'archers_paradox:quartz_arrow', 'archers_paradox:diamond_arrow', 'minecraft:spectral_arrow', 'apotheosis:obidian_arrow', 'minecraft:arrow', 'minecraft:arrow'])
                                 last.server.runCommandSilent(`execute at ${event.player.username} run summon ${arrow} ~${offset[0]} ~${offset[1]} ~${offset[2]} {SoundEvent:"minecraft:entity.drowned.shoot",life:1180,crit:1b,pickup:0b,Motion:[${-offset[0]},${-offset[1]},${-offset[2]}]}`)
@@ -996,10 +996,10 @@ PlayerEvents.chat(event => {
                         }
                     })
                 } else {
-                    Utils.server.runCommand(`tellraw ${event.player.username} {"text":"Your brain explodes from Within...","color":"dark_purple"}`)
+                    event.server.runCommand(`tellraw ${event.player.username} {"text":"Your brain explodes from Within...","color":"dark_purple"}`)
                     event.player.potionEffects.add('minecraft:levitation', 60, 2, false, false)
-                    Utils.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.wither.ambient master ${event.player.username} ~ ~ ~ 50 0.5`)
-                    Utils.server.scheduleInTicks(50, later => {
+                    event.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.wither.ambient master ${event.player.username} ~ ~ ~ 50 0.5`)
+                    event.server.scheduleInTicks(50, later => {
                         later.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:block.end_portal_frame.fill master ${event.player.username} ~ ~ ~ 50 0.5`)
                         for (let i = 0; i < 1000; i++) {
                             let offset = [Utils.random.nextDouble(-15, 15), Utils.random.nextDouble(-5, 5), Utils.random.nextDouble(-15, 15)]
@@ -1007,13 +1007,13 @@ PlayerEvents.chat(event => {
                         }
                     })
                     if (event.player.level.dimension == 'minecraft:the_nether') {
-                        Utils.server.scheduleInTicks(60, later => {
+                        event.server.scheduleInTicks(60, later => {
                             event.player.attack(15)
                             event.entity.addExhaustion(500)
                             later.server.runCommandSilent(`execute at ${event.player.username} in minecraft:overworld run tp ${event.player.username} ~ ~ ~`)
                         })
                     } else {
-                        Utils.server.scheduleInTicks(60, later => {
+                        event.server.scheduleInTicks(60, later => {
                             event.player.attack(15)
                             event.entity.addExhaustion(500)
                             later.server.runCommandSilent(`execute at ${event.player.username} in minecraft:the_nether run tp ${event.player.username} ~ ~ ~`)
@@ -1035,7 +1035,7 @@ PlayerEvents.tick(event => {
             event.player.data.add('arrows_spell_cooldown', cooldown - 1)
         } else {
             event.player.data.remove('arrows_spell_cooldown')
-            Utils.server.runCommand(`tellraw ${event.player.username} {"text":"Your mind is open once again.", "color":"dark_purple"}`)
+            event.server.runCommand(`tellraw ${event.player.username} {"text":"Your mind is open once again.", "color":"dark_purple"}`)
         }
     }
 })

@@ -1,0 +1,47 @@
+{
+    "type": "geolosys:deposit_sparse",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "minecraft:redstone_ore",
+            "chance": 0.1
+          },
+          {
+            "block": "geolosys:hematite_ore",
+            "chance": 0.1
+          },
+          {
+            "block": null,
+            "chance": 0.8
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "minecraft:deepslate_redstone_ore",
+            "chance": 0.1
+          },
+          {
+            "block": "geolosys:deepslate_hematite_ore",
+            "chance": 0.1
+          },
+          {
+            "block": null,
+            "chance": 0.8
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": null,
+          "chance": 1.0
+        }
+      ],
+      "yMin": -64,
+      "yMax": 30,
+      "size": 30,
+      "spread": 30,
+      "biomeTag": "#minecraft:is_overworld",
+      "generationWeight": 16
+    }
+}

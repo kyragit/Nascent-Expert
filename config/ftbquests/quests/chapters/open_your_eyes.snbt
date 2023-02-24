@@ -97,6 +97,12 @@
 				type: "item"
 				item: "map_atlases:atlas"
 			}]
+			rewards: [{
+				id: "260E2CA234696E94"
+				type: "item"
+				item: "minecraft:map"
+				count: 4
+			}]
 		}
 		{
 			icon: "minecraft:white_banner"
@@ -113,6 +119,11 @@
 				id: "1AEE08B4A653EB73"
 				type: "checkmark"
 				title: "Making Waypoints"
+			}]
+			rewards: [{
+				id: "4CBC0B9E696CE983"
+				type: "item"
+				item: "minecraft:white_banner"
 			}]
 		}
 		{

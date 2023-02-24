@@ -1,0 +1,55 @@
+{
+    "type": "geolosys:deposit_sparse",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "minecraft:emerald_ore",
+            "chance": 0.1
+          },
+          {
+            "block": "minecraft:diamond_ore",
+            "chance": 0.1
+          },
+          {
+            "block": "geolosys:gold_ore",
+            "chance": 0.1
+          },
+          {
+            "block": null,
+            "chance": 0.7
+          }
+        ],
+        "minecraft:deepslate": [
+          {
+            "block": "minecraft:deepslate_emerald_ore",
+            "chance": 0.1
+          },
+          {
+            "block": "minecraft:deepslate_diamond_ore",
+            "chance": 0.1
+          },
+          {
+            "block": "geolosys:deepslate_gold_ore",
+            "chance": 0.1
+          },
+          {
+            "block": null,
+            "chance": 0.7
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": null,
+          "chance": 1.0
+        }
+      ],
+      "yMin": -64,
+      "yMax": 10,
+      "size": 30,
+      "spread": 30,
+      "biomeTag": "#minecraft:is_overworld",
+      "generationWeight": 10
+    }
+}

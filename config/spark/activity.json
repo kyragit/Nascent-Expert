@@ -5,6 +5,32 @@
       "name": "kyracraft",
       "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
     },
+    "time": 1677132088634,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/5Bo5iTi2ra"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "kyracraft",
+      "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
+    },
+    "time": 1677128907045,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/FUndgAcyOw"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "kyracraft",
+      "uniqueId": "05c198f6-1c7c-4063-a67b-c3a050e4f3e6"
+    },
     "time": 1673302175006,
     "type": "Heap dump summary",
     "data": {

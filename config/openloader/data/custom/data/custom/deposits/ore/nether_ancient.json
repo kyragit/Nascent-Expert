@@ -1,0 +1,33 @@
+{
+    "type": "geolosys:deposit_layer",
+    "config": {
+      "blocks": {
+        "default": [
+          {
+            "block": "geolosys:nether_gold_ore",
+            "chance": 0.05
+          },
+          {
+            "block": "geolosys:ancient_debris_ore",
+            "chance": 0.01
+          },
+          {
+            "block": null,
+            "chance": 0.94
+          }
+        ]
+      },
+      "samples": [
+        {
+          "block": null,
+          "chance": 1.0
+        }
+      ],
+      "yMin": 0,
+      "yMax": 40,
+      "radius": 50,
+      "depth": 30,
+      "biomeTag": "#minecraft:is_nether",
+      "generationWeight": 1
+    }
+}

@@ -69,6 +69,12 @@
 				type: "item"
 				item: "minecraft:fletching_table"
 			}]
+			rewards: [{
+				id: "6AADE5D4EEA7750D"
+				type: "item"
+				item: "minecraft:feather"
+				count: 16
+			}]
 		}
 		{
 			title: "Runic Weapons"
@@ -138,6 +144,44 @@
 					}
 				}
 			}]
+			rewards: [
+				{
+					id: "1F9311FBE333E9B1"
+					type: "item"
+					item: "archers_paradox:quartz_arrow"
+					count: 4
+				}
+				{
+					id: "13F7F3BE51B0AEF6"
+					type: "item"
+					item: "archers_paradox:diamond_arrow"
+					count: 4
+				}
+				{
+					id: "5919DA0367091ED7"
+					type: "item"
+					item: "archers_paradox:ender_arrow"
+					count: 4
+				}
+				{
+					id: "4BE0F3E4B9BFF9FC"
+					type: "item"
+					item: "archers_paradox:phantasmal_arrow"
+					count: 4
+				}
+				{
+					id: "421B30319A8A60A9"
+					type: "item"
+					item: "archers_paradox:blaze_arrow"
+					count: 4
+				}
+				{
+					id: "058BD77A0BDAC066"
+					type: "item"
+					item: "archers_paradox:frost_arrow"
+					count: 4
+				}
+			]
 		}
 		{
 			icon: {

@@ -1,0 +1,263 @@
+{
+	id: "20A1C88D67B1AFCF"
+	group: "36C3CA17FE4F12AD"
+	order_index: 7
+	filename: "planar_magicks"
+	title: "Planar Magicks"
+	icon: "minecraft:nether_star"
+	subtitle: ["Harnessing extraplanar magicks to your own ends."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "Pyromancy"
+			icon: {
+				id: "pyromancer:blazing_journal"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: 2.0d
+			y: 0.0d
+			description: [
+				"The Nether itself is brimming with potiental energy. Pyromancy is the art of harnessing and directing it."
+				""
+				"In order to begin, you'll need two things: a Blazing Journal, and a Pyromancer's Table. The Journal can either be made or looted in the Nether, and the Table is made from Pyrowood; ancient trees found rarely in deserts or in the Nether."
+			]
+			id: "46B56DBD4BBE2BFF"
+			tasks: [
+				{
+					id: "210A32039165A206"
+					type: "item"
+					item: {
+						id: "pyromancer:blazing_journal"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "614EE32E5DEEF1D6"
+					type: "item"
+					item: "pyromancer:pyromancer_table"
+				}
+			]
+		}
+		{
+			icon: "minecraft:blaze_powder"
+			x: 4.0d
+			y: 0.0d
+			description: [
+				"The Blazing Journal uses Blaze Powder as fuel. Fuel it inside of a Pyromancer's Table. "
+				""
+				"The Journal is an offhand weapon. Enchant it in an enchanting table, and it will empower weapons in your main hand (depending on the enchantments). This uses its stored blaze."
+				""
+				"Its other use is to power certain Pyromancy Artifacts. These all have a unique spell-like effect that uses blaze from an offhanded Journal."
+			]
+			dependencies: ["46B56DBD4BBE2BFF"]
+			id: "102808F22A27EE1B"
+			tasks: [{
+				id: "5DFF060CE6E6933A"
+				type: "checkmark"
+				title: "Using the Journal"
+			}]
+			rewards: [{
+				id: "09716341889EA3F0"
+				type: "item"
+				item: "minecraft:blaze_powder"
+				count: 16
+			}]
+		}
+		{
+			title: "Staves"
+			icon: {
+				id: "enchantable_staffs:gold_staff"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: -2.0d
+			y: 0.0d
+			description: [
+				"Staves are special tools that use the enchanting process to create spell-like effects."
+				""
+				"There are a whole host of enchantments that can be applied to these, but each staff can only have one spell enchantment."
+				""
+				"Using a spell requires 'charge'. By default, each staff has a limit of 200 charge that regenerates as long as you are holding it. Some spells require more than 200 charge, however. The only way to use these is with special potions that increase your avaiable charge."
+				""
+				"Different staves have different durability and enchantability values. Gold is the most enchantable, and netherite is the most durable."
+			]
+			id: "43E4BB038781FD68"
+			tasks: [{
+				id: "25E45DDE5D969490"
+				type: "item"
+				title: "Any Staff"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "enchantable_staffs:staffs"
+					}
+				}
+			}]
+		}
+		{
+			title: "Scrolls"
+			x: -4.0d
+			y: -1.0d
+			description: ["Scrolls function exactly like enchanted books, but only accept staff enchantments. Very useful for getting the spell you want!"]
+			dependencies: ["43E4BB038781FD68"]
+			id: "5608FE9D92E0D227"
+			tasks: [{
+				id: "09CA1C36A7D70B8C"
+				type: "item"
+				item: "enchantable_staffs:scroll"
+			}]
+		}
+		{
+			icon: "minecraft:cake"
+			x: -4.0d
+			y: 1.0d
+			description: [
+				"Certain items, when combined with a staff in a smithing table, will give the staff a modifier."
+				""
+				"Blue Ice: Cold Affinity"
+				"This modifier doubles the staff's charge rate in a cold biome."
+				""
+				"Shroomlight: Heat Affinity"
+				"Like Cold Affinity, but for hot biomes instead."
+				""
+				"Cake: Gluttony"
+				"Consumes food items in your offhand to charge your staff faster. Activate by left clicking."
+				""
+				"Emerald Block: Greed"
+				"Like above, but consumes valuable items (e.g. ingots, ores, gems) instead. "
+				""
+				"Eye of Ender: Envy"
+				"Adds charge when attacking an entity with the staff, based on the max health of the entity."
+			]
+			dependencies: ["43E4BB038781FD68"]
+			id: "4D5DA2D80A5B9044"
+			tasks: [{
+				id: "6AD016B7FB86729A"
+				type: "checkmark"
+				title: "Staff Modifiers"
+			}]
+		}
+		{
+			title: "Alchemy"
+			icon: {
+				id: "minecraft:potion"
+				Count: 1b
+				tag: {
+					Potion: "minecraft:leaping"
+				}
+			}
+			x: 0.0d
+			y: -2.0d
+			description: [
+				"Many tweaks have been made to making and using potions. Potions now stack for easier use (up to 16 for regular potions and 4 for splash potions)."
+				""
+				"Additionally, splash potions can now be thrown much further. "
+				""
+				"The intrepid alchemist also has a few new tools at their disposal."
+			]
+			id: "02AA7B55F4EC5E2E"
+			tasks: [{
+				id: "4FEA687C1036F874"
+				type: "checkmark"
+				title: "Alchemy"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -4.0d
+			description: [
+				"The Compound Brewing Stand is an upgrade to the standard brewing stand. "
+				""
+				"It can make double the amount of potions at once, up to six. It can also store additional ingredients that will be applied in sequence. Additionally, it is twice as fast as a regular brewing stand."
+			]
+			dependencies: ["02AA7B55F4EC5E2E"]
+			id: "7EA39BE8353C86C1"
+			tasks: [{
+				id: "457CD75640A0491D"
+				type: "item"
+				item: "davespotioneering:compound_brewing_stand"
+			}]
+		}
+		{
+			title: "Coating Weapons"
+			x: 1.0d
+			y: -4.0d
+			description: [
+				"The Reinforced Cauldron can be used to coat weapons with a potion effect."
+				""
+				"Fill the cauldron with three of the same potion, and then a dragon's breath. Then right-click with your weapon."
+				""
+				"The weapon will apply the potion effect upon hitting an enemy. It has limited uses, and limited time (though the time only ticks down while you are holding it)."
+			]
+			dependencies: ["02AA7B55F4EC5E2E"]
+			id: "2F27E3FC7864ED2C"
+			tasks: [{
+				id: "2EA460A3C6FE4C43"
+				type: "item"
+				item: "davespotioneering:reinforced_cauldron"
+			}]
+		}
+		{
+			icon: {
+				id: "davespotioneering:potioneer_gauntlet"
+				Count: 1b
+				tag: { }
+			}
+			x: -1.0d
+			y: -4.0d
+			description: [
+				"The Potioneer's Gauntlet is a special melee weapon that applies potion effects on hit."
+				""
+				"Put it into a Potion Injector, and then insert blaze powder and lingering potions."
+				""
+				"The Gauntlet will then use blaze to apply the potions to entities you hit. The potions are not consumed. Read the item's description for its controls."
+			]
+			dependencies: ["02AA7B55F4EC5E2E"]
+			id: "3FC2AB9CEF5869E7"
+			tasks: [
+				{
+					id: "4582EB1010A51BE1"
+					type: "item"
+					item: {
+						id: "davespotioneering:potioneer_gauntlet"
+						Count: 1b
+						tag: { }
+					}
+				}
+				{
+					id: "2C6609D7044E1CC2"
+					type: "item"
+					item: "davespotioneering:potion_injector"
+				}
+			]
+		}
+		{
+			title: "Dragon's Breath Early"
+			x: 0.0d
+			y: -6.0d
+			description: ["Dragon's Breath can be obtained before going to the End. You'll need to scrap some affix items and crush some gems. "]
+			dependencies: [
+				"2F27E3FC7864ED2C"
+				"3FC2AB9CEF5869E7"
+			]
+			dependency_requirement: "one_started"
+			id: "091F68B339B98F49"
+			tasks: [{
+				id: "47DA124EC926EE92"
+				type: "item"
+				item: "minecraft:dragon_breath"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

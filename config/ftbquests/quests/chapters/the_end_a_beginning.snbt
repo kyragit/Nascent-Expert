@@ -15,7 +15,7 @@
 			description: [
 				"Reaching the End will be no simple task. You will need at least 12 of the 16 unique eyes to fill the portal."
 				""
-				"The stronghold cannot be located with a standard eye of ender either. You must use one of the unique eyes (do not worry, they will never break)."
+				"The stronghold cannot be located with a standard eye of ender, either. You must use one of the unique eyes (do not worry, they will never break)."
 			]
 			dependencies: ["7F492ECCA9E3A777"]
 			id: "6CC755A226C041F6"

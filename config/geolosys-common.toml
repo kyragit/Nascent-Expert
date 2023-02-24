@@ -19,7 +19,7 @@
 	maxSamplesPerChunk = 6
 	#The number of times Geolosys will attempt to place plutons in a given chunk
 	#Range: > 1
-	numPlutonsPerChunk = 1
+	numPlutonsPerChunk = 4
 	#The upper limit of RNG for generating any pluton in a given chunk.
 	#Larger values indicate further distance between plutons.
 	#Range: 0.0 ~ 1.0

@@ -8,7 +8,7 @@ ascendingWinds = true
 windSources = ["fire", "soul_fire", "campfire#lit=true", "soul_campfire#lit=true"]
 #Horizontal movement speed while paragliding.
 #Range: 0.2 ~ 10.0
-paraglidingSpeed = 1.0
+paraglidingSpeed = 2.0
 #Durability of Paragliders. Set to zero to disable durability.
 #Range: > 0
 paragliderDurability = 0

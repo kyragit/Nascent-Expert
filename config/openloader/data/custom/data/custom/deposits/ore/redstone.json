@@ -9,7 +9,7 @@
           },
           {
             "block": "minecraft:redstone_ore",
-            "chance": 0.4
+            "chance": 0.3
           },
           {
             "block": "create:crimsite",
@@ -23,7 +23,7 @@
           },
           {
             "block": "minecraft:deepslate_redstone_ore",
-            "chance": 0.4
+            "chance": 0.3
           },
           {
             "block": "create:crimsite",
@@ -40,7 +40,7 @@
       "yMin": -40,
       "yMax": 10,
       "size": 100,
-      "spread": 15,
+      "spread": 16,
       "biomeTag": "#forge:is_hot/overworld",
       "generationWeight": 3
     }

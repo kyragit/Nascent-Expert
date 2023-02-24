@@ -15,7 +15,7 @@
                 "chance": 1.0
             }
         ],
-        "generationWeight": 6,
+        "generationWeight": 18,
         "yMin": -20,
         "yMax": 10,
         "biomeTag": "#forge:is_cold/overworld",

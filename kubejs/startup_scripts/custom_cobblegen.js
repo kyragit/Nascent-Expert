@@ -159,6 +159,9 @@ ForgeEvents.onEvent(LivingEquipmentChangeEvent, event => {
     if (!event.getEntity().player) {
         return
     }
+    if (!event.getEntity().server) {
+        return
+    }
     if (event.getSlot() == EquipmentSlot.MAINHAND || event.getSlot() == EquipmentSlot.OFFHAND) {
         return
     }
@@ -168,7 +171,7 @@ ForgeEvents.onEvent(LivingEquipmentChangeEvent, event => {
     if (event.getTo().enchantments.get('minecraft:binding_curse') == undefined) {
         return
     }
-    Utils.server.runCommandSilent(`give ${event.getEntity().username} kubejs:mark_of_the_accursed`)
+    event.getEntity().server.runCommandSilent(`give ${event.getEntity().username} kubejs:mark_of_the_accursed`)
     event.getEntity().addTag('recieved_curse_mark')
-    Utils.server.runCommand(`tellraw ${event.getEntity().username} {"text":"You bear the mark... you are cursed. You must place your hand upon the stone.","italic":"true","color":"#B00000","clickEvent":{"action":"open_url","value":"https://www.youtube.com/watch?v=AJATwqY5muo"}}`)
+    event.getEntity().server.runCommand(`tellraw ${event.getEntity().username} {"text":"You bear the mark... you are cursed. You must place your hand upon the stone.","italic":"true","color":"#B00000","clickEvent":{"action":"open_url","value":"https://www.youtube.com/watch?v=AJATwqY5muo"}}`)
 })

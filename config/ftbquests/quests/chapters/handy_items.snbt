@@ -50,6 +50,12 @@
 				type: "item"
 				item: "potionofbees:splash_potion_of_bees"
 			}]
+			rewards: [{
+				id: "5D37630EA224D57D"
+				type: "item"
+				item: "minecraft:honeycomb_block"
+				count: 8
+			}]
 		}
 		{
 			x: -2.0d
@@ -83,6 +89,56 @@
 						value: "paraglider:paragliders"
 					}
 				}
+			}]
+		}
+		{
+			title: "Day Packs"
+			x: 0.0d
+			y: 2.0d
+			description: [
+				"Easier to get than backpacks, these will ease your inventory struggles in the early game."
+				""
+				"To make the tanned leather, put down a leather tanner directly next to a campfire, and place some leather."
+				""
+				"These packs are much smaller than standard backpacks. Also, they take your chestplate slot, and if you take them off your items spill all over the floor."
+			]
+			id: "46F570061CAB0D9F"
+			tasks: [{
+				id: "0400D28A1B2E7D50"
+				type: "item"
+				title: "Any #campanion:backpacks"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "campanion:backpacks"
+					}
+				}
+			}]
+		}
+		{
+			x: 3.5d
+			y: 0.0d
+			description: [
+				"BEES"
+				""
+				"SO MANY BEES"
+			]
+			dependencies: [
+				"3E78BE3906130AD3"
+				"091F68B339B98F49"
+			]
+			hide: true
+			id: "2F58E0E7E4EE7C2A"
+			tasks: [{
+				id: "604C4905EFAC389F"
+				type: "item"
+				item: "potionofbees:lingering_potion_of_bees"
+			}]
+			rewards: [{
+				id: "79435572592AF363"
+				type: "item"
+				item: "minecraft:dragon_breath"
 			}]
 		}
 	]
