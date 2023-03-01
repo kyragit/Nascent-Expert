@@ -724,7 +724,7 @@
     B:CursedRingAutoEquip=false
 
     # Set to false to disable ALL special drops that can be obtained from vanilla mobs when bearing Ring of the Seven Curses. [default: true, synchronized: yes]
-    B:CursedRingEnableSpecialDrops=true
+    B:CursedRingEnableSpecialDrops=false
 
     # How much additional Enchanting Power ring provides in Enchanting Table. [range: 0 ~ 32768, default: 10, synchronized: yes]
     I:CursedRingEnchantingBonus=10

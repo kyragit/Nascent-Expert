@@ -135,6 +135,9 @@ ItemEvents.modification(event => {
     event.modify('enigmaticlegacy:recall_potion', item => {
         item.setMaxStackSize(16)
     })
+    event.modify('enigmaticlegacy:twisted_potion', item => {
+        item.setMaxStackSize(16)
+    })
 })
 
 const SAMPLES = [

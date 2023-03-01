@@ -1,0 +1,194 @@
+{
+	id: "3EA10B43A8135B81"
+	group: "52DC2EC078E51292"
+	order_index: 4
+	filename: "advanced_hexcasting"
+	title: "Advanced Hexcasting"
+	icon: "hexcasting:slate"
+	subtitle: ["Go insane."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: 0.0d
+			y: 0.0d
+			shape: "hexagon"
+			description: ["You've opened your mind, and it hurt. There's more to this world than you realized."]
+			dependencies: ["1C329DDA761BAD72"]
+			invisible: true
+			id: "5BA71EB9A5C867E5"
+			tasks: [{
+				id: "0A79A66C473E590C"
+				type: "advancement"
+				title: "MY BRAIN"
+				advancement: "hexcasting:enlightenment"
+				criterion: ""
+			}]
+		}
+		{
+			title: "Spell Circles"
+			x: 1.0d
+			y: 0.75d
+			shape: "hexagon"
+			description: [
+				"You now understand the purpose of the slates; casting spells automatically, no wand or trinket required."
+				""
+				"Now that it's possible to automate the collection of amethyst, the possibilities are truly endless."
+			]
+			dependencies: ["5BA71EB9A5C867E5"]
+			id: "79A6CEB6520C6C01"
+			tasks: [{
+				id: "252EBE25FA876E2E"
+				type: "item"
+				item: "hexcasting:slate"
+			}]
+		}
+		{
+			title: "Akashic Libraries"
+			x: -1.0d
+			y: 0.75d
+			shape: "hexagon"
+			description: ["You need a place to store your vast wealth of knowledge. Create an Akashic Library to recall your catalogue of spells from anywhere."]
+			dependencies: ["5BA71EB9A5C867E5"]
+			id: "432AA51E2F5C9845"
+			tasks: [{
+				id: "79C9BBEB360EFD09"
+				type: "item"
+				item: "hexcasting:akashic_record"
+			}]
+		}
+		{
+			icon: {
+				id: "hexcasting:scroll"
+				Count: 1b
+				tag: {
+					pattern: {
+						angles: [B;
+							1b
+							1b
+							5b
+							2b
+							0b
+							2b
+							1b
+							4b
+							4b
+							2b
+							0b
+							2b
+							2b
+						]
+						start_dir: 1b
+					}
+					op_id: "hexcasting:potion/haste"
+				}
+			}
+			x: 0.0d
+			y: -1.25d
+			shape: "hexagon"
+			description: ["The Media flows through you, and you now understand how to cast the Great Spells. The fate of the Universe is at your fingertips; great and terrible power brimming from After."]
+			dependencies: ["5BA71EB9A5C867E5"]
+			id: "34B5C00E8DAFC17E"
+			tasks: [{
+				id: "5A32F4AC5EEEE69A"
+				type: "checkmark"
+				title: "Great Spells"
+			}]
+		}
+		{
+			icon: "hexcasting:scroll"
+			x: -1.5d
+			y: -3.0d
+			shape: "hexagon"
+			description: ["The Greater Teleport spell has immense potential. In combination with spell circles, it may be possible to make a 'network' of connected teleporters. Use them to travel across continents in the blink of an eye."]
+			hide_dependency_lines: true
+			dependencies: ["5BA71EB9A5C867E5"]
+			id: "0CDC37675FEBAFD5"
+			tasks: [{
+				id: "296BBE0D0503E8F6"
+				type: "checkmark"
+				title: "Ideas: Teleporter Network"
+			}]
+		}
+		{
+			icon: "hexcasting:scroll"
+			x: 1.5d
+			y: -3.0d
+			shape: "hexagon"
+			description: ["The combination of the Acceleration spell and a Cyclic Wisp is a powerful one. Feed it enough amethyst, and it can warp time forward for any block. Grow crops at lightning speed, smelt at the speed of light, or anything else you can imagine."]
+			hide_dependency_lines: true
+			dependencies: ["5BA71EB9A5C867E5"]
+			id: "44652A39FA2E5D87"
+			tasks: [{
+				id: "2FE98947DA240344"
+				type: "checkmark"
+				title: "Ideas: Tick Acceleration"
+			}]
+		}
+		{
+			icon: "hexcasting:scroll"
+			x: 3.0d
+			y: 0.0d
+			shape: "hexagon"
+			description: ["Wisps are very powerful creatures indeed. It should be possible to program one that, for example, excavates an entire chunk all by itself. "]
+			hide_dependency_lines: true
+			dependencies: ["5BA71EB9A5C867E5"]
+			id: "2CF16EA1CC8A976E"
+			tasks: [{
+				id: "28F82A2B17541439"
+				type: "checkmark"
+				title: "Ideas: Mass Excavation"
+			}]
+		}
+		{
+			icon: "hexcasting:scroll"
+			x: 1.5d
+			y: 3.0d
+			shape: "hexagon"
+			description: ["You'll need a large amount of lava for your growing industry. If you're already producing amethyst, it might be wise to use some of it to generate lava with a spell circle. "]
+			hide_dependency_lines: true
+			dependencies: ["5BA71EB9A5C867E5"]
+			id: "0208D445C6533C54"
+			tasks: [{
+				id: "5D3617B4585F0744"
+				type: "checkmark"
+				title: "Ideas: Lava Generation"
+			}]
+		}
+		{
+			icon: "hexcasting:scroll"
+			x: -1.5d
+			y: 3.0d
+			shape: "hexagon"
+			description: ["Wisps seem to have the ability to navigate to a position of your choosing. Perhaps you could program one to constantly update its destination to a moving target? What you choose to do to said target is up to you."]
+			hide_dependency_lines: true
+			dependencies: ["5BA71EB9A5C867E5"]
+			id: "6CFB953D0FBCFD8A"
+			tasks: [{
+				id: "56649EF819DA7CB5"
+				type: "checkmark"
+				title: "Ideas: Pathfinding Wisps"
+			}]
+		}
+		{
+			icon: "hexcasting:scroll"
+			x: -3.0d
+			y: 0.0d
+			shape: "hexagon"
+			description: [
+				"Your Everbook in combination with an Akashic Library can do incredible things. You can create your own patterns that execute a more complicated set of patterns when drawn."
+				""
+				"This means that you can cast very complex spells on the fly, without a casting implement. "
+			]
+			hide_dependency_lines: true
+			dependencies: ["5BA71EB9A5C867E5"]
+			id: "4FE3DCBC7AC64B0F"
+			tasks: [{
+				id: "5289E87264392029"
+				type: "checkmark"
+				title: "Ideas: Metaprogramming"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

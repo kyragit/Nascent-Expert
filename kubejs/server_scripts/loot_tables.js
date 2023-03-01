@@ -14,10 +14,18 @@ ServerEvents.genericLootTables(event => {
     graveyardLootTables(event)
     dungeonsEnhancedLootTables(event)
     incendiumLootTables(event)
+    cursedLootTable(event)
+    treasureBagLootTables(event)
 })
 
 ServerEvents.blockLootTables(event => {
     geolosysLootTables(event)
+    event.modifyBlock('#forge:ores/redstone', loot => {
+        loot.addPool(pool => {
+            pool.rolls = {n: 1, p: 0.1}
+            pool.addItem('spelunkery:cinnabar')
+        })
+    })
 })
 
 ServerEvents.entityLootTables(event => {
@@ -29,9 +37,12 @@ LootJS.modifiers(event => {
     // Stops all eyes of ender generating as loot, anywhere
     event.addLootTableModifier(/.*/).removeLoot('minecraft:ender_eye').removeLoot(/create:(?:andesite_alloy|goggles|wrench|gearbox|large_cogwheel|cogwheel|shaft)/)
     event.addLootTableModifier(/^endrem:.*/).removeLoot(/.*/)
+    event.addLootTableModifier(/^blazegear:inject.*/).removeLoot(/.*/)
     event.addLootTableModifier(/^incendium:artifact.*/).randomChance(0.75).addLoot('enigmaticlegacy:blazing_core')
     event.addLootTableModifier('dreamland:grant_book_on_first_join').removeLoot(/.*/)
     event.addLootTableModifier('simplyswords:grant_book_on_first_join').removeLoot(/.*/)
+    event.addLootTableModifier('immersiveengineering:chests/engineers_house').removeLoot(/.*/)
+    event.addLootTableModifier(/immersiveengineering:gameplay.*/).removeLoot(/.*/)
 })
 
 const PLENTIFUL = 'custom:loot_plentiful'
@@ -164,6 +175,7 @@ function createUniversalLootTables(event) {
         ['simplyswords:runic_greathammer', 1],
         ['simplyswords:runic_warglaive', 1],
         ['simplyswords:runic_scythe', 1],
+        ['simply_swords:runic_tablet', 3],
     ]
     
     const OVERWORLD_VALUABLE = [
@@ -726,6 +738,7 @@ function dungeonsAriseLootTables(event) {
     addItemToLootTable(event, 'dungeons_arise:chests/shiraz_palace/shiraz_palace_elite', 'simplyswords:thunderbrand', 0.5, 1)
     addItemToLootTable(event, 'dungeons_arise:chests/shiraz_palace/shiraz_palace_elite', 'enigmaticlegacy:hunter_guidebook', 0.5, 1)
     dungeonsAriseLoot(event, 'small_blimp/small_blimp_treasure', EPIC)
+    addItemToLootTable(event, 'dungeons_arise:chests/small_blimp/small_blimp_treasure', 'enigmaticlegacy:angel_blessing', 0.33, 1)
     dungeonsAriseLoot(event, 'thornborn_towers/thornborn_towers_barrels', COMMON)
     dungeonsAriseLoot(event, 'thornborn_towers/thornborn_towers_rooms', COMMON)
     dungeonsAriseLoot(event, 'thornborn_towers/thornborn_towers_top_rooms', RARE)
@@ -770,11 +783,13 @@ function yungsLootTables(event) {
     addToLootTable(event, 'betterdeserttemples:chests/library', 'custom:lore_book', 0.1, 1)
     addToLootTable(event, 'betterdeserttemples:chests/pharaoh_hidden', LEGENDARY, 1, 1)
     addItemToLootTable(event, 'betterdeserttemples:chests/pharaoh_hidden', 'kubejs:pharaohs_ankh', 0.67, 1)
+    addItemToLootTable(event, 'betterdeserttemples:chests/pharaoh_hidden', 'simplyswords:shadowsting', 0.5, 1)
     addToLootTable(event, 'betterdeserttemples:chests/statue', RARE, 1, 1)
     addToLootTable(event, 'betterdeserttemples:chests/storage', PLENTIFUL, 1, 1)
     addToLootTable(event, 'betterdeserttemples:chests/tomb', RARE, 1, 1)
     addToLootTable(event, 'betterdeserttemples:chests/tomb_pharaoh', EPIC, 1, 1)
     addItemToLootTable(event, 'betterdeserttemples:chests/tomb_pharaoh', 'kubejs:pharaohs_ankh', 0.25, 1)
+    addItemToLootTable(event, 'betterdeserttemples:chests/tomb_pharaoh', 'simplyswords:shadowsting', 0.33, 1)
     addToLootTable(event, 'betterfortresses:chests/hall', NETHER_COMMON, 1, 1)
     addToLootTable(event, 'betterfortresses:chests/keep', NETHER_COMMON, 1, 1)
     addToLootTable(event, 'betterfortresses:chests/puzzle', NETHER_EPIC, 1, 1)
@@ -904,6 +919,8 @@ function geolosysLootTables(event) {
     replaceOreDrop(event, 'geolosys:deepslate_lignite_ore', 'kubejs:lignite_coal')
     replaceOreDrop(event, 'geolosys:bituminous_coal_ore', 'kubejs:bituminous_coal')
     replaceOreDrop(event, 'geolosys:deepslate_bituminous_coal_ore', 'kubejs:bituminous_coal')
+    replaceOreDrop(event, 'geolosys:nether_gold_ore', 'minecraft:raw_gold')
+    replaceOreDrop(event, 'geolosys:ancient_debris_ore', 'minecraft:ancient_debris')
 
     for (let i of SAMPLE_MAP) {
         sampleNuggetLoot(event, i[0], i[1])
@@ -1114,4 +1131,76 @@ function incendiumLootTables(event) {
     addToLootTable(event, 'incendium:sanctum/tax_collector', NETHER_UNCOMMON, 1, 1)
     addToLootTable(event, 'incendium:steam/rare', NETHER_UNCOMMON, 1, 1)
     addToLootTable(event, 'incendium:steam/treasure', NETHER_RARE, 1, 1)
+}
+
+function cursedLootTable(event) {
+    event.addGeneric('custom:cursed_loot', loot => {
+        loot.addPool(pool => {
+            pool.randomChance(0.1)
+            pool.rolls = [1, 4]
+            pool.addItem('minecraft:iron_ingot', 40, [1, 8])
+            pool.addItem('minecraft:gold_ingot', 30, [1, 8])
+            pool.addItem('minecraft:quartz', 25, [1, 16])
+            pool.addItem('minecraft:amethyst_shard', 12, [1, 3])
+            pool.addItem('minecraft:diamond', 2, [1, 4])
+            pool.addItem('minecraft:emerald', 10, [1, 8])
+            pool.addItem('minecraft:netherite_scrap', 1, [1, 2])
+            pool.addItem('minecraft:ender_pearl', 3, [1, 4])
+            pool.addItem('minecraft:golden_apple', 2, [1, 2])
+            pool.addItem('minecraft:enchanted_golden_apple', 1, 1)
+            pool.addItem('minecraft:ghast_tear', 1, [1, 4])
+            pool.addItem('quark:diamond_heart', 1, 1)
+            pool.addItem('dimdungeons:item_portal_key', 1, [1, 2])
+            pool.addItem('immersive_weathering:golden_moss_clump', 2, [1, 4])
+            pool.addItem('immersive_weathering:enchanted_golden_moss_clump', 1, [1, 2])
+            pool.addItem('rottencreatures:treasure_chest', 2, 1)
+            pool.addItem('enigmaticlegacy:earth_heart', 1, 1)
+            pool.addItem('supplementaries:bomb', 8, [1, 4])
+            pool.addItem('supplementaries:bomb_blue', 6, [1, 4])
+            pool.addItem('supplementaries:bomb_spiky', 5, [1, 4])
+            pool.addItem('supplementaries:flute', 1, 1)
+            pool.addItem('pyromancer:bombsack', 8, [1, 4])
+            pool.addItem('pyromancer:scatter_bombsack', 6, [1, 4])
+            pool.addItem('pyromancer:napalm_bombsack', 5, [1, 4])
+            pool.addItem('campanion:grappling_hook', 1, 1)
+        })
+        loot.addPool(pool => {
+            pool.rolls = {n:1, p: 0.025}
+            pool.addLootTable('custom:loot_rare').weight(100)
+            pool.addLootTable('custom:loot_epic').weight(25)
+            pool.addLootTable('custom:loot_legendary').weight(5)
+            pool.addLootTable('custom:loot_godly').weight(1)
+        })
+    })
+}
+
+function treasureBagLootTables(event) {
+    event.addGeneric('custom:raid_bag', loot => {
+        loot.addPool(pool => {
+            pool.addLootTable('custom:loot_epic')
+        })
+        loot.addPool(pool => {
+            pool.rolls = [56, 128]
+            pool.addItem('minecraft:emerald')
+        })
+        loot.addPool(pool => {
+            pool.rolls = 1
+            pool.addItem('artifacts:villager_hat').weight(1)
+            pool.addItem('villagertools:lure').weight(1)
+        })
+        loot.addPool(pool => {
+            pool.rolls = [6, 12]
+            pool.addItem('villagertools:gears').weight(1)
+            pool.addItem('villagertools:bribe').weight(1)
+            pool.addItem('villagertools:restock').weight(1)
+            pool.addItem('villagertools:forget').weight(1)
+            pool.addItem('villagertools:contract').weight(1)
+            pool.addItem('villagertools:darkness').weight(1)
+            pool.addItem('villagertools:guard').weight(1)
+            pool.addItem('villagertools:knowledge').weight(1)
+            pool.addItem('villagertools:key').weight(1)
+            pool.addItem('villagertools:badge').weight(1)
+            pool.addItem('villagertools:cure').weight(1)
+        })
+    })
 }

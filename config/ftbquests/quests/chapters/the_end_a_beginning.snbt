@@ -5,6 +5,7 @@
 	filename: "the_end_a_beginning"
 	title: "The End, a Beginning"
 	icon: "minecraft:ender_eye"
+	subtitle: ["Follow the eyes, and they might follow you back."]
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	quests: [

@@ -49,6 +49,21 @@ ServerEvents.tags('item', event => {
     for (let color of ['white', 'black', 'red', 'cyan', 'purple']) {
         event.add('custom:lich_staves', `graveyard:${color}_bone_staff`)
     }
+    event.add('custom:necklaces', [
+        'relics:reflection_necklace',
+        'relics:jellyfish_necklace',
+        'relics:holy_locket',
+        'artifacts:panic_necklace',
+        'artifacts:shock_pendant',
+        'artifacts:cross_necklace',
+        'artifacts:thorn_pendant',
+        'artifacts:charm_of_sinking',
+        'artifacts:flame_pendant',
+    ])
+    event.add('forge:dust/saltpeter', 'immersiveengineering:dust_saltpeter')
+    event.add('forge:dusts/saltpeter', 'oldguns:niter')
+    event.add('forge:dust/sulfur', 'immersiveengineering:dust_sulfur')
+    event.add('forge:dusts/sulfur', 'oldguns:sulfur') 
 })
 
 ServerEvents.tags('minecraft:worldgen/biome', event => {
@@ -84,6 +99,13 @@ ServerEvents.tags('minecraft:worldgen/biome', event => {
     event.add('trolldom:has_structure/air_shrine', DESERT.concat(['byg:baobab_savanna', 'byg:araucaria_savanna', 'minecraft:savanna']))
     event.add('yungsextras:has_structure/desert_decorations', DESERT)
     event.add('yungsextras:has_structure/vanilla_desert_well', DESERT)
+    event.add('collectorsreap:pomegranate_spawns', ['byg:warped_desert', 'byg:crimson_gardens', 'incendium:inverted_forest'])
+    for (let biome of event.get('minecraft:is_forest').getObjectIds()) {
+        event.add('collectorsreap:lime_spawns', biome)
+    }
+    for (let biome of event.get('minecraft:is_mountain').getObjectIds()) {
+        event.add('collectorsreap:portobello_spawns', biome)
+    }
 })
 
 ServerEvents.tags('block', event => {

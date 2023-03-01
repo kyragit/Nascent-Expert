@@ -64,7 +64,7 @@ function affixLootEntries(event) {
                     'minecraft:the_nether',
                     'minecraft:the_end'
                 ],
-                max_rarity: 'rare'
+                max_rarity: 'epic'
             })
         }
         event.addJson(`custom:affix_loot_entries/runic_${weapon[0]}`, {
@@ -306,6 +306,7 @@ function weaponAttributes(event) {
     event.addJson('pyromancer:weapon_attributes/firelink', {parent: 'simplyswords:emberblade'})
     event.addJson('pyromancer:weapon_attributes/flammenklinge', {parent: 'bettercombat:claymore'})
     event.addJson('cfm:weapon_attributes/spatula', {parent: 'bettercombat:mace'})
+    event.addJson('enigmaticlegacy:weapon_attributes/the_infinitum', {parent: 'bettercombat:mace'})
 }
 
 function advancements(event) {

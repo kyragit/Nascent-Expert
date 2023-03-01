@@ -1,0 +1,12 @@
+{
+    "group": "custom",
+    "displayName": {
+        "text": "Raid Treasure Bag"
+    },
+    "lootTable": "custom:raid_bag",
+    "rarity": "rare",
+    "dropsFromGroups": [],
+    "bagColor": "#8C8C8C",
+    "bagOverlayColor": "#4E4E4E",
+    "bagStringColor": "#8C8C8C"
+}

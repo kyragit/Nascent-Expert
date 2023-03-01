@@ -1,0 +1,1991 @@
+
+#Server config settings
+[server]
+
+	#Recipe enable and disable and other crafting settings
+	[server.recipeSettings]
+
+		#World interaction and recipe settings
+		[server.recipeSettings.worldInteractionSettings]
+			#Enable/disable shears stripping bark from trees
+			allowShearsToStripBark = true
+			#The amount of bark strands gained from right-clicking an unstripped log with shears
+			#Range: 1 ~ 64
+			barkStrandHarvestAmount = 3
+
+		#Firearm recipe settings
+		[server.recipeSettings.firearmRecipeSettings]
+			#Enable/disable matchlock firearm crafts
+			allowMatchlockWeaponsCrafting = true
+			#Enable/disable wheellock firearm crafts
+			allowWheellockWeaponsCrafting = true
+			#Enable/disable flintlock firearm crafts
+			allowFlintlockWeaponsCrafting = true
+			#Enable/disable caplock firearm crafts
+			allowCaplockWeaponsCrafting = true
+			#Enable/disable paper cartridge ammo crafts
+			allowPaperCartridgeCrafting = true
+			#Enable/disable stone firearm ammo crafts
+			allowStoneFirearmAmmoCrafting = true
+			#Enable/disable iron firearm ammo crafts
+			allowIronFirearmAmmoCrafting = true
+			#Enable/disable lead firearm ammo crafts
+			allowLeadFirearmAmmoCrafting = true
+
+		#Artillery recipe settings
+		[server.recipeSettings.artilleryRecipeSettings]
+			#Enable/disable congreve rocket stand artillery craft
+			allowCongreveRocketStandArtilleryCrafting = true
+			#Enable/disable naval cannon artillery craft
+			allowNavalCannonCrafting = true
+			#Enable/disable powder charge crafts
+			allowArtilleryPowderChargeCrafting = true
+			#Enable/disable stone artillery ammo crafts
+			allowStoneFirearmAmmoCrafting = true
+			#Enable/disable iron artillery ammo crafts
+			allowIronFirearmAmmoCrafting = true
+			#Enable/disable lead artillery ammo crafts
+			allowLeadFirearmAmmoCrafting = true
+
+		#Design notes settings
+		[server.recipeSettings.designNotesSettings]
+			#A list of items that require design notes to be crafted in the gunsmith's bench
+			#Design Notes can be found in dungeon chests, villager chests, and mob loot
+			designNotesRequiredItems = ["oldguns:flintlock_mechanism", "oldguns:caplock_mechanism", "oldguns:matchlock_musketoon", "oldguns:matchlock_blunderbuss_pistol", "oldguns:wheellock_doublebarrel_pistol", "oldguns:wheellock_musketoon", "oldguns:wheellock_blunderbuss_pistol", "oldguns:flintlock_duckfoot_derringer", "oldguns:flintlock_pepperbox_pistol", "oldguns:flintlock_musketoon", "oldguns:flintlock_nock_gun", "oldguns:flintlock_blunderbuss_pistol", "oldguns:caplock_duckfoot_derringer", "oldguns:caplock_pepperbox_pistol", "oldguns:caplock_musketoon", "oldguns:caplock_blunderbuss_pistol"]
+
+		#Black Powder manufacture settings
+		[server.recipeSettings.blackPowderManufactureSettings]
+
+			#Nitre production settings
+			[server.recipeSettings.blackPowderManufactureSettings.niterProductionSettings]
+				#The min amount of Niter gained from crystallization of liquid niter
+				#Range: 1 ~ 64
+				niterCrystallizationAmountMin = 8
+				#The max amount of Niter gained from crystallization of liquid niter
+				#Range: 1 ~ 64
+				niterCrystallizationAmountMax = 16
+				#How difficult it is for niter to crystallize from a boiling cauldron of liquid niter
+				#The chance for crystalization is 1 in (difficulty+1)*2, calculated when the block randomly ticks
+				#Range: 0.0 ~ 3.4028234663852886E38
+				niterCrystallizationDifficulty = 1.5
+				#A list of blocks that can be used as heat sources for niter crystallization
+				niterCauldronValidHeatSources = ["minecraft:fire", "minecraft:lava", "minecraft:campfire", "minecraft:soul_campfire"]
+				#How difficult it is for niter bedding to advance through its 10 refuse levels when under dripping water dripstone
+				#The chance for advancement is 1 in (difficulty)*2, calculated when the block randomly ticks
+				#Range: 0.0 ~ 3.4028234663852886E38
+				niterBeddingDripstoneGenerationDifficulty = 15.0
+				#How difficult it is for niter bedding to advance through its 10 refuse levels when under animals
+				#The chance for advancement is 1 in (difficulty/localRefuse+1)*2, calculated when the block randomly ticks
+				#Range: 0.0 ~ 3.4028234663852886E38
+				niterBeddingRefuseGenerationDifficulty = 30.0
+				#The amount of nitrated soil gained from right-clicking a ripe Niter Bedding with a shovel
+				#Range: 1 ~ 64
+				niterBeddingAnimalRadius = 3
+				#How much refuse a low refuse animal can contribute to nitrated soil production
+				#Range: 0.0 ~ 3.4028234663852886E38
+				lowRefuseAnimalGeneratedAmount = 1.0
+				#How much refuse a high refuse animal can contribute to nitrated soil production
+				#Range: 0.0 ~ 3.4028234663852886E38
+				highRefuseAnimalGeneratedAmount = 2.0
+				#A list of animal entities that will produce a modest amount of refuse for nitrated soil production
+				lowRefuseAnimals = ["entity.minecraft.chicken", "entity.minecraft.pig", "entity.minecraft.sheep", "entity.minecraft.llama"]
+				#A list of animal entities that will produce a large amount of refuse for nitrated soil production
+				highRefuseAnimals = ["entity.minecraft.horse", "entity.minecraft.cow"]
+
+			#Corning process settings
+			[server.recipeSettings.blackPowderManufactureSettings.corningProcessSettings]
+				#How difficult it is for wet black powder cakes or blocks to dry in direct sunlight
+				#The chance for drying is 1 in (difficulty+1)*2, calculated when the block randomly ticks
+				#Range: 0.0 ~ 3.4028234663852886E38
+				wetBlackPowderCakeSunDryingDifficulty = 7.5
+				#How difficult it is for dry black powder blocks to get wet in rain
+				#The chance for drying is 1 in (difficulty+1)*2, calculated when the block randomly ticks
+				#Range: 0.0 ~ 3.4028234663852886E38
+				blackPowderRainWettingDifficulty = 5.0
+
+			#Mercury process settings
+			[server.recipeSettings.blackPowderManufactureSettings.mercuryProductionSettings]
+				#Enable/disable creating mercury from gold ore via a liquid niter cauldron
+				allowMercuryFromGoldAtNiterCauldronCrafting = true
+				#Enable/disable creating mercury from redstone dust via a liquid niter cauldron
+				allowMercuryFromRedstoneAtNiterCauldronCrafting = true
+
+		#Equipment recipe settings
+		[server.recipeSettings.equipmentRecipeSettings]
+			#Enable/disable crafting blasting powder sticks
+			allowBlastingPowderStickCrafting = true
+
+		#Vanilla alternative recipe settings
+		[server.recipeSettings.vanillaAlternativeRecipeSettings]
+			#Enable/disable crafting vanilla TNT from blasting powder sticks
+			allowTntFromBlastingPowderSticksCrafting = true
+
+		#Miscellaneous recipe settings
+		[server.recipeSettings.miscRecipeSettings]
+			#Enable/disable crafting match cords from bark strands
+			allowMatchCordFromBarkStrandsCrafting = true
+			#Enable/disable crafting match cords from string via right-clicking a liquid niter cauldron
+			allowMatchCordFromStringAtNiterCauldronCrafting = true
+
+	#Loot enable and disable settings
+	[server.lootSettings]
+		#Enable/disable design notes built-in loot tables
+		allowDesignNotesInLoot = true
+		#Enable/disable mechanisms built-in loot tables
+		allowMechanismsInLoot = false
+		#Enable/disable firearms built-in loot tables
+		allowFirearmsInLoot = false
+
+	#Attributes of firearms and firearm ammo
+	[server.firearmSettings]
+		#Apply slowness effect while wielding huge firearms, like the nock gun
+		hugeFirearmDebuffs = true
+
+		#Firearm ammo settings
+		[server.firearmSettings.ammoSettings]
+			#Allow firearm projectiles to bypass a percentage of armor as defined in their attributes
+			allowArmorBypass = true
+
+			#Attributes of Small Stone Musket Ball Ammo
+			[server.firearmSettings.ammoSettings.small_stone_musket_ball]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 8
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 10.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.30000001192092896
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 15.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.10000000149011612
+
+			#Attributes of Medium Stone Musket Ball Ammo
+			[server.firearmSettings.ammoSettings.medium_stone_musket_ball]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 6
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 13.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.4000000059604645
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 30.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.11999999731779099
+
+			#Attributes of Large Stone Musket Ball Ammo
+			[server.firearmSettings.ammoSettings.large_stone_musket_ball]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 4
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 16.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.5
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 55.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.14000000059604645
+
+			#Attributes of Small Stone Birdshot Ammo
+			[server.firearmSettings.ammoSettings.small_stone_birdshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 8
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 6
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 2.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.10000000149011612
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 5.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 3.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.0
+
+			#Attributes of Medium Stone Birdshot Ammo
+			[server.firearmSettings.ammoSettings.medium_stone_birdshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 6
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 8
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 2.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.10000000149011612
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 5.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 3.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.0
+
+			#Attributes of Large Stone Birdshot Ammo
+			[server.firearmSettings.ammoSettings.large_stone_birdshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 4
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 10
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 2.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.10000000149011612
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 5.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 3.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.0
+
+			#Attributes of Small Iron Musket Ball Ammo
+			[server.firearmSettings.ammoSettings.small_iron_musket_ball]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 8
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 20.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.30000001192092896
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 25.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.1599999964237213
+
+			#Attributes of Medium Iron Musket Ball Ammo
+			[server.firearmSettings.ammoSettings.medium_iron_musket_ball]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 6
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 23.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.4000000059604645
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 50.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.18000000715255737
+
+			#Attributes of Large Iron Musket Ball Ammo
+			[server.firearmSettings.ammoSettings.large_iron_musket_ball]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 4
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 26.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.5
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 75.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.20000000298023224
+
+			#Attributes of Small Iron Buckshot Ammo
+			[server.firearmSettings.ammoSettings.small_iron_buckshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 8
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 3
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.30000001192092896
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 30.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.5
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.10000000149011612
+
+			#Attributes of Medium Iron Buckshot Ammo
+			[server.firearmSettings.ammoSettings.medium_iron_buckshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 6
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 5
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.30000001192092896
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 30.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.5
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.10000000149011612
+
+			#Attributes of Large Iron Buckshot Ammo
+			[server.firearmSettings.ammoSettings.large_iron_buckshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 4
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 7
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.30000001192092896
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 30.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.5
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.10000000149011612
+
+			#Attributes of Small Iron Birdshot Ammo
+			[server.firearmSettings.ammoSettings.small_iron_birdshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 8
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 6
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 3.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.20000000298023224
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 7.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 3.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.0
+
+			#Attributes of Medium Iron Birdshot Ammo
+			[server.firearmSettings.ammoSettings.medium_iron_birdshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 6
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 8
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 3.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.20000000298023224
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 7.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 3.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.0
+
+			#Attributes of Large Iron Birdshot Ammo
+			[server.firearmSettings.ammoSettings.large_iron_birdshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 4
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 10
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 3.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.20000000298023224
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 7.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 3.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.0
+
+			#Attributes of Small Lead Musket Ball Ammo
+			[server.firearmSettings.ammoSettings.small_lead_musket_ball]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 8
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 20.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.30000001192092896
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 25.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.1599999964237213
+
+			#Attributes of Medium Lead Musket Ball Ammo
+			[server.firearmSettings.ammoSettings.medium_lead_musket_ball]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 6
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 23.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.4000000059604645
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 50.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.18000000715255737
+
+			#Attributes of Large Lead Musket Ball Ammo
+			[server.firearmSettings.ammoSettings.large_lead_musket_ball]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 4
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 26.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.5
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 75.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.20000000298023224
+
+			#Attributes of Small Lead Buckshot Ammo
+			[server.firearmSettings.ammoSettings.small_lead_buckshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 8
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 3
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.30000001192092896
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 30.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.5
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.10000000149011612
+
+			#Attributes of Medium Lead Buckshot Ammo
+			[server.firearmSettings.ammoSettings.medium_lead_buckshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 6
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 5
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.30000001192092896
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 30.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.5
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.10000000149011612
+
+			#Attributes of Large Lead Buckshot Ammo
+			[server.firearmSettings.ammoSettings.large_lead_buckshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 4
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 7
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.30000001192092896
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 30.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.5
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.10000000149011612
+
+			#Attributes of Small Lead Birdshot Ammo
+			[server.firearmSettings.ammoSettings.small_lead_birdshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 8
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 6
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 3.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.20000000298023224
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 7.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 3.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.0
+
+			#Attributes of Medium Lead Birdshot Ammo
+			[server.firearmSettings.ammoSettings.medium_lead_birdshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 6
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 8
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 3.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.20000000298023224
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 7.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 3.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.0
+
+			#Attributes of Large Lead Birdshot Ammo
+			[server.firearmSettings.ammoSettings.large_lead_birdshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 4
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 10
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 3.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.20000000298023224
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 7.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 3.0
+				#How much damage done by each projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 0.0
+
+		#Matchlock firearm settings
+		[server.firearmSettings.matchlockSettings]
+
+			#Attributes of Matchlock Derringers
+			[server.firearmSettings.matchlockSettings.matchlock_derringer]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 8
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.5
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 5.800000190734863
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.0
+
+			#Attributes of Matchlock Pistols
+			[server.firearmSettings.matchlockSettings.matchlock_pistol]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 12
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.0
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.799999952316284
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.25
+
+			#Attributes of Matchlock Arquebus
+			[server.firearmSettings.matchlockSettings.matchlock_arquebus]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 16
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2000000476837158
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.5999999046325684
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.5
+
+			#Attributes of Matchlock Calivers
+			[server.firearmSettings.matchlockSettings.matchlock_caliver]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 20
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2000000476837158
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.4000000953674316
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.75
+
+			#Attributes of Matchlock Musketoons
+			[server.firearmSettings.matchlockSettings.matchlock_musketoon]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 24
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.800000011920929
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.200000047683716
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.75
+
+			#Attributes of Matchlock Muskets
+			[server.firearmSettings.matchlockSettings.matchlock_musket]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 24
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.0
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.0
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.0
+
+			#Attributes of Matchlock Long Muskets
+			[server.firearmSettings.matchlockSettings.matchlock_long_musket]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 28
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2000000476837158
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.7999999523162842
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.25
+
+			#Attributes of Matchlock Blunderbuss Pistols
+			[server.firearmSettings.matchlockSettings.matchlock_blunderbuss_pistol]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 8
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.4000000059604645
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 4.099999904632568
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 2.75
+
+			#Attributes of Matchlock Blunderbusses
+			[server.firearmSettings.matchlockSettings.matchlock_blunderbuss]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 24
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.0
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.299999952316284
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.5
+
+		#Wheellock firearm settings
+		[server.firearmSettings.wheellockSettings]
+
+			#Attributes of Wheellock Derringers
+			[server.firearmSettings.wheellockSettings.wheellock_derringer]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 16
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.5
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 5.5
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.125
+
+			#Attributes of Wheellock Pistols
+			[server.firearmSettings.wheellockSettings.wheellock_pistol]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 20
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.0
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.700000047683716
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.375
+
+			#Attributes of Wheellock Double Barrel Pistols
+			[server.firearmSettings.wheellockSettings.wheellock_double_barrel_pistol]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 20
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.800000011920929
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 0.800000011920929
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 3.700000047683716
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.2750000953674316
+
+			#Attributes of Wheellock Arquebus
+			[server.firearmSettings.wheellockSettings.wheellock_arquebus]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 24
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2000000476837158
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.4000000953674316
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.625
+
+			#Attributes of Wheellock Calivers
+			[server.firearmSettings.wheellockSettings.wheellock_caliver]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 28
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2000000476837158
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.0999999046325684
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.875
+
+			#Attributes of Wheellock Musketoons
+			[server.firearmSettings.wheellockSettings.wheellock_musketoon]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 32
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.800000011920929
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.7999999523162842
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.875
+
+			#Attributes of Wheellock Muskets
+			[server.firearmSettings.wheellockSettings.wheellock_musket]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 32
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.0
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.7999999523162842
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.125
+
+			#Attributes of Wheellock Long Muskets
+			[server.firearmSettings.wheellockSettings.wheellock_long_musket]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 36
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2000000476837158
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.5
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.375
+
+			#Attributes of Flintlock Blunderbuss Pistols
+			[server.firearmSettings.wheellockSettings.flintlock_blunderbuss_pistol]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 28
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.4000000059604645
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 4.199999809265137
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.875
+
+			#Attributes of Wheellock Blunderbusses
+			[server.firearmSettings.wheellockSettings.wheellock_blunderbuss]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 32
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.0
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.0
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.625
+
+			#Attributes of Wheellock Hand Mortars
+			[server.firearmSettings.wheellockSettings.wheellock_hand_mortar]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 18
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.0
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 7.0
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 1.5
+
+		#Flintlock firearm settings
+		[server.firearmSettings.flintlockSettings]
+
+			#Attributes of Flintlock Derringers
+			[server.firearmSettings.flintlockSettings.flintlock_derringer]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 28
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.5
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 5.0
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.25
+
+			#Attributes of Flintlock Duckfoot Derringers
+			[server.firearmSettings.flintlockSettings.flintlock_duckfoot_derringers]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 24
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.30000001192092896
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 0.800000011920929
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 10.0
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.0
+
+			#Attributes of Flintlock Pistols
+			[server.firearmSettings.flintlockSettings.flintlock_pistol]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 32
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.0
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.0
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.5
+
+			#Attributes of Flintlock Pepperbox Pistols
+			[server.firearmSettings.flintlockSettings.flintlock_pepperbox_pistol]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 28
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.800000011920929
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 0.800000011920929
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 3.0
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.4000000953674316
+
+			#Attributes of Flintlock Arquebus
+			[server.firearmSettings.flintlockSettings.flintlock_arquebus]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 36
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2000000476837158
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.7999999523162842
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.75
+
+			#Attributes of Flintlock Calivers
+			[server.firearmSettings.flintlockSettings.flintlock_caliver]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 40
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2000000476837158
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.600000023841858
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.0
+
+			#Attributes of Flintlock Musketoons
+			[server.firearmSettings.flintlockSettings.flintlock_musketoon]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 44
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.800000011920929
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.5
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.0
+
+			#Attributes of Flintlock Muskets
+			[server.firearmSettings.flintlockSettings.flintlock_musket]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 44
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.0
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.399999976158142
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.25
+
+			#Attributes of Flintlock Nock Guns
+			[server.firearmSettings.flintlockSettings.flintlock_nock_gun]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 40
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.800000011920929
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 0.800000011920929
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.7999999523162842
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.0
+
+			#Attributes of Flintlock Long Muskets
+			[server.firearmSettings.flintlockSettings.flintlock_long_musket]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 48
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2000000476837158
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.2000000476837158
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.5
+
+			#Attributes of Flintlock Blunderbuss Pistols
+			[server.firearmSettings.flintlockSettings.flintlock_blunderbuss_pistol]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 28
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.4000000059604645
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 3.5
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.0
+
+			#Attributes of Flintlock Blunderbusses
+			[server.firearmSettings.flintlockSettings.flintlock_blunderbuss]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 44
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.0
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.7000000476837158
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.5
+
+			#Attributes of Flintlock Doublebarrel Blunderbusses
+			[server.firearmSettings.flintlockSettings.flintlock_doublebarrel_blunderbuss]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 40
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.800000011920929
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 0.800000011920929
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.7000000476837158
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.5
+
+		#Caplock firearm settings
+		[server.firearmSettings.caplockSettings]
+
+			#Attributes of Caplock Derringers
+			[server.firearmSettings.caplockSettings.caplock_derringer]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 40
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.6000000238418579
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 5.0
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.375
+
+			#Attributes of Caplock Duckfoot Derringers
+			[server.firearmSettings.caplockSettings.caplock_duckfoot_derringer]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 36
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.4000000059604645
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 0.800000011920929
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 10.0
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.125
+
+			#Attributes of Caplock Pistols
+			[server.firearmSettings.caplockSettings.caplock_pistol]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 44
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.100000023841858
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 2.0
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.625
+
+			#Attributes of Caplock Pepperbox Pistols
+			[server.firearmSettings.caplockSettings.caplock_pepperbox_pistol]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 40
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.8999999761581421
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 0.800000011920929
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 3.0
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.5250000953674316
+
+			#Attributes of Caplock Arquebus
+			[server.firearmSettings.caplockSettings.caplock_arquebus]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 48
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2999999523162842
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.7999999523162842
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.875
+
+			#Attributes of Caplock Calivers
+			[server.firearmSettings.caplockSettings.caplock_caliver]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 52
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2999999523162842
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.600000023841858
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.125
+
+			#Attributes of Caplock Musketoons
+			[server.firearmSettings.caplockSettings.caplock_musketoon]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 44
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.8999999761581421
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.5
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.125
+
+			#Attributes of Caplock Muskets
+			[server.firearmSettings.caplockSettings.caplock_musket]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 56
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.100000023841858
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.399999976158142
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.375
+
+			#Attributes of Caplock Long Muskets
+			[server.firearmSettings.caplockSettings.caplock_long_musket]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 60
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.2999999523162842
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.2000000476837158
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 4.625
+
+			#Attributes of Caplock Blunderbuss Pistols
+			[server.firearmSettings.caplockSettings.caplock_blunderbuss_pistol]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 40
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.5
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 3.5
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.125
+
+			#Attributes of Caplock Blunderbusses
+			[server.firearmSettings.caplockSettings.caplock_blunderbuss]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 56
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 1.100000023841858
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 1.0
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.7000000476837158
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.625
+
+			#Attributes of Caplock Doublebarrel Blunderbusses
+			[server.firearmSettings.caplockSettings.caplock_doublebarrel_blunderbuss]
+				#How many uses before breaking
+				#Range: > 1
+				durability = 52
+				#How the firearm modifies the base range of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				effectiveRangeModifier = 0.8999999761581421
+				#How the firearm modifies the base damage of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDamageModifier = 0.800000011920929
+				#How the firearm modifies the base deviation of ammo shot
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				shotDeviaitionModifier = 1.7000000476837158
+				#How fast projectiles shot from the firearm are
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSpeed = 3.625
+
+	#Attributes of artillery and artillery ammo
+	[server.artillerySettings]
+
+		#Artillery ammo settings
+		[server.artillerySettings.artilleryAmmoSettings]
+			#Allow artillery projectiles to bypass a percentage of armor as defined in their attributes
+			allowArmorBypass = true
+
+			#Attributes of Medium Iron Explosive Rocket ammo
+			[server.artillerySettings.artilleryAmmoSettings.medium_iron_explosive_rocket]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.6000000238418579
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 100.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 1.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 0
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 3.0
+
+			#Attributes of Small Iron Cannonball ammo
+			[server.artillerySettings.artilleryAmmoSettings.small_iron_cannonball]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 30.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.4000000059604645
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 100.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 1.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 0
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 2.0
+
+			#Attributes of Large Iron Cannonball ammo
+			[server.artillerySettings.artilleryAmmoSettings.medium_iron_cannonball]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 50.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.800000011920929
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 500.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 1.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 0
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 4.0
+
+			#Attributes of Small Iron Explosive Shell ammo
+			[server.artillerySettings.artilleryAmmoSettings.small_iron_explosive_shell]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.4000000059604645
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 100.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 1.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 0
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 2.0
+
+			#Attributes of Medium Iron Explosive Shell ammo
+			[server.artillerySettings.artilleryAmmoSettings.medium_iron_explosive_shell]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.6000000238418579
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 100.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 1.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 20
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 3.0
+
+			#Attributes of Large Iron Explosive Shell ammo
+			[server.artillerySettings.artilleryAmmoSettings.large_iron_explosive_shell]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.800000011920929
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 100.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 1.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 0
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 4.0
+
+			#Attributes of Small Iron Grapeshot ammo
+			[server.artillerySettings.artilleryAmmoSettings.small_iron_grapeshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 7
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 20.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.20000000298023224
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 30.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 6.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 6.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 0
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 0.0
+
+			#Attributes of Medium Iron Grapeshot ammo
+			[server.artillerySettings.artilleryAmmoSettings.medium_iron_grapeshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 10
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 20.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.20000000298023224
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 20.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 6.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 6.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 0
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 0.0
+
+			#Attributes of Large Iron Grapeshot ammo
+			[server.artillerySettings.artilleryAmmoSettings.large_iron_grapeshot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 13
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 20.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.20000000298023224
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 20.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 6.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 6.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 0
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 0.0
+
+			#Attributes of Small Iron Canister Shot ammo
+			[server.artillerySettings.artilleryAmmoSettings.small_iron_canister_shot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.4000000059604645
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 100.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 1.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 20
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 10.0
+
+			#Attributes of Medium Iron Canister Shot ammo
+			[server.artillerySettings.artilleryAmmoSettings.medium_iron_canister_shot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.6000000238418579
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 100.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 1.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 20
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 15.0
+
+			#Attributes of Large Iron Canister Shot ammo
+			[server.artillerySettings.artilleryAmmoSettings.large_iron_canister_shot]
+				#How much ammo can be stored per stack
+				#Range: > 1
+				maxStackSize = 1
+				#How many projectiles launched
+				#Range: > 1
+				projectileCount = 1
+				#How much damage each projectile does
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDamage = 15.0
+				#How large the each projectile is
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileSize = 0.800000011920929
+				#How far each projectile can travel before applying damage falloff
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileEffectiveRange = 100.0
+				#How the ammo modifies the base deviation of the firearm
+				#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+				projectileDeviationModifier = 1.0
+				#How much damage done by the projectile bypasses armor
+				#Range: 0.0 ~ 1.0
+				projectileArmorBypassPercentage = 1.0
+				#How long do any effects from this projectile last in ticks
+				#Range: > 1
+				effectTicks = 20
+				#How potent are any effects from this projectile
+				#Range: 0.0 ~ 3.4028234663852886E38
+				effectPotency = 20.0
+
+		#Attributes of Naval Cannons
+		[server.artillerySettings.medium_naval_cannon]
+			#How the artillery modifies the base range of ammo shot
+			#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+			effectiveRangeModifier = 0.800000011920929
+			#How the artillery modifies the base damage of ammo shot
+			#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+			damageModifier = 0.800000011920929
+			#How much projectiles shot from the artillery deviate
+			#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+			projectileDeviation = 1.7000000476837158
+			#How fast projectiles shot from the artillery are
+			#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+			projectileSpeed = 1.5
+
+		#Attributes of Bombards
+		[server.artillerySettings.bombard]
+			#How the artillery modifies the base range of ammo shot
+			#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+			effectiveRangeModifier = 0.800000011920929
+			#How the artillery modifies the base damage of ammo shot
+			#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+			damageModifier = 0.800000011920929
+			#How much projectiles shot from the artillery deviate
+			#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+			projectileDeviation = 1.7000000476837158
+			#How fast projectiles shot from the artillery are
+			#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+			projectileSpeed = 1.5
+
+		#Attributes of Congreve Rocket Stands
+		[server.artillerySettings.congreve_rocket_stand]
+			#How much deviation rockets have when shot from this artillery
+			#Range: 0.0010000000474974513 ~ 3.4028234663852886E38
+			rocketDeviation = 4.0
+
+	#Settings for mob spawns
+	[server.mobSettings]
+		#The chance mobs that can use firearms will spawn with firearms. Set 0.0 to disable
+		#Range: 0.0 ~ 1.0
+		mobFirearmEquipChance = 0.0
+		#The chance mobs that can use firearms will spawn with armor, after being equiped with a firearm. Set 0.0 to disable
+		#Range: 0.0 ~ 1.0
+		mobArmorEquipChance = 0.0
+		#Whether mobs have their shot timer reset when struck
+		resetMobShotTimerOnHit = false
+		#How long of an interval in ticks mobs shoot their weapons
+		#Range: > 1
+		firearmMobShotTime = 140
+		#How long of an interval in ticks mobs shoot their weapons on Hard difficulty
+		#Range: > 1
+		firearmMobShotTimeHard = 100
+		#The base projectile deviation of mobs when shooting their weapon
+		#Range: 0.10000000149011612 ~ 3.4028234663852886E38
+		firearmMobBaseProjectileDeviation = 3.0
+
+	#Equipment effects and other settings
+	[server.equipmentSettings]
+		#Allow equipment to impart special effects
+		allowEquipmentEffects = true
+
+		#Musketeer Hats
+		[server.equipmentSettings.musketeerHatSettings]
+			#Allow Musketeer Hat to increase armor bypass percentage for damage when worn
+			allowEffects = true
+			#The additional percentage of armor bypass that wearing a musketeer hat gives to firearm projectiles
+			#Range: 0.0 ~ 10.0
+			percentArmorBypassIncrease = 0.1
+
+		#Horseman's Pot Helms
+		[server.equipmentSettings.horsemansPotHelmSettings]
+			#Allow Horseman's Pot Helm to decrease accuracy debuff for firearms while mounted
+			allowEffects = true
+			#The percentage of accuracy increase to firearm projectiles while mounted while wearing a horseman's pot helm
+			#Range: 0.0 ~ 10.0
+			percentMountedInaccuracyDecrease = 1.0
+

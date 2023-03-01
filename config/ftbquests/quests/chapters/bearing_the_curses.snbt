@@ -1,0 +1,265 @@
+{
+	id: "75C2CD644E0D95AA"
+	group: "36C3CA17FE4F12AD"
+	order_index: 9
+	filename: "bearing_the_curses"
+	title: "Bearing the Curses"
+	icon: "enigmaticlegacy:cursed_ring"
+	subtitle: ["You didn't have to do it."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "You Are Now Cursed"
+			x: 0.0d
+			y: 0.0d
+			description: ["Against all common sense, you've decided to put on the Ring. You will soon learn the weight of your decision."]
+			invisible: true
+			id: "345CD3B4FE5D6B0E"
+			tasks: [{
+				id: "715A6CB67FE1E9BE"
+				type: "advancement"
+				title: "Equip the Ring"
+				advancement: "enigmaticlegacy:main/cursed_ring"
+				criterion: ""
+			}]
+			rewards: [{
+				id: "7AAF2F2A29ED92B9"
+				type: "item"
+				item: "enigmaticlegacy:recall_potion"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -1.5d
+			description: [
+				"You will need advice to succeed in this inhospitable world."
+				""
+				"Firstly, avoid death at all costs! Every death tears apart your soul, reducing you maximum health until you return to your point of death."
+				""
+				"Second, don't bother trying to seek refuge in villages. Iron golems sense your cursed soul and wish to remove you from this land; and given that you take double damage, they will probably succeed."
+				""
+				"Lastly, the Nether is practically a death sentence without some sort of fire resistance. Water won't work there, and you will burn forever."
+			]
+			dependencies: ["345CD3B4FE5D6B0E"]
+			id: "0DF5BDDAE3625398"
+			tasks: [{
+				id: "1FFDC60133115282"
+				type: "checkmark"
+				title: "General Advice"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 1.5d
+			description: ["The Twisted Heart is your gateway to the treasures exclusive to the bearers of the Curses. "]
+			dependencies: ["345CD3B4FE5D6B0E"]
+			id: "7AA714145E152A85"
+			tasks: [{
+				id: "65351F4A9AFB564E"
+				type: "item"
+				item: "enigmaticlegacy:twisted_heart"
+			}]
+		}
+		{
+			x: 1.25d
+			y: 7.25d
+			description: ["Vitally important for escaping death, this mirror essentially acts as a reusable potion of recall."]
+			dependencies: ["7AA714145E152A85"]
+			id: "69BECBB858438F99"
+			tasks: [{
+				id: "549A9A1AC6DA4364"
+				type: "item"
+				item: "enigmaticlegacy:twisted_mirror"
+			}]
+		}
+		{
+			x: 3.75d
+			y: 6.75d
+			description: ["Very useful in combination with the Scroll of a Thousand Curses."]
+			dependencies: ["7AA714145E152A85"]
+			id: "59B12CAB80767CEA"
+			tasks: [{
+				id: "65B84D2350E764E2"
+				type: "item"
+				item: "enigmaticlegacy:curse_transposer"
+			}]
+		}
+		{
+			x: -2.5d
+			y: 7.0d
+			description: ["You already bear seven curses, what's a few more?"]
+			dependencies: ["7AA714145E152A85"]
+			id: "5E02FF5BC65C9CDA"
+			tasks: [{
+				id: "6AE31A0D593BB88B"
+				type: "item"
+				item: "enigmaticlegacy:cursed_scroll"
+			}]
+		}
+		{
+			x: -3.75d
+			y: 6.75d
+			description: ["Perhaps the Nether will be somewhat more hospitable with this scroll."]
+			dependencies: ["7AA714145E152A85"]
+			id: "0198F576A402CA23"
+			tasks: [{
+				id: "7B9CA2F462D6704D"
+				type: "item"
+				item: "enigmaticlegacy:avarice_scroll"
+			}]
+		}
+		{
+			x: 2.5d
+			y: 7.0d
+			description: ["A book... as a weapon?"]
+			dependencies: ["7AA714145E152A85"]
+			id: "2A2B626D882904A7"
+			tasks: [{
+				id: "4DED6846BEC6EFD3"
+				type: "item"
+				item: "enigmaticlegacy:the_twist"
+			}]
+		}
+		{
+			x: 5.0d
+			y: 6.5d
+			description: ["Put it to your lips and taste Death. Anything if it means keeping your Soul."]
+			dependencies: ["7AA714145E152A85"]
+			id: "7DBB7FAC53CE66F5"
+			tasks: [{
+				id: "365BFE6A65C3CE2A"
+				type: "item"
+				item: "enigmaticlegacy:twisted_potion"
+			}]
+		}
+		{
+			x: -5.0d
+			y: 6.5d
+			description: ["When death is at every corner, you'll need a strong defense. This shield is a wall protecting your Soul."]
+			dependencies: ["7AA714145E152A85"]
+			id: "41FF3891E8AB689A"
+			tasks: [{
+				id: "2C9136041A5F1CCC"
+				type: "item"
+				item: {
+					id: "enigmaticlegacy:infernal_shield"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -1.25d
+			y: 7.25d
+			description: ["For those times when you just cannot remember where you died."]
+			dependencies: ["7AA714145E152A85"]
+			id: "668C3A38B6FA792E"
+			tasks: [{
+				id: "515052974C6F454B"
+				type: "item"
+				item: "enigmaticlegacy:soul_compass"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -3.0d
+			description: [
+				"Press the button in your inventory (or the associated keybind) to open your personal ender chest at any time."
+				""
+				"If you sense death approaching, it may be wise to put your most important items in there. Then you will have access to them while getting back to your soul."
+			]
+			dependencies: ["0DF5BDDAE3625398"]
+			id: "44DAC2E6D363C019"
+			tasks: [{
+				id: "11A7672638A62EE0"
+				type: "checkmark"
+				title: "Fighting Back (to your soul)"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 9.0d
+			description: [
+				"It's... horrifying. The most digusting thing you've ever held, and yet... "
+				"Is this what is has come to?"
+			]
+			dependencies: ["7AA714145E152A85"]
+			invisible: true
+			id: "473B92B34D1E72D7"
+			tasks: [{
+				id: "6A3A0EE3092D3219"
+				type: "item"
+				item: "enigmaticlegacy:abyssal_heart"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 11.5d
+			description: ["Kill them all."]
+			dependencies: ["473B92B34D1E72D7"]
+			id: "5F550C7A29403A2A"
+			tasks: [{
+				id: "73F4C8FBA89973AF"
+				type: "item"
+				item: "enigmaticlegacy:the_infinitum"
+			}]
+		}
+		{
+			x: 1.0d
+			y: 11.25d
+			description: ["Perhaps this will give you a moment of peace."]
+			dependencies: ["473B92B34D1E72D7"]
+			id: "69B6A5D01F315B4F"
+			tasks: [{
+				id: "0435C16CAF1F77CF"
+				type: "item"
+				item: "enigmaticlegacy:desolation_ring"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 11.25d
+			description: ["Death will be only an inconvenience. "]
+			dependencies: ["473B92B34D1E72D7"]
+			id: "5A5C11079C1B954C"
+			tasks: [{
+				id: "37EA37E044272231"
+				type: "item"
+				item: {
+					id: "enigmaticlegacy:eldritch_amulet"
+					Count: 1b
+					tag: { }
+				}
+			}]
+		}
+		{
+			x: 0.0d
+			y: 7.5d
+			description: ["The edge of death is a dangerous place; this emblem will make it dangerous for your enemies as well."]
+			dependencies: ["7AA714145E152A85"]
+			id: "5F5410E68A67BD93"
+			tasks: [{
+				id: "33A2B866AC3B2997"
+				type: "item"
+				item: "enigmaticlegacy:berserk_charm"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 14.0d
+			description: ["If you truly wish to be free of this curse, there may be a way; although it is not without sacrifice."]
+			dependencies: ["50495DF13D4A3590"]
+			hide: true
+			id: "42D6B601FAD787BA"
+			tasks: [{
+				id: "0A49C46FCBFE7167"
+				type: "item"
+				item: "enigmaticlegacy:cursed_stone"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

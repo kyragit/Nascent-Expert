@@ -22,7 +22,23 @@ ServerEvents.recipes(event => {
     endRemRecipes(event)
     davesPotioneeringRecipes(event)
     enchantableStaffsRecipes(event)
+    enigmaticLegacyRecipes(event)
+    oldGunsRecipes(event)
+    spelunkeryRecipes(event)
 })
+
+//const HiddenRecipe = Java.loadClass('com.aizistral.enigmaticlegacy.crafting.HiddenRecipe')
+//
+//ServerEvents.recipes(event => {
+//    HiddenRecipe.addRecipe(
+//        Item.of('minecraft:dandelion'), 
+//        [
+//            Item.of('minecraft:dirt'), Item.of('minecraft:dirt'), Item.of('minecraft:dirt'),
+//            Item.of('minecraft:dirt'), Item.of('minecraft:dirt'), Item.of('minecraft:dirt'), 
+//            Item.of('minecraft:dirt'), Item.of('minecraft:dirt'), Item.of('minecraft:dirt')
+//        ]
+//    )
+//})
 
 // Blow up amethyst shards to get amethyst dust
 LevelEvents.afterExplosion(event => {
@@ -3413,6 +3429,7 @@ function miscRemovals(event) {
     event.remove({mod:'endrem'})
     event.remove({mod:'magic_doorknob'})
     event.remove({mod:'blazegear'})
+    event.remove({mod:'villagertools'})
 }
 
 function kubejsRecipes(event) {
@@ -4219,4 +4236,230 @@ function enchantableStaffsRecipes(event) {
         'enchantable_staffs:netherite_staff',
         'minecraft:gold_block'
     ).id('kubejs:plated_netherite_staff')
+}
+
+function enigmaticLegacyRecipes(event) {
+    event.shaped(
+        'enigmaticlegacy:earth_heart',
+        [
+            'GSG',
+            'SHS',
+            'GSG'
+        ],
+        {
+            G: 'apotheosis:gem_dust',
+            S: 'apotheosis:rare_material',
+            H: 'minecraft:heart_of_the_sea'
+        }
+    ).id('kubejs:earth_heart')
+    event.custom({
+        type: 'enigmaticlegacy:crafting_shaped_cursed',
+        pattern: [
+            ' E ',
+            'BHB',
+            'EPE'
+        ],
+        key: {
+            E: {
+                item: 'minecraft:ender_pearl'
+            },
+            B: {
+                item: 'minecraft:blaze_powder'
+            },
+            H: {
+                item: 'enigmaticlegacy:earth_heart'
+            },
+            P: {
+                tag: 'minecraft:music_discs'
+            }
+        },
+        result: {
+            item: 'enigmaticlegacy:twisted_heart'
+        }
+    }).id('kubejs:twisted_heart')
+    event.shaped(
+        'enigmaticlegacy:twisted_mirror',
+        [
+            'SRS',
+            'RTR',
+            'SRS'
+        ],
+        {
+            S: 'immersiveengineering:ingot_silver',
+            R: 'minecraft:respawn_anchor',
+            T: 'enigmaticlegacy:twisted_heart'
+        }
+    ).id('kubejs:twisted_mirror')
+    event.shaped(
+        'enigmaticlegacy:darkest_scroll',
+        [
+            ' S ',
+            'STS',
+            ' S '
+        ],
+        {
+            S: 'enigmaticlegacy:thicc_scroll',
+            T: 'enigmaticlegacy:twisted_heart'
+        }
+    ).id('kubejs:darkest_scroll')
+    event.custom({
+        type: 'apotheosis:enchanting',
+        input: {
+            item: 'enigmaticlegacy:darkest_scroll'
+        },
+        requirements: {
+            eterna: 0.0,
+            quanta: 100.0,
+            arcana: 0.0
+        },
+        max_requirements: {
+            eterna: 50.0,
+            quanta: 100.0,
+            arcana: 10.0
+        },
+        display_level: 5,
+        result: {
+            item: 'enigmaticlegacy:cursed_scroll',
+            count: 1
+        }
+    }).id('kubejs:cursed_scroll')
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('enigmaticlegacy:darkest_scroll'))
+        .itemOutput(Ingredient.of('enigmaticlegacy:avarice_scroll'))
+        .sacrifice('minecraft:piglin')
+        .sacrifice('minecraft:piglin')
+        .sacrifice('minecraft:piglin')
+        .sacrifice('minecraft:piglin')
+        .sacrificeRegion(10, 5)
+        .blockBelow('minecraft:gold_block')
+    event.shaped(
+        'enigmaticlegacy:berserk_charm',
+        [
+            'BBB',
+            'NTN',
+            'BBB'
+        ],
+        {
+            B: 'alexsmobs:blood_sac',
+            N: 'minecraft:netherite_ingot',
+            T: 'enigmaticlegacy:twisted_heart'
+        }
+    ).id('kubejs:berserk_charm')
+    event.shaped(
+        '8x enigmaticlegacy:twisted_potion',
+        [
+            'WWW',
+            'WTW',
+            'WWW'
+        ],
+        {
+            W: 'minecraft:glass_bottle',
+            T: 'enigmaticlegacy:twisted_heart'
+        }
+    ).id('kubejs:twisted_potion')
+    event.smithing(
+        'enigmaticlegacy:infernal_shield',
+        'minecraft:shield',
+        'enigmaticlegacy:twisted_heart'
+    ).id('kubejs:infernal_shield')
+    event.shaped(
+        'enigmaticlegacy:soul_compass',
+        [
+            'SRS',
+            'RTR',
+            'SRS'
+        ],
+        {
+            S: 'minecraft:gold_ingot',
+            R: 'minecraft:compass',
+            T: 'enigmaticlegacy:twisted_heart'
+        }
+    ).id('kubejs:soul_compass')
+    event.shaped(
+        'enigmaticlegacy:curse_transposer',
+        [
+            'WWW',
+            'WTW',
+            'WWW'
+        ],
+        {
+            W: 'minecraft:enchanted_book',
+            T: 'enigmaticlegacy:twisted_heart'
+        }
+    ).id('kubejs:curse_transposer')
+    event.shapeless(
+        'enigmaticlegacy:the_acknowledgment',
+        [
+            'minecraft:book',
+            'minecraft:lantern'
+        ]
+    ).id('kubejs:the_acknowledgment')
+    event.smithing(
+        'enigmaticlegacy:the_twist',
+        'enigmaticlegacy:the_acknowledgment',
+        'enigmaticlegacy:twisted_heart'
+    ).id('kubejs:the_twist')
+    event.smithing(
+        'enigmaticlegacy:the_infinitum',
+        'enigmaticlegacy:the_twist',
+        'enigmaticlegacy:abyssal_heart'
+    ).id('kubejs:the_infinitum')
+    event.shaped(
+        'enigmaticlegacy:iron_ring',
+        [
+            'NIN',
+            'I I',
+            'NIN'
+        ],
+        {
+            I: 'minecraft:iron_ingot',
+            N: 'minecraft:iron_nugget'
+        }
+    ).id('kubejs:iron_ring')
+    event.smithing(
+        'enigmaticlegacy:desolation_ring',
+        'enigmaticlegacy:iron_ring',
+        'enigmaticlegacy:abyssal_heart'
+    ).id('kubejs:desolation_ring')
+    event.smithing(
+        'enigmaticlegacy:eldritch_amulet',
+        '#custom:necklaces',
+        'enigmaticlegacy:abyssal_heart'
+    ).id('kubejs:eldritch_amulet')
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('enigmaticlegacy:twisted_heart'))
+        .itemOutput(Ingredient.of('enigmaticlegacy:soul_crystal'))
+        .input(Ingredient.of('minecraft:diamond_block', 4))
+        .input(Ingredient.of('#meetyourfight:boss_drop'))
+        .input(Ingredient.of('minecraft:totem_of_undying'))
+        .input(Ingredient.of('quark:rainbow_rune'))
+        .sacrifice('quark:wraith')
+        .sacrifice('minecraft:phantom')
+        .sacrificeRegion(10, 5)
+    event.remove({id:'enigmaticlegacy:cursed_stone'})
+    event.shaped(
+        'enigmaticlegacy:cursed_stone',
+        [
+            'NTN',
+            'LSL',
+            'NTN'
+        ],
+        {
+            N: 'minecraft:netherite_ingot',
+            T: 'enigmaticlegacy:twisted_heart',
+            L: 'minecraft:lava_bucket',
+            S: 'minecraft:nether_star'
+        }
+    ).id('kubejs:cursed_stone')
+}
+
+function oldGunsRecipes(event) {
+    
+}
+
+function spelunkeryRecipes(event) {
+    event.remove({id:'spelunkery:mixing/portal_fluid'})
+    event.remove({id:'spelunkery:emptying/crying_obsidian'})
+    event.remove({id:'spelunkery:emptying/portal_fluid'})
+    event.remove({id:'spelunkery:diamond_grindstone'})
 }

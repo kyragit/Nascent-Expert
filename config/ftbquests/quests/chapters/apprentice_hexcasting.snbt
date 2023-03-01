@@ -1,7 +1,7 @@
 {
 	id: "16D96E16D600EDE0"
 	group: "36C3CA17FE4F12AD"
-	order_index: 6
+	order_index: 8
 	filename: "apprentice_hexcasting"
 	title: "Apprentice Hexcasting"
 	icon: "hexcasting:charged_amethyst"
@@ -174,6 +174,63 @@
 						]
 					}
 				}
+			}]
+		}
+		{
+			icon: "hexcasting:scroll_medium"
+			x: 0.0d
+			y: -2.0d
+			shape: "hexagon"
+			description: [
+				"A fairly simple spell to start with would be one that propels the user in the direction they are looking."
+				""
+				"Perhaps you could propel other entities, as well..."
+			]
+			hide_dependency_lines: true
+			dependencies: ["476B3F89A19F2F0E"]
+			id: "58698170FC11D9E3"
+			tasks: [{
+				id: "1BA126F42C489D5B"
+				type: "checkmark"
+				title: "Ideas: Self-Propulsion"
+			}]
+		}
+		{
+			icon: "hexcasting:scroll_medium"
+			x: 1.5d
+			y: 1.0d
+			shape: "hexagon"
+			description: [
+				"Your spells can interact with the world at a far greater range than you can place blocks. Perhaps you could make a spell that places blocks at a distance?"
+				""
+				"That being said, why stop at single blocks? There may be ways to place many blocks at once..."
+			]
+			hide_dependency_lines: true
+			dependencies: ["476B3F89A19F2F0E"]
+			id: "1EA8B504D8337856"
+			tasks: [{
+				id: "69F2F4A41E959945"
+				type: "checkmark"
+				title: "Ideas: Long-Range Block Placement"
+			}]
+		}
+		{
+			icon: "hexcasting:scroll_medium"
+			x: -1.5d
+			y: 1.0d
+			shape: "hexagon"
+			description: [
+				"It should be simple enough to inflict entities with status effects. A spell that, say, inflicted slowness on all nearby monsters could be incredibly useful."
+				""
+				"It would also seem that it's possible to inflict much more potent effects this way than with standard alchemy; though the amethyst cost is certainly high."
+			]
+			hide_dependency_lines: true
+			dependencies: ["476B3F89A19F2F0E"]
+			id: "4480A038BF969CD1"
+			tasks: [{
+				id: "68D39FBE9A230B91"
+				type: "checkmark"
+				title: "Ideas: Mass Debuffs"
 			}]
 		}
 	]

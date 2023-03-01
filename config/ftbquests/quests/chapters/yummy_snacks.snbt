@@ -1,0 +1,395 @@
+{
+	id: "6740DD44D0FE26EB"
+	group: "36C3CA17FE4F12AD"
+	order_index: 7
+	filename: "yummy_snacks"
+	title: "Yummy Snacks"
+	icon: "alexsdelight:bison_burger"
+	subtitle: ["A guide to the culinary arts."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: 2.0d
+			y: 0.0d
+			description: ["Many new foods have special effects when eaten. These can be incredibly useful both in combat and otherwise!"]
+			id: "7AE5BB79ED0D166C"
+			tasks: [{
+				id: "0DDD654D248F9EC9"
+				type: "checkmark"
+				title: "Special Food Effects"
+			}]
+		}
+		{
+			x: 8.0d
+			y: -3.0d
+			description: ["Foods made from strawberries give instant health upon consumption! Very helpful in a pinch."]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "438419326757D602"
+			tasks: [{
+				id: "424824BFD27BE415"
+				type: "item"
+				item: "neapolitan:strawberries"
+			}]
+			rewards: [{
+				id: "293188846058B101"
+				type: "item"
+				item: "neapolitan:strawberry_scones"
+			}]
+		}
+		{
+			x: 8.0d
+			y: 3.0d
+			description: ["Foods made from bananas give the Agility status effect, which lets you climb any block as if it was a ladder."]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "1C5FC81B2711E2D1"
+			tasks: [{
+				id: "07BDA5467C899E23"
+				type: "item"
+				item: "neapolitan:banana"
+			}]
+			rewards: [{
+				id: "0CCF41D2F79CC7DA"
+				type: "item"
+				item: "neapolitan:banana_bread"
+			}]
+		}
+		{
+			title: "Mint"
+			x: 8.0d
+			y: -4.0d
+			description: ["Foods made from mint give the Berserking effect, which increases your damage and defense as you kill mobs."]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "01A49610634E4211"
+			tasks: [{
+				id: "5885757F640F7106"
+				type: "item"
+				item: "neapolitan:mint_leaves"
+			}]
+			rewards: [{
+				id: "2762A73D20F80362"
+				type: "item"
+				item: "neapolitan:mint_candies"
+			}]
+		}
+		{
+			title: "Vanilla"
+			x: 8.5d
+			y: -2.0d
+			description: ["Foods made from vanilla give the Vanilla Scent effect, which blocks most other status effects from being applied while it is active. Very useful for those pesky witches!"]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "754BDDC68E84ADBF"
+			tasks: [{
+				id: "214EE3B7E405DE0C"
+				type: "item"
+				item: "neapolitan:vanilla_pods"
+			}]
+			rewards: [{
+				id: "3572316D5DBAC984"
+				type: "item"
+				item: "neapolitan:vanilla_fudge"
+			}]
+		}
+		{
+			title: "Adzuki"
+			x: 8.0d
+			y: 4.0d
+			description: ["Foods made from adzuki give the Harmony effect, which causes hostile mobs to run away from you."]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "1B3D1BB99076B7B0"
+			tasks: [{
+				id: "0222048575CCA14B"
+				type: "item"
+				item: "neapolitan:adzuki_beans"
+			}]
+			rewards: [{
+				id: "767DDBF9265E89FC"
+				type: "item"
+				item: "neapolitan:adzuki_bun"
+			}]
+		}
+		{
+			x: 8.5d
+			y: 1.0d
+			description: ["Foods made from pomegranate give the Volatility effect, which gives all your attacks an explosive shockwave effect!"]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "0BE357E9360AABB1"
+			tasks: [{
+				id: "2C286AD8D171CE1D"
+				type: "item"
+				item: "collectorsreap:pomegranate"
+			}]
+			rewards: [{
+				id: "7A19763798B97243"
+				type: "item"
+				item: "collectorsreap:pomegranate_custard"
+			}]
+		}
+		{
+			x: 8.5d
+			y: -1.0d
+			description: ["Foods made from lime give the Corrosion effect, which blocks incoming projectiles!"]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "18BB61C6A5F08815"
+			tasks: [{
+				id: "502B409C417253F0"
+				type: "item"
+				item: "collectorsreap:lime"
+			}]
+			rewards: [{
+				id: "3608EB43A8A92DFB"
+				type: "item"
+				item: "collectorsreap:lime_cookie"
+			}]
+		}
+		{
+			title: "Milkshakes"
+			x: 10.0d
+			y: 0.5d
+			description: [
+				"Milkshakes are special drinks that let you manipulate nearby creature's potion effects. You can drink them yourself, or force another mob to drink it by right-clicking them."
+				""
+				"- Vanilla: Removes all effects from the drinker."
+				"- Chocolate: Removes all positive effects from the drinker."
+				"- Strawberry: Removes all negative effects from the drinker."
+				"- Banana: Swaps the status effects of the drinker and the nearest entity."
+				"- Mint: Steals the status effects from the nearest entity."
+				"- Adzuki: Transfers the drinker's status effects to the nearest entity."
+				"- Lime: Copies the drinker's negative effects to the 3 nearest entities."
+				"- Pomegranate: Copies the drinker's positive effects to the 3 nearest entities."
+			]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "76187E7715D50FCE"
+			tasks: [{
+				id: "0419748AF6A7E664"
+				type: "item"
+				title: "Any Milkshake"
+				item: {
+					id: "itemfilters:or"
+					Count: 1b
+					tag: {
+						items: [
+							{
+								id: "neapolitan:adzuki_milkshake"
+								Count: 1b
+							}
+							{
+								id: "neapolitan:mint_milkshake"
+								Count: 1b
+							}
+							{
+								id: "neapolitan:banana_milkshake"
+								Count: 1b
+							}
+							{
+								id: "neapolitan:strawberry_milkshake"
+								Count: 1b
+							}
+							{
+								id: "neapolitan:chocolate_milkshake"
+								Count: 1b
+							}
+							{
+								id: "neapolitan:vanilla_milkshake"
+								Count: 1b
+							}
+							{
+								id: "collectorsreap:pomegranate_milkshake"
+								Count: 1b
+							}
+						]
+					}
+				}
+			}]
+		}
+		{
+			title: "Comforting Foods"
+			x: 9.5d
+			y: -1.5d
+			description: ["Soups and Stews give the Comfort effect, which stops you from getting slowness, weakness, and hunger."]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "4A3B2B9FFFC4AA6C"
+			tasks: [{
+				id: "1378A72C2E69BD80"
+				type: "item"
+				title: "Any Comforting Food"
+				item: {
+					id: "itemfilters:or"
+					Count: 1b
+					tag: {
+						items: [
+							{
+								id: "farmersdelight:chicken_soup"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:fish_stew"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:noodle_soup"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:baked_cod_stew"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:pumpkin_soup"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:fried_rice"
+								Count: 1b
+							}
+							{
+								id: "minecraft:mushroom_stew"
+								Count: 1b
+							}
+							{
+								id: "minecraft:rabbit_stew"
+								Count: 1b
+							}
+							{
+								id: "minecraft:beetroot_soup"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:cooked_rice"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:bone_broth"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:beef_stew"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:vegetable_soup"
+								Count: 1b
+							}
+						]
+					}
+				}
+			}]
+		}
+		{
+			title: "Nourishing Foods"
+			x: 9.5d
+			y: 1.5d
+			description: ["Large meals give Nourishment, which prevents you from losing hunger from anything except healing."]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "13FE46450D4C1E0D"
+			tasks: [{
+				id: "52F4A3836D00FC50"
+				type: "item"
+				item: {
+					id: "itemfilters:or"
+					Count: 1b
+					tag: {
+						items: [
+							{
+								id: "farmersdelight:ratatouille"
+								Count: 1b
+							}
+							{
+								id: "collectorsreap:deluxe_salad"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:shepherds_pie"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:honey_glazed_ham"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:roast_chicken"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:stuffed_pumpkin"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:grilled_salmon"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:squid_ink_pasta"
+								Count: 1b
+							}
+							{
+								id: "delightful:nut_butter_and_jelly_sandwich"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:bacon_and_eggs"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:pasta_with_meatballs"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:pasta_with_mutton_chop"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:mushroom_rice"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:roasted_mutton_chops"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:vegetable_noodles"
+								Count: 1b
+							}
+							{
+								id: "farmersdelight:steak_and_potatoes"
+								Count: 1b
+							}
+						]
+					}
+				}
+			}]
+		}
+		{
+			icon: "minecraft:sugar"
+			x: 10.0d
+			y: -0.5d
+			description: ["Sugary foods, like cakes and pies, give speed when eaten!"]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "6DBF790C34785CB5"
+			tasks: [{
+				id: "533FC599603B647B"
+				type: "checkmark"
+				title: "Sugary Foods"
+			}]
+		}
+		{
+			title: "Chocolate"
+			x: 8.5d
+			y: 2.0d
+			description: ["Foods made from chocolate (from Neapolitan) give the Sugar Rush effect, which increases speed a lot at first, then slows you down."]
+			dependencies: ["7AE5BB79ED0D166C"]
+			id: "4D792AC8FE3CF270"
+			tasks: [{
+				id: "50F9CA7AACED12F8"
+				type: "item"
+				item: "neapolitan:chocolate_bar"
+			}]
+			rewards: [{
+				id: "1DA9C27B07CA791D"
+				type: "item"
+				item: "abnormals_delight:chocolate_cake_slice"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

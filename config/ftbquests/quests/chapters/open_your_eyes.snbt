@@ -45,8 +45,6 @@
 				"Equipping this ring will make the game VASTLY more difficult. You will deal less and take more damage, neutral mobs will be hostile, and most importantly, you will lose maximum health every time you die (unless you return to retrieve your soul). Oh, and did I mention that once equipped it is bound to you forever?"
 				""
 				"That being said, bearers of the Curses are granted access to artifacts of the gods themselves - if they can survive the challenge."
-				""
-				"(Currently, most of the special rewards for the ring are unimplemented. Only equip it if you enjoy torturing yourself.)"
 			]
 			dependencies: ["54AABF574DEEFF57"]
 			id: "562B95C0055CD04A"
@@ -199,6 +197,8 @@
 				"These boats have a few keybinds associated with them, so take a look at those and set them to whatever you like. They also have a large inventory for all the booty you've collected!"
 				""
 				"You can make cannons for your ship if you'd like. Simply right-click to place them in your ship, then put cannonballs and gunpowder inside the ship's inventory."
+				""
+				"Note: These are currently broken on dedicated servers :("
 			]
 			dependencies: ["54AABF574DEEFF57"]
 			id: "0C9C9DD103A82BB1"

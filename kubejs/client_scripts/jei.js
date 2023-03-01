@@ -38,6 +38,7 @@ const ITEMS = [
     'paraglider:rito_goddess_statue',
     'paraglider:horned_statue',
     'campanion:rope_bridge_planks',
+    'oldguns:bombard',
 ]
 
 const TEPEE_WALLS = [
@@ -187,4 +188,5 @@ ItemEvents.tooltip(event => {
             text.add(Text.darkRed('Warning: very destructive!'))
         }
     })
+    event.add('simplyswords:runic_tablet', Text.aqua('Right-click for a random runic weapon!'))
 })

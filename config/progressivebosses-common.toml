@@ -200,11 +200,11 @@
 
 ["Elder Guardian"]
 	#Handles the Damage Resistances
-	"Enable Resistances" = true
+	"Enable Resistances" = false
 	#More damage and attack speed based off Elder Guardians Defeated
 	"Enable Attack" = true
 	#Bonus Health and Health regeneration.
-	"Enable Health" = true
+	"Enable Health" = false
 	#Bonus Experience and Dragon Egg per player
 	"Enable Rewards" = true
 	#Elder Guardians will spawn Elder Minions.

@@ -178,6 +178,10 @@ EntityEvents.spawned('minecraft:wither', event => {
     }
 })
 
+PlayerEvents.advancement('enigmaticlegacy:main/cursed_ring', event => {
+    event.addGameStage('cursed_ring')
+})
+
 PlayerEvents.advancement('custom:unlock_create', event => {
     event.player.stages.add('create')
 })
@@ -203,6 +207,60 @@ PlayerEvents.inventoryChanged('create:andesite_alloy', event => {
         event.server.runCommandSilent(`clear ${event.player.username} create:andesite_alloy`)
         event.server.runCommand(`tellraw ${event.player.username} {"text":"If somehow you encountered this from the intended progression path, or you\'re a dirty cheater, click this message to disable sequence break detection (requires cheats to be enabled). If you found the item some other way, please submit a bug report <TODO: link>.","clickEvent":{"action":"run_command","value":"/advancement grant @s only custom:unlock_create"}}`)
     }
+})
+
+EntityEvents.death('minecraft:elder_guardian', event => {
+    if (!event.source.player) {
+        return
+    }
+    if (!event.source.player.stages.has('cursed_ring')) {
+        return
+    }
+    if (Utils.random.nextDouble(0.0, 1.0) < 0.5) {
+        return
+    }
+    event.entity.block.popItem('enigmaticlegacy:guardian_heart')
+})
+
+const Builder = Java.loadClass('net.minecraft.world.level.storage.loot.LootContext$Builder')
+const LootContextParamSets = Java.loadClass('net.minecraft.world.level.storage.loot.parameters.LootContextParamSets')
+
+EntityEvents.death(event => {
+    if (!event.source.player) {
+        return
+    }
+    if (!event.source.player.stages.has('cursed_ring')) {
+        return
+    }
+    if (event.entity.animal || event.entity.ambientCreature || event.entity.waterCreature || event.entity.player) {
+        return
+    }
+    let builder = new Builder(event.server.getLevel(event.level.dimension))
+    event.server.lootTables.get('custom:cursed_loot').getRandomItems(builder.create(LootContextParamSets.EMPTY)).forEach(item => {
+        event.entity.block.popItem(item)
+    })
+})
+
+ItemEvents.rightClicked('simplyswords:runic_tablet', event => {
+    const SIMPLY_SWORD_TYPES = [
+        'longsword',
+        'twinblade',
+        'rapier',
+        'katana',
+        'sai',
+        'spear',
+        'glaive',
+        'warglaive',
+        'cutlass',
+        'claymore',
+        'greathammer',
+        'greataxe',
+        'chakram',
+        'scythe',
+        'halberd',
+    ]
+    event.player.block.popItem(`simplyswords:runic_${Utils.randomOf(Utils.random, SIMPLY_SWORD_TYPES)}`)
+    event.item.count -= 1
 })
 
 // ---WARNING: MEGA SPOILERS BELOW!!---

@@ -175,3 +175,15 @@ ForgeEvents.onEvent(LivingEquipmentChangeEvent, event => {
     event.getEntity().addTag('recieved_curse_mark')
     event.getEntity().server.runCommand(`tellraw ${event.getEntity().username} {"text":"You bear the mark... you are cursed. You must place your hand upon the stone.","italic":"true","color":"#B00000","clickEvent":{"action":"open_url","value":"https://www.youtube.com/watch?v=AJATwqY5muo"}}`)
 })
+
+
+const MobEffectEvent = Java.loadClass('net.minecraftforge.event.entity.living.MobEffectEvent')
+ForgeEvents.onEvent(MobEffectEvent.Added, event => {
+    if (!event.getEffectSource()) {
+        return
+    }
+    if (!event.getEffectSource().player) {
+        return
+    }
+    event.getEffectSource().block.popItem(Item.of('treasurebags:treasure_bag', '{silentlib.LootContainer:{BagType:"custom:raid"}}'))
+})
