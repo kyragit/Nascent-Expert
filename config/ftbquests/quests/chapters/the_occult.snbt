@@ -1,0 +1,371 @@
+{
+	id: "22E4CCC9BE45C925"
+	group: "36C3CA17FE4F12AD"
+	order_index: 12
+	filename: "the_occult"
+	title: "The Occult"
+	icon: {
+		id: "goety:osseous_focus"
+		Count: 1b
+		tag: {
+			"Soul Cost": 8
+		}
+	}
+	subtitle: ["The darkness is calling. Surely this is safe..."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "A World of Darkness"
+			x: 0.0d
+			y: 0.0d
+			description: [
+				"The vile Evokers harness great power... but from what? "
+				""
+				"There may be answers. Surely there must be texts detailing the Illagers and their magic, waiting to be discovered."
+			]
+			invisible: true
+			id: "5C5C624290702B4E"
+			tasks: [{
+				id: "6697D93F9C1E61C9"
+				type: "kill"
+				title: "Kill an Evoker."
+				icon: "minecraft:totem_of_undying"
+				entity: "minecraft:evoker"
+				value: 1L
+			}]
+		}
+		{
+			title: "Inception of the Occult"
+			x: 0.0d
+			y: -1.5d
+			description: [
+				"Your cursed dagger has severed the Evoker's very soul. With this your journey can begin."
+				""
+				"Create a Cursed Infuser. It requires souls as fuel; perhaps the ever-familiar Spawner will suffice? Try placing the infuser atop one, and insert an Emerald."
+			]
+			dependencies: ["5C5C624290702B4E"]
+			invisible_until_tasks: 1
+			id: "0021B27CDC96D5FA"
+			tasks: [
+				{
+					id: "20859F9CFEC426D5"
+					type: "item"
+					item: "kubejs:evoker_soul"
+				}
+				{
+					id: "593C2F468A67FB41"
+					type: "item"
+					item: "goety:cursed_infuser"
+				}
+			]
+		}
+		{
+			x: 0.0d
+			y: -3.0d
+			description: [
+				"The Evoker's Totems of Undying can be fashioned into something greater. The newly awakened emeralds seem to be able to store the energy of souls."
+				""
+				"When in your hotbar or equipped in your charm slot, the Totem of Souls will charge when you kill mobs. It stores a maximum of 10,000 souls, and each mob gives a different number of souls depending on the type. "
+				""
+				"Villagers, being sapient, give more souls than any other normal creature. "
+				""
+				"Souls are required to cast spells and perform rituals, among other things. Additionally, a completely filled Totem functions like a Totem of Undying, but works in the inventory or charm slot; though this damages the Totem in the process."
+			]
+			dependencies: ["0021B27CDC96D5FA"]
+			id: "755B8D656918A138"
+			tasks: [{
+				id: "33526F60ABD82E97"
+				type: "item"
+				item: {
+					id: "goety:totem_of_souls"
+					Count: 1b
+					tag: {
+						Souls: 0
+					}
+				}
+			}]
+		}
+		{
+			title: "Dark Spellcasting"
+			x: -1.0d
+			y: -4.5d
+			description: [
+				"A Wand should be able to harness soul energy to great effect. It has little use by itself, however. You will need a Focus to direct the soul energy into a spell of some kind."
+				""
+				"Casting spells requires soul energy from your Totem of Souls (or Arca). To equip a Focus, press the 'open wand focus slot' keybind ('z' by default). Then hold right-click to cast the spell. Some spells take longer to cast than others."
+			]
+			dependencies: ["755B8D656918A138"]
+			id: "32B16978406D0AB8"
+			tasks: [{
+				id: "609844829346614C"
+				type: "item"
+				item: {
+					id: "goety:dark_wand"
+					Count: 1b
+					ForgeCaps: {
+						Parent: {
+							Size: 1
+							Items: [ ]
+							slot: 0
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: -2.5d
+			y: -6.0d
+			description: [
+				"Ritual souls required: 1,000"
+				""
+				"The first logical idea for a Focus would be to copy the Evoker's fang attacks. The Biting Focus does exactly that."
+				""
+				"Casting this spell creates a line of fangs out of the ground in front of you, piercing enemy armor. Holding shift while casting instead creates a circle of fangs around you."
+			]
+			dependencies: ["32B16978406D0AB8"]
+			id: "0CF428C4BD00204C"
+			tasks: [{
+				id: "556D17EBB143CCD1"
+				type: "item"
+				item: {
+					id: "goety:biting_focus"
+					Count: 1b
+					tag: {
+						"Soul Cost": 8
+					}
+				}
+			}]
+		}
+		{
+			x: -1.5d
+			y: -6.5d
+			description: [
+				"Ritual souls required: 1,000"
+				""
+				"A simple tweak to the Biting Focus should allow for an alternative targeting method."
+				""
+				"This focus will summon fangs beneath all creatures nearby. "
+			]
+			dependencies: ["32B16978406D0AB8"]
+			id: "3764030FD608B7F1"
+			tasks: [{
+				id: "33C17EBE35982992"
+				type: "item"
+				item: {
+					id: "goety:feast_focus"
+					Count: 1b
+					tag: {
+						"Soul Cost": 8
+					}
+				}
+			}]
+		}
+		{
+			title: "Occult Rituals"
+			x: 1.0d
+			y: -4.5d
+			description: [
+				"To craft more advanced occult items, you will need to perform rituals. Rituals require souls and items, as well as blocks arranged around the altar. Some rituals will also require a sacrifice."
+				""
+				"At the center of your ritual is the Dark Altar, placed atop a Cursed Cage. You must place your Totem of Souls in the Cage to provide souls to the ritual. Around the Altar are up to twelve Pedestals, to hold all the required items for the ritual. Placement of Pedestals or special blocks does not matter, as long as it is reasonably close the Altar."
+				""
+				"Different ritual types have different requirements for blocks placed around the altar, detailed later in this section. If those are fulfilled, and the items are placed in the pedestals, placing the activation item in the Altar will begin the ritual."
+				""
+				"Be warned, however: if there are not enough souls in the Cursed Cage, the ritual will fail and your items may be lost."
+			]
+			dependencies: ["755B8D656918A138"]
+			id: "1E72B91C692C915E"
+			tasks: [
+				{
+					id: "4B3E74F3F9D41A94"
+					type: "item"
+					item: "goety:cursed_cage"
+				}
+				{
+					id: "26E26DCA30F6D8C8"
+					type: "item"
+					item: "goety:dark_altar"
+				}
+				{
+					id: "08ABB984FFAD0B3E"
+					type: "item"
+					item: "goety:pedestal"
+					count: 12L
+				}
+			]
+			rewards: [{
+				id: "58360A04EDB6812F"
+				type: "gamestage"
+				team_reward: true
+				auto: "invisible"
+				ignore_reward_blocking: true
+				stage: "ritual_types"
+			}]
+		}
+		{
+			x: 1.5d
+			y: -3.5d
+			description: ["Sacrifices work slightly differently than the Summoning Altar. Mobs to be sacrificed will not be killed automatically; you must kill them yourself, AFTER the ritual has started. Only then will the ritual continue as normal."]
+			dependencies: ["1E72B91C692C915E"]
+			id: "58406D1248683499"
+			tasks: [{
+				id: "0CEA3036A61F9650"
+				type: "checkmark"
+				title: "Ritual Sacrifices"
+			}]
+		}
+		{
+			title: "Ritual Types"
+			icon: "goety:pedestal"
+			x: 3.0d
+			y: -4.5d
+			dependencies: ["1E72B91C692C915E"]
+			id: "4FBE969040237A65"
+			tasks: [{
+				id: "7D2156727C99B525"
+				type: "gamestage"
+				title: "Dummy Task"
+				icon: "quark:tiny_potato"
+				disable_toast: true
+				stage: "ritual_types"
+			}]
+		}
+		{
+			icon: "minecraft:carved_pumpkin"
+			x: 7.5d
+			y: -6.5d
+			description: ["Animation Rituals require at least 15 nearby ladders, 15 nearby rails, and a carved pumpkin."]
+			dependencies: ["4FBE969040237A65"]
+			id: "105BAC371D1577D5"
+			tasks: [{
+				id: "39E874EBAC46DEAD"
+				type: "checkmark"
+				title: "Animation"
+			}]
+		}
+		{
+			icon: "minecraft:zombie_head"
+			x: 8.0d
+			y: -5.5d
+			description: ["Necroturgy Rituals require at least 16 non-wooden slabs, 16 sculk blocks, and 8 non-empty flower pots."]
+			dependencies: ["4FBE969040237A65"]
+			id: "4B12F2C9FF39E158"
+			tasks: [{
+				id: "5CC32B2744180861"
+				type: "checkmark"
+				title: "Necroturgy"
+			}]
+		}
+		{
+			icon: "minecraft:anvil"
+			x: 8.5d
+			y: -4.5d
+			description: ["Forge Rituals require at least 4 anvils, 3 furnaces (or blast furnaces), and 1 smithing table."]
+			dependencies: ["4FBE969040237A65"]
+			id: "46A14F3F7ACB6B9B"
+			tasks: [{
+				id: "5666A335A6C4844B"
+				type: "checkmark"
+				title: "Forge"
+			}]
+		}
+		{
+			icon: "minecraft:enchanting_table"
+			x: 8.0d
+			y: -3.5d
+			description: ["Magic Rituals require at least 16 (oak) bookshelves, 2 enchanting tables, and a lectern with a book inside."]
+			dependencies: ["4FBE969040237A65"]
+			id: "246454D128EB31B1"
+			tasks: [{
+				id: "61C9169D6F892670"
+				type: "checkmark"
+				title: "Magic"
+			}]
+		}
+		{
+			icon: "minecraft:feather"
+			x: 7.5d
+			y: -2.5d
+			description: ["Air Rituals simply require being high in the sky (above y=128)."]
+			dependencies: ["4FBE969040237A65"]
+			id: "588258E27C1F03C8"
+			tasks: [{
+				id: "02AA81F09E2378EB"
+				type: "checkmark"
+				title: "Air"
+			}]
+		}
+		{
+			icon: "minecraft:lightning_rod"
+			x: 7.0d
+			y: -1.5d
+			description: ["Storm Rituals require at least 20 chains, 12 blocks of copper, and 4 lightning rods; as well as being high in the sky (above y=128) and exposed to a thunderstorm."]
+			dependencies: ["4FBE969040237A65"]
+			id: "1D8352B98001706B"
+			tasks: [{
+				id: "4889A94D5EFFC4EE"
+				type: "checkmark"
+				title: "Storm"
+			}]
+		}
+		{
+			icon: "minecraft:crying_obsidian"
+			x: 7.0d
+			y: -7.5d
+			description: ["Sabbath Rituals require at least 16 obsidian, 8 crying obsidian, and 4 soul fires."]
+			dependencies: ["4FBE969040237A65"]
+			id: "6D8B1BB7668421B1"
+			tasks: [{
+				id: "2D7B13C3E2EB8F75"
+				type: "checkmark"
+				title: "Sabbath"
+			}]
+		}
+		{
+			x: -4.5d
+			y: -6.5d
+			description: [
+				"Ritual souls required: 3,000"
+				""
+				"By learning from the Evokers, it should be possible to craft a focus to summon Vexes. "
+			]
+			dependencies: ["32B16978406D0AB8"]
+			id: "11D76E3994BF417C"
+			tasks: [{
+				id: "37A80999B4775DC3"
+				type: "item"
+				item: {
+					id: "goety:vexing_focus"
+					Count: 1b
+					tag: {
+						"Soul Cost": 18
+					}
+				}
+			}]
+		}
+		{
+			x: -2.5d
+			y: -8.0d
+			description: [
+				"Ritual souls required: 1,500"
+				""
+				"This focus will summon a block of ice above an area or target. After a time, the ice will fall, dealing damage and causing slowness."
+			]
+			dependencies: ["32B16978406D0AB8"]
+			id: "668BFFD11FFD4E02"
+			tasks: [{
+				id: "6786E33EFDC74D75"
+				type: "item"
+				item: {
+					id: "goety:iceology_focus"
+					Count: 1b
+					tag: {
+						"Soul Cost": 16
+					}
+				}
+			}]
+		}
+	]
+	quest_links: [ ]
+}

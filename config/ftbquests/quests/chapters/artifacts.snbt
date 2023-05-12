@@ -202,6 +202,11 @@
 		{
 			x: 5.0d
 			y: 0.0d
+			description: [
+				"Guarded by the prismatic towers of Shiraz Palace, the Thunderbrand crackles with power."
+				""
+				"Wield it and strike your foes like lightning."
+			]
 			invisible: true
 			id: "5F9BC06EA8548C29"
 			tasks: [{
@@ -242,6 +247,66 @@
 				id: "701151D93E7EE71A"
 				type: "item"
 				item: "kubejs:staff_of_gaea"
+			}]
+		}
+		{
+			x: 7.0d
+			y: 0.0d
+			description: ["The Infested Temple truly lives up to its name, hiding this venomous weapon at its peak. Its sting is potent; use it with care."]
+			invisible: true
+			id: "37D9E5B61AB227B3"
+			tasks: [{
+				id: "4189B37699833D68"
+				type: "item"
+				item: {
+					id: "simplyswords:bramblethorn"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -7.0d
+			y: 0.0d
+			description: ["The pharaohs of ancients past created a weapon that pierces the very soul. Even the thickest of armor will not protect you from its sting."]
+			invisible: true
+			id: "0D203FD64819B062"
+			tasks: [{
+				id: "582296B5EB2E4B9F"
+				type: "item"
+				item: {
+					id: "simplyswords:shadowsting"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 0.0d
+			y: -7.0d
+			description: ["This curious device creates simple space vortices. The user and anyone nearby seem to have their places shuffled around at random. The purpose of such an artifact is certainly vexing; though, I'm sure you'll find some use for it."]
+			invisible: true
+			id: "708F7B8205AB5A96"
+			tasks: [{
+				id: "0A244B4D3C453799"
+				type: "item"
+				item: "kubejs:unstable_vortex_generator"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 7.0d
+			description: ["ITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOU"]
+			invisible: true
+			id: "0408EACDCA73D854"
+			tasks: [{
+				id: "003894957206BE16"
+				type: "item"
+				item: "kubejs:unsettling_eye"
 			}]
 		}
 	]

@@ -1,6 +1,6 @@
 
 [general]
-	milkification = true
+	milkification = false
 	#Range: > 1
 	gauntlet_cooldown = 1
 	#Cooldown in ticks when switching to potions

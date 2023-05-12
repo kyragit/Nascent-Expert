@@ -1,0 +1,128 @@
+
+[Attributes]
+
+	[Attributes.Cultists]
+		#How much Max Health Malghast have, Default: 20.0
+		#Range: 1.0 ~ 1.7976931348623157E308
+		malghastHealth = 20.0
+
+		[Attributes.Cultists."Zombified Piglin Brute Servant"]
+			#How much damage Zombified Piglin Brute Servants deals, Default: 7.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			zombifiedPiglinBruteServantDamage = 7.0
+			#How much Max Health Zombified Piglin Brute Servants have, Default: 50.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			zombifiedPiglinBruteServantHealth = 50.0
+
+		[Attributes.Cultists."Zombie Villager Servant"]
+			#How much Max Health Zombie Villager Servants have, Default: 20.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			zombieVillagerServantHealth = 20.0
+			#How much damage Zombie Villager Servants deals, Default: 3.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			zombieVillagerServantDamage = 3.0
+
+		[Attributes.Cultists."Skeleton Villager Servant"]
+			#How much Max Health Skeleton Villager Servants have, Default: 20.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			skeletonVillagerServantHealth = 20.0
+			#How much damage Skeleton Villager Servants deals, Default: 2.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			skeletonVillagerServantDamage = 2.0
+
+		[Attributes.Cultists."Zombified Piglin Servant"]
+			#How much Max Health Zombified Piglin Servants have, Default: 20.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			zombifiedPiglinServantHealth = 20.0
+			#How much damage Zombified Piglin Servants deals, Default: 5.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			zombifiedPiglinServantDamage = 5.0
+
+	[Attributes.General]
+
+		[Attributes.General.Wraith]
+			#How much damage Wraith deals, Default: 4.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			wraithDamage = 4.0
+			#How much Max Health Wraiths have, Default: 25.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			wraithHealth = 25.0
+
+	[Attributes.Bosses]
+
+		[Attributes.Bosses.Apostle]
+			#Multiplies Apostle's Bow damage, Default: 4
+			#Range: > 2
+			apostleBowDamage = 4
+			#How much Max Health Apostles have, Default: 320.0
+			#Range: 100.0 ~ 1.7976931348623157E308
+			apostleHealth = 320.0
+			#The maximum amount of damage an Apostle can attain per hit, Default: 20
+			#Range: > 1
+			apostleDamageCap = 20
+
+		[Attributes.Bosses.Vizier]
+			#How much Max Health Viziers have, Default: 200.0
+			#Range: 100.0 ~ 1.7976931348623157E308
+			vizierHealth = 200.0
+			#The maximum amount of damage a Vizier can attain per hit, Default: 20
+			#Range: > 1
+			vizierDamageCap = 20
+
+	[Attributes."Summoned Mobs"]
+
+		[Attributes."Summoned Mobs".Vex]
+			#How much Max Health Summoned Vexes have, Default: 14.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			summonedVexHealth = 14.0
+			#How much damage Summoned Vexes deals, Default: 4.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			summonedVexDamage = 4.0
+
+		[Attributes."Summoned Mobs"."Zombie Servant"]
+			#How much Max Health Zombie Servants and variants have, Default: 20.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			zombieServantHealth = 20.0
+			#How much damage Zombie Servants and variants deals, Default: 3.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			zombieServantDamage = 3.0
+
+		[Attributes."Summoned Mobs"."Skeleton Servant"]
+			#How much damage Skeleton Servants and variants deals, Default: 3.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			skeletonServantDamage = 3.0
+			#How much Max Health Skeleton Servants and variants have, Default: 20.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			skeletonServantHealth = 20.0
+
+	[Attributes.Illagers]
+		#How much Max Health Conquillager have, Default: 24.0
+		#Range: 1.0 ~ 1.7976931348623157E308
+		conquillagerHealth = 24.0
+
+		[Attributes.Illagers.Envioker]
+			#How much Max Health Tormentor have, Default: 24.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			tormentorHealth = 24.0
+			#How much Max Health Envioker have, Default: 24.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			enviokerHealth = 24.0
+			#How much damage Envioker deals, Default: 5.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			enviokerDamage = 5.0
+			#How much damage Tormentor deals, Default: 4.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			tormentorDamage = 4.0
+
+		[Attributes.Illagers.Inquillager]
+			#How much Max Health Inquillager have, Default: 24.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			inquillagerHealth = 24.0
+			#How much damage Inquillager deals, Default: 5.0
+			#Range: 1.0 ~ 1.7976931348623157E308
+			inquillagerDamage = 5.0
+
+[General]
+	#Allows newly Configured Attributes to override pre-existing ones, Default: true
+	overrideAttributes = true
+

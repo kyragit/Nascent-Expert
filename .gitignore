@@ -22,4 +22,9 @@ usernamecache.json
 *.bak
 *.log
 everbook/
+shaderpacks/
+modernfix/
+localconfigs/
+patchouli_books/
 knownkeys.txt
+nascent_expert.code-workspace

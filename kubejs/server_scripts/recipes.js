@@ -25,6 +25,8 @@ ServerEvents.recipes(event => {
     enigmaticLegacyRecipes(event)
     oldGunsRecipes(event)
     spelunkeryRecipes(event)
+    coinRecipes(event)
+    goetyRecipes(event)
 })
 
 //const HiddenRecipe = Java.loadClass('com.aizistral.enigmaticlegacy.crafting.HiddenRecipe')
@@ -45,10 +47,10 @@ LevelEvents.afterExplosion(event => {
     for (let entity of event.affectedEntities) {
         if (entity.item != null) {
             if (entity.item.id == 'minecraft:amethyst_shard') {
-                entity.block.popItem('2x hexcasting:amethyst_dust')
+                entity.block.popItem(`${entity.item.count * 2}x hexcasting:amethyst_dust`)
             }
             if (entity.item.id == 'kubejs:star_of_quintessence') {
-                entity.block.popItem('kubejs:powdered_determination')
+                entity.block.popItem(`${entity.item.count}x kubejs:powdered_determination`)
             }
             if (entity.item.id == 'treasurebags:treasure_bag' || entity.item.id == 'gateways:gate_pearl') {
                 event.removeAffectedEntity(entity)
@@ -2584,6 +2586,19 @@ function sophisticatedBackpacksRecipes(event) {
         'sophisticatedbackpacks:tool_swapper_upgrade',
         'minecraft:gold_ingot'
     ).id('kubejs:advanced_tool_swapper_upgrade')
+    event.shaped(
+        'quark:backpack',
+        [
+            'ILI',
+            'LCL',
+            'ILI'
+        ],
+        {
+            I: 'minecraft:iron_ingot',
+            L: '#forge:leather',
+            C: '#forge:chests'
+        }
+    ).id('kubejs:quark_backpack')
 }
 
 function dimDungeonsRecipes(event) {
@@ -3343,6 +3358,19 @@ function apotheosisRecipes(event) {
         'simplyswords:waking_lichblade',
         '#custom:lich_staves'
     ).id('kubejs:awakened_lichblade_smithing')
+    event.shaped(
+        'apotheosis:ender_lead',
+        [
+            ' GE',
+            'GLG',
+            'EG '
+        ],
+        {
+            G: 'minecraft:gold_ingot',
+            E: 'minecraft:ender_pearl',
+            L: 'minecraft:lead'
+        }
+    ).id('apotheosis:ender_lead')
 }
 
 function archersParadoxRecipes(event) {
@@ -3589,6 +3617,20 @@ function kubejsRecipes(event) {
             }
         ]
     }).id('kubejs:ender_eye_mixing')
+    event.remove({id:'magic_mirror:magic_mirror'})
+    event.shaped(
+        '2x magic_mirror:magic_mirror',
+        [
+            'TST',
+            'ASA',
+            'TST'
+        ],
+        {
+            T: 'minecraft:tinted_glass',
+            A: 'hexcasting:amethyst_dust',
+            S: 'immersiveengineering:ingot_silver'
+        }
+    ).id('kubejs:magic_mirror')
 }
 
 function simpleStorageRecipes(event) {
@@ -3670,12 +3712,17 @@ function simpleStorageRecipes(event) {
             S: 'minecraft:stick'
         }
     ).id('kubejs:inventory_cable_framed')
-    event.shapeless(
-        'toms_storage:ts.inventory_cable_connector',
+    event.shaped(
+        '4x toms_storage:ts.inventory_cable_connector',
         [
-            'toms_storage:ts.inventory_cable',
-            'toms_storage:ts.inventory_connector'
-        ]
+            ' C ',
+            'CBC',
+            ' C '
+        ],
+        {
+            C: 'toms_storage:ts.inventory_cable',
+            B: 'toms_storage:ts.inventory_connector'
+        }
     ).id('kubejs:inventory_cable_connector')
     event.shapeless(
         'toms_storage:ts.inventory_cable_connector_filtered',
@@ -3752,6 +3799,21 @@ function simpleStorageRecipes(event) {
             A: 'create:andesite_casing'
         }
     ).id('kubejs:inventory_proxy')
+    event.remove({id:'storagedrawers:controller'})
+    event.shaped(
+        'storagedrawers:controller',
+        [
+            'AAA',
+            'CVC',
+            'ADA'
+        ],
+        {
+            A: 'create:andesite_alloy',
+            C: 'minecraft:comparator',
+            V: 'create:item_vault',
+            D: 'minecraft:diamond'
+        }
+    ).id('kubejs:drawer_controller')
 }
 
 function paragliderRecipes(event) {
@@ -4454,7 +4516,60 @@ function enigmaticLegacyRecipes(event) {
 }
 
 function oldGunsRecipes(event) {
-    
+    event.remove({id:'oldguns:mortar_and_pestle'})
+    event.custom({
+        type: 'oldguns:gunsmiths_bench_shaped',
+        conditions: [],
+        pattern: [
+            ' L ',
+            'S S',
+            ' S '
+        ],
+        key: {
+            L: {
+                item: 'minecraft:lever'
+            },
+            S: {
+                tag: 'forge:stone'
+            }
+        },
+        result: {
+            item: 'oldguns:mortar_and_pestle',
+            nbt: {
+                Damage: 0
+            }
+        }
+    }).id('kubejs:mortar_and_pestle_gunsmith')
+    event.custom({
+        type: 'oldguns:gunsmiths_bench_shapeless',
+        conditions: [],
+        ingredients: [
+            {
+                item: 'minecraft:honey_bottle'
+            },
+            {
+                tag: 'minecraft:wool'
+            },
+            {
+                tag: 'forge:rods/wooden'
+            },
+            {
+                tag: 'forge:leather'
+            },
+            {
+                tag: 'minecraft:logs'
+            },
+            {
+                item: 'minecraft:lever'
+            }
+        ],
+        result: {
+            item: 'oldguns:repair_kit',
+            nbt: {
+                Damage: 0
+            }
+        }
+    }).id('kubejs:repair_kit_alt_gunsmith')
 }
 
 function spelunkeryRecipes(event) {
@@ -4462,4 +4577,834 @@ function spelunkeryRecipes(event) {
     event.remove({id:'spelunkery:emptying/crying_obsidian'})
     event.remove({id:'spelunkery:emptying/portal_fluid'})
     event.remove({id:'spelunkery:diamond_grindstone'})
+}
+
+function coinRecipes(event) {
+    let mats = ['copper', 'iron', 'gold', 'netherite']
+    for (let mat of mats) {
+        event.remove({id:`createdeco:${mat}_coin`})
+        event.remove({id:`createdeco:${mat}_coinstack`})
+        event.shapeless(
+            `createdeco:${mat}_coinstack`,
+            [
+                `9x createdeco:${mat}_coin`
+            ]
+        ).id(`kubejs:${mat}_coinstack`)
+        event.shapeless(
+            `9x createdeco:${mat}_coin`,
+            [
+                `createdeco:${mat}_coinstack`
+            ]
+        ).id(`kubejs:${mat}_coin_from_coinstack`)
+    }
+    event.shapeless(
+        'createdeco:iron_coin',
+        [
+            '4x createdeco:copper_coin'
+        ]
+    ).id('kubejs:coin_copper_to_iron')
+    event.shapeless(
+        '4x createdeco:copper_coin',
+        [
+            'createdeco:iron_coin'
+        ]
+    ).id('kubejs:coin_iron_to_copper')
+    event.shapeless(
+        'createdeco:gold_coin',
+        [
+            '8x createdeco:iron_coin'
+        ]
+    ).id('kubejs:coin_iron_to_gold')
+    event.shapeless(
+        '8x createdeco:iron_coin',
+        [
+            'createdeco:gold_coin'
+        ]
+    ).id('kubejs:coin_gold_to_iron')
+    event.shapeless(
+        'createdeco:netherite_coin',
+        [
+            '4x createdeco:gold_coin'
+        ]
+    ).id('kubejs:coin_gold_to_netherite')
+    event.shapeless(
+        '4x createdeco:gold_coin',
+        [
+            'createdeco:netherite_coin'
+        ]
+    ).id('kubejs:coin_netherite_to_gold')
+    event.shapeless(
+        '6x createdeco:copper_coin',
+        [
+            'minecraft:emerald'
+        ]
+    ).id('kubejs:coin_emerald_to_copper')
+    event.remove({id:'spelunkery:emerald_shard'})
+    event.remove({id:'spelunkery:emerald_from_shard'})
+}
+
+function tagOrItem(input) {
+    return input.startsWith('#') ? {tag: input.split('#')[1]} : {item: input}
+}
+
+function goetyRecipes(event) {
+    event.remove({id:'goety:cursed_infuser'})
+    event.shaped(
+        'goety:cursed_infuser',
+        [
+            '   ',
+            'OEO',
+            'SSS'
+        ],
+        {
+            O: 'minecraft:crying_obsidian',
+            E: 'kubejs:evoker_soul',
+            S: 'minecraft:stone_brick_slab'
+        }
+    ).id('kubejs:cursed_infuser')
+    let cursedInfuser = function(input, result, time, id) {
+        event.custom({
+            type: 'goety:cursed_infuser_recipes',
+            ingredient: tagOrItem(input),
+            result: result,
+            cookingTime: time
+        }).id(id)
+    }
+    let ritualCraft = function(activator, craft_type, cost, duration, inputs, result, id) {
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i] = tagOrItem(inputs[i])
+        }
+        event.custom({
+            type: 'goety:ritual',
+            ritual_type: 'goety:craft',
+            activation_item: tagOrItem(activator),
+            craftType: craft_type,
+            soulCost: cost,
+            duration: duration,
+            ingredients: inputs,
+            result: {
+                item: result
+            }
+        }).id(id + '_manual_only')
+    }
+    let ritualCraftSacrifice = function(activator, craft_type, cost, duration, inputs, sacrifice_tag, sacrifice_display, result, id) {
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i] = tagOrItem(inputs[i])
+        }
+        event.custom({
+            type: 'goety:ritual',
+            ritual_type: 'goety:craft',
+            activation_item: tagOrItem(activator),
+            craftType: craft_type,
+            soulCost: cost,
+            duration: duration,
+            ingredients: inputs,
+            entity_to_sacrifice: {
+                tag: sacrifice_tag,
+                display_name: sacrifice_display
+            },
+            result: {
+                item: result
+            }
+        }).id(id + '_manual_only')
+    }
+    event.remove({id:'goety:empty_focus_burner'})
+    cursedInfuser('hexcasting:charged_amethyst', 'goety:empty_focus', 100, 'kubejs:empty_focus')
+    event.remove({id:'goety:animation_core'})
+    ritualCraft(
+        'goety:empty_focus', 'animation', 10, 15, 
+        [
+            'minecraft:minecart', 
+            '#forge:feathers', 
+            'minecraft:ender_pearl', 
+            'minecraft:sugar'
+        ], 
+        'goety:animation_core', 
+        'kubejs:animation_core'
+    )
+    event.remove({id:'goety:hunger_core'})
+    ritualCraft(
+        'goety:empty_focus', 'animation', 10, 15, 
+        [
+            'minecraft:rotten_flesh',
+            '#goety:meat',
+            'minecraft:pufferfish',
+            'minecraft:spider_eye',
+            'goety:savage_tooth',
+            'minecraft:poisonous_potato',
+            'farmersdelight:organic_compost',
+            'farmersdelight:rotten_tomato'
+        ],
+        'goety:hunger_core',
+        'kubejs:hunger_core'
+    )
+    event.remove({id:'goety:wind_core'})
+    ritualCraft(
+        'goety:empty_focus', 'air', 10, 15, 
+        [
+            'minecraft:phantom_membrane', 
+            '#forge:feathers', 
+            'quark:bottled_cloud', 
+            'hexcasting:amethyst_dust'
+        ], 
+        'goety:wind_core', 
+        'kubejs:wind_core'
+    )
+    event.remove({id:'goety:biting_focus'})
+    ritualCraft(
+        'goety:hunger_core', 'magic', 25, 40, 
+        [
+            'goety:magic_emerald', 
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            '#custom:teeth',
+            '#custom:teeth',
+            '#custom:teeth',
+            '#custom:teeth',
+            'goety:savage_tooth',
+            'goety:savage_tooth',
+            'goety:savage_tooth',
+            'goety:savage_tooth',
+        ], 
+        'goety:biting_focus', 
+        'kubejs:biting_focus'
+    )
+    event.remove({id:'goety:feast_focus'})
+    ritualCraft(
+        'goety:biting_focus', 'magic', 25, 40, 
+        [
+            'minecraft:ender_pearl', 
+            'minecraft:ender_pearl',
+            'minecraft:ender_pearl',
+            'minecraft:ender_pearl',
+        ], 
+        'goety:feast_focus', 
+        'kubejs:feast_focus'
+    )
+    event.remove({id:'goety:vexing_focus'})
+    ritualCraft(
+        'goety:animation_core', 'animation', 50, 60,
+        [
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            'goety:animation_core',
+            'goety:hunger_core',
+            'goety:wind_core',
+            'goety:wind_core',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            'minecraft:totem_of_undying',
+            'minecraft:totem_of_undying',
+        ],
+        'goety:vexing_focus',
+        'kubejs:vexing_focus'
+    )
+    event.remove({id:'goety:iceology_focus'})
+    ritualCraft(
+        'goety:wind_core', 'storm', 25, 60,
+        [
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'minecraft:blue_ice',
+            'minecraft:blue_ice',
+            'minecraft:blue_ice',
+            'minecraft:blue_ice',
+            'savage_and_ravage:wand_of_freezing',
+            'minecraft:powder_snow_bucket',
+            'kubejs:effervescent_snowflake',
+            'minecraft:powder_snow_bucket',
+        ],
+        'goety:iceology_focus',
+        'kubejs:iceology_focus'
+    )
+    event.remove({id:'goety:illusion_focus'})
+    ritualCraftSacrifice(
+        'goety:animation_core', 'animation', 25, 60,
+        [
+            'magic_mirror:magic_mirror',
+            'magic_mirror:magic_mirror',
+            'magic_mirror:magic_mirror',
+            'magic_mirror:magic_mirror',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+        ],
+        'custom:player_dummy', 'Player',
+        'goety:illusion_focus',
+        'kubejs:illusion_focus'
+    )
+    event.remove({id:'goety:soul_bolt_focus'})
+    ritualCraft(
+        'goety:soul_light_focus', 'magic', 25, 40,
+        [
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            'goety:ectoplasm',
+            'goety:ectoplasm',
+            'goety:ectoplasm',
+            'goety:ectoplasm',
+            'quark:soul_bead',
+            'quark:soul_bead',
+            'quark:soul_bead',
+            'quark:soul_bead',
+        ],
+        'goety:soul_bolt_focus',
+        'kubejs:soul_bolt_focus'
+    )
+    event.remove({id:'goety:soul_light_focus'})
+    ritualCraft(
+        'goety:empty_focus', 'magic', 50, 10,
+        [
+            'minecraft:soul_lantern',
+            'minecraft:soul_lantern',
+            'minecraft:soul_lantern',
+            'minecraft:soul_lantern',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+        ],
+        'goety:soul_light_focus',
+        'kubejs:soul_light_focus'
+    )
+    event.remove({id:'goety:glow_light_focus'})
+    ritualCraft(
+        'goety:empty_focus', 'magic', 50, 10,
+        [
+            'minecraft:lantern',
+            'minecraft:lantern',
+            'minecraft:lantern',
+            'minecraft:lantern',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+        ],
+        'goety:glow_light_focus',
+        'kubejs:glow_light_focus'
+    )
+    event.remove({id:'goety:lightning_focus'})
+    ritualCraft(
+        'goety:wind_core', 'storm', 50, 100,
+        [
+            'goety:soul_ruby',
+            'minecraft:trident',
+            'minecraft:heart_of_the_sea',
+            'minecraft:lightning_rod',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+        ],
+        'goety:lightning_focus',
+        'kubejs:lightning_focus'
+    )
+    event.remove({id:'goety:sonic_boom_focus'})
+    ritualCraft(
+        'goety:hunger_core', 'magic', 50, 100,
+        [
+            'goety:soul_ruby',
+            'minecraft:sculk_sensor',
+            'minecraft:sculk_shrieker',
+            'minecraft:sculk_catalyst',
+            'minecraft:echo_shard',
+            'minecraft:echo_shard',
+            'minecraft:echo_shard',
+            'minecraft:echo_shard',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+        ],
+        'goety:sonic_boom_focus',
+        'kubejs:sonic_boom_focus'
+    )
+    event.remove({id:'goety:launch_focus'})
+    ritualCraft(
+        'goety:wind_core', 'air', 50, 100,
+        [
+            '#custom:aircraft',
+            'minecraft:phantom_membrane',
+            'minecraft:phantom_membrane',
+            'minecraft:phantom_membrane',
+        ],
+        'goety:launch_focus',
+        'kubejs:launch_focus'
+    )
+    event.remove({id:'goety:rotting_focus'})
+    ritualCraftSacrifice(
+        'goety:animation_core', 'necroturgy', 25, 40,
+        [
+            'minecraft:rotten_flesh',
+            'minecraft:rotten_flesh',
+            'minecraft:rotten_flesh',
+            'minecraft:rotten_flesh',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+        ],
+        'custom:zombie_dummy', 'Zombie',
+        'goety:rotting_focus',
+        'kubejs:rotting_focus'
+    )
+    event.remove({id:'goety:osseous_focus'})
+    ritualCraftSacrifice(
+        'goety:animation_core', 'necroturgy', 25, 40,
+        [
+            'minecraft:bone',
+            'minecraft:arrow',
+            'minecraft:bone',
+            'minecraft:arrow',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+        ],
+        'custom:skeleton_dummy', 'Skeleton',
+        'goety:osseous_focus',
+        'kubejs:osseous_focus'
+    )
+    event.remove({id:'goety:spooky_focus'})
+    ritualCraftSacrifice(
+        'goety:animation_core', 'necroturgy', 50, 40,
+        [
+            'goety:spirit_fabric',
+            'goety:spirit_fabric',
+            'goety:spirit_fabric',
+            'goety:spirit_fabric',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:magic_emerald',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+        ],
+        'custom:wraith_dummy', 'Wraith',
+        'goety:spooky_focus',
+        'kubejs:spooky_focus'
+    )
+    event.remove({id:'goety:dark_scythe'})
+    ritualCraft(
+        'minecraft:iron_hoe', 'forge', 25, 60,
+        [
+            'goety:hunger_core',
+            'goety:hunger_core',
+            'goety:hunger_core',
+            'goety:hunger_core',
+            'goety:savage_tooth',
+            'goety:savage_tooth',
+            'goety:cursed_ingot',
+            'goety:cursed_ingot',
+            '#goety:haunted_logs',
+            '#goety:haunted_logs',
+            'apotheosis:common_material',
+            'apotheosis:common_material',
+        ],
+        'goety:dark_scythe',
+        'kubejs:dark_scythe'
+    )
+    event.remove({id:'goety:death_scythe'})
+    ritualCraft(
+        'goety:dark_scythe', 'forge', 100, 100,
+        [
+            'goety:unholy_blood',
+            'minecraft:dragon_breath',
+            'goety:soul_ruby',
+            'minecraft:dragon_breath',
+            'goety:ectoplasm',
+            'goety:ectoplasm',
+            'goety:ectoplasm',
+            'goety:ectoplasm',
+            'minecraft:netherite_ingot',
+            'minecraft:netherite_ingot',
+            'kubejs:evoker_soul',
+            'hexcasting:uuid_colorizer',
+        ],
+        'goety:death_scythe',
+        'kubejs:death_scythe'
+    )
+    event.remove({id:'goety:undeath_potion'})
+    ritualCraftSacrifice(
+        'goety:unholy_blood', 'lich', 1000, 60,
+        [
+            'minecraft:totem_of_undying',
+            'goety:totem_of_souls',
+            'minecraft:enchanted_golden_apple',
+            'kubejs:mark_of_the_accursed',
+            'goety:soul_ruby',
+            '#custom:lich_staves',
+            'apotheosis:mythic_material',
+            '#curios:spellstone',
+            'minecraft:lava_bucket',
+            'minecraft:ghast_tear',
+            'the_bumblezone:honey_bucket',
+            'minecraft:wither_skeleton_skull',
+        ],
+        'forge:villagers', 'Villager',
+        'goety:undeath_potion',
+        'kubejs:undeath_potion'
+    )
+    event.remove({id:'goety:cursed_ingot_burner'})
+    cursedInfuser('graveyard:dark_iron_ingot', 'goety:cursed_ingot', 60, 'kubejs:cursed_ingot')
+    event.remove({id:'goety:dark_fabric'})
+    event.shaped(
+        'goety:dark_fabric',
+        [
+            'SIS',
+            'IAI',
+            'SIS'
+        ],
+        {
+            S: 'graveyard:corruption',
+            I: 'immersiveengineering:hemp_fabric',
+            A: 'apotheosis:uncommon_material'
+        }
+    ).id('kubejs:dark_fabric')
+    event.remove({id:'goety:magic_fabric'})
+    event.shaped(
+        'goety:magic_fabric',
+        [
+            'SIS',
+            'IAI',
+            'SIS'
+        ],
+        {
+            S: 'minecraft:magma_cream',
+            I: 'immersiveengineering:hemp_fabric',
+            A: 'apotheosis:uncommon_material'
+        }
+    ).id('kubejs:magic_fabric')
+    event.remove({id:'goety:occult_fabric'})
+    event.shaped(
+        'goety:occult_fabric',
+        [
+            'SIS',
+            'IAI',
+            'SIS'
+        ],
+        {
+            S: 'hexcasting:amethyst_dust',
+            I: 'immersiveengineering:hemp_fabric',
+            A: 'apotheosis:uncommon_material'
+        }
+    ).id('kubejs:occult_fabric')
+    event.remove({id:'goety:spirit_fabric'})
+    event.shaped(
+        'goety:spirit_fabric',
+        [
+            'SIS',
+            'IAI',
+            'SIS'
+        ],
+        {
+            S: 'goety:ectoplasm',
+            I: 'immersiveengineering:hemp_fabric',
+            A: 'apotheosis:uncommon_material'
+        }
+    ).id('kubejs:spirit_fabric')
+    event.remove({id:'goety:cursed_metal_block_burner'})
+    event.remove({id:'goety:totem_of_souls'})
+    event.shaped(
+        'goety:totem_of_souls',
+        [
+            'GEG',
+            'ETE',
+            'GEG'
+        ],
+        {
+            G: 'minecraft:gold_ingot',
+            E: 'goety:magic_emerald',
+            T: 'minecraft:totem_of_undying'
+        }
+    ).id('kubejs:totem_of_souls')
+    event.remove({id:'goety:dark_wand'})
+    event.recipes.summoningrituals
+        .altar(Ingredient.of('minecraft:stick'))
+        .input(Ingredient.of('goety:magic_fabric'))
+        .input(Ingredient.of('goety:empty_focus'))
+        .input(Ingredient.of('minecraft:lapis_lazuli'))
+        .itemOutput('goety:dark_wand')
+    event.remove({id:'goety:soul_absorber'})
+    ritualCraft(
+        'goety:cursed_infuser', 'forge', 40, 100,
+        [
+            '#goety:shade_stone',
+            'goety:cursed_metal_block',
+            '#goety:shade_stone',
+            'goety:cursed_metal_block',
+            'minecraft:hopper',
+            'goety:hunger_core',
+            'minecraft:hopper',
+            'goety:hunger_core',
+        ],
+        'goety:soul_absorber',
+        'kubejs:soul_absorber'
+    )
+    event.remove({id:'goety:witch_robe'})
+    ritualCraft(
+        'minecraft:brewing_stand', 'storm', 30, 100,
+        [
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+            'minecraft:nether_wart',
+            'goety:dark_fabric',
+            'minecraft:nether_wart',
+            'goety:dark_fabric',
+            'minecraft:glowstone_dust',
+            'goety:dark_fabric',
+            'minecraft:glowstone_dust',
+            'goety:dark_fabric',
+        ],
+        'goety:witch_robe',
+        'kubejs:witch_robe'
+    )
+    event.remove({id:'goety:arca'})
+    ritualCraft(
+        'goety:cursed_cage', 'forge', 100, 100,
+        [
+            'minecraft:lodestone',
+            'goety:totem_of_souls',
+            'minecraft:respawn_anchor',
+            'minecraft:recovery_compass',
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            '#goety:shade_stone',
+            '#goety:shade_stone',
+            '#goety:shade_stone',
+            '#goety:shade_stone',
+        ],
+        'goety:arca',
+        'kubejs:arca'
+    )
+    event.remove({id:'goety:grave_glove'})
+    ritualCraft(
+        'davespotioneering:rudimentary_gauntlet', 'necroturgy', 50, 40,
+        [
+            '#forge:leather',
+            '#forge:leather',
+            '#forge:leather',
+            '#forge:leather',
+            'goety:spirit_fabric',
+            'goety:magic_fabric',
+            'goety:spirit_fabric',
+            'goety:dark_fabric',
+        ],
+        'goety:grave_glove',
+        'kubejs:grave_glove'
+    )
+    event.remove({id:'goety:ring_of_want'})
+    ritualCraft(
+        'enigmaticlegacy:iron_ring', 'magic', 25, 60,
+        [
+            'minecraft:gold_ingot',
+            'minecraft:gold_ingot',
+            'minecraft:gold_ingot',
+            'minecraft:gold_ingot',
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            'goety:soul_emerald',
+            'minecraft:diamond',
+            'minecraft:diamond',
+            'minecraft:diamond',
+            'minecraft:diamond',
+        ],
+        'goety:ring_of_want',
+        'kubejs:ring_of_want'
+    )
+    event.remove({id:'goety:summon_storm'})
+    event.custom({
+        type: 'goety:ritual',
+        ritual_type: 'goety:summon',
+        activation_item: {
+            item: 'minecraft:clock'
+        },
+        craftType: 'air',
+        entity_to_summon: 'goety:storm_util',
+        soulCost: 10,
+        duration: 10,
+        ingredients: [
+            {
+                item: 'quark:bottled_cloud'
+            },
+            {
+                item: 'quark:bottled_cloud'
+            },
+            {
+                item: 'minecraft:water_bucket'
+            },
+            {
+                item: 'minecraft:water_bucket'
+            }
+        ],
+        result: {
+            item: 'goety:jei_dummy/none'
+        }
+    }).id('kubejs:summon_storm_manual_only')
+    event.remove({id:'goety:summon_skeleton_horse'})
+    event.custom({
+        type: 'goety:ritual',
+        ritual_type: 'goety:summon_tamed',
+        activation_item: {
+            tag: 'forge:leather'
+        },
+        craftType: 'necroturgy',
+        entity_to_sacrifice: {
+            tag: 'forge:horses',
+            display_name: 'Horse'
+        },
+        entity_to_summon: 'minecraft:skeleton_horse',
+        soulCost: 10,
+        duration: 30,
+        ingredients: [
+            {
+                item: 'minecraft:bone'
+            },
+            {
+                item: 'minecraft:bone'
+            },
+            {
+                item: 'minecraft:bone'
+            },
+            {
+                item: 'minecraft:bone'
+            }
+        ],
+        result: {
+            item: 'goety:jei_dummy/none'
+        }
+    }).id('kubejs:summon_skeleton_horse_manual_only')
+    event.remove({id:'goety:summon_zombie_horse'})
+    event.custom({
+        type: 'goety:ritual',
+        ritual_type: 'goety:summon_tamed',
+        activation_item: {
+            tag: 'forge:leather'
+        },
+        craftType: 'necroturgy',
+        entity_to_sacrifice: {
+            tag: 'forge:horses',
+            display_name: 'Horse'
+        },
+        entity_to_summon: 'minecraft:zombie_horse',
+        soulCost: 10,
+        duration: 30,
+        ingredients: [
+            {
+                item: 'minecraft:rotten_flesh'
+            },
+            {
+                item: 'minecraft:rotten_flesh'
+            },
+            {
+                item: 'minecraft:rotten_flesh'
+            },
+            {
+                item: 'minecraft:rotten_flesh'
+            }
+        ],
+        result: {
+            item: 'goety:jei_dummy/none'
+        }
+    }).id('kubejs:summon_zombie_horse_manual_only')
+    event.remove({id:'goety:summon_apostle'})
+    event.custom({
+        type: 'goety:ritual',
+        ritual_type: 'goety:summon',
+        activation_item: {
+            item: 'minecraft:netherite_ingot'
+        },
+        craftType: 'sabbath',
+        entity_to_summon: 'goety:summon_apostle',
+        soulCost: 10,
+        duration: 100,
+        ingredients: [
+            {
+                item: 'goety:witch_hat'
+            },
+            {
+                item: 'goety:witch_hat'
+            },
+            {
+                item: 'goety:witch_hat'
+            },
+            {
+                item: 'goety:witch_hat'
+            }
+        ],
+        result: {
+            item: 'goety:jei_dummy/none'
+        }
+    }).id('kubejs:summon_apostle_manual_only')
+    event.remove({id:'goety:necro_cape'})
+    ritualCraft(
+        'goety:dark_robe', 'necroturgy', 50, 100,
+        [
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+            'goety:spirit_fabric',
+            'goety:spirit_fabric',
+            'goety:spirit_fabric',
+            'goety:spirit_fabric',
+            'minecraft:gold_ingot',
+            'minecraft:gold_ingot',
+            '#custom:backpack_hides',
+            '#custom:backpack_hides',
+        ],
+        'goety:necro_cape',
+        'kubejs:necro_cape'
+    )
+    event.remove({id:'goety:necro_crown'})
+    ritualCraft(
+        'goety:dark_hat', 'necroturgy', 50, 100,
+        [
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+            'goety:occult_fabric',
+            'goety:spirit_fabric',
+            'goety:spirit_fabric',
+            'goety:spirit_fabric',
+            'goety:spirit_fabric',
+            'minecraft:bone',
+            'minecraft:bone',
+            'minecraft:bone',
+            'minecraft:bone',
+        ],
+        'goety:necro_crown',
+        'kubejs:necro_crown'
+    )
 }

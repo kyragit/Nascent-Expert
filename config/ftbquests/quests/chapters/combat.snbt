@@ -25,6 +25,8 @@
 				"Feathers are used to dodge and paraglide, and your maximum feathers is determined by the weight of your armor."
 				""
 				"To dodge, set the dodge keybind to whatever you'd like. "
+				""
+				"Feathers are also used for certain advanced parkour maneuvers; though you likely don't know how to perform any of these as of yet."
 			]
 			id: "22A99DA61F14A375"
 			tasks: [{

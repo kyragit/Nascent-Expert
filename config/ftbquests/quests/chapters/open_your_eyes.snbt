@@ -143,8 +143,8 @@
 		}
 		{
 			icon: "minecraft:stone_bricks"
-			x: 0.0d
-			y: 3.0d
+			x: 2.0d
+			y: 2.0d
 			description: [
 				"Exploring this realm will be key to your progression. Great megastructures await your discovery; but beware, they do not go unguarded."
 				""
@@ -209,19 +209,6 @@
 			}]
 		}
 		{
-			icon: "minecraft:grass_block"
-			x: 2.0d
-			y: 2.0d
-			description: ["World generation is a bit different than normal. As well as a whole host of new biomes to explore, landmasses now generate in distinct continents with large oceans in between. You'll find smaller islands dotted around the seas as well."]
-			dependencies: ["54AABF574DEEFF57"]
-			id: "6DC1F7E52A81599A"
-			tasks: [{
-				id: "1430C33107A014F7"
-				type: "checkmark"
-				title: "World Generation"
-			}]
-		}
-		{
 			icon: "minecraft:oak_wood"
 			x: -2.0d
 			y: 2.0d
@@ -236,6 +223,19 @@
 				id: "3A0E7F7C5BFBCCF6"
 				type: "checkmark"
 				title: "What should I do?"
+			}]
+		}
+		{
+			icon: "minecraft:sunflower"
+			x: 0.0d
+			y: 3.0d
+			description: ["This pack comes pre-installed with Oculus, and is fully compatible with shaders. If you'd like to play with shaders, simply drag and drop the file into your shaders folder and enable it in the settings!"]
+			dependencies: ["54AABF574DEEFF57"]
+			id: "533ECEE1C2EB99FC"
+			tasks: [{
+				id: "47E0A2CA321F0A7C"
+				type: "checkmark"
+				title: "Shaders"
 			}]
 		}
 	]

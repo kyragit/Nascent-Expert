@@ -55,6 +55,7 @@ PlayerEvents.loggedIn(event => {
     }
 })
 
+// Andesite alloy obtaining
 ItemEvents.rightClicked('kubejs:powdered_determination', event => {
     if (event.target.block == null) {
         return
@@ -70,6 +71,7 @@ ItemEvents.rightClicked('kubejs:powdered_determination', event => {
     event.server.runCommand(`tellraw ${event.player.username} {"text":"As you sprinkle the dust upon the andesite, it melts and solidifies into something else. A new material, perhaps? Or a gift from the future...","color":"#BA00FC"}`)
 })
 
+// Portable black hole functionality
 ItemEvents.rightClicked('kubejs:portable_black_hole', event => {
     let suck_strength = 0.5
     let blast_strength = 1.0
@@ -91,6 +93,7 @@ ItemEvents.rightClicked('kubejs:portable_black_hole', event => {
     event.player.addItemCooldown('kubejs:portable_black_hole', 20)
 })
 
+// Custom eye obtaining
 ItemEvents.rightClicked('minecraft:ender_eye', event => {
     if (event.target.block == null) {
         return
@@ -140,6 +143,7 @@ ItemEvents.entityInteracted(event => {
     event.server.runCommandSilent(`give ${event.player.username} endrem:guardian_eye`)
 })
 
+// Getting Paragliders to use Feathers
 const PlayerMovement = Java.loadClass('tictim.paraglider.capabilities.PlayerMovement')
 const FeathersHelper = Java.loadClass('com.elenai.feathers.api.FeathersHelper')
 
@@ -164,6 +168,7 @@ PlayerEvents.tick(event => {
     }
 })
 
+// Custom music
 const TargetingConditions = Java.loadClass('net.minecraft.world.entity.ai.targeting.TargetingConditions')
 
 EntityEvents.spawned('minecraft:wither', event => {
@@ -200,6 +205,7 @@ LootJS.modifiers(event => {
         .removeLoot(ItemFilter.ALWAYS_TRUE)
 })
 
+// Sequence break prevention
 PlayerEvents.inventoryChanged('create:andesite_alloy', event => {
     if (!event.hasGameStage('create')) {
         event.server.runCommand(`tellraw ${event.player.username} {"text":"Sequence break prevention initiated!","color":"dark_red"}`)
@@ -209,6 +215,7 @@ PlayerEvents.inventoryChanged('create:andesite_alloy', event => {
     }
 })
 
+// Custom ring drops
 EntityEvents.death('minecraft:elder_guardian', event => {
     if (!event.source.player) {
         return
@@ -229,18 +236,43 @@ EntityEvents.death(event => {
     if (!event.source.player) {
         return
     }
-    if (!event.source.player.stages.has('cursed_ring')) {
+    if (event.entity.animal || event.entity.ambientCreature || event.entity.waterCreature || event.entity.player || event.entity.isPeacefulCreature()) {
         return
     }
-    if (event.entity.animal || event.entity.ambientCreature || event.entity.waterCreature || event.entity.player) {
+    let player_cursed = event.source.player.stages.has('cursed_ring')
+    let chance_multiplier = player_cursed ? 0.85 : 0.65
+    let count_multiplier = player_cursed ? 2.5 : 2.0
+    let health = event.entity.maxHealth
+    if (Utils.random.nextDouble(0.0, 1.0) < (chance_multiplier * health * Math.log10(health)) / 100.0) {
+        event.entity.block.popItem(Item.of('createdeco:copper_coin', Math.round((count_multiplier * Math.sqrt(health) - 6.5) * Utils.random.nextDouble(0.67, 1.33))))
+    }
+    if (Utils.random.nextDouble(0.0, 1.0) < (chance_multiplier * health * Math.log10(health)) / 200.0) {
+        event.entity.block.popItem(Item.of('createdeco:iron_coin', Math.round((count_multiplier * 0.5 * Math.sqrt(health) - 6.5) * Utils.random.nextDouble(0.67, 1.33))))
+    }
+    if (Utils.random.nextDouble(0.0, 1.0) < (chance_multiplier * health * Math.log10(health)) / 400.0) {
+        event.entity.block.popItem(Item.of('createdeco:gold_coin', Math.round((count_multiplier * 0.25 * Math.sqrt(health) - 6.5) * Utils.random.nextDouble(0.67, 1.33))))
+    }
+    if (Utils.random.nextDouble(0.0, 1.0) < (chance_multiplier * health * Math.log10(health)) / 1000.0) {
+        event.entity.block.popItem(Item.of('createdeco:netherite_coin', Math.round((count_multiplier * 0.1 * Math.sqrt(health) - 6.5) * Utils.random.nextDouble(0.67, 1.33))))
+    }
+    if (!player_cursed) {
         return
     }
     let builder = new Builder(event.server.getLevel(event.level.dimension))
     event.server.lootTables.get('custom:cursed_loot').getRandomItems(builder.create(LootContextParamSets.EMPTY)).forEach(item => {
         event.entity.block.popItem(item)
     })
+    switch (event.entity.type) {
+        case 'minecraft:witch':
+            event.server.lootTables.get('custom:cursed_loot_witch').getRandomItems(builder.create(LootContextParamSets.EMPTY)).forEach(item => {
+                event.entity.block.popItem(item)
+            })
+        default:
+            return
+    }
 })
 
+// Runic Tablet functionality
 ItemEvents.rightClicked('simplyswords:runic_tablet', event => {
     const SIMPLY_SWORD_TYPES = [
         'longsword',
@@ -261,6 +293,274 @@ ItemEvents.rightClicked('simplyswords:runic_tablet', event => {
     ]
     event.player.block.popItem(`simplyswords:runic_${Utils.randomOf(Utils.random, SIMPLY_SWORD_TYPES)}`)
     event.item.count -= 1
+})
+
+// Raid treasure bags (I could not find a better way to do this....)
+const Raider = Java.loadClass('net.minecraft.world.entity.raid.Raider')
+
+EntityEvents.hurt(event => {
+    if (event.entity instanceof Raider) {
+        if (event.entity.hasActiveRaid()) {
+            event.entity.addTag('is_raiding')
+        }
+    }
+})
+
+EntityEvents.death(event => {
+    if (event.entity.tags.contains('is_raiding')) {
+        if (Utils.random.nextDouble(0, 1) < 0.05) {
+            event.entity.block.popItem(Item.of('treasurebags:treasure_bag', '{silentlib.LootContainer:{BagType:"custom:raid"}}'))
+        }
+    }
+})
+
+ItemEvents.rightClicked('kubejs:unstable_vortex_generator', event => {
+    if (!event.server) {
+        return
+    }
+    let nearby = event.level.getEntitiesOfClass(LivingEntity, AABB.ofSize(event.player.position(), 25, 7, 25))
+    let positions = []
+    nearby.forEach(entity => {
+        positions.push(entity.position())
+    })
+    nearby.forEach(entity => {
+        if (entity.player) {
+            let pos = Utils.randomOf(Utils.random, positions)
+            event.server.runCommandSilent(`tp ${entity.username} ${pos.x()} ${pos.y()} ${pos.z()}`)
+        } else {
+            entity.setPos(Utils.randomOf(Utils.random, positions))
+        }
+        event.server.runCommandSilent(`execute at ${entity.getStringUuid()} run particle minecraft:reverse_portal ~ ~1 ~ 0.25 0.25 0.25 2 50 normal @a`)
+    })
+    event.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.enderman.teleport player @a ~ ~ ~ 1 1`)
+    event.player.addItemCooldown('kubejs:unstable_vortex_generator', 20)
+})
+
+ItemEvents.entityInteracted(event => {
+    if (event.item.id != 'minecraft:glass_bottle') {
+        return
+    }
+    if (event.target.type != 'minecraft:cow') {
+        return
+    }
+    if (!event.server) {
+        return
+    }
+    event.server.scheduleInTicks(1, later => {
+        later.server.runCommandSilent(`clear ${event.player.username} minecraft:potion{Potion:"davespotioneering:milk"} 1`)
+    })
+    event.player.give('neapolitan:milk_bottle')
+})
+
+const LIMITATIONS = [
+    'BreakfallReady',
+    'CatLeap',
+    'ClimbUp',
+    'ClingToCliff',
+    'Crawl',
+    'Dive',
+    'Dodge',
+    'FastRun',
+    'Flipping',
+    'HangDown',
+    'HorizontalWallRun',
+    'JumpFromBar',
+    'QuickTurn',
+    'Roll',
+    'Slide',
+    'Tap',
+    'Vault',
+    'WallJump',
+    'WallSlide',
+]
+
+PlayerEvents.loggedIn(event => {
+    if (!event.server) {
+        return
+    }
+    if (!event.hasGameStage('first_log_in')) {
+        event.addGameStage('first_log_in')
+        event.server.runCommandSilent(`parcool limitation enable ${event.player.username}`)
+        for (let limit of LIMITATIONS) {
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility ${limit} false`)
+        }
+    }
+})
+
+ItemEvents.rightClicked(event => {
+    if (!event.server) {
+        return
+    }
+    switch (event.item.id) {
+        case 'kubejs:parkour_guide_quick_turn':
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility QuickTurn true`)
+            event.server.runCommand(`tellraw ${event.player.username} {"text":"You have learned how to quick turn! Read the quest book for more details.","color":"aqua"}`)
+            break
+        case 'kubejs:parkour_guide_wall_jump':
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility WallJump true`)
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility WallSlide true`)
+            event.server.runCommand(`tellraw ${event.player.username} {"text":"You have learned how to wall jump and wall slide! Read the quest book for more details.","color":"aqua"}`)
+            break
+        case 'kubejs:parkour_guide_wallrun':
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility HorizontalWallRun true`)
+            event.server.runCommand(`tellraw ${event.player.username} {"text":"You have learned how to wall run! Read the quest book for more details.","color":"aqua"}`)
+            break
+        case 'kubejs:parkour_guide_flip':
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility Flipping true`)
+            event.server.runCommand(`tellraw ${event.player.username} {"text":"You have learned how to do a front flip! Read the quest book for more details.","color":"aqua"}`)
+            break
+        case 'kubejs:parkour_guide_dodge':
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility Dodge true`)
+            event.server.runCommand(`tellraw ${event.player.username} {"text":"You have learned how to dodge! Read the quest book for more details.","color":"aqua"}`)
+            break
+        case 'kubejs:parkour_guide_crawl':
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility Crawl true`)
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility Slide true`)
+            event.server.runCommand(`tellraw ${event.player.username} {"text":"You have learned how to crawl and slide! Read the quest book for more details.","color":"aqua"}`)
+            break
+        case 'kubejs:parkour_guide_cling':
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility ClingToCliff true`)
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility ClimbUp true`)
+            event.server.runCommand(`tellraw ${event.player.username} {"text":"You have learned how to cling to cliffs! Read the quest book for more details.","color":"aqua"}`)
+            break
+        case 'kubejs:parkour_guide_catleap':
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility CatLeap true`)
+            event.server.runCommand(`tellraw ${event.player.username} {"text":"You have learned how to cat leap! Read the quest book for more details.","color":"aqua"}`)
+            break
+        case 'kubejs:parkour_guide_vault':
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility Vault true`)
+            event.server.runCommand(`tellraw ${event.player.username} {"text":"You have learned how to vault! Read the quest book for more details.","color":"aqua"}`)
+            break
+        case 'kubejs:parkour_guide_breakfall':
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility BreakfallReady true`)
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility Roll true`)
+            event.server.runCommandSilent(`parcool limitation set ${event.player.username} possibility Tap true`)
+            event.server.runCommand(`tellraw ${event.player.username} {"text":"You have learned how to break your fall! Read the quest book for more details.","color":"aqua"}`)
+            break    
+        default:
+            return
+    }
+})
+
+ItemEvents.rightClicked('kubejs:unsettling_eye', event => {
+    if (!event.server) {
+        return
+    }
+    let arrow = Utils.random.nextDouble(0.0, 1.0) < 0.2 ? 'lightning' : 'blaze'
+    for (let i = 0; i < 100; i++) {
+        let offsetX = Utils.random.nextDouble(-1.0, 1.0)
+        let offsetZ = Utils.random.nextDouble(-1.0, 1.0)
+        let offsetY = Utils.random.nextDouble(0.5, 2.0)
+        // normalize the vector
+        let length = Math.sqrt((offsetX ** 2) + (offsetZ ** 2))
+        offsetX /= length
+        offsetZ /= length
+        
+        let speed = Utils.random.nextDouble(0.1, 2.0)
+        event.server.runCommandSilent(`execute at ${event.player.username} run summon archers_paradox:${arrow}_arrow ~${offsetX} ~${offsetY} ~${offsetZ} {pickup:0b,life:1199,Motion:[${offsetX * speed}d, ${offsetY * speed}d, ${offsetZ * speed}d],crit:1b,damage:4.0}`)
+    }
+    event.server.runCommandSilent(`execute at ${event.player.username} run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 1 1`)
+    if (Utils.random.nextDouble(0.0, 1.0) < 0.1) {
+        for (let i = 0; i < 30; i++) {
+            event.server.runCommandSilent(`tellraw ${event.player.username} [{"text":"<???> "},{"text":"I SEE YOU","color":"dark_red"}]`)
+            event.server.runCommandSilent(`title ${event.player.username} title {"text":"I SEE YOU","color":"dark_red"}`)
+            event.server.runCommandSilent(`title ${event.player.username} subtitle {"text":"I SEE YOU","color":"dark_red"}`)
+            event.server.runCommandSilent(`title ${event.player.username} actionbar {"text":"I SEE YOU","color":"dark_red"}`)
+            event.server.runCommandSilent(`execute at ${event.player.username} run playsound alexsmobs:april_fools_scream master ${event.player.username} ~ ~ ~ 1 0.75`)
+        }
+    }
+    event.item.count -= 1
+})
+
+const AttributeModifier = Java.loadClass('net.minecraft.world.entity.ai.attributes.AttributeModifier')
+const RARITY_MAP = {
+    'common': 0.15,
+    'uncommon': 0.25,
+    'rare': 0.35,
+    'epic': 0.45,
+    'mythic': 0.55,
+    'ancient': 0.65
+}
+
+
+LootJS.modifiers(event => {
+    let speed_uuid = 'fa233e1c-4180-4865-b01b-bcce9785aca3'
+    let damage_uuid = 'cb3f55d3-645c-4f38-a497-9c13a33db5cf'
+    let speed_factor = 0.5
+    event.addLootTableModifier(/.*/)
+        .modifyLoot(ItemFilter.and(ItemFilter.or(Ingredient.of('#custom:heavy_weapons'), ItemFilter.AXE), ItemFilter.custom(item => {return item.nbt.contains('affix_data')})), loot => {
+            let speed_attr
+            let damage_attr
+            loot.getAttributeModifiers('mainhand').forEach((attr, mod) => {
+                if (mod.getId().toString() == speed_uuid) {
+                    speed_attr = [attr, mod]
+                }
+                if (mod.getId().toString() == damage_uuid) {
+                    damage_attr = [attr, mod]
+                }
+            })
+            let rarity = loot.nbt.getCompound('affix_data').getString('rarity')
+            loot.addAttributeModifier('generic.attack_speed', new AttributeModifier('Heavy Weapon AS Fix', ((1.0 / (1.0 - RARITY_MAP[rarity])) - 1.0) * speed_factor, 'multiply_total'), 'mainhand')
+            loot.addAttributeModifier(speed_attr[0], speed_attr[1], 'mainhand')
+            loot.addAttributeModifier(damage_attr[0], damage_attr[1], 'mainhand')
+            return loot
+        })
+})
+
+// Prevents falling out of the void in the tent dimension
+EntityEvents.hurt(event => {
+    if (!event.server) {
+        return
+    }
+    if (!event.entity.player) {
+        return
+    }
+    if (event.source != DamageSource.OUT_OF_WORLD) {
+        return
+    }
+    // I can't check for the tent dimension specifically, since they're procedurally generated
+    // Any new dimensions with intentional voids should be added here
+    if (event.level.dimension == 'minecraft:the_end') {
+        return
+    }
+    if (event.player.y < -20) {
+        event.player.heal(20)
+    }
+    if (event.player.y > -66) {
+        return
+    }
+    event.server.runCommandSilent(`effect give ${event.player.username} minecraft:slow_falling 1 0 true`)
+    event.server.runCommandSilent(`execute at ${event.player.username} run tp ${event.player.username} 1 64.5 0`)
+    event.server.runCommand(`tellraw ${event.player.username} {"text":"You're not dead!","color":"aqua"}`)
+    event.cancel()
+})
+
+EntityEvents.death('minecraft:evoker', event => {
+    if (!event.server) {
+        return
+    }
+    if (!event.source.player) {
+        return
+    }
+    let item = event.source.player.mainHandItem
+    if (!item.hasTag('forge:tools/knives')) {
+        return
+    }
+    if (!item.isEnchanted()) {
+        return
+    }
+    let cursed = false
+    item.allEnchantments.forEach((ench, level) => {
+        if (ench.isCurse()) {
+            cursed = true
+        }
+    })
+    if (cursed) {
+        event.entity.block.popItem('kubejs:evoker_soul')
+        event.server.runCommandSilent(`execute at ${event.entity.getStringUuid()} run playsound minecraft:entity.generic.extinguish_fire master @a ~ ~ ~ 1 2`)
+        event.server.runCommandSilent(`execute at ${event.entity.getStringUuid()} run playsound minecraft:entity.wither.hurt master @a ~ ~ ~ 1 0.5`)
+        event.server.runCommandSilent(`execute at ${event.entity.getStringUuid()} run particle minecraft:soul ~ ~ ~ 0.5 1 0.5 0.03 10 normal @a`)
+    }
 })
 
 // ---WARNING: MEGA SPOILERS BELOW!!---
@@ -393,7 +693,7 @@ ServerEvents.tick(event => {
         event.server.runCommandSilent(`data modify storage custom:secret_books slow set value {display:{Name:\'${slow_book_name}\'},author:"Unknown",title:"Cryptic Writing #3",pages:${obfuscateBookPlayfair(slow_book_deobf, slow_key)}}`)
     
         secret_words.arrows = `${Utils.randomOf(random, WORD_LIST.arrows)} ${Utils.randomOf(random, WORD_LIST.arrows)} ${Utils.randomOf(random, WORD_LIST.arrows)}`
-        let arrows_book_deobf = [{"text":"OFFICIAL COURT TRANSCRIPT\\\\n\\\\n11/12/5011\\\\n\\\\nCASE #12309\\\\n\\\\n\\\\n\\\\n\\\\n\\\\nVERIFIED BY THE DISTRICT OF AUREL CITY COURT "},{"text":"Judge: Court is now in session. The accused will now give their closing statement.\\\\n\\\\nAcc: Thank you. As I have demonstrated, my client has neither the mental state nor the motive to have been responsible for the victim\\\'s disappearance. She had a very good relationship with her "},{"text":"sister, and has been devastated by her vanishing. To suggest that she murdered her own sister just because of the conflicting witness accounts is frankly absurd. Both parties were of sound mind, an-\\\\n\\\\nPros: Objection, your honor. \\\\\"Sound mind\\\\\"? "},{"text":"Can I bring you attention to, uh... exhibit 14. Does this look like sound mind to you? \\\\n\\\\nNOTE: EXHIBIT 14\\\\n*A photo is inserted here. It depicts a destroyed bedroom with the words \\\\\"word word word\\\\\" painted everywhere on the walls.*"},{"text":"Pros: Not only that, but the accused\\\'s account of the victim \\\\\"disappearing in a brilliant flash of multicolored light\\\\\" doesn\\\'t seem like sound mind to me.\\\\n\\\\nAcc: With all due respect, the mental state of the victim-\\\\n\\\\nJudge: I\\\'d like to hear "},{"text":"what the prosecutor has to say. Please, continue.\\\\n\\\\nPros: Thank you, your honor. As can be plainly seen by looking at the evidence, the victim was having some kind of mental break. I mean, she was writing about \\\\\"unlocking her inner mind\\\\\" and \\\\\"going Within\\\\\". To suggest  "},{"text":"that the accused was unaware of this fact is ludicrous. For crying out loud, she had painted all over the walls, \\\\n\\\\nCOURT NOTICE:\\\\nTHE TRANSCRIPT BEYOND THIS POINT HAS BEEN REDACTED."}]
+        let arrows_book_deobf = [{"text":"OFFICIAL COURT TRANSCRIPT\\\\n\\\\n11/12/5011\\\\n\\\\nCASE #12309\\\\n\\\\n\\\\n\\\\n\\\\n\\\\nVERIFIED BY THE DISTRICT OF AUREL CITY COURT "},{"text":"Judge: Court is now in session. The accused will now give their closing statement.\\\\n\\\\nAcc: Thank you. As I have demonstrated, my client has neither the mental state nor the motive to have been responsible for the victim\\\'s disappearance. She had a very good relationship with her "},{"text":"sister, and has been devastated by her vanishing. To suggest that she murdered her own sister just because of the conflicting witness accounts is frankly absurd. Both parties were of sound mind, an-\\\\n\\\\nPros: Objection, your honor. \\\\\"Sound mind\\\\\"? "},{"text":`Can I bring you attention to, uh... exhibit 14. Does this look like sound mind to you? \\\\n\\\\nNOTE: EXHIBIT 14\\\\n*A photo is inserted here. It depicts a destroyed bedroom with the words \\\\\"${secret_words.arrows}\\\\\" painted everywhere on the walls.*`},{"text":"Pros: Not only that, but the accused\\\'s account of the victim \\\\\"disappearing in a brilliant flash of multicolored light\\\\\" doesn\\\'t seem like sound mind to me.\\\\n\\\\nAcc: With all due respect, the mental state of the victim-\\\\n\\\\nJudge: I\\\'d like to hear "},{"text":"what the prosecutor has to say. Please, continue.\\\\n\\\\nPros: Thank you, your honor. As can be plainly seen by looking at the evidence, the victim was having some kind of mental break. I mean, she was writing about \\\\\"unlocking her inner mind\\\\\" and \\\\\"going Within\\\\\". To suggest  "},{"text":"that the accused was unaware of this fact is ludicrous. For crying out loud, she had painted all over the walls, \\\\n\\\\nCOURT NOTICE:\\\\nTHE TRANSCRIPT BEYOND THIS POINT HAS BEEN REDACTED."}]
         event.server.runCommandSilent(`data modify storage custom:secret_books arrows set value {author:"0119030909",title:"Cryptic Writing #4",pages:${obfuscateBookHill(arrows_book_deobf, hill_key)}}`)
     }
 })
@@ -839,13 +1139,13 @@ function revelation(event) {
 
 PlayerEvents.chat(event => {
     switch (event.message) {
-        case 'spoil me':
-            event.server.runCommand(`say ${secret_words.lightning}`)
-            event.server.runCommand(`say ${secret_words.fireball}`)
-            event.server.runCommand(`say ${secret_words.slow}`)
-            event.server.runCommand(`say ${secret_words.arrows}`)
-            event.cancel()
-            return
+        //case 'spoil me':
+        //    event.server.runCommand(`say ${secret_words.lightning}`)
+        //    event.server.runCommand(`say ${secret_words.fireball}`)
+        //    event.server.runCommand(`say ${secret_words.slow}`)
+        //    event.server.runCommand(`say ${secret_words.arrows}`)
+        //    event.cancel()
+        //    return
         case secret_words.lightning:
             if (!event.player.getTags().contains('had_revelation')) {
                 revelation(event)
@@ -1080,7 +1380,7 @@ PlayerEvents.chat(event => {
                 }
             }
             event.cancel()
-            return   
+            return
         default:
             return
     }

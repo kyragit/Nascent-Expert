@@ -45,8 +45,8 @@
 	portal_destruction_sound = true
 
 [worldgen]
-	stone_stripe_features = true
+	stone_stripe_features = false
 	enable_sporophytes = true
 	dark_forest_portabellas = true
-	enable_mores = true
+	enable_mores = false
 

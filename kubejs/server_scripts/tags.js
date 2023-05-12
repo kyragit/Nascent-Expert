@@ -63,7 +63,63 @@ ServerEvents.tags('item', event => {
     event.add('forge:dust/saltpeter', 'immersiveengineering:dust_saltpeter')
     event.add('forge:dusts/saltpeter', 'oldguns:niter')
     event.add('forge:dust/sulfur', 'immersiveengineering:dust_sulfur')
-    event.add('forge:dusts/sulfur', 'oldguns:sulfur') 
+    event.add('forge:dusts/sulfur', 'oldguns:sulfur')
+    event.add('curios:belt', 'supplementaries:quiver')
+    event.add('forge:elytra', ['alexsmobs:tarantula_hawk_elytra', 'enigmaticlegacy:enigmatic_elytra'])
+    
+    let heavy_weapons = [
+        'simplyswords:iron_claymore',
+        'simplyswords:iron_greathammer',
+        'simplyswords:iron_greataxe',
+        'simplyswords:iron_halberd',
+        'simplyswords:iron_scythe',
+        'simplyswords:gold_claymore',
+        'simplyswords:gold_greathammer',
+        'simplyswords:gold_greataxe',
+        'simplyswords:gold_halberd',
+        'simplyswords:gold_scythe',
+        'simplyswords:diamond_claymore',
+        'simplyswords:diamond_greathammer',
+        'simplyswords:diamond_greataxe',
+        'simplyswords:diamond_halberd',
+        'simplyswords:diamond_scythe',
+        'simplyswords:netherite_claymore',
+        'simplyswords:netherite_greathammer',
+        'simplyswords:netherite_greataxe',
+        'simplyswords:netherite_halberd',
+        'simplyswords:netherite_scythe',
+        'simplyswords:runic_claymore',
+        'simplyswords:runic_greathammer',
+        'simplyswords:runic_greataxe',
+        'simplyswords:runic_halberd',
+        'simplyswords:runic_scythe',
+        'simplyswords:watcher_claymore',
+        'simplyswords:hearthflame',
+        'simplyswords:soulkeeper',
+        'simplyswords:twisted_blade',
+        'simplyswords:soulrender',
+        'simplyswords:soulpyre',
+        'simplyswords:frostfall',
+        'simplyswords:livyatan',
+        'simplyswords:molten_edge',
+        'simplyswords:icewhisper',
+        'simplyswords:arcanethyst',
+        'simplyswords:thunderbrand',
+        'simplyswords:mjolnir',
+        'simplyswords:slumbering_lichblade',
+        'simplyswords:waking_lichblade',
+        'simplyswords:awakened_lichblade',
+        'pyromancer:iron_mace',
+        'pyromancer:golden_mace',
+        'pyromancer:diamond_mace',
+        'pyromancer:netherite_mace',
+    ]
+
+    event.add('custom:heavy_weapons', heavy_weapons)
+
+    event.add('forge:tools/knives', ['mahoutsukai:dagger', 'graveyard:bone_dagger'])
+    event.add('custom:teeth', ['meetyourfight:mossy_tooth', 'alexsmobs:bone_serpent_tooth', 'alexsmobs:shark_tooth', 'alexsmobs:cachalot_whale_tooth', 'alexsmobs:serrated_shark_tooth'])
+    event.add('custom:aircraft', ['immersive_aircraft:airship', 'immersive_aircraft:biplane', 'immersive_aircraft:gyrodyne'])
 })
 
 ServerEvents.tags('minecraft:worldgen/biome', event => {
@@ -91,12 +147,11 @@ ServerEvents.tags('minecraft:worldgen/biome', event => {
     event.add('immersive_weathering:has_sandstorm', DESERT)
     event.add('immersive_weathering:has_lakebed', DESERT)
     event.add('immersive_weathering:underground_desert', DESERT)
-    event.add('neapolotan:has_feature/strawberry_bush', PLAINS)
+    event.add('neapolitan:has_feature/strawberry_bush', PLAINS)
     event.add('structory:has_structure/jungle_well', JUNGLE)
     event.add('structory:has_structure/northern_ruin', PLAINS)
     event.add('structory:has_structure/outcast_villager_desert', DESERT)
     event.removeAll('trolldom:has_structure/air_shrine')
-    event.add('trolldom:has_structure/air_shrine', DESERT.concat(['byg:baobab_savanna', 'byg:araucaria_savanna', 'minecraft:savanna']))
     event.add('yungsextras:has_structure/desert_decorations', DESERT)
     event.add('yungsextras:has_structure/vanilla_desert_well', DESERT)
     event.add('collectorsreap:pomegranate_spawns', ['byg:warped_desert', 'byg:crimson_gardens', 'incendium:inverted_forest'])
@@ -105,9 +160,121 @@ ServerEvents.tags('minecraft:worldgen/biome', event => {
     }
     for (let biome of event.get('minecraft:is_mountain').getObjectIds()) {
         event.add('collectorsreap:portobello_spawns', biome)
+        event.add('neapolitan:has_feature/mint_pond', biome)
     }
+    for (let biome of event.get('forge:is_snowy').getObjectIds()) {
+        event.add('frozenup:chilloo_spawns_in', biome)
+        event.add('frozenup:penguin_spawns_in', biome)
+        event.add('frozenup:reindeer_spawns_in', biome)
+        event.add('frozenup:has_structure/revamped_igloo', biome)
+    }
+    for (let biome of event.get('minecraft:is_savanna').getObjectIds()) {
+        event.add('trolldom:has_structure/air_shrine', biome)
+    }
+    for (let biome of event.get('forge:is_desert').getObjectIds()) {
+        event.add('trolldom:has_structure/air_shrine', biome)
+    }
+
+    let addTag = function(tag, tagToAdd) {
+        for (let biome of event.get(tagToAdd).getObjectIds()) {
+            event.add(tag, biome)
+        }
+    }
+    addTag('idas:has_structure/abandonedhouse_biomes', 'minecraft:is_forest')
+    addTag('idas:has_structure/acacia_biomes', 'minecraft:is_savanna')
+    addTag('idas:has_structure/apothecary_abode_biomes', 'forge:is_dense/overworld')
+    addTag('idas:has_structure/bazaar_biomes', 'forge:is_desert')
+    addTag('idas:has_structure/bearclaw_inn_biomes', 'minecraft:is_forest')
+    addTag('idas:has_structure/beekeepers_house_biomes', 'forge:is_plains')
+    addTag('idas:has_structure/farmhouse_biomes', 'forge:is_plains')
+    addTag('idas:has_structure/farmhouse_biomes', 'minecraft:is_taiga')
+    addTag('idas:has_structure/hunters_cabin_biomes', 'minecraft:is_taiga')
+    addTag('idas:has_structure/pillager_fortress_biomes', 'forge:is_dense/overworld')
+    addTag('idas:has_structure/polar_bear_den_biomes', 'forge:is_snowy')
+    addTag('idas:has_structure/redhorn_guild_biomes', 'minecraft:is_forest')
+    addTag('idas:has_structure/tinkers_workshop_biomes', 'minecraft:is_forest')
+    addTag('idas:has_structure/winter_wagon_biomes', 'forge:is_snowy')
+    addTag('idas:has_structure/witches_treestump_biomes', 'minecraft:is_forest')
+    addTag('idas:has_structure/wizardtower_biomes', 'minecraft:is_forest')
+
+    addTag('wabi_sabi_structures:has_structure/abandoned_small_castle', 'forge:is_plains')
+    addTag('wabi_sabi_structures:has_structure/badlands_dwelling', 'minecraft:is_badlands')
+    addTag('wabi_sabi_structures:has_structure/bee_farm', 'minecraft:is_forest')
+    addTag('wabi_sabi_structures:has_structure/beetroot_patch', 'forge:is_swamp')
+    addTag('wabi_sabi_structures:has_structure/birch_mushroom_cave', 'idas:collections/idasbirch_forests')
+    addTag('wabi_sabi_structures:has_structure/candlemaker_house', 'forge:is_plateau')
+    addTag('wabi_sabi_structures:has_structure/concrete_mill_ruins_desert', 'forge:is_desert')
+    addTag('wabi_sabi_structures:has_structure/effigy_patch_forest', 'minecraft:is_forest')
+    addTag('wabi_sabi_structures:has_structure/effigy_patch_jungle', 'minecraft:is_jungle')
+    addTag('wabi_sabi_structures:has_structure/effigy_patch_savanna', 'minecraft:is_savanna')
+    addTag('wabi_sabi_structures:has_structure/effigy_patch_swamp', 'forge:is_swamp')
+    addTag('wabi_sabi_structures:has_structure/firewatch_tower', 'minecraft:is_forest')
+    addTag('wabi_sabi_structures:has_structure/frost_reactor_plant', 'forge:is_snowy')
+    addTag('wabi_sabi_structures:has_structure/gallows', 'forge:is_spooky')
+    addTag('wabi_sabi_structures:has_structure/lighthouse', 'forge:is_beach')
+    addTag('wabi_sabi_structures:has_structure/lighthouse', 'minecraft:is_beach')
+    addTag('wabi_sabi_structures:has_structure/lost_foot', 'forge:is_beach')
+    addTag('wabi_sabi_structures:has_structure/lost_foot', 'minecraft:is_beach')
+    addTag('wabi_sabi_structures:has_structure/lumpy_tower', 'forge:is_peak')
+    addTag('wabi_sabi_structures:has_structure/memorial_of_tonkis', 'minecraft:is_jungle')
+    addTag('wabi_sabi_structures:has_structure/mossy_roof_house', 'minecraft:is_forest')
+    addTag('wabi_sabi_structures:has_structure/mossy_roof_shed', 'minecraft:is_forest')
+    addTag('wabi_sabi_structures:has_structure/muddy_badlands_well', 'minecraft:is_badlands')
+    addTag('wabi_sabi_structures:has_structure/old_stable', 'forge:is_plains')
+    addTag('wabi_sabi_structures:has_structure/old_stable', 'minecraft:is_savanna')
+    addTag('wabi_sabi_structures:has_structure/old_tiny_house', 'minecraft:is_taiga')
+    addTag('wabi_sabi_structures:has_structure/pumpkin_field', 'forge:is_plains')
+    addTag('wabi_sabi_structures:has_structure/pumpkin_field', 'minecraft:is_savanna')
+    addTag('wabi_sabi_structures:has_structure/pumpkin_patch', 'forge:is_plains')
+    addTag('wabi_sabi_structures:has_structure/pumpkin_patch', 'minecraft:is_savanna')
+    addTag('wabi_sabi_structures:has_structure/rot_tree', 'forge:is_dense/overworld')
+    addTag('wabi_sabi_structures:has_structure/sandy_hidey_hole', 'forge:is_desert')
+    addTag('wabi_sabi_structures:has_structure/small_sphinx', 'forge:is_desert')
+    addTag('wabi_sabi_structures:has_structure/spider_cellar', 'minecraft:is_jungle')
+    addTag('wabi_sabi_structures:has_structure/spruce_berry_farm', 'forge:is_snowy')
+    addTag('wabi_sabi_structures:has_structure/spruce_cabin', 'minecraft:is_taiga')
+    addTag('wabi_sabi_structures:has_structure/tall_birch_house', 'idas:collections/idasbirch_forests')
+    addTag('wabi_sabi_structures:has_structure/totem_pole', 'minecraft:is_taiga')
+    addTag('wabi_sabi_structures:has_structure/tree_cage', 'forge:is_swamp')
+    addTag('wabi_sabi_structures:has_structure/wandering_trader_cart', 'forge:is_dense/overworld')
+    addTag('wabi_sabi_structures:has_structure/water_tower_forest', 'minecraft:is_forest')
+    addTag('wabi_sabi_structures:has_structure/water_tower_oak', 'forge:is_plains')
+    addTag('wabi_sabi_structures:has_structure/water_tower_savanna', 'minecraft:is_savanna')
+    addTag('wabi_sabi_structures:has_structure/water_tower_spruce', 'minecraft:is_taiga')
+    addTag('wabi_sabi_structures:has_structure/wheat_patch', 'forge:is_plains')
+    addTag('wabi_sabi_structures:has_structure/wheat_patch', 'minecraft:is_savanna')
+
+    addTag('cutehermitcrabs:hermit_crab_spawnable_biomes', 'forge:is_beach')
+    addTag('cutehermitcrabs:hermit_crab_spawnable_biomes', 'minecraft:is_beach')
+
+    addTag('structory:has_structure/firetower', 'minecraft:is_forest')
+    addTag('structory:has_structure/jungle_well', 'minecraft:is_jungle')
+    addTag('structory:has_structure/outcast_villager_desert', 'forge:is_desert')
+    addTag('structory:has_structure/outcast_villager_grassy', 'forge:is_plains')
+
+    addTag('towns_and_towers:has_structure/pillager_outpost_badlands', 'minecraft:is_badlands')
+    addTag('towns_and_towers:has_structure/pillager_outpost_beach', 'minecraft:is_beach')
+    addTag('towns_and_towers:has_structure/pillager_outpost_beach', 'forge:is_beach')
+    addTag('towns_and_towers:has_structure/pillager_outpost_desert', 'forge:is_desert')
+    addTag('towns_and_towers:has_structure/pillager_outpost_forest', 'minecraft:is_forest')
+    addTag('towns_and_towers:has_structure/pillager_outpost_jungle', 'minecraft:is_jungle')
+    addTag('towns_and_towers:has_structure/pillager_outpost_savanna', 'minecraft:is_savanna')
+    addTag('towns_and_towers:has_structure/pillager_outpost_snowy', 'forge:is_snowy')
+    addTag('towns_and_towers:has_structure/pillager_outpost_swamp', 'forge:is_swamp')
+    addTag('towns_and_towers:has_structure/pillager_outpost_taiga', 'minecraft:is_taiga')
+    addTag('towns_and_towers:has_structure/village_badlands_pueblo', 'minecraft:is_badlands')
+    addTag('towns_and_towers:has_structure/village_forest_ruins', 'minecraft:is_forest')
+    addTag('towns_and_towers:has_structure/village_jungle_tribal', 'minecraft:is_jungle')
+    addTag('towns_and_towers:has_structure/village_swamp_boat', 'forge:is_swamp')
 })
 
 ServerEvents.tags('block', event => {
     event.remove('forge:bookshelves', ['quark:crimson_bookshelf', 'quark:warped_bookshelf'])
+})
+
+ServerEvents.tags('minecraft:entity_type', event => {
+    event.add('custom:player_dummy', ['minecraft:player'])
+    event.add('custom:zombie_dummy', ['minecraft:zombie'])
+    event.add('custom:skeleton_dummy', ['minecraft:skeleton'])
+    event.add('custom:wraith_dummy', ['quark:wraith', 'goety:wraith', 'graveyard:wraith'])
 })

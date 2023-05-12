@@ -258,6 +258,213 @@
 				item: "minecraft:dragon_breath"
 			}]
 		}
+		{
+			x: 0.0d
+			y: 2.0d
+			description: ["Across the world you will find elemental shrines. These shrines, when activated with a specific ritual, will give you a buff that lasts until death. You cannot have buffs from opposing elements at the same time, however."]
+			id: "6E037E2BEAC02455"
+			tasks: [{
+				id: "53AAC3B3DB36D4DB"
+				type: "checkmark"
+				title: "Elemental Shrines"
+			}]
+		}
+		{
+			title: "Air Shrine"
+			x: 1.5d
+			y: 3.5d
+			description: [
+				"The soaring winds of the plains hide an Air Shrine. You can feel its pull; both physically and mentally."
+				""
+				"Perhaps you should relent?"
+				""
+				"Note: this shrine is very finicky. Keep trying, you'll eventually get it."
+			]
+			dependencies: ["6E037E2BEAC02455"]
+			id: "4962374EE7EAE446"
+			tasks: [{
+				id: "14C8F821600F4652"
+				type: "advancement"
+				advancement: "trolldom:discovery/air_shrine"
+				criterion: ""
+			}]
+		}
+		{
+			title: "Earth Shrine"
+			x: 0.5d
+			y: 3.5d
+			description: [
+				"You've found an ancient Earth Shrine, buried deep underground. It feels... serene."
+				""
+				"Perhaps you should contemplate upon it."
+			]
+			dependencies: ["6E037E2BEAC02455"]
+			id: "6001CE574EC162CD"
+			tasks: [{
+				id: "4852937E3077799A"
+				type: "advancement"
+				advancement: "trolldom:discovery/earth_shrine"
+				criterion: ""
+			}]
+		}
+		{
+			title: "Fire Shrine"
+			x: -0.5d
+			y: 3.5d
+			description: [
+				"You've found a Fire Shrine in the Nether. You can feel its strong connection to Beyond."
+				""
+				"It seems to be demanding some kind of sacrifice. Some fuel, perhaps? "
+			]
+			dependencies: ["6E037E2BEAC02455"]
+			id: "269EAA13860D6147"
+			tasks: [{
+				id: "5766AAF65B45DD30"
+				type: "advancement"
+				advancement: "trolldom:discovery/fire_shrine"
+				criterion: ""
+			}]
+		}
+		{
+			title: "Water Shrine"
+			x: -1.5d
+			y: 3.5d
+			description: [
+				"You've found a Water Shrine, deep on the floor of the ocean."
+				""
+				"It shines invitingly... as if begging you to let it carry you."
+			]
+			dependencies: ["6E037E2BEAC02455"]
+			id: "52C71D348804EBB8"
+			tasks: [{
+				id: "5D538D889FB24EBB"
+				type: "advancement"
+				advancement: "trolldom:discovery/water_shrine"
+				criterion: ""
+			}]
+		}
+		{
+			title: "Fire Boon"
+			x: -1.0d
+			y: 5.0d
+			description: [
+				"Your chest fills with Its rage. Is this how It feels? That they all must burn? "
+				""
+				"It's best not to think about that right now."
+			]
+			dependencies: ["269EAA13860D6147"]
+			invisible: true
+			id: "777AACC25A7E4934"
+			tasks: [{
+				id: "2E7D6E00D6015DCC"
+				type: "advancement"
+				advancement: "trolldom:discovery/fire_boon"
+				criterion: ""
+			}]
+			rewards: [{
+				id: "7122984303C44DB6"
+				type: "item"
+				item: "minecraft:blaze_rod"
+				count: 4
+			}]
+		}
+		{
+			title: "Air Boon"
+			x: 2.5d
+			y: 4.5d
+			description: [
+				"You can feel your whole being accelerate forward, as if pulled by an extraplanar source. Your mind feels... free. "
+				""
+				"If only this feeling could last forever."
+			]
+			dependencies: ["4962374EE7EAE446"]
+			invisible: true
+			id: "411F5F8981CEC99C"
+			tasks: [{
+				id: "69782B8670AC949F"
+				type: "advancement"
+				advancement: "trolldom:discovery/air_boon"
+				criterion: ""
+			}]
+			rewards: [{
+				id: "5D9A5D6EB1D4AD15"
+				type: "item"
+				item: "quark:bottled_cloud"
+				count: 8
+			}]
+		}
+		{
+			title: "Earth Boon"
+			x: 1.0d
+			y: 5.0d
+			description: [
+				"Your contemplation was rewarded. You can feel Before crystallizing your skin, like a shield of gemstones."
+				""
+				"You suddenly long for a time long ago... when exactly, you're not sure."
+			]
+			dependencies: ["6001CE574EC162CD"]
+			invisible: true
+			id: "266FD9EFA4A5E7A2"
+			tasks: [{
+				id: "74F187EDB3994DE4"
+				type: "advancement"
+				advancement: "trolldom:discovery/earth_boon"
+				criterion: ""
+			}]
+			rewards: [
+				{
+					id: "52F2556E33CAD6F2"
+					type: "item"
+					item: "minecraft:diamond"
+					count: 4
+				}
+				{
+					id: "4B376B06AB6FBEF3"
+					type: "item"
+					item: "minecraft:emerald"
+					count: 4
+				}
+				{
+					id: "7AD579576C0D5DB8"
+					type: "item"
+					item: "minecraft:iron_ingot"
+					count: 4
+				}
+				{
+					id: "48BCC3F89C95034A"
+					type: "item"
+					item: "minecraft:gold_ingot"
+					count: 4
+				}
+			]
+		}
+		{
+			x: -2.5d
+			y: 4.5d
+			description: ["You feel the power surge from Within. Your momentum carries you; each movement into the next, flowing like water."]
+			dependencies: ["52C71D348804EBB8"]
+			invisible: true
+			id: "4B4FDC9CAE319B85"
+			tasks: [{
+				id: "1CD326A8F16EA85E"
+				type: "advancement"
+				title: "Water Boon"
+				advancement: "trolldom:discovery/water_boon"
+				criterion: ""
+			}]
+			rewards: [{
+				id: "02C163D7DFF1B09F"
+				type: "item"
+				item: {
+					id: "apotheosis:potion_charm"
+					Count: 1b
+					tag: {
+						Damage: 0
+						Potion: "minecraft:long_water_breathing"
+					}
+				}
+			}]
+		}
 	]
 	quest_links: [ ]
 }

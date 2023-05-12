@@ -1,0 +1,216 @@
+
+["Spell Power"]
+	#How much base damage Ice Chunks deals, Default: 8.0
+	#Range: 1.0 ~ 1.7976931348623157E308
+	iceChunkDamage = 8.0
+	#How much base damage Lavaballs deal when directly hitting a mob, Default: 6.0
+	#Range: 1.0 ~ 1.7976931348623157E308
+	lavaballDamage = 6.0
+	#How much base damage Haunted Skulls deal when directly hitting a mob, Default: 5.0
+	#Range: 1.0 ~ 1.7976931348623157E308
+	hauntedSkullDamage = 5.0
+	#How much base damage Magic Fangs deals, Default: 6.0
+	#Range: 1.0 ~ 1.7976931348623157E308
+	fangDamage = 6.0
+	#How much base damage Fireballs deal when directly hitting a mob, Default: 5.0
+	#Range: 1.0 ~ 1.7976931348623157E308
+	fireballDamage = 5.0
+	#How much base damage Necro Bolts deals, Default: 10.0
+	#Range: 1.0 ~ 1.7976931348623157E308
+	necroBoltDamage = 10.0
+	#How much base damage Updraft Blasts deals, Default: 5.0
+	#Range: 1.0 ~ 1.7976931348623157E308
+	updraftBlastDamage = 5.0
+	#How much base damage Sonic Boom Spell deals, Default: 10.0
+	#Range: 1.0 ~ 1.7976931348623157E308
+	sonicBoomDamage = 10.0
+	#How much base damage Soul Bolts deals, Default: 4.0
+	#Range: 1.0 ~ 1.7976931348623157E308
+	soulBoltDamage = 4.0
+	#How much base damage Lightning from the spell deals, Default: 5.0
+	#Range: 1.0 ~ 1.7976931348623157E308
+	lightningDamage = 5.0
+
+[Minions]
+	#Owners can't attack their servants, Default: true
+	ownerAttackCancel = true
+	#Whether Undead Servants can heal if summoned while wearing Necro Robes, Default: true
+	undeadMinionHeal = true
+	#Number of Zombie Servants that can exist around the player without instantly dying, Default: 32
+	#Range: > 1
+	zombieLimit = 32
+	#How much Soul Energy it cost per second for an Undead Servant to heal, Default: 1
+	#Range: > 0
+	undeadMinionHealCost = 1
+	#Whether Vex Servants can teleport to Players, Default: true
+	vexTeleport = true
+	#Number of Skeleton Servants that can exist around the player without instantly dying, Default: 32
+	#Range: > 1
+	skeletonLimit = 32
+	#Number of Haunted Skulls that can exist around the player without instantly dying, Default: 8
+	#Range: > 1
+	skullLimit = 8
+	#Whether Servants can attack Creepers if Mob Griefing Rule is False, Default: true
+	minionAttackCreepers = true
+	#Whether Undead Servants can teleport to Players, Default: false
+	undeadTeleport = false
+	#Number of Vex Servants that can be spawn with a wand, without instantly dying, around the player, Default: 8
+	#Range: > 1
+	wandVexLimit = 8
+	#Number of Vex Servants that can be spawn with a staff, without instantly dying, around the player, Default: 16
+	#Range: > 1
+	staffVexLimit = 16
+	#Number of Wraith Servants that can exist around the player without instantly dying, Default: 6
+	#Range: > 1
+	wraithLimit = 6
+	#Whether Servants or their owner are immune to attacks made by other servants that are summoned by the same owner, Default: true
+	minionMasterImmune = true
+
+["Summon Down Duration"]
+	#Vex Spell Cooldown, Default: 340
+	#Range: 0 ~ 72000
+	vexCooldown = 340
+	#Spooky Spell Cooldown, Default: 300
+	#Range: 0 ~ 72000
+	wraithCooldown = 300
+	#Skull Spell Cooldown, Default: 0
+	#Range: 0 ~ 72000
+	hauntedSkullCooldown = 0
+	#Rotting Spell Cooldown, Default: 120
+	#Range: 0 ~ 72000
+	zombieCooldown = 120
+	#Osseous Spell Cooldown, Default: 280
+	#Range: 0 ~ 72000
+	skeletonCooldown = 280
+
+["Casting Time"]
+	#Time to cast Lightning Spell, Default: 60
+	#Range: 0 ~ 72000
+	lightningTime = 60
+	#Time to cast Lava Bomb Spell, Default: 20
+	#Range: 0 ~ 72000
+	lavaBombTime = 20
+	#Time to cast Rotting Spell, Default: 20
+	#Range: 0 ~ 72000
+	zombieTime = 20
+	#Time to cast Illusion Spell, Default: 40
+	#Range: 0 ~ 72000
+	illusionTime = 40
+	#Time to cast Ice Chunk Spell, Default: 40
+	#Range: 0 ~ 72000
+	iceChunkTime = 40
+	#Time to cast Vex Spell, Default: 100
+	#Range: 0 ~ 72000
+	vexTime = 100
+	#Time to cast Haunted Skull Spell, Default: 20
+	#Range: 0 ~ 72000
+	hauntedSkullTime = 20
+	#Time to cast Updraft Spell, Default: 20
+	#Range: 0 ~ 72000
+	updraftTime = 20
+	#Time to cast Feasting Spell per second, Default: 20
+	#Range: 0 ~ 72000
+	feastTime = 20
+	#Time to cast Wraith Spell, Default: 60
+	#Range: 0 ~ 72000
+	wraithTime = 60
+	#Time to cast Sonic Boom Spell, Default: 60
+	#Range: 0 ~ 72000
+	sonicBoomTime = 60
+	#Time to cast Wind Blast Spell, Default: 20
+	#Range: 0 ~ 72000
+	windBlastTime = 20
+	#Time to cast Fang Spell, Default: 40
+	#Range: 0 ~ 72000
+	fangTime = 40
+	#Time to cast Osseous Spell, Default: 60
+	#Range: 0 ~ 72000
+	skeletonTime = 60
+
+[Enchantments]
+	#Soul Eater Maximum Enchantment Level, Default: 5
+	#Range: 1 ~ 10
+	maxSoulEaterLevel = 5
+	#Radius Maximum Enchantment Level, Default: 2
+	#Range: 1 ~ 10
+	maxRadiusLevel = 2
+	#Wanting Maximum Enchantment Level, Default: 3
+	#Range: 1 ~ 10
+	maxWantingLevel = 3
+	#Range Maximum Enchantment Level, Default: 10
+	#Range: 1 ~ 10
+	maxRangeLevel = 10
+	#Duration Maximum Enchantment Level, Default: 3
+	#Range: 1 ~ 10
+	maxDurationLevel = 3
+	#Potency Maximum Enchantment Level, Default: 5
+	#Range: 1 ~ 10
+	maxPotencyLevel = 5
+
+["Spell Costs"]
+	#Soul Bolt Spell Cost, Default: 4
+	#Range: > 0
+	soulBoltCost = 4
+	#Osseous Spell Cost, Default: 8
+	#Range: > 0
+	skeletonCost = 8
+	#Flight Spell Cost, Default: 4
+	#Range: > 0
+	flightCost = 4
+	#Wind Blast Spell Cost, Default: 4
+	#Range: > 0
+	windBlastCost = 4
+	#Vex Spell Cost, Default: 18
+	#Range: > 0
+	vexCost = 18
+	#Updraft Spell Cost, Default: 8
+	#Range: > 0
+	updraftCost = 8
+	#Illusion Spell Cost, Default: 20
+	#Range: > 0
+	illusionCost = 20
+	#Feasting Spell Cost, Default: 8
+	#Range: > 0
+	feastCost = 8
+	#Lightning Spell Cost, Default: 16
+	#Range: > 0
+	lightningCost = 16
+	#Lava Bomb Spell Cost, Default: 16
+	#Range: > 0
+	lavaBombCost = 16
+	#Glow Light Spell Cost, Default: 2
+	#Range: > 0
+	glowLightCost = 2
+	#Launch Spell Cost, Default: 4
+	#Range: > 0
+	launchCost = 4
+	#Spooky Spell Cost, Default: 24
+	#Range: > 0
+	wraithCost = 24
+	#Sonic Boom Spell Cost, Default: 16
+	#Range: > 0
+	sonicBoomCost = 16
+	#Ice Chunk Spell Cost, Default: 16
+	#Range: > 0
+	iceChunkCost = 16
+	#Fang Spell Cost, Default: 8
+	#Range: > 0
+	fangCost = 8
+	#Skull Spell Cost, Default: 24
+	#Range: > 0
+	hauntedSkullCost = 16
+	#Fireball Spell Cost, Default: 4
+	#Range: > 0
+	fireballCost = 4
+	#Rotting Spell Cost, Default: 5
+	#Range: > 0
+	zombieCost = 5
+	#Soul Light Spell Cost, Default: 1
+	#Range: > 0
+	soulLightCost = 1
+
+[General]
+	#Multiplies the damage of spells by this amount, Default: 1
+	#Range: > 1
+	spellDamageMultiplier = 1
+

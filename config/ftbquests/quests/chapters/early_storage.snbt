@@ -1,0 +1,129 @@
+{
+	id: "5DEE8B746FCC10B4"
+	group: "36C3CA17FE4F12AD"
+	order_index: 8
+	filename: "early_storage"
+	title: "Early Storage"
+	icon: "quark:crate"
+	subtitle: ["Gotta put all that stuff somewhere."]
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			icon: {
+				id: "nomadictents:mega_tepee"
+				Count: 1b
+				tag: { }
+			}
+			x: 0.0d
+			y: 0.0d
+			description: ["These were detailed earlier, but it cannot be overstated how useful these are. Store all your stuff in a tent!"]
+			id: "118738129B6E6A45"
+			tasks: [{
+				id: "5072CA0F7F381E37"
+				type: "checkmark"
+				title: "Tents"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -1.5d
+			description: [
+				"Quark's crates are great for storing lots of different items. They can store 640 items, regardless of stack size."
+				""
+				"Put all your cool swords and whatnot in them!"
+			]
+			id: "4A6A45B89EBA932C"
+			tasks: [{
+				id: "102464C2B22F21D0"
+				type: "item"
+				item: "quark:crate"
+			}]
+		}
+		{
+			title: "Drawers"
+			x: 0.0d
+			y: 1.5d
+			description: [
+				"Drawers are great bulk storage blocks. They can store many stacks of one item."
+				""
+				"Right-click to insert items, left-click to extract one, shift-left-click to extract a stack."
+			]
+			id: "5B5D2062C842E013"
+			tasks: [{
+				id: "04DA2B2121824AF2"
+				type: "item"
+				title: "Any Drawer"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "storagedrawers:drawers"
+					}
+				}
+			}]
+		}
+		{
+			title: "Framed Drawers"
+			x: 0.0d
+			y: 3.0d
+			description: [
+				"If vanilla wood types dont match your style, use framed drawers!"
+				""
+				"To use, put the drawer in the center of a crafting table. Then you can add up to three blocks:"
+				""
+				"Top left corner: base texture"
+				"Left of center: face texture"
+				"Top of center: trim texture"
+			]
+			dependencies: ["5B5D2062C842E013"]
+			id: "6FE3284BF3DCAFCB"
+			tasks: [{
+				id: "1B3642B6ED419C77"
+				type: "item"
+				title: "Any Framed Drawer"
+				item: {
+					id: "itemfilters:or"
+					Count: 1b
+					tag: {
+						items: [
+							{
+								id: "framedcompactdrawers:framed_compact_drawer"
+								Count: 1b
+							}
+							{
+								id: "framedcompactdrawers:framed_drawer_controller"
+								Count: 1b
+							}
+							{
+								id: "framedcompactdrawers:framed_full_one"
+								Count: 1b
+							}
+							{
+								id: "framedcompactdrawers:framed_full_two"
+								Count: 1b
+							}
+							{
+								id: "framedcompactdrawers:framed_full_four"
+								Count: 1b
+							}
+							{
+								id: "framedcompactdrawers:framed_half_one"
+								Count: 1b
+							}
+							{
+								id: "framedcompactdrawers:framed_half_two"
+								Count: 1b
+							}
+							{
+								id: "framedcompactdrawers:framed_half_four"
+								Count: 1b
+							}
+						]
+					}
+				}
+			}]
+		}
+	]
+	quest_links: [ ]
+}

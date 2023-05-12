@@ -14,8 +14,94 @@ ServerEvents.genericLootTables(event => {
     graveyardLootTables(event)
     dungeonsEnhancedLootTables(event)
     incendiumLootTables(event)
-    cursedLootTable(event)
+    cursedLootTables(event)
     treasureBagLootTables(event)
+    structoryLootTables(event)
+})
+
+// [structure, weight, decoration, zoom, name]
+const MAP_STRUCTURES = [
+    ['dungeons_arise:bandit_towers', 1, 'target_x', 2, Text.gold('Bandit Towers Explorer\'s Map')],
+    ['dungeons_arise:keep_kayra', 1, 'target_x', 2, Text.green('Keep Kayra Explorer\'s Map')],
+    ['dungeons_arise:thornborn_towers', 1, 'target_x', 2, Text.green('Thornborn Towers Explorer\'s Map')],
+    ['dungeons_arise:foundry', 1, 'target_x', 2, Text.red('Foundry Explorer\'s Map')],
+    ['dungeons_arise:heavenly_challenger', 1, 'target_x', 2, Text.aqua('Heavenly Challenger Explorer\'s Map')],
+    ['dungeons_arise:infested_temple', 1, 'target_x', 2, Text.darkGreen('Infested Temple Explorer\'s Map')],
+    ['dungeons_arise:plague_asylum', 1, 'target_x', 2, Text.darkGray('Plague Asylum Explorer\'s Map')],
+    ['dungeons_arise:shiraz_palace', 1, 'target_x', 2, Text.gold('Shiraz Palace Explorer\'s Map')],
+    ['betterdeserttemples:desert_temple', 1, 'target_x', 2, Text.gold('Desert Temple Explorer\'s Map')],
+    ['betteroceanmonuments:ocean_monument', 1, 'target_x', 2, Text.blue('Ocean Monument Explorer\'s Map')],
+    ['idas:ancient_mines', 1, 'target_x', 2, Text.darkGray('Ancient Mines Explorer\'s Map')],
+    ['idas:labyrinth', 1, 'target_x', 2, Text.gold('Labyrinth Explorer\'s Map')],
+    ['idas:pillager_fortress', 1, 'target_x', 2, Text.gray('Pillager Fortress Explorer\'s Map')],
+    ['idas:tinkers_workshop', 1, 'target_x', 2, Text.white('Tinker\'s Workshop Explorer\'s Map')],
+    ['graveyard:lich_prison', 1, 'target_x', 2, Text.red('Lich Prison Explorer\'s Map')],
+    ['trolldom:water_shrine', 1, 'target_x', 2, Text.blue('Water Shrine Explorer\'s Map')],
+    ['trolldom:earth_shrine', 1, 'target_x', 2, Text.green('Earth Shrine Explorer\'s Map')],
+    ['trolldom:air_shrine', 1, 'target_x', 2, Text.yellow('Air Shrine Explorer\'s Map')],
+]
+
+const MAP_STRUCTURES_NETHER = [
+    ['trolldom:fire_shrine', 1, 'target_x', 2, Text.red('Fire Shrine Explorer\'s Map')],
+    ['bygonenether:piglin_manor', 1, 'target_x', 2, Text.red('Piglin Manor Explorer\'s Map')],
+    ['betterfortresses:fortress', 1, 'target_x', 2, Text.red('Nether Fortress Explorer\'s Map')],
+]
+
+// Map function needs a tag, so I make a new tag for each structure
+ServerEvents.tags('minecraft:worldgen/structure', event => {
+    for (let structure of MAP_STRUCTURES) {
+        event.add(`custom:dummy_tags/${structure[0].split(':')[1]}`, structure[0])
+    }
+    for (let structure of MAP_STRUCTURES_NETHER) {
+        event.add(`custom:dummy_tags/${structure[0].split(':')[1]}`, structure[0])
+    }
+})
+
+ServerEvents.genericLootTables(event => {
+    event.addGeneric('custom:structure_map', loot => {
+        loot.addPool(pool => {
+            for (let structure of MAP_STRUCTURES) {
+                pool.addItem('minecraft:map')
+                .addCondition({
+                    condition: 'location_check',
+                    predicate: {
+                        dimension: 'minecraft:overworld'
+                    }
+                })
+                .weight(structure[1])
+                .addFunction({
+                    function: 'exploration_map',
+                    destination: `custom:dummy_tags/${structure[0].split(':')[1]}`,
+                    decoration: structure[2],
+                    zoom: structure[3],
+                    search_radius: 50
+                })
+                .name(structure[4])
+            }
+        })
+    })
+    event.addGeneric('custom:structure_map_nether', loot => {
+        loot.addPool(pool => {
+            for (let structure of MAP_STRUCTURES_NETHER) {
+                pool.addItem('minecraft:map')
+                .addCondition({
+                    condition: 'location_check',
+                    predicate: {
+                        dimension: 'minecraft:the_nether'
+                    }
+                })
+                .weight(structure[1])
+                .addFunction({
+                    function: 'exploration_map',
+                    destination: `custom:dummy_tags/${structure[0].split(':')[1]}`,
+                    decoration: structure[2],
+                    zoom: structure[3],
+                    search_radius: 50
+                })
+                .name(structure[4])
+            }
+        })
+    })
 })
 
 ServerEvents.blockLootTables(event => {
@@ -28,10 +114,6 @@ ServerEvents.blockLootTables(event => {
     })
 })
 
-ServerEvents.entityLootTables(event => {
-    vanillaEntityLootTables(event)
-})
-
 LootJS.modifiers(event => {
     event.disableWitherStarDrop()
     // Stops all eyes of ender generating as loot, anywhere
@@ -41,8 +123,16 @@ LootJS.modifiers(event => {
     event.addLootTableModifier(/^incendium:artifact.*/).randomChance(0.75).addLoot('enigmaticlegacy:blazing_core')
     event.addLootTableModifier('dreamland:grant_book_on_first_join').removeLoot(/.*/)
     event.addLootTableModifier('simplyswords:grant_book_on_first_join').removeLoot(/.*/)
+    event.addLootTableModifier('parcool:grant_parcool_guide').removeLoot(/.*/)
     event.addLootTableModifier('immersiveengineering:chests/engineers_house').removeLoot(/.*/)
     event.addLootTableModifier(/immersiveengineering:gameplay.*/).removeLoot(/.*/)
+    event.addLootTableModifier(/treasurebags:entity_group.*/).removeLoot(/.*/)
+    // i hate this so much
+    event.addLootTableModifier(/^wabi_sabi_structures:chests.*/).apply(ctx => {
+        ctx.server.lootTables.get('custom:loot_common').getRandomItems(new Builder(ctx.server.getLevel(ctx.level.dimension)).create(LootContextParamSets.EMPTY)).forEach(item => {
+            ctx.addLoot(item)
+        })
+    })
 })
 
 const PLENTIFUL = 'custom:loot_plentiful'
@@ -88,8 +178,9 @@ function createUniversalLootTables(event) {
         ['artifacts:power_glove', 1],
         ['artifacts:feral_claws', 1],
         ['artifacts:crystal_heart', 1],
-        ['kubejs:portable_black_hole', 3],
-        ['kubejs:staff_of_gaea', 3],
+        ['kubejs:portable_black_hole', 2],
+        ['kubejs:staff_of_gaea', 2],
+        ['kubejs:unstable_vortex_generator', 2],
         ['davespotioneering:potioneer_gauntlet', 1],
         ['simplyswords:slumbering_lichblade', 1],
     ]
@@ -205,6 +296,7 @@ function createUniversalLootTables(event) {
         ['aquaculture:neptunium_ingot', 1],
         ['magic_doorknob:magic_doorknob_wood', 1],
         ['magic_doorknob:magic_doorknob_stone', 1],
+        ['kubejs:unsettling_eye', 1],
     ]
 
     const VALUABLE_CHARMS = [
@@ -249,14 +341,29 @@ function createUniversalLootTables(event) {
 
     const LORE_BOOKS = [
         Item.of('minecraft:written_book', '{author:"Unknown",pages:[\'{"text":">AUTOMATIC LOG ENTRY\\\\n>14:30:34 7/3/9727\\\\n>SUBSYSTEM 366E\\\\n>\\\\n>OVERWORLD INFRACTIONS DETECTED: 1\\\\n>NETHER INFRACTIONS DETECTED: 0\\\\n>END INFRACTIONS DETECTED: 0\\\\n>BEFORE INFRACTIONS DETECTED: 0\\\\n"}\',\'{"text":">BEYOND INFRACTIONS DETECTED: 0\\\\n>WITHIN INFRACTIONS DETECTED: 0\\\\n>AFTER INFRACTIONS DETECTED: 1,802\\\\n>OTHER INFRACTIONS DETECTED: 0\\\\n>DETERMINED THREAT PRIORITY: LOW\\\\n>ACTIONS TAKEN: 5\\\\n>ACTIONS SUCCESSFUL: 5"}\',\'{"text":">LOG ENTRY DESCRIPTION AGENT: A-376-B\\\\n>DESCRIPTION:\\\\n1,798 Threats in After determined non-actionable. The 4 remaining threats in After were forwarded to subsystem 13A. One overworld threat estimated to be an attempted unauthorized entry"}\',\'{"text":"into After United Minds spacetime. Entry was successfully blocked and countermeasures were taken, including automated electric strikes at the estimated area of infraction and deployment of AUM vehicles. Threat determined to be terminated.\\\\n>END LOG"}\'],title:"LOG ENTRY"}'),
-        Item.of('minecraft:written_book', '{author:"Unknown Explorer",pages:[\'{"text":"1st Full Moon,\\\\n2599\\\\n\\\\nThe scorching desert heat gives way to fleeting comfort as the sun sets. The days have been long and draining, but my determination is undeterred. If I am to verify these rumors, I must adapt to these harsh conditions."}\',\'{"text":"1st Waning Gibbous,\\\\n2599\\\\n\\\\nA miracle or a mirage? In the distance, a faint outline; hope. If my eyes do not decieve me, a structure on the horizon. Tomorrow will bring answers."}\',\'{"text":"1st Last Quarter,\\\\n2599\\\\n\\\\nIt is no mirage. Before me is the grandest palace this side of the Alles; pristinely maintained with chromatic paint and lush trees. It is raised very far above the ground and vastly oversized, as if not built for my kind."}\',\'{"text":"The architecture is supremely advanced, with towers capped in bulbous domes and golden spires. It looks as though it was dropped here from another time. My heart races at the thought of exploring its every crevice."}\',\'{"text":"1st Waning Crescent,\\\\n2599\\\\n\\\\nI write this hidden in one of the many corners of this grand palace, for it seems it was not as unguarded as I had hoped. I am lucky to be well-prepared for such an encounter, but I will have to explore carefully."}\',\'{"text":"Already, I have stumbled across masterfully crafted and enchanted weapons and armor; if only I could carry it all back home. Nevertheless, my exploration will continue."}\',\'{"text":"2nd New Moon,\\\\n2599\\\\n\\\\nI have discovered something truly awful and marvelous. At the very peak of one of its mighty towers, a weapon unlike any I have seen. It is a halberd, and it surges with the power of thunder itself! Not only that, when wielded"}\',\'{"text":"and charged, it vaults me forward and through any foes in my path, killing them near instantly. I cannot risk losing such an artifact; I will bring it back immediately, along with a story unlike any other."}\'],title:"Lost Journal"}'),
+        Item.of('minecraft:written_book', '{author:"Unknown Explorer",pages:[\'{"text":"1st Full Moon,\\\\n2599\\\\n\\\\nThe scorching desert heat gives way to fleeting comfort as the sun sets. The days have been long and draining, but my determination is undeterred. If I am to verify these rumors, I must adapt to these harsh conditions."}\',\'{"text":"1st Waning Gibbous,\\\\n2599\\\\n\\\\nA miracle or a mirage? In the distance, a faint outline; hope. If my eyes do not decieve me, a structure on the horizon. Tomorrow will bring answers."}\',\'{"text":"1st Last Quarter,\\\\n2599\\\\n\\\\nIt is no mirage. Before me is the grandest palace this side of the Alles; pristinely maintained with chromatic paint and lush trees. It is raised very far above the ground and vastly oversized, as if not built for my kind."}\',\'{"text":"The architecture is supremely advanced, with towers capped in bulbous domes and golden spires. It looks as though it was dropped here from another time. My heart races at the thought of exploring its every crevice."}\',\'{"text":"1st Waning Crescent,\\\\n2599\\\\n\\\\nI write this hidden in one of the many corners of this grand palace, for it seems it was not as unguarded as I had hoped. I am lucky to be well-prepared for such an encounter, but I will have to explore carefully."}\',\'{"text":"Already, I have stumbled across masterfully crafted and enchanted weapons and armor; if only I could carry it all back home. Nevertheless, my exploration will continue."}\',\'{"text":"2nd New Moon,\\\\n2599\\\\n\\\\nI have discovered something truly awful and marvelous. At the very peak of one of its mighty towers, a weapon unlike any I have seen. It is a halberd, and it surges with the power of thunder itself! Not only that, when wielded"}\',\'{"text":"and charged, it vaults me forward and through any foes in my path, killing them near instantly. I cannot risk losing such an artifact; I will bring it back immediately, along with a story unlike any other."}\'],title:"Lost Journal #1"}'),
         Item.of('minecraft:written_book', '{author:"A.C.P.C.G.",pages:[\'{"text":"Analysis on the Origin and Composition of the Spellstones\\\\n\\\\n\\\\nReport by the Alleq City Planar Communications Guild\\\\n\\\\n\\\\n\\\\n\\\\n\\\\nPublished 3991"}\',\'{"text":"Much discussion has been had regarding the Spellstones that the Guild has recently acquired from an unknown donor. Until recently, these were only known about from ancient writings and oral history (with one exception). This analysis hopes to demystify these items and their origin."}\',\'{"text":"The Guild now has three of these Spellstones, though it is now deemed probable that at least four exist. The following pages will describe each in detail."}\',\'{"text":"Will of the Ocean\\\\n\\\\nThis is the Spellstone with the earliest known written evidence of its existence, due to its relatively straightforward location. Its first appearance in the Overworld was very likely deep in the ocean, in the now-ruined ancient"}\',\'{"text":"monuments. Who created these monuments remains a mystery, though some oral accounts claim a group called the \\\\"guardians\\\\" were responsible. Regardless, what is known about this artifact is what it is made of; highly concentrated prismarine. It almost"}\',\'{"text":"certainly has some sort of power source in the center, but the Guild has elected not to destroy it to find out. The artifact has a very strong connection to Within, and it is hypothesized that the Spellstone itself is a conscious being, though this remains controversial. Little more is known of"}\',\'{"text":"its creation because of the difficulty inherent to studying Within. "}\',\'{"text":"Blazing Core\\\\n\\\\nThis Spellstone was first created in Beyond, and as such extra care had to be taken when handling it. It was likely crafted by the Beyond Mind itself, for the express purpose of luring in treasure hunters. And lure it did, for its first "}\',\'{"text":"documented discovery was in the Nether (during the Beyond occupation period). Its construction is not known exactly, but it seems to be made of some biological material. Perhaps it is best left unknown. "}\',\'{"text":"Heart of the Golem\\\\n\\\\nThis Spellstone is certainly the most well-known due to the public nature of its discovery and theft. Of course, it was first found in the Zamir Forest incident of 2656, before going missing for centuries. The Guild will not comment on the "}\',\'{"text":"controversy surrounding this event. This artifact is from Before, as it is a Golem\\\'s power source. It is made from what has now been dubbed \\\\"golemite\\\\". Many more of these likely exist, as it is now known that the Golems were prolific planar travellers. "}\',\'{"text":"Hypothesized Fourth Spellstone\\\\n\\\\nIt seems very likely that another Spellstone with connections to After exists. However, due to the current political climate, the Guild has elected not to publish any unverified hypotheses."}\'],title:"On Spellstones"}'),
+        Item.of('minecraft:written_book', '{author:"Unknown Explorer",pages:[\'{"text":"3rd Last Quarter,\\\\n2600\\\\n\\\\nThe days on the high seas drag on and on. Oh, how I long for sweet land... \\\\nNevertheless, I must persist. Who knows what may await my discovery?"}\',\'{"text":"3rd Waxing Gibbous,\\\\n2600\\\\n\\\\nThe captain seems confident that land will arrive soon. I know not his reasons, but that is what I pay him for! \\\\nAmazing news! I was just informed as I write this that land has been spotted! I must prepare."}\',\'{"text":"3rd Full Moon,\\\\n2600\\\\n\\\\nWe have arrived at an unfamiliar land. The flora here is consistent with the rumours... it remains to be seen how true they are. "}\',\'{"text":"4th First Quarter,\\\\n2600\\\\n\\\\nWhat I am looking at is hard to believe, despite it being before my own two eyes. A gargantuan sandstone keep, with intricate stained glass windows and expertly carved roofing. It is hard to even describe how large it is; to my "}\',\'{"text":"eyes it appears over 200 meters high! My heart races at the thought of exploring this grand building."}\',\'{"text":"4th Waning Crescent,\\\\n2600\\\\n\\\\nAs expected, this place is heavily guarded; though nothing I am not capable of. The inside of this keep is even grander than I could have imagined. An enormous staircase ascends to the heavens, each step "}\',\'{"text":"well taller than I am. I can see some sort of grand gardens at the top, so high up I feel dizzy thinking about it. What, and who, this place was built for elude any explanation. I must reach the top."}\',\'{"text":"4th New Moon,\\\\n2600\\\\n\\\\nEven my trained legs can barely withstand climbing this keep, not to mention the inhabitants providing resistance. I am hiding in the building\\\'s library, nearing its zenith. I should take care t"}\',\'{"text":"4th Waxing Crescent,\\\\n2600\\\\n\\\\nApologies, I was rudely interrupted. I have reached the gardens, but I am not safe yet. New entry soon."}\',\'{"text":"4th Full Moon,\\\\n2600\\\\n\\\\nI have managed to escape alive. That place is exceptionally dangerous, even I could barely manage; but my discoveries are well worth it. Its peak hid luxurious gardens, decadent beyond any city I have ever visited.  "}\',\'{"text":"I would spend an eternity there, if not for its hostile guardians. Within its foliage, I have discovered an otherworldy weapon. It is a large battleaxe, one head brilliant orange and the other vibrant cyan. It seems to vibrate slightly, feeling as if it could tear itself apart at"}\',\'{"text":"any moment. It is not merely decorative, however. When held, I can feel its energies leak into my soul; and at will, I can unleash them, warping space itself and enhancing my abilities. Its power is unreal, and terrifying. I will return at once, with another incredible discovery."}\'],title:"Lost Journal #2"}'),
+        Item.of('minecraft:written_book', '{author:"Unknown",pages:[\'{"text":"CLASSIFIED DOCUMENTATION\\\\n\\\\nReading or distributing this text without explicit clearance from class A personnel is punishable by silencing.\\\\n\\\\n "}\',\'{"text":"INTERVIEW RECORDING\\\\nSUBJECT 044\\\\n01/30/5015\\\\n\\\\nInt: Interviewer\\\\nSub: Subject\\\\nNote: Transcriber notes"}\',\'{"text":"Int: How did you learn about [REDACTED]?\\\\n\\\\nSub: Within.\\\\n\\\\nInt: That is impossible. Within does not communicate directly.\\\\n\\\\nNote: Subject remains silent.\\\\n\\\\nInt: How did you contact Within?"}\',\'{"text":"Sub: I accepted its presence.\\\\n\\\\nInt: I know you\\\'re lying.\\\\n\\\\nNote: Subject remains silent.\\\\n\\\\nInt: How did you contact Within?\\\\n\\\\nNote: Subject begins levitating."}\',\'{"text":"Int: Cease immediately!\\\\n\\\\nSub: I AM AB-\\\\n\\\\nNote: Interviewer neutralized subject.\\\\n\\\\nInt: Wake up.\\\\n\\\\nSub: I do not sleep.\\\\n\\\\nInt: Tell me how you contacted it, or I\\\'m sending you back."}\',\'{"text":"Sub: 10/10/5001, Kingdom Park.\\\\n\\\\nNote: Interviewer is visibly disturbed.\\\\n\\\\nInt: We\\\'re done her-\\\\n\\\\nSub: I KNOW [REDACTED]\\\\n\\\\nInterview has been redacted beyond this point."}\'],title:"CLASSIFIED"}'),
+        Item.of('minecraft:written_book', '{author:"Unknown",pages:[\'{"text":"Oh, Overworld\\\\n\\\\nLand of secrets aplenty\\\\n\\\\nFor the planes were hurled\\\\n\\\\nFrom the Aether empty"}\',\'{"text":"Looking Within\\\\n\\\\nSomething of a feeling\\\\n\\\\nWhere waters begin\\\\n\\\\nLeaving my mind reeling"}\',\'{"text":"So far Beyond\\\\n\\\\nWorse even than hell\\\\n\\\\nIf I were to respond\\\\n\\\\nYou\\\'d be my cell"}\',\'{"text":"Echoes Before\\\\n\\\\nOf times long past\\\\n\\\\nAnd while they talk of more\\\\n\\\\nIt was already their last"}\',\'{"text":"Flying through After\\\\n\\\\nGreat cities of clouds\\\\n\\\\nAnd never look backward\\\\n\\\\nWhere progress enshrouds"}\',\'{"text":"Oh, Overworld\\\\n\\\\nHow you feel like home\\\\n\\\\nBut without the others\\\\n\\\\nI\\\'d feel so alone"}\'],title:"An Ode"}'),
+        Item.of('minecraft:written_book', '{author:"A.I.N.",pages:[\'{"text":"BREAKING NEWS\\\\n\\\\n12/12/9721\\\\n\\\\nAfter Independent News "}\',\'{"text":"AUM APPROVES FUNDING FOR EXTRAPLANAR RESEARCH\\\\n\\\\nThis morning, After United Minds have officially approved 10,000,000,000c for extraplanar research. The reported goal of this project is to secure AUM spacetime and investigate"}\',\'{"text":"meta-planar travel. The decision has recieved both praise and criticism. The Interplanar Peace Coalition has stated that it is \\\\"promoting the needless slaughter of innocent non-After beings\\\\", whereas the Anti-Communication Union has supported the decision."}\'],title:"BREAKING NEWS"}'),
+        Item.of('minecraft:written_book', '{author:"Unknown",pages:[\'{"text":"The Illagers are a frequent scourge upon civilian life. They are well-organized, and guard many secrets of the arcane arts. I hope this book will assist in their destruction."}\',\'{"text":"Pillagers\\\\n\\\\nPillagers are the grunts of the Illager army. They are little more than trained crossbowmen, and must frequently travel in large groups to acheive much of anything."}\',\'{"text":"Vindicators\\\\n\\\\nVindicators are axe-wielding maniacs. They are extremely deadly, but lack any sort of ranged training. Use ranged weapons to your advantage against them."}\',\'{"text":"Ravagers\\\\n\\\\nRavagers are a truly terrifying sight on the battlefield. They are giant, malformed beasts whos only goal is violence. It is unknown how these abominations were created."}\',\'{"text":"Evokers\\\\n\\\\nEvokers are among the high-ranking officers of the Illager army for their dark magical powers. They wield evil forces beyond our knowledge. It is said that a cursed knife or dagger is strong enough to tear apart their soul; though"}\',\'{"text":"these are likely simply rumours."}\',\'{"text":"Illusioners\\\\n\\\\nIllusioners are very rarely seen, but it seems likely that they also commune with dark forces. More accounts are required for a detailed description."}\'],title:"The Illagers"}'),
+        Item.of('minecraft:written_book', '{author:"Unknown",pages:[\'{"text":"*This book is blank, but upon opening it you begin hearing a conversation coming from the pages.*\\\\n\\\\nVoice 1: *Unintelligible yelling*\\\\n\\\\nVoice 2: Target locked. Firing in 3... 2... 1...\\\\n\\\\n*A loud explosion-like sound can be heard.*"}\',\'{"text":"Voice 2: Missed.\\\\n\\\\nVoice 3: Core power below fifty percent. Sustaining major damage at torso and hands. \\\\n\\\\nVoice 1: There\\\'s more! I repeat, more enemy aircraft have just warped in!\\\\n\\\\n*Sounds of commotion.*"}\',\'{"text":"Voice 2: Firing again.\\\\n\\\\n*Another explosion.*\\\\n\\\\nVoice 2: Direct hit. Recharging hand cannon.\\\\n\\\\n*You hear a very loud noise followed by blaring alarms.*\\\\n\\\\nVoice 3: Major hull damage. The Core is"}\',\'{"text":"suggesting retreat.\\\\n\\\\nVoice 4: Retreating to nearest intersection.\\\\n\\\\n*You hear an otherworldy noise. It is then suddenly much quieter.*\\\\n\\\\nVoice 1: I can\\\'t believe this. Our history, our greatness... "}\',\'{"text":"Voice 4: I wish we could go back to the way things were.\\\\n\\\\n*Muffled sounds of agreement.*\\\\n\\\\nVoice 2: So where did we end up?\\\\n\\\\nVoice 4: It looks like, uh... hold on.\\\\n\\\\nVoice 4: Looks like the"}\',\'{"text":"Overworld, uh, somewhere they call Zamir Forest.\\\\n\\\\nVoice 3: Hold on, something weird is going on...\\\\n\\\\n*You hear another otherworldy noise, followed by chaos.*\\\\n\\\\nVoice 1: What the hell just happened??"}\',\'{"text":"Voice 3: Oh no. Oh no no no no-\\\\n\\\\nVoice 4: We got transported underground somehow.\\\\n\\\\nVoice 3: The Core, it\\\'s...\\\\n\\\\nVoice 2: Dead?\\\\n\\\\nVoice 3: Well, it might as well be."}\',\'{"text":"*A deathly silence.*\\\\n\\\\nVoice 1: How far underground?\\\\n\\\\nVoice 4: We\\\'re completely submerged.\\\\n\\\\n*Another silence.*\\\\n\\\\nVoice 1: Well then, we better get going. \\\\n\\\\nVoice 3: What? You"}\',\'{"text":"mean the emergency escape portals?\\\\n\\\\nVoice 1: What other choice do we have?\\\\n\\\\n*More silence.*\\\\n\\\\nVoice 2: Well, if this is it... thanks for everything.\\\\n\\\\n*The sound stops. The book closes itself.*"}\'],title:"Final Moments"}'),
     ]
 
     event.addGeneric('custom:lore_book', loot => {
         loot.addPool(pool => {
             for (let book of LORE_BOOKS) {
                 pool.addItem(book, 1, 1)
+            }
+        })
+    })
+
+    event.addGeneric('custom:parkour_guide', loot => {
+        let guides = ['vault', 'breakfall', 'catleap', 'cling', 'crawl', 'dodge', 'flip', 'wallrun', 'wall_jump', 'quick_turn']
+        loot.addPool(pool => {
+            for (let guide of guides) {
+                pool.addItem(`kubejs:parkour_guide_${guide}`, 1, 1)
             }
         })
     })
@@ -269,7 +376,11 @@ function createUniversalLootTables(event) {
             for (let potion of VALUABLE_CHARMS) {
                 pool.addItem(Item.of('apotheosis:potion_charm', `{Potion:"${potion[0]}",Unbreakable:${potion[1] ? '1b' : '0b'}}`), potion[2], 1)
             }
-            pool.addLootTable('custom:lore_book').weight(1)
+            
+        })
+        loot.addPool(pool => {
+            pool.randomChance(0.05)
+            pool.addLootTable('custom:lore_book')
         })
     })
     event.addGeneric('custom:overworld_treasure', loot => {
@@ -281,7 +392,19 @@ function createUniversalLootTables(event) {
                 pool.addItem(Item.of('apotheosis:potion_charm', `{Potion:"${potion[0]}",Unbreakable:${potion[1] ? '1b' : '0b'}}`), potion[2], 1)
             }
             pool.addLootTable('custom:random_scroll').weight(3)
+        })
+        loot.addPool(pool => {
+            pool.randomChance(0.1)
+            pool.addLootTable('custom:parkour_guide')
+        })
+        loot.addPool(pool => {
+            pool.randomChance(0.075)
+            pool.addLootTable('custom:lore_book').weight(2)
             pool.addLootTable('custom:secret_book').weight(1)
+        })
+        loot.addPool(pool => {
+            pool.randomChance(0.17)
+            pool.addLootTable('custom:structure_map')
         })
     })
     event.addGeneric('custom:runic_weapons', loot => {
@@ -301,6 +424,10 @@ function createUniversalLootTables(event) {
             }
             pool.addLootTable('custom:random_scroll').weight(1)
             pool.addLootTable('custom:secret_book').weight(1)
+        })
+        loot.addPool(pool => {
+            pool.randomChance(0.2)
+            pool.addLootTable('custom:parkour_guide')
         })
     })
     event.addGeneric('custom:nether_valuable', loot => {
@@ -492,6 +619,10 @@ function createUniversalLootTables(event) {
                 quality: 0
             }).randomChance(0.85)
         })
+        loot.addPool(pool => {
+            pool.randomChance(0.01)
+            pool.addItem('kubejs:ancent_core')
+        })
     })
     event.addGeneric('custom:loot_godly', loot => {
         loot.addPool(pool => {
@@ -502,6 +633,10 @@ function createUniversalLootTables(event) {
         })
         loot.addPool(pool => {
             pool.addLootTable('custom:overworld_artifacts').randomChance(0.35)
+        })
+        loot.addPool(pool => {
+            pool.randomChance(0.025)
+            pool.addItem('kubejs:ancent_core')
         })
         loot.addPool(pool => {
             pool.randomChance(1.0)
@@ -525,11 +660,11 @@ function createUniversalLootTables(event) {
             })
         })
         loot.addPool(pool => {
-            pool.addEntry({
-                type: 'apotheosis:random_gem',
-                weight: 1,
-                quality: 0
-            }).randomChance(0.95)
+           pool.addEntry({
+               type: 'apotheosis:random_gem',
+               weight: 1,
+               quality: 0
+           }).randomChance(0.95)
         })
     })
 
@@ -610,6 +745,127 @@ function createUniversalLootTables(event) {
         loot.addPool(pool => {
             pool.addLootTable('custom:nether_artifacts').randomChance(0.25)
         })
+    })
+
+    event.addGeneric('custom:affix_item', loot => {
+        loot.addPool(pool => {
+            pool.addEntry({
+                type: 'apotheosis:random_affix_item',
+                weight: 13,
+                quality: 0,
+                rarity: 'rare'
+            })
+            pool.addEntry({
+                type: 'apotheosis:random_affix_item',
+                weight: 9,
+                quality: 0,
+                rarity: 'epic'
+            })
+            pool.addEntry({
+                type: 'apotheosis:random_affix_item',
+                weight: 3,
+                quality: 0,
+                rarity: 'mythic'
+            })
+            pool.addEntry({
+                type: 'apotheosis:random_affix_item',
+                weight: 1,
+                quality: 0,
+                rarity: 'ancient'
+            })
+        })
+    })
+    event.addGeneric('custom:artifact_lesser', loot => {
+        loot.addPool(pool => {
+            pool.addItem('artifacts:plastic_drinking_hat').weight(5)
+            pool.addItem('artifacts:novelty_drinking_hat').weight(1)
+            pool.addItem('artifacts:night_vision_goggles').weight(4)
+            pool.addItem('artifacts:superstitious_hat').weight(2)
+            pool.addItem('artifacts:scarf_of_invisibility').weight(1)
+            pool.addItem('artifacts:cross_necklace').weight(1)
+            pool.addItem('artifacts:panic_necklace').weight(3)
+            pool.addItem('artifacts:shock_pendant').weight(1)
+            pool.addItem('artifacts:flame_pendant').weight(2)
+            pool.addItem('artifacts:thorn_pendant').weight(1)
+            pool.addItem('artifacts:charm_of_sinking').weight(4)
+            pool.addItem('artifacts:obsidian_skull').weight(3)
+            pool.addItem('artifacts:antidote_vessel').weight(1)
+            pool.addItem('artifacts:universal_attractor').weight(5)
+            pool.addItem('artifacts:digging_claws').weight(4)
+            pool.addItem('artifacts:feral_claws').weight(1)
+            pool.addItem('artifacts:power_glove').weight(2)
+            pool.addItem('artifacts:fire_gauntlet').weight(2)
+            pool.addItem('artifacts:pocket_piston').weight(6)
+            pool.addItem('artifacts:golden_hook').weight(2)
+            pool.addItem('artifacts:kitty_slippers').weight(1)
+            pool.addItem('artifacts:running_shoes').weight(2)
+            pool.addItem('artifacts:flippers').weight(3)
+            pool.addItem('artifacts:whoopee_cushion').weight(1)
+            pool.addItem('relics:reflection_necklace').weight(3)
+            pool.addItem('relics:drowned_belt').weight(2)
+            pool.addItem('relics:hunter_belt').weight(3)
+            pool.addItem('relics:ice_skates').weight(3)
+            pool.addItem('relics:bastion_ring').weight(5)
+            pool.addItem('relics:ice_breaker').weight(2)
+            pool.addItem('relics:blazing_flask').weight(2)
+            pool.addItem('relics:leather_belt').weight(10)
+            pool.addItem('relics:horse_flute').weight(8)
+            pool.addItem('relics:wool_mitten').weight(3)
+            pool.addItem('relics:amphibian_boot').weight(1)
+            pool.addItem('enigmaticlegacy:xp_scroll').weight(3)
+            pool.addItem('enigmaticlegacy:ender_ring').weight(4)
+            pool.addItem('enigmaticlegacy:magnet_ring').weight(6)
+            pool.addItem('enigmaticlegacy:void_stone').weight(3)
+        })
+    })
+    event.addGeneric('custom:artifact_greater', loot => {
+        loot.addPool(pool => {
+            pool.addItem('artifacts:snorkel').weight(5)
+            pool.addItem('artifacts:lucky_scarf').weight(4)
+            pool.addItem('artifacts:cloud_in_a_bottle').weight(2)
+            pool.addItem('artifacts:crystal_heart').weight(6)
+            pool.addItem('artifacts:helium_flamingo').weight(1)
+            pool.addItem('artifacts:vampiric_glove').weight(3)
+            pool.addItem('artifacts:aqua_dashers').weight(1)
+            pool.addItem('artifacts:bunny_hoppers').weight(4)
+            pool.addItem('artifacts:steadfast_spikes').weight(4)
+            pool.addItem('relics:spatial_sign').weight(3)
+            pool.addItem('relics:magma_walker').weight(2)
+            pool.addItem('relics:aqua_walker').weight(4)
+            pool.addItem('relics:midnight_robe').weight(3)
+            pool.addItem('relics:jellyfish_necklace').weight(5)
+            pool.addItem('relics:rage_glove').weight(3)
+            pool.addItem('relics:holy_locket').weight(6)
+            pool.addItem('relics:magic_mirror').weight(1)
+            pool.addItem('relics:spore_sack').weight(5)
+            pool.addItem('relics:roller_skates').weight(4)
+            pool.addItem('relics:shadow_glaive').weight(2)
+        })
+    })
+    event.addJson('custom:enchanted_book_level_10', {
+        pools: [
+            {
+                rolls: 1,
+                entries: [
+                    {
+                        type: 'item',
+                        name: 'minecraft:book',
+                        weight: 1,
+                        functions: [
+                            {
+                                function: 'enchant_with_levels',
+                                treasure: false,
+                                levels: {
+                                    type: 'uniform',
+                                    min: 8,
+                                    max: 12
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     })
 }
 
@@ -1015,10 +1271,10 @@ function idasLootTables(event) {
     idas(event, 'labyrinth/labyrinth_treasure', LEGENDARY)
     addItemToLootTable(event, 'idas:chests/labyrinth/labyrinth_treasure', 'kubejs:pharaohs_ankh', 1, 1)
     idas(event, 'necromancers_spire/necromancers_spire', RARE)
-    idas(event, 'pillager_fortress/pillager_basic', COMMON)
+    idas(event, 'pillager_fortress/pillager_basic', UNCOMMON)
     idas(event, 'pillager_fortress/pillager_bedroom', UNCOMMON)
     idas(event, 'pillager_fortress/pillager_jail', RARE)
-    idas(event, 'pillager_fortress/pillager_library', UNCOMMON)
+    idas(event, 'pillager_fortress/pillager_library', RARE)
     addToLootTable(event, 'idas:chests/pillager_fortress/pillager_library', 'custom:secret_book', 0.05, 1)
     addToLootTable(event, 'idas:chests/pillager_fortress/pillager_library', 'custom:lore_book', 0.1, 1)
     idas(event, 'sunken_ship/sunken_ship_supply', UNCOMMON)
@@ -1133,7 +1389,7 @@ function incendiumLootTables(event) {
     addToLootTable(event, 'incendium:steam/treasure', NETHER_RARE, 1, 1)
 }
 
-function cursedLootTable(event) {
+function cursedLootTables(event) {
     event.addGeneric('custom:cursed_loot', loot => {
         loot.addPool(pool => {
             pool.randomChance(0.1)
@@ -1162,7 +1418,6 @@ function cursedLootTable(event) {
             pool.addItem('pyromancer:bombsack', 8, [1, 4])
             pool.addItem('pyromancer:scatter_bombsack', 6, [1, 4])
             pool.addItem('pyromancer:napalm_bombsack', 5, [1, 4])
-            pool.addItem('campanion:grappling_hook', 1, 1)
         })
         loot.addPool(pool => {
             pool.rolls = {n:1, p: 0.025}
@@ -1170,6 +1425,19 @@ function cursedLootTable(event) {
             pool.addLootTable('custom:loot_epic').weight(25)
             pool.addLootTable('custom:loot_legendary').weight(5)
             pool.addLootTable('custom:loot_godly').weight(1)
+        })
+        loot.addPool(pool => {
+            pool.randomChance(0.001)
+            pool.addItem('kubejs:ancient_core')
+        })
+    })
+    event.addGeneric('custom:cursed_loot_witch', loot => {
+        loot.addPool(pool => {
+            pool.randomChance(0.25)
+            pool.rolls = [1, 3]
+            pool.addItem('minecraft:blaze_powder').weight(3)
+            pool.addItem('minecraft:glistering_melon_slice').weight(1)
+            pool.addItem('minecraft:golden_carrot').weight(1)
         })
     })
 }
@@ -1202,5 +1470,21 @@ function treasureBagLootTables(event) {
             pool.addItem('villagertools:badge').weight(1)
             pool.addItem('villagertools:cure').weight(1)
         })
+        loot.addPool(pool => {
+            pool.randomChance(0.025)
+            pool.addItem('kubejs:ancient_core')
+        })
     })
+}
+
+function structoryLootTables(event) {
+    addToLootTable(event, 'structory:library/high', COMMON, 1, 1)
+    addToLootTable(event, 'structory:library/high', 'custom:secret_book', 0.05, 1)
+    addToLootTable(event, 'structory:library/high', 'custom:lore_book', 0.1, 1)
+    addToLootTable(event, 'structory:outcast/bandit/desert', COMMON, 1, 1)
+    addToLootTable(event, 'structory:outcast/mine/loot', COMMON, 1, 1)
+    addToLootTable(event, 'structory:outcast/ruin/ruin', COMMON, 1, 1)
+    addToLootTable(event, 'structory:ruin/swamp/loot', COMMON, 1, 1)
+    addToLootTable(event, 'structory:ruin/taiga/illager_treasure', RARE, 1, 1)
+    addToLootTable(event, 'structory:ruin/taiga/illager_high', UNCOMMON, 1, 1)
 }

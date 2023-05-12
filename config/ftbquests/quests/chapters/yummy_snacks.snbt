@@ -1,7 +1,7 @@
 {
 	id: "6740DD44D0FE26EB"
 	group: "36C3CA17FE4F12AD"
-	order_index: 7
+	order_index: 9
 	filename: "yummy_snacks"
 	title: "Yummy Snacks"
 	icon: "alexsdelight:bison_burger"
@@ -23,7 +23,13 @@
 		{
 			x: 8.0d
 			y: -3.0d
-			description: ["Foods made from strawberries give instant health upon consumption! Very helpful in a pinch."]
+			description: [
+				"Foods made from strawberries give instant health upon consumption! Very helpful in a pinch."
+				""
+				"Strawberry bushes grow fairly commonly in plains."
+				""
+				"When growing strawberries at extremely high elevations, you will instead get white strawberries! These provide more food and have a stronger heal effect."
+			]
 			dependencies: ["7AE5BB79ED0D166C"]
 			id: "438419326757D602"
 			tasks: [{
@@ -40,7 +46,11 @@
 		{
 			x: 8.0d
 			y: 3.0d
-			description: ["Foods made from bananas give the Agility status effect, which lets you climb any block as if it was a ladder."]
+			description: [
+				"Foods made from bananas give the Agility status effect, which lets you climb any block as if it was a ladder."
+				""
+				"Banana trees grow frequently in jungle biomes."
+			]
 			dependencies: ["7AE5BB79ED0D166C"]
 			id: "1C5FC81B2711E2D1"
 			tasks: [{
@@ -58,7 +68,11 @@
 			title: "Mint"
 			x: 8.0d
 			y: -4.0d
-			description: ["Foods made from mint give the Berserking effect, which increases your damage and defense as you kill mobs."]
+			description: [
+				"Foods made from mint give the Berserking effect, which increases your damage and defense as you kill mobs."
+				""
+				"Mint grows in hills and mountains."
+			]
 			dependencies: ["7AE5BB79ED0D166C"]
 			id: "01A49610634E4211"
 			tasks: [{
@@ -76,7 +90,11 @@
 			title: "Vanilla"
 			x: 8.5d
 			y: -2.0d
-			description: ["Foods made from vanilla give the Vanilla Scent effect, which blocks most other status effects from being applied while it is active. Very useful for those pesky witches!"]
+			description: [
+				"Foods made from vanilla give the Vanilla Scent effect, which blocks most other status effects from being applied while it is active. Very useful for those pesky witches!"
+				""
+				"Vanilla vines can be found growing in savanna biomes."
+			]
 			dependencies: ["7AE5BB79ED0D166C"]
 			id: "754BDDC68E84ADBF"
 			tasks: [{
@@ -94,7 +112,11 @@
 			title: "Adzuki"
 			x: 8.0d
 			y: 4.0d
-			description: ["Foods made from adzuki give the Harmony effect, which causes hostile mobs to run away from you."]
+			description: [
+				"Foods made from adzuki give the Harmony effect, which causes hostile mobs to run away from you."
+				""
+				"Adzuki sprouts can be found fairly commonly in forests."
+			]
 			dependencies: ["7AE5BB79ED0D166C"]
 			id: "1B3D1BB99076B7B0"
 			tasks: [{
@@ -111,7 +133,11 @@
 		{
 			x: 8.5d
 			y: 1.0d
-			description: ["Foods made from pomegranate give the Volatility effect, which gives all your attacks an explosive shockwave effect!"]
+			description: [
+				"Foods made from pomegranate give the Volatility effect, which gives all your attacks an explosive shockwave effect!"
+				""
+				"Pomegranates are found in Warped biomes in the Nether. They grow spontaneously in the Nether, but require nearby bees to grow in the Overworld."
+			]
 			dependencies: ["7AE5BB79ED0D166C"]
 			id: "0BE357E9360AABB1"
 			tasks: [{
@@ -128,7 +154,11 @@
 		{
 			x: 8.5d
 			y: -1.0d
-			description: ["Foods made from lime give the Corrosion effect, which blocks incoming projectiles!"]
+			description: [
+				"Foods made from lime give the Corrosion effect, which blocks incoming projectiles!"
+				""
+				"Limes are found frequently in forests. They can only produce fruit if bees are pollinating nearby flowers, however!"
+			]
 			dependencies: ["7AE5BB79ED0D166C"]
 			id: "18BB61C6A5F08815"
 			tasks: [{
@@ -285,6 +315,7 @@
 			tasks: [{
 				id: "52F4A3836D00FC50"
 				type: "item"
+				title: "Any Nourishing Food"
 				item: {
 					id: "itemfilters:or"
 					Count: 1b
@@ -376,7 +407,11 @@
 			title: "Chocolate"
 			x: 8.5d
 			y: 2.0d
-			description: ["Foods made from chocolate (from Neapolitan) give the Sugar Rush effect, which increases speed a lot at first, then slows you down."]
+			description: [
+				"Foods made from chocolate (from Neapolitan) give the Sugar Rush effect, which increases speed a lot at first, then slows you down."
+				""
+				"Chocolate is made from cocoa beans, found in jungles."
+			]
 			dependencies: ["7AE5BB79ED0D166C"]
 			id: "4D792AC8FE3CF270"
 			tasks: [{
@@ -388,6 +423,129 @@
 				id: "1DA9C27B07CA791D"
 				type: "item"
 				item: "abnormals_delight:chocolate_cake_slice"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 0.0d
+			description: ["The Farmer's Delight mod overhauls farming and cooking to be much more engaging."]
+			id: "15CF818C3C1F0DEC"
+			tasks: [{
+				id: "49157E2E7773DDAC"
+				type: "checkmark"
+				title: "Farmer's Delight"
+			}]
+		}
+		{
+			x: -6.5d
+			y: 0.0d
+			description: [
+				"The Cooking Pot is a new crafting station used for making unique meals. It must be placed over a heat source, like a campfire or stove."
+				""
+				"Most food made in the cooking pot requires a container, like a bowl. These are placed in a dedicated slot in the GUI. "
+			]
+			dependencies: ["15CF818C3C1F0DEC"]
+			id: "7D2B0AB210EC480E"
+			tasks: [{
+				id: "7555EAC1F9609884"
+				type: "item"
+				item: "farmersdelight:cooking_pot"
+			}]
+		}
+		{
+			x: -6.0d
+			y: -1.0d
+			description: ["The Skillet is another way of cooking foods. Shift-right-click to place above a heat source, then insert food. Alternatively, you can hold food in your offhand and the skillet in you mainhand, then hold right click while near a heat source to cook from your inventory."]
+			dependencies: ["15CF818C3C1F0DEC"]
+			id: "6166F5B0AF729BBE"
+			tasks: [{
+				id: "5C91B91A403B885A"
+				type: "item"
+				item: {
+					id: "farmersdelight:skillet"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -6.0d
+			y: 1.0d
+			description: ["The Stove functions essentially like a campfire, acting as a heat source for cooking pots and skillets."]
+			dependencies: ["15CF818C3C1F0DEC"]
+			id: "1AC9F9275D91F443"
+			tasks: [{
+				id: "355AFA79B78F857B"
+				type: "item"
+				item: "farmersdelight:stove"
+			}]
+		}
+		{
+			x: -7.0d
+			y: -2.0d
+			description: ["The Cutting Board is a special crafting station for cutting meat, as well as other things. Right-click to insert, then right-click with the knife or other tool to cut. (Pro tip: offhand the item to be cut and then hold right click to cut fast)."]
+			dependencies: ["15CF818C3C1F0DEC"]
+			id: "4AABDBF469D74E26"
+			tasks: [{
+				id: "2CB7D0DCD8DAEA47"
+				type: "item"
+				item: "farmersdelight:cutting_board"
+			}]
+		}
+		{
+			x: -8.0d
+			y: 0.0d
+			description: ["The Basket is a simple storage container. It acts like a hopper, inserting items near its open face."]
+			dependencies: ["15CF818C3C1F0DEC"]
+			id: "3143A91994875ACB"
+			tasks: [{
+				id: "1A06E39BD331518D"
+				type: "item"
+				item: "farmersdelight:basket"
+			}]
+		}
+		{
+			title: "Rich Soil"
+			x: -7.0d
+			y: 2.0d
+			description: [
+				"Rich Soil is a higher-quality farmland. As long as it's hydrated, it will speed up crop growth, and turn mushrooms planted on top into mushroom colonies."
+				""
+				"To acquire it, leave some compost out in the sun, ideally near water and activators, like mushrooms."
+			]
+			dependencies: ["15CF818C3C1F0DEC"]
+			id: "5EAAA312DB041A73"
+			tasks: [
+				{
+					id: "46A5E1FBA02A294E"
+					type: "item"
+					item: "farmersdelight:organic_compost"
+				}
+				{
+					id: "52110131F03A19E2"
+					type: "item"
+					item: "farmersdelight:rich_soil"
+				}
+			]
+		}
+		{
+			icon: "minecraft:hay_block"
+			x: 0.0d
+			y: -2.0d
+			description: [
+				"Place a carved pumpkin atop a hay bale to create a straw golem! These little guys will harvest your crops for you."
+				""
+				"Shift-right-click the golem, then shift-right-click a container to set the golem's deposit location. It will then harvest nearby crops and put them in there!"
+				""
+				"They don't work for free, however. They need to be fed apples every once in a while, or else they'll throw a fit and refuse to work!"
+			]
+			id: "37F85A3C9E1C99A6"
+			tasks: [{
+				id: "209102550824112C"
+				type: "checkmark"
+				title: "Straw Golem"
 			}]
 		}
 	]

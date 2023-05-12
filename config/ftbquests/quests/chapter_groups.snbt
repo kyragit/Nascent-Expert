@@ -1,6 +1,6 @@
 {
 	chapter_groups: [
-		{ id: "36C3CA17FE4F12AD", title: "Medieval" }
-		{ id: "52DC2EC078E51292", title: "Industrial" }
+		{ id: "36C3CA17FE4F12AD", title: "Age of Discovery" }
+		{ id: "52DC2EC078E51292", title: "Age of Industry" }
 	]
 }

@@ -3,9 +3,9 @@
 	group: "36C3CA17FE4F12AD"
 	order_index: 0
 	filename: "medieval_progression"
-	title: "Medieval Progression"
+	title: "The Path"
 	icon: "summoningrituals:altar"
-	subtitle: ["Progressing through the Medieval Age."]
+	subtitle: ["Progressing through the Age of Discovery."]
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	quests: [

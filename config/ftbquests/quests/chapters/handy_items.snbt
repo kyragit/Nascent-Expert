@@ -92,26 +92,52 @@
 			}]
 		}
 		{
-			title: "Day Packs"
+			title: "Small Backpack"
 			x: 0.0d
 			y: 2.0d
 			description: [
-				"Easier to get than backpacks, these will ease your inventory struggles in the early game."
+				"Easier to get than a regular backpack, this will ease your inventory struggles in the early game."
 				""
-				"To make the tanned leather, put down a leather tanner directly next to a campfire, and place some leather."
-				""
-				"These packs are much smaller than standard backpacks. Also, they take your chestplate slot, and if you take them off your items spill all over the floor."
+				"It takes your chestplate slot, and expands your inventory when worn. It cannot be taken off with items inside, however."
 			]
 			id: "46F570061CAB0D9F"
 			tasks: [{
 				id: "0400D28A1B2E7D50"
 				type: "item"
-				title: "Any #campanion:backpacks"
+				title: "Small Backpack"
 				item: {
-					id: "itemfilters:tag"
+					id: "quark:backpack"
 					Count: 1b
 					tag: {
-						value: "campanion:backpacks"
+						Inventory: [
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+							{ }
+						]
 					}
 				}
 			}]

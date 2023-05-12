@@ -289,13 +289,13 @@
 		"Minion at Difficulty" = 1
 		#Minimum ticks (20 ticks = 1 seconds) after Minions can spawn
 		#Range: > 0
-		"Minimum Cooldown" = 1400
+		"Minimum Cooldown" = 2400
 		#Maximum ticks (20 ticks = 1 seconds) after Minions can spawn.
 		#Range: > 0
-		"Maximum Cooldown" = 2000
+		"Maximum Cooldown" = 3000
 		#Percentage cooldown reduction at max difficulty for the cooldown of Minion spawning.
 		#Range: 0.0 ~ 1.0
-		"Cooldown Reduction" = 0.4
+		"Cooldown Reduction" = 0.0
 		#Percentage chance at max difficulty for a Minion to spawn as a Blinding Minion.
 		#Range: 0.0 ~ 1.0
 		"Blinding Chance" = 0.4
@@ -343,14 +343,14 @@
 		"Max Difficulty" = 8
 		#How much difficulty will players start with when joining a world? Note that this will apply when the player joins the world if the current player difficulty is below this value.
 		#Range: > 0
-		"Starting Difficulty" = 0
+		"Starting Difficulty" = 8
 		#If false and there's more than 1 player around the Dragon, difficulty will be the average of all the players' difficulty instead of summing them.
 		"Sum Killed Dragons Difficulty" = false
 		#Percentage bonus difficulty added to the Dragon when more than one player is present. Each player past the first one will add this percentage to the difficulty.
 		#Range: 0.0 ~ 1.7976931348623157E308
-		"Bonus Difficulty per Player" = 0.25
+		"Bonus Difficulty per Player" = 0.0
 		#Set to false to disable the first Dragon killed message.
-		"Show First Killed Dragon Message" = true
+		"Show First Killed Dragon Message" = false
 
 	#Handles the Damage Resistances and Vulnerabilities
 	["Ender Dragon"."Resistances & Vulnerabilities"]
@@ -368,13 +368,13 @@
 	["Ender Dragon".Health]
 		#Ender Dragon health will be increased by this value at max difficulty (scaling accordingly at lower difficulties)
 		#Range: 0.0 ~ 1.7976931348623157E308
-		"Health Bonus at Max Difficulty" = 200.0
+		"Health Bonus at Max Difficulty" = 1200.0
 		#How much health will the Ender Dragon regen at max difficulty (scaling accordingly at lower difficulties). This doesn't affect the health regen given by crystals.
 		#Range: 0.0 ~ 1.7976931348623157E308
-		"Bonus Regeneration" = 1.0
+		"Bonus Regeneration" = 0.0
 		#Maximum bonus regeneration per second given by "Bonus Regeneration". Set to 0 to disable bonus health regeneration. Can be lower than "Bonus Regeneration". This doesn't affect the health regen given by crystals.
 		#Range: 0.0 ~ 1.7976931348623157E308
-		"Maximum Bonus Regeneration" = 1.0
+		"Maximum Bonus Regeneration" = 0.0
 		#How much health (when missing 100% health) will the Ender Dragon regen at max difficulty each second whenever she's attached to a Crystal. So if she's missing 30% health, this will be 30% effective. This is added to the normal Crystal regen.
 		#Range: 0.0 ~ 1.7976931348623157E308
 		"Bonus Crystal Regeneration" = 0.0
@@ -389,7 +389,7 @@
 		"Larva at Difficulty" = 1
 		#As the Ender Dragon starts spawning Minions, every how much difficulty she will spawn one more Minions
 		#Range: > 0
-		"Bonus Larva Every Difficulty" = 1
+		"Bonus Larva Every Difficulty" = 4
 		#Maximum Larva spawned by the Ender Dragon
 		#Range: > 0
 		"Max Larvae Spawned" = 7
@@ -411,7 +411,7 @@
 		"Dragon Egg per Player" = true
 		#If true default mod drops are added to the Ender Dragon.
 		#Note that replacing the Ender Dragon loot table (e.g. via DataPack) will automatically remove the Injected loot.
-		"Inject Default Loot" = true
+		"Inject Default Loot" = false
 
 	#Makes more Crystal spawn and with more cages.
 	["Ender Dragon".Crystals]
@@ -423,7 +423,7 @@
 		"Max Bonus Cages" = 6
 		#At this difficulty one crystal will start to appear inside obsidian towers. -1 will disable this feature.
 		#Range: > -1
-		"More Crystals at Difficulty" = 2
+		"More Crystals at Difficulty" = -1
 		#Every how much difficulty one more crystal will be spawned inside towers
 		#Range: > -1
 		"More Crystals Step" = 3

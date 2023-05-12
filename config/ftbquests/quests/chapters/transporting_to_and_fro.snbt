@@ -1,7 +1,7 @@
 {
 	id: "13662E651588A17C"
 	group: "52DC2EC078E51292"
-	order_index: 2
+	order_index: 3
 	filename: "transporting_to_and_fro"
 	title: "Transporting To and Fro"
 	icon: "create:track"
@@ -111,7 +111,7 @@
 			title: "Deep Storage"
 			x: 2.0d
 			y: -2.0d
-			description: ["While not exclusive to trains, item vaults are particularly useful for them. They can store many stacks of one kind of item, perfect for all that stone."]
+			description: ["While not exclusive to trains, item vaults are particularly useful for them. They can store a large amount of items, but cannot be interfaced with manually."]
 			dependencies: ["5CC96150E830E856"]
 			id: "797951E905A4B09F"
 			tasks: [{
