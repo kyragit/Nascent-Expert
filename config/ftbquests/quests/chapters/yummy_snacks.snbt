@@ -1,28 +1,26 @@
 {
-	id: "6740DD44D0FE26EB"
-	group: "36C3CA17FE4F12AD"
-	order_index: 9
-	filename: "yummy_snacks"
-	title: "Yummy Snacks"
-	icon: "alexsdelight:bison_burger"
-	subtitle: ["A guide to the culinary arts."]
-	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "yummy_snacks"
+	group: "36C3CA17FE4F12AD"
+	icon: "alexsdelight:bison_burger"
+	id: "6740DD44D0FE26EB"
+	order_index: 9
+	quest_links: [ ]
 	quests: [
 		{
-			x: 2.0d
-			y: 0.0d
 			description: ["Many new foods have special effects when eaten. These can be incredibly useful both in combat and otherwise!"]
 			id: "7AE5BB79ED0D166C"
 			tasks: [{
 				id: "0DDD654D248F9EC9"
-				type: "checkmark"
 				title: "Special Food Effects"
+				type: "checkmark"
 			}]
+			x: 2.0d
+			y: 0.0d
 		}
 		{
-			x: 8.0d
-			y: -3.0d
+			dependencies: ["7AE5BB79ED0D166C"]
 			description: [
 				"Foods made from strawberries give instant health upon consumption! Very helpful in a pinch."
 				""
@@ -30,152 +28,151 @@
 				""
 				"When growing strawberries at extremely high elevations, you will instead get white strawberries! These provide more food and have a stronger heal effect."
 			]
-			dependencies: ["7AE5BB79ED0D166C"]
 			id: "438419326757D602"
-			tasks: [{
-				id: "424824BFD27BE415"
-				type: "item"
-				item: "neapolitan:strawberries"
-			}]
 			rewards: [{
 				id: "293188846058B101"
-				type: "item"
 				item: "neapolitan:strawberry_scones"
+				type: "item"
 			}]
+			tasks: [{
+				id: "424824BFD27BE415"
+				item: "neapolitan:strawberries"
+				type: "item"
+			}]
+			x: 8.0d
+			y: -3.0d
 		}
 		{
-			x: 8.0d
-			y: 3.0d
+			dependencies: ["7AE5BB79ED0D166C"]
 			description: [
 				"Foods made from bananas give the Agility status effect, which lets you climb any block as if it was a ladder."
 				""
 				"Banana trees grow frequently in jungle biomes."
 			]
-			dependencies: ["7AE5BB79ED0D166C"]
 			id: "1C5FC81B2711E2D1"
-			tasks: [{
-				id: "07BDA5467C899E23"
-				type: "item"
-				item: "neapolitan:banana"
-			}]
 			rewards: [{
 				id: "0CCF41D2F79CC7DA"
-				type: "item"
 				item: "neapolitan:banana_bread"
+				type: "item"
 			}]
+			tasks: [{
+				id: "07BDA5467C899E23"
+				item: "neapolitan:banana"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 3.0d
 		}
 		{
-			title: "Mint"
-			x: 8.0d
-			y: -4.0d
+			dependencies: ["7AE5BB79ED0D166C"]
 			description: [
 				"Foods made from mint give the Berserking effect, which increases your damage and defense as you kill mobs."
 				""
 				"Mint grows in hills and mountains."
 			]
-			dependencies: ["7AE5BB79ED0D166C"]
 			id: "01A49610634E4211"
-			tasks: [{
-				id: "5885757F640F7106"
-				type: "item"
-				item: "neapolitan:mint_leaves"
-			}]
 			rewards: [{
 				id: "2762A73D20F80362"
-				type: "item"
 				item: "neapolitan:mint_candies"
+				type: "item"
 			}]
+			tasks: [{
+				id: "5885757F640F7106"
+				item: "neapolitan:mint_leaves"
+				type: "item"
+			}]
+			title: "Mint"
+			x: 8.0d
+			y: -4.0d
 		}
 		{
-			title: "Vanilla"
-			x: 8.5d
-			y: -2.0d
+			dependencies: ["7AE5BB79ED0D166C"]
 			description: [
 				"Foods made from vanilla give the Vanilla Scent effect, which blocks most other status effects from being applied while it is active. Very useful for those pesky witches!"
 				""
 				"Vanilla vines can be found growing in savanna biomes."
 			]
-			dependencies: ["7AE5BB79ED0D166C"]
 			id: "754BDDC68E84ADBF"
-			tasks: [{
-				id: "214EE3B7E405DE0C"
-				type: "item"
-				item: "neapolitan:vanilla_pods"
-			}]
 			rewards: [{
 				id: "3572316D5DBAC984"
-				type: "item"
 				item: "neapolitan:vanilla_fudge"
+				type: "item"
 			}]
+			tasks: [{
+				id: "214EE3B7E405DE0C"
+				item: "neapolitan:vanilla_pods"
+				type: "item"
+			}]
+			title: "Vanilla"
+			x: 8.5d
+			y: -2.0d
 		}
 		{
-			title: "Adzuki"
-			x: 8.0d
-			y: 4.0d
+			dependencies: ["7AE5BB79ED0D166C"]
 			description: [
 				"Foods made from adzuki give the Harmony effect, which causes hostile mobs to run away from you."
 				""
 				"Adzuki sprouts can be found fairly commonly in forests."
 			]
-			dependencies: ["7AE5BB79ED0D166C"]
 			id: "1B3D1BB99076B7B0"
-			tasks: [{
-				id: "0222048575CCA14B"
-				type: "item"
-				item: "neapolitan:adzuki_beans"
-			}]
 			rewards: [{
 				id: "767DDBF9265E89FC"
-				type: "item"
 				item: "neapolitan:adzuki_bun"
+				type: "item"
 			}]
+			tasks: [{
+				id: "0222048575CCA14B"
+				item: "neapolitan:adzuki_beans"
+				type: "item"
+			}]
+			title: "Adzuki"
+			x: 8.0d
+			y: 4.0d
 		}
 		{
-			x: 8.5d
-			y: 1.0d
+			dependencies: ["7AE5BB79ED0D166C"]
 			description: [
 				"Foods made from pomegranate give the Volatility effect, which gives all your attacks an explosive shockwave effect!"
 				""
 				"Pomegranates are found in Warped biomes in the Nether. They grow spontaneously in the Nether, but require nearby bees to grow in the Overworld."
 			]
-			dependencies: ["7AE5BB79ED0D166C"]
 			id: "0BE357E9360AABB1"
-			tasks: [{
-				id: "2C286AD8D171CE1D"
-				type: "item"
-				item: "collectorsreap:pomegranate"
-			}]
 			rewards: [{
 				id: "7A19763798B97243"
-				type: "item"
 				item: "collectorsreap:pomegranate_custard"
+				type: "item"
 			}]
+			tasks: [{
+				id: "2C286AD8D171CE1D"
+				item: "collectorsreap:pomegranate"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 1.0d
 		}
 		{
-			x: 8.5d
-			y: -1.0d
+			dependencies: ["7AE5BB79ED0D166C"]
 			description: [
 				"Foods made from lime give the Corrosion effect, which blocks incoming projectiles!"
 				""
 				"Limes are found frequently in forests. They can only produce fruit if bees are pollinating nearby flowers, however!"
 			]
-			dependencies: ["7AE5BB79ED0D166C"]
 			id: "18BB61C6A5F08815"
-			tasks: [{
-				id: "502B409C417253F0"
-				type: "item"
-				item: "collectorsreap:lime"
-			}]
 			rewards: [{
 				id: "3608EB43A8A92DFB"
-				type: "item"
 				item: "collectorsreap:lime_cookie"
+				type: "item"
 			}]
+			tasks: [{
+				id: "502B409C417253F0"
+				item: "collectorsreap:lime"
+				type: "item"
+			}]
+			x: 8.5d
+			y: -1.0d
 		}
 		{
-			title: "Milkshakes"
-			x: 10.0d
-			y: 0.5d
+			dependencies: ["7AE5BB79ED0D166C"]
 			description: [
 				"Milkshakes are special drinks that let you manipulate nearby creature's potion effects. You can drink them yourself, or force another mob to drink it by right-clicking them."
 				""
@@ -188,352 +185,351 @@
 				"- Lime: Copies the drinker's negative effects to the 3 nearest entities."
 				"- Pomegranate: Copies the drinker's positive effects to the 3 nearest entities."
 			]
-			dependencies: ["7AE5BB79ED0D166C"]
 			id: "76187E7715D50FCE"
 			tasks: [{
 				id: "0419748AF6A7E664"
-				type: "item"
-				title: "Any Milkshake"
 				item: {
-					id: "itemfilters:or"
 					Count: 1b
+					id: "itemfilters:or"
 					tag: {
 						items: [
 							{
+								Count: 1b
 								id: "neapolitan:adzuki_milkshake"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "neapolitan:mint_milkshake"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "neapolitan:banana_milkshake"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "neapolitan:strawberry_milkshake"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "neapolitan:chocolate_milkshake"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "neapolitan:vanilla_milkshake"
-								Count: 1b
 							}
 							{
-								id: "collectorsreap:pomegranate_milkshake"
 								Count: 1b
+								id: "collectorsreap:pomegranate_milkshake"
 							}
 						]
 					}
 				}
+				title: "Any Milkshake"
+				type: "item"
 			}]
+			title: "Milkshakes"
+			x: 10.0d
+			y: 0.5d
 		}
 		{
-			title: "Comforting Foods"
-			x: 9.5d
-			y: -1.5d
-			description: ["Soups and Stews give the Comfort effect, which stops you from getting slowness, weakness, and hunger."]
 			dependencies: ["7AE5BB79ED0D166C"]
+			description: ["Soups and Stews give the Comfort effect, which stops you from getting slowness, weakness, and hunger."]
 			id: "4A3B2B9FFFC4AA6C"
 			tasks: [{
 				id: "1378A72C2E69BD80"
-				type: "item"
-				title: "Any Comforting Food"
 				item: {
-					id: "itemfilters:or"
 					Count: 1b
+					id: "itemfilters:or"
 					tag: {
 						items: [
 							{
+								Count: 1b
 								id: "farmersdelight:chicken_soup"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:fish_stew"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:noodle_soup"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:baked_cod_stew"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:pumpkin_soup"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:fried_rice"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "minecraft:mushroom_stew"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "minecraft:rabbit_stew"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "minecraft:beetroot_soup"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:cooked_rice"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:bone_broth"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:beef_stew"
-								Count: 1b
 							}
 							{
-								id: "farmersdelight:vegetable_soup"
 								Count: 1b
+								id: "farmersdelight:vegetable_soup"
 							}
 						]
 					}
 				}
+				title: "Any Comforting Food"
+				type: "item"
 			}]
+			title: "Comforting Foods"
+			x: 9.5d
+			y: -1.5d
 		}
 		{
-			title: "Nourishing Foods"
-			x: 9.5d
-			y: 1.5d
-			description: ["Large meals give Nourishment, which prevents you from losing hunger from anything except healing."]
 			dependencies: ["7AE5BB79ED0D166C"]
+			description: ["Large meals give Nourishment, which prevents you from losing hunger from anything except healing."]
 			id: "13FE46450D4C1E0D"
 			tasks: [{
 				id: "52F4A3836D00FC50"
-				type: "item"
-				title: "Any Nourishing Food"
 				item: {
-					id: "itemfilters:or"
 					Count: 1b
+					id: "itemfilters:or"
 					tag: {
 						items: [
 							{
+								Count: 1b
 								id: "farmersdelight:ratatouille"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "collectorsreap:deluxe_salad"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:shepherds_pie"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:honey_glazed_ham"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:roast_chicken"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:stuffed_pumpkin"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:grilled_salmon"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:squid_ink_pasta"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "delightful:nut_butter_and_jelly_sandwich"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:bacon_and_eggs"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:pasta_with_meatballs"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:pasta_with_mutton_chop"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:mushroom_rice"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:roasted_mutton_chops"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "farmersdelight:vegetable_noodles"
-								Count: 1b
 							}
 							{
-								id: "farmersdelight:steak_and_potatoes"
 								Count: 1b
+								id: "farmersdelight:steak_and_potatoes"
 							}
 						]
 					}
 				}
+				title: "Any Nourishing Food"
+				type: "item"
 			}]
+			title: "Nourishing Foods"
+			x: 9.5d
+			y: 1.5d
 		}
 		{
-			icon: "minecraft:sugar"
-			x: 10.0d
-			y: -0.5d
-			description: ["Sugary foods, like cakes and pies, give speed when eaten!"]
 			dependencies: ["7AE5BB79ED0D166C"]
+			description: ["Sugary foods, like cakes and pies, give speed when eaten!"]
+			icon: "minecraft:sugar"
 			id: "6DBF790C34785CB5"
 			tasks: [{
 				id: "533FC599603B647B"
-				type: "checkmark"
 				title: "Sugary Foods"
+				type: "checkmark"
 			}]
+			x: 10.0d
+			y: -0.5d
 		}
 		{
-			title: "Chocolate"
-			x: 8.5d
-			y: 2.0d
+			dependencies: ["7AE5BB79ED0D166C"]
 			description: [
 				"Foods made from chocolate (from Neapolitan) give the Sugar Rush effect, which increases speed a lot at first, then slows you down."
 				""
 				"Chocolate is made from cocoa beans, found in jungles."
 			]
-			dependencies: ["7AE5BB79ED0D166C"]
 			id: "4D792AC8FE3CF270"
-			tasks: [{
-				id: "50F9CA7AACED12F8"
-				type: "item"
-				item: "neapolitan:chocolate_bar"
-			}]
 			rewards: [{
 				id: "1DA9C27B07CA791D"
-				type: "item"
 				item: "abnormals_delight:chocolate_cake_slice"
+				type: "item"
 			}]
+			tasks: [{
+				id: "50F9CA7AACED12F8"
+				item: "neapolitan:chocolate_bar"
+				type: "item"
+			}]
+			title: "Chocolate"
+			x: 8.5d
+			y: 2.0d
 		}
 		{
-			x: -2.0d
-			y: 0.0d
 			description: ["The Farmer's Delight mod overhauls farming and cooking to be much more engaging."]
 			id: "15CF818C3C1F0DEC"
 			tasks: [{
 				id: "49157E2E7773DDAC"
-				type: "checkmark"
 				title: "Farmer's Delight"
+				type: "checkmark"
 			}]
+			x: -2.0d
+			y: 0.0d
 		}
 		{
-			x: -6.5d
-			y: 0.0d
+			dependencies: ["15CF818C3C1F0DEC"]
 			description: [
 				"The Cooking Pot is a new crafting station used for making unique meals. It must be placed over a heat source, like a campfire or stove."
 				""
 				"Most food made in the cooking pot requires a container, like a bowl. These are placed in a dedicated slot in the GUI. "
 			]
-			dependencies: ["15CF818C3C1F0DEC"]
 			id: "7D2B0AB210EC480E"
 			tasks: [{
 				id: "7555EAC1F9609884"
-				type: "item"
 				item: "farmersdelight:cooking_pot"
+				type: "item"
 			}]
+			x: -6.5d
+			y: 0.0d
 		}
 		{
-			x: -6.0d
-			y: -1.0d
-			description: ["The Skillet is another way of cooking foods. Shift-right-click to place above a heat source, then insert food. Alternatively, you can hold food in your offhand and the skillet in you mainhand, then hold right click while near a heat source to cook from your inventory."]
 			dependencies: ["15CF818C3C1F0DEC"]
+			description: ["The Skillet is another way of cooking foods. Shift-right-click to place above a heat source, then insert food. Alternatively, you can hold food in your offhand and the skillet in you mainhand, then hold right click while near a heat source to cook from your inventory."]
 			id: "6166F5B0AF729BBE"
 			tasks: [{
 				id: "5C91B91A403B885A"
-				type: "item"
 				item: {
-					id: "farmersdelight:skillet"
 					Count: 1b
+					id: "farmersdelight:skillet"
 					tag: {
 						Damage: 0
 					}
 				}
+				type: "item"
 			}]
+			x: -6.0d
+			y: -1.0d
 		}
 		{
-			x: -6.0d
-			y: 1.0d
-			description: ["The Stove functions essentially like a campfire, acting as a heat source for cooking pots and skillets."]
 			dependencies: ["15CF818C3C1F0DEC"]
+			description: ["The Stove functions essentially like a campfire, acting as a heat source for cooking pots and skillets."]
 			id: "1AC9F9275D91F443"
 			tasks: [{
 				id: "355AFA79B78F857B"
-				type: "item"
 				item: "farmersdelight:stove"
+				type: "item"
 			}]
+			x: -6.0d
+			y: 1.0d
 		}
 		{
-			x: -7.0d
-			y: -2.0d
-			description: ["The Cutting Board is a special crafting station for cutting meat, as well as other things. Right-click to insert, then right-click with the knife or other tool to cut. (Pro tip: offhand the item to be cut and then hold right click to cut fast)."]
 			dependencies: ["15CF818C3C1F0DEC"]
+			description: ["The Cutting Board is a special crafting station for cutting meat, as well as other things. Right-click to insert, then right-click with the knife or other tool to cut. (Pro tip: offhand the item to be cut and then hold right click to cut fast)."]
 			id: "4AABDBF469D74E26"
 			tasks: [{
 				id: "2CB7D0DCD8DAEA47"
-				type: "item"
 				item: "farmersdelight:cutting_board"
+				type: "item"
 			}]
+			x: -7.0d
+			y: -2.0d
 		}
 		{
-			x: -8.0d
-			y: 0.0d
-			description: ["The Basket is a simple storage container. It acts like a hopper, inserting items near its open face."]
 			dependencies: ["15CF818C3C1F0DEC"]
+			description: ["The Basket is a simple storage container. It acts like a hopper, inserting items near its open face."]
 			id: "3143A91994875ACB"
 			tasks: [{
 				id: "1A06E39BD331518D"
-				type: "item"
 				item: "farmersdelight:basket"
+				type: "item"
 			}]
+			x: -8.0d
+			y: 0.0d
 		}
 		{
-			title: "Rich Soil"
-			x: -7.0d
-			y: 2.0d
+			dependencies: ["15CF818C3C1F0DEC"]
 			description: [
 				"Rich Soil is a higher-quality farmland. As long as it's hydrated, it will speed up crop growth, and turn mushrooms planted on top into mushroom colonies."
 				""
 				"To acquire it, leave some compost out in the sun, ideally near water and activators, like mushrooms."
 			]
-			dependencies: ["15CF818C3C1F0DEC"]
 			id: "5EAAA312DB041A73"
 			tasks: [
 				{
 					id: "46A5E1FBA02A294E"
-					type: "item"
 					item: "farmersdelight:organic_compost"
+					type: "item"
 				}
 				{
 					id: "52110131F03A19E2"
-					type: "item"
 					item: "farmersdelight:rich_soil"
+					type: "item"
 				}
 			]
+			title: "Rich Soil"
+			x: -7.0d
+			y: 2.0d
 		}
 		{
-			icon: "minecraft:hay_block"
-			x: 0.0d
-			y: -2.0d
 			description: [
 				"Place a carved pumpkin atop a hay bale to create a straw golem! These little guys will harvest your crops for you."
 				""
@@ -541,13 +537,17 @@
 				""
 				"They don't work for free, however. They need to be fed apples every once in a while, or else they'll throw a fit and refuse to work!"
 			]
+			icon: "minecraft:hay_block"
 			id: "37F85A3C9E1C99A6"
 			tasks: [{
 				id: "209102550824112C"
-				type: "checkmark"
 				title: "Straw Golem"
+				type: "checkmark"
 			}]
+			x: 0.0d
+			y: -2.0d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["A guide to the culinary arts."]
+	title: "Yummy Snacks"
 }

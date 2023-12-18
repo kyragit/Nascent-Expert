@@ -1,18 +1,14 @@
 {
-	id: "2A123BE92C8C8D9E"
-	group: "36C3CA17FE4F12AD"
-	order_index: 7
-	filename: "decoration"
-	title: "Decoration"
-	icon: "create:cut_andesite_bricks"
-	subtitle: ["Turning your house into a home!"]
-	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "decoration"
+	group: "36C3CA17FE4F12AD"
+	icon: "create:cut_andesite_bricks"
+	id: "2A123BE92C8C8D9E"
+	order_index: 7
+	quest_links: [ ]
 	quests: [
 		{
-			title: "Block Carpentry"
-			x: 0.0d
-			y: 0.0d
 			description: [
 				"Ever wished this one particular block had a slab variant? Or wanted more fence types? Block Carpentry lets you do this and much, much more!"
 				""
@@ -23,14 +19,14 @@
 			id: "0F2EADF997F2EF49"
 			tasks: [{
 				id: "33B84962F6D196DB"
-				type: "item"
 				item: "blockcarpentry:frameblock"
+				type: "item"
 			}]
+			title: "Block Carpentry"
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			title: "Fantasy's Furniture"
-			x: 2.0d
-			y: 0.0d
 			description: [
 				"Make a Furniture Station and create some beautiful medieval-style furniture! The Furniture Station uses wood, clay, and stone to craft all the different furnitures for simplicity's sake."
 				""
@@ -39,14 +35,14 @@
 			id: "407761FFB25D9AED"
 			tasks: [{
 				id: "7317C6858B0FC193"
-				type: "item"
 				item: "fantasyfurniture:furniture_station"
+				type: "item"
 			}]
+			title: "Fantasy's Furniture"
+			x: 2.0d
+			y: 0.0d
 		}
 		{
-			title: "Macaw's Roofs"
-			x: -2.0d
-			y: 0.0d
 			description: [
 				"Macaw's Roofs has hundreds of options for great looking roofing blocks, event supporting many modded wood types!"
 				""
@@ -55,26 +51,26 @@
 			id: "5AA9CA3842FD115A"
 			tasks: [{
 				id: "1BE5EF46E6A59FB4"
-				type: "item"
 				item: "mcwroofs:roofing_hammer"
+				type: "item"
 			}]
+			title: "Macaw's Roofs"
+			x: -2.0d
+			y: 0.0d
 		}
 		{
-			icon: "createdeco:worn_bricks"
-			x: 0.0d
-			y: -2.0d
 			description: ["The Create Deco mod has lots of different types of bricks for all your brick-laying needs."]
+			icon: "createdeco:worn_bricks"
 			id: "050AEE52755C5305"
 			tasks: [{
 				id: "630BF59AD8FC118D"
-				type: "checkmark"
 				title: "Create Deco"
+				type: "checkmark"
 			}]
+			x: 0.0d
+			y: -2.0d
 		}
 		{
-			title: "Fairy Lights"
-			x: 0.0d
-			y: 2.0d
 			description: [
 				"The Fairy Lights mod has a bunch of very cute hanging lights and flags! Simply place down the hanging lights and right-click with the light you want."
 				""
@@ -83,95 +79,99 @@
 			id: "19F50EB317825DA0"
 			tasks: [{
 				id: "3F29AE96396B4AA2"
-				type: "item"
 				item: {
-					id: "fairylights:hanging_lights"
 					Count: 1b
+					id: "fairylights:hanging_lights"
 					tag: {
-						string: "fairylights:black_string"
 						pattern: [{
-							id: "fairylights:fairy_light"
 							Count: 1b
+							id: "fairylights:fairy_light"
 							tag: {
 								color: 16383998
 							}
 						}]
+						string: "fairylights:black_string"
 					}
 				}
+				type: "item"
 			}]
+			title: "Fairy Lights"
+			x: 0.0d
+			y: 2.0d
 		}
 		{
-			title: "ManyIdeas Doors"
-			icon: "manyideas_doors:door_special_end"
-			x: 2.0d
-			y: -2.0d
 			description: [
 				"Make a table saw and create some majestic doors from the ManyIdeas Doors mod."
 				""
 				"This mod has many door variants, and even some huge doors for your dramatic entrance."
 			]
+			icon: "manyideas_doors:door_special_end"
 			id: "07641719203CC00A"
 			tasks: [{
 				id: "4E51DC074FF06C44"
-				type: "item"
 				item: {
-					id: "itemfilters:or"
 					Count: 1b
+					id: "itemfilters:or"
 					tag: {
 						items: [
 							{
+								Count: 1b
 								id: "manyideas_core:table_saw_diamond"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "manyideas_core:table_saw_iron"
-								Count: 1b
 							}
 							{
-								id: "manyideas_core:table_saw_stone"
 								Count: 1b
+								id: "manyideas_core:table_saw_stone"
 							}
 						]
 					}
 				}
+				type: "item"
 			}]
+			title: "ManyIdeas Doors"
+			x: 2.0d
+			y: -2.0d
 		}
 		{
-			icon: "cfm:spruce_bedside_cabinet"
-			x: -2.0d
-			y: -2.0d
 			description: ["MrCrayfish's Furniture Mod has tons of great furniture options for all sorts of styles! It even has mailboxes and a post office that let you send items to your friends :)"]
+			icon: "cfm:spruce_bedside_cabinet"
 			id: "637C90A4356C37F9"
 			tasks: [{
 				id: "5121D63858960D14"
-				type: "checkmark"
 				title: "MrCrayfish's Furniture Mod"
+				type: "checkmark"
 			}]
+			x: -2.0d
+			y: -2.0d
 		}
 		{
-			icon: "simplylight:illuminant_block_on"
-			x: 2.0d
-			y: 2.0d
 			description: ["The Simply Light mod provides a bunch of very clean, neutral-looking lights for any occasion."]
+			icon: "simplylight:illuminant_block_on"
 			id: "562427B7C25EF079"
 			tasks: [{
 				id: "49BA23B623B61792"
-				type: "checkmark"
 				title: "Simply Lights"
+				type: "checkmark"
 			}]
+			x: 2.0d
+			y: 2.0d
 		}
 		{
-			title: "Macaw's Bridges"
-			x: -2.0d
-			y: 2.0d
 			description: ["Make beautiful bridges with the Macaw's Bridges mod! Perfect for treehouses or towers."]
 			id: "75E3C34D7AB783CD"
 			tasks: [{
 				id: "07CB2A7FB07A22D2"
-				type: "item"
 				item: "mcwbridges:pliers"
+				type: "item"
 			}]
+			title: "Macaw's Bridges"
+			x: -2.0d
+			y: 2.0d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["Turning your house into a home!"]
+	title: "Decoration"
 }

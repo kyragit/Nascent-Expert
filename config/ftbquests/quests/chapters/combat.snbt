@@ -1,24 +1,20 @@
 {
-	id: "60C6E8A4AC0E8493"
-	group: "36C3CA17FE4F12AD"
-	order_index: 2
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
 	filename: "combat"
-	title: "Combat"
+	group: "36C3CA17FE4F12AD"
 	icon: {
-		id: "minecraft:iron_sword"
 		Count: 1b
+		id: "minecraft:iron_sword"
 		tag: {
 			Damage: 0
 		}
 	}
-	subtitle: ["How to avoid dying horribly."]
-	default_quest_shape: ""
-	default_hide_dependency_lines: false
+	id: "60C6E8A4AC0E8493"
+	order_index: 2
+	quest_links: [ ]
 	quests: [
 		{
-			icon: "minecraft:feather"
-			x: 0.0d
-			y: 0.0d
 			description: [
 				"You may have noticed the new bar above your hunger bar. These are your feathers."
 				""
@@ -28,23 +24,17 @@
 				""
 				"Feathers are also used for certain advanced parkour maneuvers; though you likely don't know how to perform any of these as of yet."
 			]
+			icon: "minecraft:feather"
 			id: "22A99DA61F14A375"
 			tasks: [{
 				id: "4B3FE8647C4AA327"
-				type: "checkmark"
 				title: "Feathers"
+				type: "checkmark"
 			}]
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			icon: {
-				id: "simplyswords:iron_scythe"
-				Count: 1b
-				tag: {
-					Damage: 0
-				}
-			}
-			x: 2.0d
-			y: 0.0d
 			description: [
 				"Gone are the days of the janky point-and-click adventure game that is minecraft combat. Weapons now actually take time to swing, and you cannot attack faster than your weapon's attack speed."
 				""
@@ -52,172 +42,182 @@
 				""
 				"Different weapons also have unique movesets, which affects how they swing and hit enemies. For example, a hammer might swing at everything nearby, whereas a spear might require more precision."
 			]
+			icon: {
+				Count: 1b
+				id: "simplyswords:iron_scythe"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "20C1E18D03E42151"
 			tasks: [{
 				id: "1C895969A0844731"
-				type: "checkmark"
 				title: "No more spam clicking?"
+				type: "checkmark"
 			}]
+			x: 2.0d
+			y: 0.0d
 		}
 		{
-			title: "New Arrows"
-			icon: "archers_paradox:lightning_arrow"
-			x: -2.0d
-			y: 0.0d
 			description: ["A whole host of new arrows are now available. They can be made in a fletching table, as can normal arrows at a reduced cost!"]
+			icon: "archers_paradox:lightning_arrow"
 			id: "12FFF7177F4DC3F3"
+			rewards: [{
+				count: 16
+				id: "6AADE5D4EEA7750D"
+				item: "minecraft:feather"
+				type: "item"
+			}]
 			tasks: [{
 				id: "50E718480F39401F"
-				type: "item"
 				item: "minecraft:fletching_table"
-			}]
-			rewards: [{
-				id: "6AADE5D4EEA7750D"
 				type: "item"
-				item: "minecraft:feather"
-				count: 16
 			}]
+			title: "New Arrows"
+			x: -2.0d
+			y: 0.0d
 		}
 		{
-			title: "Runic Weapons"
-			x: 0.0d
-			y: 2.0d
 			description: [
 				"Ah, I see you've found a runic weapon from another time. These weapons, aside from being made from a fabulously strong material, each have a unique power when used. "
 				""
 				"It is said that the Forgemasters would put a piece of their very being into each one of these weapons. Treat it with respect, Traveller."
 			]
-			invisible: true
 			id: "0C60F762C1E42070"
+			invisible: true
 			tasks: [{
 				id: "12E3A139EC9A8911"
-				type: "item"
-				title: "Any Runic Weapon"
 				item: {
-					id: "itemfilters:id_regex"
 					Count: 1b
+					id: "itemfilters:id_regex"
 					tag: {
 						value: "simplyswords:runic_.*"
 					}
 				}
+				title: "Any Runic Weapon"
+				type: "item"
 			}]
+			title: "Runic Weapons"
+			x: 0.0d
+			y: 2.0d
 		}
 		{
-			title: "Affixes"
-			icon: {
-				id: "minecraft:netherite_sword"
-				Count: 1b
-				tag: {
-					Damage: 0
-				}
-			}
-			x: 0.0d
-			y: -2.0d
 			description: [
 				"Sometimes, especially when exploring places of great power, you will find items infused with the very Aether itself. These are known as Affixes."
 				""
 				"Affixes enhance the properties of the item or the wielder, and range from minor upgrades to world-ending artifacts, depending on the concentration of Aether."
 			]
-			id: "1FB231D52BC63B73"
-			tasks: [{
-				id: "1EB2A858488DD89C"
-				type: "checkmark"
-				title: "Affixes"
-			}]
-		}
-		{
-			x: -4.0d
-			y: 0.0d
-			description: ["The quiver makes it much less of a hassle to use multiple different arrow types. Simply right-click a stack of arrows onto the quiver in your inventory to put them inside. Then, put the quiver in your 'back' slot and press the 'quiver' keybind ('v' by default). You can then select which arrow to use!"]
-			dependencies: ["12FFF7177F4DC3F3"]
-			id: "2AF41D3980176EFB"
-			tasks: [{
-				id: "0F55CCA7F21AE529"
-				type: "item"
-				item: {
-					id: "supplementaries:quiver"
-					Count: 1b
-					ForgeCaps: {
-						Parent: {
-							Size: 6
-							Items: [ ]
-							SelectedSlot: 0
-						}
-					}
-				}
-			}]
-			rewards: [
-				{
-					id: "1F9311FBE333E9B1"
-					type: "item"
-					item: "archers_paradox:quartz_arrow"
-					count: 4
-				}
-				{
-					id: "13F7F3BE51B0AEF6"
-					type: "item"
-					item: "archers_paradox:diamond_arrow"
-					count: 4
-				}
-				{
-					id: "5919DA0367091ED7"
-					type: "item"
-					item: "archers_paradox:ender_arrow"
-					count: 4
-				}
-				{
-					id: "4BE0F3E4B9BFF9FC"
-					type: "item"
-					item: "archers_paradox:phantasmal_arrow"
-					count: 4
-				}
-				{
-					id: "421B30319A8A60A9"
-					type: "item"
-					item: "archers_paradox:blaze_arrow"
-					count: 4
-				}
-				{
-					id: "058BD77A0BDAC066"
-					type: "item"
-					item: "archers_paradox:frost_arrow"
-					count: 4
-				}
-			]
-		}
-		{
 			icon: {
-				id: "simplyswords:netherite_warglaive"
 				Count: 1b
+				id: "minecraft:netherite_sword"
 				tag: {
 					Damage: 0
 				}
 			}
-			x: 4.0d
+			id: "1FB231D52BC63B73"
+			tasks: [{
+				id: "1EB2A858488DD89C"
+				title: "Affixes"
+				type: "checkmark"
+			}]
+			title: "Affixes"
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["12FFF7177F4DC3F3"]
+			description: ["The quiver makes it much less of a hassle to use multiple different arrow types. Simply right-click a stack of arrows onto the quiver in your inventory to put them inside. Then, put the quiver in your 'back' slot and press the 'quiver' keybind ('v' by default). You can then select which arrow to use!"]
+			id: "2AF41D3980176EFB"
+			rewards: [
+				{
+					count: 4
+					id: "1F9311FBE333E9B1"
+					item: "archers_paradox:quartz_arrow"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "13F7F3BE51B0AEF6"
+					item: "archers_paradox:diamond_arrow"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "5919DA0367091ED7"
+					item: "archers_paradox:ender_arrow"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "4BE0F3E4B9BFF9FC"
+					item: "archers_paradox:phantasmal_arrow"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "421B30319A8A60A9"
+					item: "archers_paradox:blaze_arrow"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "058BD77A0BDAC066"
+					item: "archers_paradox:frost_arrow"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "0F55CCA7F21AE529"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							SelectedSlot: 0
+							Size: 6
+						}
+					}
+					id: "supplementaries:quiver"
+				}
+				type: "item"
+			}]
+			x: -4.0d
 			y: 0.0d
-			description: ["Weapons that are not two-handed can be dual wielded in lieu of a shield. Any two one-handed weapons may be dual wielded, but weapons with the same moveset will have unique attacks."]
+		}
+		{
 			dependencies: ["20C1E18D03E42151"]
+			description: ["Weapons that are not two-handed can be dual wielded in lieu of a shield. Any two one-handed weapons may be dual wielded, but weapons with the same moveset will have unique attacks."]
+			icon: {
+				Count: 1b
+				id: "simplyswords:netherite_warglaive"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "4FBFC600E415ABAD"
 			tasks: [{
 				id: "123B77D0F773EDAA"
-				type: "checkmark"
 				title: "Dual Wielding"
+				type: "checkmark"
 			}]
+			x: 4.0d
+			y: 0.0d
 		}
 		{
+			dependencies: ["1FB231D52BC63B73"]
+			description: ["Affix items will sometimes have a gem socket. This allows you to insert special gems to augment the item's power even more."]
+			id: "092CFEEF555357FA"
+			tasks: [{
+				advancement: "apotheosis:affix/gem"
+				criterion: ""
+				id: "6FD5C93B9E14C8E4"
+				type: "advancement"
+			}]
 			title: "Gems \\& Socketing"
 			x: 0.0d
 			y: -4.0d
-			description: ["Affix items will sometimes have a gem socket. This allows you to insert special gems to augment the item's power even more."]
-			dependencies: ["1FB231D52BC63B73"]
-			id: "092CFEEF555357FA"
-			tasks: [{
-				id: "6FD5C93B9E14C8E4"
-				type: "advancement"
-				advancement: "apotheosis:affix/gem"
-				criterion: ""
-			}]
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["How to avoid dying horribly."]
+	title: "Combat"
 }

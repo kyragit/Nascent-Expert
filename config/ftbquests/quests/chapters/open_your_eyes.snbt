@@ -1,26 +1,18 @@
 {
-	id: "1CF007EFA8A818EB"
-	group: ""
-	order_index: 0
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
 	filename: "open_your_eyes"
-	title: "Open Your Eyes"
+	group: ""
 	icon: {
-		id: "enigmaticlegacy:extradimensional_eye"
 		Count: 1b
+		id: "enigmaticlegacy:extradimensional_eye"
 		tag: { }
 	}
-	subtitle: ["An introduction to Nascent: Expert."]
-	default_quest_shape: ""
-	default_hide_dependency_lines: false
+	id: "1CF007EFA8A818EB"
+	order_index: 0
+	quest_links: [ ]
 	quests: [
 		{
-			icon: {
-				id: "enigmaticlegacy:extradimensional_eye"
-				Count: 1b
-				tag: { }
-			}
-			x: 0.0d
-			y: 0.0d
 			description: [
 				"Welcome, Traveller. The world awaits."
 				""
@@ -28,17 +20,22 @@
 				""
 				"Oh, also, please don't put on the ring."
 			]
+			icon: {
+				Count: 1b
+				id: "enigmaticlegacy:extradimensional_eye"
+				tag: { }
+			}
 			id: "54AABF574DEEFF57"
 			tasks: [{
 				id: "712440114ED31450"
-				type: "checkmark"
 				title: "The World Awaits"
+				type: "checkmark"
 			}]
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			icon: "enigmaticlegacy:cursed_ring"
-			x: 3.0d
-			y: 0.0d
+			dependencies: ["54AABF574DEEFF57"]
 			description: [
 				"This cursed ring seems to worm its way into the hands of all of your kin. "
 				""
@@ -46,18 +43,18 @@
 				""
 				"That being said, bearers of the Curses are granted access to artifacts of the gods themselves - if they can survive the challenge."
 			]
-			dependencies: ["54AABF574DEEFF57"]
+			icon: "enigmaticlegacy:cursed_ring"
 			id: "562B95C0055CD04A"
 			tasks: [{
 				id: "42496719AB96F302"
-				type: "checkmark"
 				title: "The Ring of the Seven Curses"
+				type: "checkmark"
 			}]
+			x: 3.0d
+			y: 0.0d
 		}
 		{
-			icon: "quark:tiny_potato"
-			x: 5.0d
-			y: 0.0d
+			dependencies: ["562B95C0055CD04A"]
 			description: [
 				"Did you not read the f-nevermind. Firstly, pause the game for a few minutes to think about what you did."
 				""
@@ -67,18 +64,18 @@
 				""
 				"Alternatively, you could simply make a new world. I'd recommend this if you don't like being in constant fear of death."
 			]
-			dependencies: ["562B95C0055CD04A"]
+			icon: "quark:tiny_potato"
 			id: "5D87BB6E600BCD6D"
 			tasks: [{
 				id: "2BC07A6B445101A7"
-				type: "checkmark"
 				title: "Help, I equipped the ring"
+				type: "checkmark"
 			}]
+			x: 5.0d
+			y: 0.0d
 		}
 		{
-			title: "Where's my minimap??"
-			x: -3.0d
-			y: 0.0d
+			dependencies: ["54AABF574DEEFF57"]
 			description: [
 				"There's no built-in map in this world. Instead, you'll have to craft one yourself."
 				""
@@ -88,80 +85,80 @@
 				""
 				"Also, cartography tables can be used to copy atlases or to add many empty maps at once. "
 			]
-			dependencies: ["54AABF574DEEFF57"]
 			id: "62C2B185DB1EF0E8"
+			rewards: [{
+				count: 4
+				id: "260E2CA234696E94"
+				item: "minecraft:map"
+				type: "item"
+			}]
 			tasks: [{
 				id: "039A8DBC4F44D860"
-				type: "item"
 				item: "map_atlases:atlas"
-			}]
-			rewards: [{
-				id: "260E2CA234696E94"
 				type: "item"
-				item: "minecraft:map"
-				count: 4
 			}]
+			title: "Where's my minimap??"
+			x: -3.0d
+			y: 0.0d
 		}
 		{
-			icon: "minecraft:white_banner"
-			x: -5.0d
-			y: 0.0d
+			dependencies: ["62C2B185DB1EF0E8"]
 			description: [
 				"Waypoints are made in the atlas in the same way as vanilla maps. Right-clicking a banner with the atlas will mark it on your map. Also, naming the banner in an anvil will let you name your waypoints."
 				""
 				"If you don't like that method, there are some other blocks you can use similarly: sign posts, beds, beacons, nether portals, conduits, lodestones, respawn anchors, and flags."
 			]
-			dependencies: ["62C2B185DB1EF0E8"]
+			icon: "minecraft:white_banner"
 			id: "010A5BC1F599E6F3"
-			tasks: [{
-				id: "1AEE08B4A653EB73"
-				type: "checkmark"
-				title: "Making Waypoints"
-			}]
 			rewards: [{
 				id: "4CBC0B9E696CE983"
-				type: "item"
 				item: "minecraft:white_banner"
+				type: "item"
 			}]
+			tasks: [{
+				id: "1AEE08B4A653EB73"
+				title: "Making Waypoints"
+				type: "checkmark"
+			}]
+			x: -5.0d
+			y: 0.0d
 		}
 		{
-			icon: "minecraft:raw_iron"
-			x: 0.0d
-			y: -3.0d
+			dependencies: ["54AABF574DEEFF57"]
 			description: [
 				"Ore generation is completely different from what you may be used to. Ores spawn in huge veins, spread out in different biomes. "
 				""
 				"Large ore veins usually spawn samples on the surface. These can be mined for some nuggets if you wish. "
 			]
-			dependencies: ["54AABF574DEEFF57"]
+			icon: "minecraft:raw_iron"
 			id: "4CEDF008AD0F1A20"
 			tasks: [{
 				id: "34E370284FBEF08C"
-				type: "checkmark"
 				title: "I can't find any ores!"
+				type: "checkmark"
 			}]
+			x: 0.0d
+			y: -3.0d
 		}
 		{
-			icon: "minecraft:stone_bricks"
-			x: 2.0d
-			y: 2.0d
+			dependencies: ["54AABF574DEEFF57"]
 			description: [
 				"Exploring this realm will be key to your progression. Great megastructures await your discovery; but beware, they do not go unguarded."
 				""
 				"Great treasures can be found in dungeons across the world. Some even have unique loot found nowhere else."
 			]
-			dependencies: ["54AABF574DEEFF57"]
+			icon: "minecraft:stone_bricks"
 			id: "06B37B0B9B130678"
 			tasks: [{
 				id: "55D62D8D2F8D996E"
-				type: "checkmark"
 				title: "Great Structures"
+				type: "checkmark"
 			}]
+			x: 2.0d
+			y: 2.0d
 		}
 		{
-			title: "Mobile Bases"
-			x: 2.0d
-			y: -2.0d
+			dependencies: ["54AABF574DEEFF57"]
 			description: [
 				"The Nomadic Tents mod allows for true movable bases with no hassle. Tents can be upgraded to be larger, and to allow digging down further."
 				""
@@ -173,24 +170,24 @@
 				""
 				"Careful not to lose the tent item, of course. It's technically possible to get it back, but go to the mod's page for help with that."
 			]
-			dependencies: ["54AABF574DEEFF57"]
 			id: "2CBF848E2C9CEE46"
 			tasks: [{
 				id: "15604501FABA952E"
-				type: "item"
 				item: {
-					id: "nomadictents:mallet"
 					Count: 1b
+					id: "nomadictents:mallet"
 					tag: {
 						Damage: 0
 					}
 				}
+				type: "item"
 			}]
+			title: "Mobile Bases"
+			x: 2.0d
+			y: -2.0d
 		}
 		{
-			title: "Sea Travel, in Style"
-			x: -2.0d
-			y: -2.0d
+			dependencies: ["54AABF574DEEFF57"]
 			description: [
 				"Want something better than a rinky-dink regular boat? Use the Small Ships mod to sail the high seas in style!"
 				""
@@ -200,44 +197,47 @@
 				""
 				"Note: These are currently broken on dedicated servers :("
 			]
-			dependencies: ["54AABF574DEEFF57"]
 			id: "0C9C9DD103A82BB1"
 			tasks: [{
 				id: "7C05A4656B65F65C"
-				type: "item"
 				item: "smallships:sail_item"
+				type: "item"
 			}]
+			title: "Sea Travel, in Style"
+			x: -2.0d
+			y: -2.0d
 		}
 		{
-			icon: "minecraft:oak_wood"
-			x: -2.0d
-			y: 2.0d
+			dependencies: ["54AABF574DEEFF57"]
 			description: [
 				"In order to proceed, you'll need a summoning altar, which requires a wither skeleton skull. I'd recommend exploring until you find a structure to raid for gear before venturing into the nether."
 				""
 				"You will face great enemies before progressing, so getting adequate weaponry and armor should be a priority."
 			]
-			dependencies: ["54AABF574DEEFF57"]
+			icon: "minecraft:oak_wood"
 			id: "046D3FE44220C22B"
 			tasks: [{
 				id: "3A0E7F7C5BFBCCF6"
-				type: "checkmark"
 				title: "What should I do?"
+				type: "checkmark"
 			}]
+			x: -2.0d
+			y: 2.0d
 		}
 		{
-			icon: "minecraft:sunflower"
-			x: 0.0d
-			y: 3.0d
-			description: ["This pack comes pre-installed with Oculus, and is fully compatible with shaders. If you'd like to play with shaders, simply drag and drop the file into your shaders folder and enable it in the settings!"]
 			dependencies: ["54AABF574DEEFF57"]
+			description: ["This pack comes pre-installed with Oculus, and is fully compatible with shaders. If you'd like to play with shaders, simply drag and drop the file into your shaders folder and enable it in the settings!"]
+			icon: "minecraft:sunflower"
 			id: "533ECEE1C2EB99FC"
 			tasks: [{
 				id: "47E0A2CA321F0A7C"
-				type: "checkmark"
 				title: "Shaders"
+				type: "checkmark"
 			}]
+			x: 0.0d
+			y: 3.0d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["An introduction to Nascent: Expert."]
+	title: "Open Your Eyes"
 }

@@ -42,7 +42,7 @@ function checkAllDirs(block) {
 
 // Deletes withers if still somehow spawned the normal way
 EntityEvents.spawned('minecraft:wither', event => {
-    if (event.entity.getFullNBT().get('Invul') > 0) {
+    if (event.entity.getNbt().get('Invul') > 0) {
         event.cancel()
     }
 })
@@ -1139,13 +1139,13 @@ function revelation(event) {
 
 PlayerEvents.chat(event => {
     switch (event.message) {
-        //case 'spoil me':
-        //    event.server.runCommand(`say ${secret_words.lightning}`)
-        //    event.server.runCommand(`say ${secret_words.fireball}`)
-        //    event.server.runCommand(`say ${secret_words.slow}`)
-        //    event.server.runCommand(`say ${secret_words.arrows}`)
-        //    event.cancel()
-        //    return
+        case 'spoil me':
+           event.server.runCommand(`say ${secret_words.lightning}`)
+           event.server.runCommand(`say ${secret_words.fireball}`)
+           event.server.runCommand(`say ${secret_words.slow}`)
+           event.server.runCommand(`say ${secret_words.arrows}`)
+           event.cancel()
+           return
         case secret_words.lightning:
             if (!event.player.getTags().contains('had_revelation')) {
                 revelation(event)

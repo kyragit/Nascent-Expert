@@ -1,227 +1,222 @@
 {
-	id: "5658CC0093FF9CC1"
-	group: "36C3CA17FE4F12AD"
-	order_index: 0
-	filename: "medieval_progression"
-	title: "The Path"
-	icon: "summoningrituals:altar"
-	subtitle: ["Progressing through the Age of Discovery."]
-	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "medieval_progression"
+	group: "36C3CA17FE4F12AD"
+	icon: "summoningrituals:altar"
+	id: "5658CC0093FF9CC1"
+	order_index: 0
+	quest_links: [ ]
 	quests: [
 		{
-			x: 0.0d
-			y: 3.0d
-			shape: "diamond"
-			description: ["You have proven yourself capable. With this alloy, great technology will be constructed."]
 			dependencies: ["2F56A483E8CF2367"]
+			description: ["You have proven yourself capable. With this alloy, great technology will be constructed."]
 			hide: true
-			size: 1.25d
 			id: "7B2817643B1C1080"
+			shape: "diamond"
+			size: 1.25d
 			tasks: [{
 				id: "04164AD84D144867"
-				type: "item"
 				item: "create:andesite_alloy"
+				type: "item"
 			}]
+			x: 0.0d
+			y: 3.0d
 		}
 		{
-			x: 0.0d
-			y: 0.0d
-			description: ["The zenith of perfection, a glowing star, a singularity. Will it be enough?"]
 			dependencies: [
 				"5B98B03795706A78"
 				"34F3EA58E776103E"
 				"50495DF13D4A3590"
 				"256A6AF62DB872DD"
 			]
+			description: ["The zenith of perfection, a glowing star, a singularity. Will it be enough?"]
 			hide: true
 			id: "20BD8541D53F6B51"
 			tasks: [{
 				id: "3CB9AD7A737092A1"
-				type: "item"
 				item: "kubejs:star_of_quintessence"
+				type: "item"
 			}]
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			x: -2.5d
-			y: -5.0d
 			dependencies: ["7716B343B0B187BA"]
 			hide: true
-			invisible: true
 			id: "5B98B03795706A78"
+			invisible: true
 			tasks: [{
 				id: "7BD9C19DCC9E4A82"
-				type: "item"
 				item: "meetyourfight:mossy_tooth"
+				type: "item"
 			}]
+			x: -2.5d
+			y: -5.0d
 		}
 		{
-			x: 0.0d
-			y: -5.5d
 			dependencies: ["2ADC2356E08232BF"]
 			hide: true
-			invisible: true
 			id: "256A6AF62DB872DD"
+			invisible: true
 			tasks: [{
 				id: "69E7EF9F7922637D"
-				type: "item"
 				item: "meetyourfight:phantoplasm"
+				type: "item"
 			}]
+			x: 0.0d
+			y: -5.5d
 		}
 		{
-			x: 2.5d
-			y: -5.0d
 			dependencies: ["79A84972F2690DEB"]
 			hide: true
-			invisible: true
 			id: "34F3EA58E776103E"
+			invisible: true
 			tasks: [{
 				id: "116E3872C196ACFB"
-				type: "item"
 				item: "meetyourfight:fortunes_favor"
+				type: "item"
 			}]
+			x: 2.5d
+			y: -5.0d
 		}
 		{
-			x: 0.0d
-			y: -1.5d
 			dependencies: ["0066B11FD09BF2F9"]
 			hide: true
 			id: "50495DF13D4A3590"
 			tasks: [{
 				id: "5D5300696E2DB433"
-				type: "item"
 				item: "minecraft:nether_star"
+				type: "item"
 			}]
+			x: 0.0d
+			y: -1.5d
 		}
 		{
-			x: -3.5d
-			y: -7.0d
 			description: ["Open a gateway and summon the Swampjaw, a bony beast from a moss-filled place."]
-			size: 1.25d
 			id: "7716B343B0B187BA"
+			size: 1.25d
 			tasks: [{
 				id: "2F2408B49478A4A6"
-				type: "item"
 				item: {
-					id: "gateways:gate_pearl"
 					Count: 1b
+					id: "gateways:gate_pearl"
 					tag: {
 						gateway: "custom:swampjaw"
 					}
 				}
 				match_nbt: true
+				type: "item"
 			}]
+			x: -3.5d
+			y: -7.0d
 		}
 		{
-			x: 0.0d
-			y: -7.0d
 			description: ["Something about this Gate Pearl is unsettling. You're not sure what, though..."]
-			size: 1.25d
 			id: "2ADC2356E08232BF"
+			size: 1.25d
 			tasks: [{
 				id: "022C95A5AA9BFE38"
-				type: "item"
 				item: {
-					id: "gateways:gate_pearl"
 					Count: 1b
+					id: "gateways:gate_pearl"
 					tag: {
 						gateway: "custom:bellringer"
 					}
 				}
 				match_nbt: true
+				type: "item"
 			}]
+			x: 0.0d
+			y: -7.0d
 		}
 		{
-			x: 3.5d
-			y: -7.0d
 			description: [
 				"Why is the recipe a seemingly random assortment of items? Why, because it *is* random!"
 				""
 				"The recipe(s) for the Dame Fortuna Gate Pearl are randomly generated per-world. "
 			]
-			size: 1.25d
 			id: "79A84972F2690DEB"
+			size: 1.25d
 			tasks: [{
 				id: "18981E6A91F9C905"
-				type: "item"
 				item: {
-					id: "gateways:gate_pearl"
 					Count: 1b
+					id: "gateways:gate_pearl"
 					tag: {
 						gateway: "custom:dame_fortuna"
 					}
 				}
 				match_nbt: true
+				type: "item"
 			}]
+			x: 3.5d
+			y: -7.0d
 		}
 		{
-			x: 0.0d
-			y: -2.5d
-			description: ["You're so close now."]
 			dependencies: [
 				"19111802285ABD62"
 				"23D512FAF297B1FF"
 				"65D11DBE1125314B"
 			]
+			description: ["You're so close now."]
 			hide: true
 			id: "0066B11FD09BF2F9"
 			tasks: [{
 				id: "5004CA088044210F"
-				type: "item"
 				item: {
-					id: "gateways:gate_pearl"
 					Count: 1b
+					id: "gateways:gate_pearl"
 					tag: {
 						gateway: "custom:wither"
 					}
 				}
 				match_nbt: true
+				type: "item"
 			}]
+			x: 0.0d
+			y: -2.5d
 		}
 		{
-			x: 0.0d
-			y: -4.0d
 			dependencies: ["2ADC2356E08232BF"]
 			hide: true
-			invisible: true
 			id: "23D512FAF297B1FF"
+			invisible: true
 			tasks: [{
 				id: "473BA16136F318B9"
-				type: "item"
 				item: "kubejs:ethereal_bell"
+				type: "item"
 			}]
+			x: 0.0d
+			y: -4.0d
 		}
 		{
-			x: -1.5d
-			y: -3.0d
 			dependencies: ["7716B343B0B187BA"]
 			hide: true
-			invisible: true
 			id: "19111802285ABD62"
+			invisible: true
 			tasks: [{
 				id: "566038B978AFB352"
-				type: "item"
 				item: "kubejs:swampjaw_rib"
+				type: "item"
 			}]
+			x: -1.5d
+			y: -3.0d
 		}
 		{
-			x: 1.5d
-			y: -3.0d
 			dependencies: ["79A84972F2690DEB"]
 			hide: true
-			invisible: true
 			id: "65D11DBE1125314B"
+			invisible: true
 			tasks: [{
 				id: "47E5752F55E1287B"
-				type: "item"
 				item: "kubejs:queen_of_diamonds"
+				type: "item"
 			}]
+			x: 1.5d
+			y: -3.0d
 		}
 		{
-			title: "The Summoning Altar"
-			icon: "summoningrituals:altar"
-			x: -1.0d
-			y: -8.0d
 			description: [
 				"The Summoning Altar is vital to creating the powerful artifacts required to progress."
 				""
@@ -231,23 +226,18 @@
 				""
 				"Additionally, some recipes may have other requirements, like a certain block below the altar. These can be seen in JEI."
 			]
+			icon: "summoningrituals:altar"
 			id: "430FEF82D170AAD1"
 			tasks: [{
 				id: "48EEABF85E0AA66C"
-				type: "item"
 				item: "summoningrituals:altar"
+				type: "item"
 			}]
+			title: "The Summoning Altar"
+			x: -1.0d
+			y: -8.0d
 		}
 		{
-			icon: {
-				id: "gateways:gate_pearl"
-				Count: 1b
-				tag: {
-					gateway: "custom:swampjaw"
-				}
-			}
-			x: 1.0d
-			y: -8.0d
 			description: [
 				"Using a Gate Pearl will summon powerful enemies from another place and time."
 				""
@@ -257,16 +247,24 @@
 				""
 				"A Gateway will fail to materialize if it cannot find anywhere to safely summon, so don't try any funny business."
 			]
+			icon: {
+				Count: 1b
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "custom:swampjaw"
+				}
+			}
 			id: "740430433073DBE8"
 			tasks: [{
 				id: "076F31C64951EA9B"
-				type: "checkmark"
 				title: "Gateways to Eternity"
+				type: "checkmark"
 			}]
+			x: 1.0d
+			y: -8.0d
 		}
 		{
-			x: 0.0d
-			y: 1.5d
+			dependencies: ["20BD8541D53F6B51"]
 			description: [
 				"With the force of an explosion, the star has been crushed into a brilliant powder."
 				""
@@ -274,15 +272,17 @@
 				""
 				"You feel a strong urge to sprinkle it on some andesite."
 			]
-			dependencies: ["20BD8541D53F6B51"]
 			hide: true
 			id: "2F56A483E8CF2367"
 			tasks: [{
 				id: "3259AB4CA1A2C494"
-				type: "item"
 				item: "kubejs:powdered_determination"
+				type: "item"
 			}]
+			x: 0.0d
+			y: 1.5d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["Progressing through the Age of Discovery."]
+	title: "The Path"
 }

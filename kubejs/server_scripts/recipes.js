@@ -84,7 +84,7 @@ function createRecipes(event) {
         results: [
             {
                 chance: 0.65,
-                item: 'create:crushed_iron_ore'
+                item: 'create:crushed_raw_iron'
             },
             {
                 item: 'minecraft:iron_nugget'
@@ -128,7 +128,7 @@ function createRecipes(event) {
         results: [
             {
                 chance: 0.2,
-                item: 'create:crushed_copper_ore'
+                item: 'create:crushed_raw_copper'
             },
             {
                 chance: 0.2,
@@ -147,7 +147,7 @@ function createRecipes(event) {
         results: [
             {
                 chance: 0.2,
-                item: 'create:crushed_nickel_ore'
+                item: 'create:crushed_raw_nickel'
             },
             {
                 chance: 0.2,
@@ -166,7 +166,7 @@ function createRecipes(event) {
         results: [
             {
                 chance: 0.2,
-                item: 'create:crushed_lead_ore'
+                item: 'create:crushed_raw_lead'
             },
             {
                 chance: 0.2,
@@ -174,7 +174,7 @@ function createRecipes(event) {
             },
             {
                 chance: 0.1,
-                item: 'create:crushed_silver_ore'
+                item: 'create:crushed_raw_silver'
             },
             {
                 chance: 0.1,
@@ -193,7 +193,7 @@ function createRecipes(event) {
         results: [
             {
                 chance: 0.2,
-                item: 'create:crushed_aluminum_ore'
+                item: 'create:crushed_raw_aluminum'
             },
             {
                 chance: 0.2,
@@ -201,7 +201,7 @@ function createRecipes(event) {
             },
             {
                 chance: 0.05,
-                item: 'create:crushed_uranium_ore'
+                item: 'create:crushed_raw_uranium'
             }
         ]
     }).id('kubejs:scorchia_crushing')
@@ -303,7 +303,7 @@ function createRecipes(event) {
         type: 'create:crushing',
         ingredients: [
             {
-                item: 'create:crushed_aluminum_ore'
+                item: 'create:crushed_raw_aluminum'
             }
         ],
         processingTime: 250,
@@ -342,22 +342,22 @@ function createRecipes(event) {
         'uranium',
     ]
     for (let ore of CRUSHED_ORES) {
-        event.remove({id:`create:splashing/crushed_${ore}_ore`})
+        event.remove({id:`create:splashing/crushed_raw_${ore}`})
     }
     for (let ore of CRUSHED_IE_ORES) {
-        event.remove({id:`create:splashing/immersiveengineering/crushed_${ore}_ore`})
+        event.remove({id:`create:splashing/immersiveengineering/crushed_raw_${ore}`})
     }
     event.custom({
         type: 'create:splashing',
         ingredients: [
             {
-                item: 'create:crushed_iron_ore'
+                item: 'create:crushed_raw_iron'
             }
         ],
         results: [
             {
                 chance: 0.6666,
-                item: 'create:crushed_iron_ore'
+                item: 'create:crushed_raw_iron'
             },
             {
                 count: 3,
@@ -377,13 +377,13 @@ function createRecipes(event) {
         type: 'create:splashing',
         ingredients: [
             {
-                item: 'create:crushed_gold_ore'
+                item: 'create:crushed_raw_gold'
             }
         ],
         results: [
             {
                 chance: 0.6666,
-                item: 'create:crushed_gold_ore'
+                item: 'create:crushed_raw_gold'
             },
             {
                 count: 3,
@@ -403,13 +403,13 @@ function createRecipes(event) {
         type: 'create:splashing',
         ingredients: [
             {
-                item: 'create:crushed_copper_ore'
+                item: 'create:crushed_raw_copper'
             }
         ],
         results: [
             {
                 chance: 0.6666,
-                item: 'create:crushed_copper_ore'
+                item: 'create:crushed_raw_copper'
             },
             {
                 count: 3,
@@ -433,13 +433,13 @@ function createRecipes(event) {
         type: 'create:splashing',
         ingredients: [
             {
-                item: 'create:crushed_zinc_ore'
+                item: 'create:crushed_raw_zinc'
             }
         ],
         results: [
             {
                 chance: 0.6666,
-                item: 'create:crushed_zinc_ore'
+                item: 'create:crushed_raw_zinc'
             },
             {
                 count: 3,
@@ -459,13 +459,13 @@ function createRecipes(event) {
         type: 'create:splashing',
         ingredients: [
             {
-                item: 'create:crushed_silver_ore'
+                item: 'create:crushed_raw_silver'
             }
         ],
         results: [
             {
                 chance: 0.6666,
-                item: 'create:crushed_silver_ore'
+                item: 'create:crushed_raw_silver'
             },
             {
                 count: 3,
@@ -485,13 +485,13 @@ function createRecipes(event) {
         type: 'create:splashing',
         ingredients: [
             {
-                item: 'create:crushed_lead_ore'
+                item: 'create:crushed_raw_lead'
             }
         ],
         results: [
             {
                 chance: 0.6666,
-                item: 'create:crushed_lead_ore'
+                item: 'create:crushed_raw_lead'
             },
             {
                 count: 3,
@@ -511,13 +511,13 @@ function createRecipes(event) {
         type: 'create:splashing',
         ingredients: [
             {
-                item: 'create:crushed_nickel_ore'
+                item: 'create:crushed_raw_nickel'
             }
         ],
         results: [
             {
                 chance: 0.6666,
-                item: 'create:crushed_nickel_ore'
+                item: 'create:crushed_raw_nickel'
             },
             {
                 count: 3,
@@ -537,13 +537,13 @@ function createRecipes(event) {
         type: 'create:splashing',
         ingredients: [
             {
-                item: 'create:crushed_aluminum_ore'
+                item: 'create:crushed_raw_aluminum'
             }
         ],
         results: [
             {
                 chance: 0.6666,
-                item: 'create:crushed_aluminum_ore'
+                item: 'create:crushed_raw_aluminum'
             },
             {
                 count: 3,
@@ -563,13 +563,13 @@ function createRecipes(event) {
         type: 'create:splashing',
         ingredients: [
             {
-                item: 'create:crushed_uranium_ore'
+                item: 'create:crushed_raw_uranium'
             }
         ],
         results: [
             {
                 chance: 0.6666,
-                item: 'create:crushed_uranium_ore'
+                item: 'create:crushed_raw_uranium'
             },
             {
                 count: 3,
@@ -2634,14 +2634,14 @@ function dimDungeonsRecipes(event) {
 function gatewayRecipes(event) {
     const MOBS = ['blaze', 'creeper', 'enderman', 'ghast', 'magma_cube', 'shulker', 'skeleton', 'slime', 'spider', 'witch', 'zombie']
 
-    const RANDOM_ITEMS_1 = ['3x minecraft:rabbit_foot', '16x minecraft:prismarine_shard', '16x minecraft:prismarine_crystals', '2x minecraft:nautilus_shell', '16x minecraft:honeycomb', '3x minecraft:name_tag']
-    const RANDOM_ITEMS_2 = ['4x minecraft:poisonous_potato', '8x minecraft:golden_carrot', '4x minecraft:pumpkin_pie', '8x minecraft:glistering_melon_slice', '4x minecraft:pufferfish', '4x minecraft:beetroot_soup', '8x minecraft:glow_berries']
-    const RANDOM_ITEMS_3 = ['#quark:runes', '2x #forge:heads', '#minecraft:music_discs', '2x minecraft:totem_of_undying']
-    const RANDOM_ITEMS_4 = ['minecraft:trident', 'savage_and_ravage:wand_of_freezing', 'alexsmobs:tendon_whip', 'alexsmobs:blood_sprayer', 'savage_and_ravage:cleaver_of_beheading']
-    const RANDOM_ITEMS_5 = ['64x ecologics:azalea_log', '64x minecraft:mangrove_log', '64x byg:aspen_log', '64x byg:cherry_log', '64x byg:jacaranda_log', '64x byg:maple_log', '64x byg:holly_log', '64x byg:fir_log']
-    const RANDOM_ITEMS_6 = ['3x minecraft:netherite_ingot', '8x #forge:storage_blocks/iron', '8x #forge:storage_blocks/gold', '8x #forge:storage_blocks/copper', '4x #forge:storage_blocks/diamond', '8x #forge:storage_blocks/aluminum', '8x #forge:storage_blocks/silver', '8x #forge:storage_blocks/lead', '8x #forge:storage_blocks/nickel', '4x #forge:storage_blocks/uranium']
-    const RANDOM_ITEMS_7 = ['16x #minecraft:candles', '64x #forge:stained_glass_panes', '64x #minecraft:wool_carpets', '64x #forge:concrete', '64x #forge:dyes', '16x #quark:corundum', '8x #the_bumblezone:super_candles', '16x #fairylights:lights', '8x #cfm:general']
-    const RANDOM_ITEMS_8 = ['8x farmersdelight:rice_roll_medley_block', '8x farmersdelight:shepherds_pie_block', '8x farmersdelight:honey_glazed_ham_block', '8x farmersdelight:stuffed_pumpkin_block', '16x farmersdelight:grilled_salmon', '16x farmersdelight:squid_ink_pasta', '16x farmersdelight:steak_and_potatoes', '16x farmersdelight:hamburger', '16x farmersdelight:chicken_sandwich', '16x farmersdelight:roasted_mutton_chops', '16x farmersdelight:chocolate_pie', '16x farmersdelight:apple_pie']
+    const RANDOM_ITEMS_1 = [['minecraft:rabbit_foot', 3], ['minecraft:prismarine_shard', 16], ['minecraft:prismarine_crystals', 16], ['minecraft:nautilus_shell', 2], ['minecraft:honeycomb', 16], ['minecraft:name_tag', 3]]
+    const RANDOM_ITEMS_2 = [['minecraft:poisonous_potato', 4], ['minecraft:golden_carrot', 8], ['minecraft:pumpkin_pie', 4], ['minecraft:glistering_melon_slice', 8], ['minecraft:pufferfish', 4], ['minecraft:beetroot_soup', 4], ['minecraft:glow_berries', 8]]
+    const RANDOM_ITEMS_3 = [['#quark:runes', 1], ['#forge:heads', 2], ['#minecraft:music_discs', 1], ['minecraft:totem_of_undying', 2]]
+    const RANDOM_ITEMS_4 = [['minecraft:trident', 1], ['savage_and_ravage:wand_of_freezing', 1], ['alexsmobs:tendon_whip', 1], ['alexsmobs:blood_sprayer', 1], ['savage_and_ravage:cleaver_of_beheading', 1]]
+    const RANDOM_ITEMS_5 = [['ecologics:azalea_log', 64], ['minecraft:mangrove_log', 64], ['byg:aspen_log', 64], ['byg:cherry_log', 64], ['byg:jacaranda_log', 64], ['byg:maple_log', 64], ['byg:holly_log', 64], ['byg:fir_log', 64]]
+    const RANDOM_ITEMS_6 = [['minecraft:netherite_ingot', 3], ['#forge:storage_blocks/iron', 8], ['#forge:storage_blocks/gold', 8], ['#forge:storage_blocks/copper', 8], ['#forge:storage_blocks/diamond', 4], ['#forge:storage_blocks/aluminum', 8], ['#forge:storage_blocks/silver', 8], ['#forge:storage_blocks/lead', 8], ['#forge:storage_blocks/nickel', 8], ['#forge:storage_blocks/uranium', 4]]
+    const RANDOM_ITEMS_7 = [['#minecraft:candles', 16], ['#forge:stained_glass_panes', 64], ['#minecraft:wool_carpets', 64], ['#forge:concrete', 64], ['#forge:dyes', 64], ['#quark:corundum', 16], ['#the_bumblezone:super_candles', 8], ['#fairylights:lights', 16], ['#cfm:general', 8]]
+    const RANDOM_ITEMS_8 = [['farmersdelight:rice_roll_medley_block', 8], ['farmersdelight:shepherds_pie_block', 8], ['farmersdelight:honey_glazed_ham_block', 8], ['farmersdelight:stuffed_pumpkin_block', 8], ['farmersdelight:grilled_salmon', 16], ['farmersdelight:squid_ink_pasta', 16], ['farmersdelight:steak_and_potatoes', 16], ['farmersdelight:hamburger', 16], ['farmersdelight:chicken_sandwich', 16], ['farmersdelight:roasted_mutton_chops', 16], ['farmersdelight:chocolate_pie', 16], ['farmersdelight:apple_pie', 16]]
 
     const RANDOM_ITEMS_LIST = [RANDOM_ITEMS_1, RANDOM_ITEMS_2, RANDOM_ITEMS_3, RANDOM_ITEMS_3, RANDOM_ITEMS_4, RANDOM_ITEMS_5, RANDOM_ITEMS_6, RANDOM_ITEMS_7, RANDOM_ITEMS_7, RANDOM_ITEMS_8, RANDOM_ITEMS_8]
 
@@ -2793,22 +2793,30 @@ function gatewayRecipes(event) {
         .input(Ingredient.of('minecraft:soul_lantern', 4))
         .sacrifice('quark:wraith')
         .sacrificeRegion(5, 2)
-
+    
     // Makes three random altar recipes based on world seed
     let i = 0
     let random = Utils.newRandom(world_seed)
     while (i < 3) {
+        let r1 = Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))
+        let r2 = Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))
+        let r3 = Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))
+        let r4 = Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))
+        let r5 = Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))
+        let r6 = Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))
+        let r7 = Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))
+        let r8 = Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))
         event.recipes.summoningrituals
             .altar(Ingredient.of('minecraft:ender_pearl'))
             .itemOutput(Item.of('gateways:gate_pearl', '{gateway:"custom:dame_fortuna"}'))
-            .input(Ingredient.of(Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))))
-            .input(Ingredient.of(Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))))
-            .input(Ingredient.of(Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))))
-            .input(Ingredient.of(Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))))
-            .input(Ingredient.of(Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))))
-            .input(Ingredient.of(Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))))
-            .input(Ingredient.of(Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))))
-            .input(Ingredient.of(Utils.randomOf(random, Utils.randomOf(random, RANDOM_ITEMS_LIST))))
+            .input(Ingredient.of(r1[0], r1[1]))
+            .input(Ingredient.of(r2[0], r2[1]))
+            .input(Ingredient.of(r3[0], r3[1]))
+            .input(Ingredient.of(r4[0], r4[1]))
+            .input(Ingredient.of(r5[0], r5[1]))
+            .input(Ingredient.of(r6[0], r6[1]))
+            .input(Ingredient.of(r7[0], r7[1]))
+            .input(Ingredient.of(r8[0], r8[1]))
         i++
     }
 }
@@ -3150,8 +3158,8 @@ function littleLogisticsRecipes(event) {
 
 function apotheosisRecipes(event) {
     event.remove({id:'apotheosis:potion_charm'})
-    event.remove({id:'apotheosis:enchanting/seashelf'})
-    event.remove({id:'apotheosis:enchanting/hellshelf'})
+    event.remove({id:'apotheosis:enchanting/infused_seashelf'})
+    event.remove({id:'apotheosis:enchanting/infused_hellshelf'})
     event.custom({
         type: 'apotheosis:enchanting',
         input: {
@@ -4654,12 +4662,13 @@ function goetyRecipes(event) {
         [
             '   ',
             'OEO',
-            'SSS'
+            'SLS'
         ],
         {
             O: 'minecraft:crying_obsidian',
             E: 'kubejs:evoker_soul',
-            S: 'minecraft:stone_brick_slab'
+            S: 'minecraft:stone_brick_slab',
+            L: 'minecraft:lapis_block'
         }
     ).id('kubejs:cursed_infuser')
     let cursedInfuser = function(input, result, time, id) {
@@ -4670,6 +4679,16 @@ function goetyRecipes(event) {
             cookingTime: time
         }).id(id)
     }
+    event.remove({id:'goety:cursed_ingot_craft'})
+    event.remove({id:'goety:cursed_ingot_burner'})
+    cursedInfuser('graveyard:dark_iron_ingot', 'goety:cursed_ingot', 60, 'kubejs:cursed_ingot_dark_iron')
+    cursedInfuser('immersiveengineering:ingot_silver', 'goety:cursed_ingot', 60, 'kubejs:cursed_ingot_silver')
+    cursedInfuser('immersiveengineering:ingot_uranium', 'goety:cursed_ingot', 60, 'kubejs:cursed_ingot_uranium')
+    event.remove({id:'goety:magic_emerald_craft'})
+    event.remove({id:'goety:savage_tooth_craft'})
+    event.remove({id:'goety:haunted/haunted_sapling_craft'})
+    event.remove({id:'goety:empty_focus_craft'})
+    event.remove({id:'goety:shade/shade_stone_craft'})
     let ritualCraft = function(activator, craft_type, cost, duration, inputs, result, id) {
         for (let i = 0; i < inputs.length; i++) {
             inputs[i] = tagOrItem(inputs[i])
@@ -4740,7 +4759,7 @@ function goetyRecipes(event) {
     )
     event.remove({id:'goety:wind_core'})
     ritualCraft(
-        'goety:empty_focus', 'air', 10, 15, 
+        'goety:empty_focus', 'sky', 10, 15, 
         [
             'minecraft:phantom_membrane', 
             '#forge:feathers', 
@@ -4750,9 +4769,21 @@ function goetyRecipes(event) {
         'goety:wind_core', 
         'kubejs:wind_core'
     )
-    event.remove({id:'goety:biting_focus'})
+    event.remove({id:'goety:mystic_core'})
     ritualCraft(
-        'goety:hunger_core', 'magic', 25, 40, 
+        'goety:empty_focus', 'magic', 10, 15, 
+        [
+            'hexcasting:charged_amethyst', 
+            'minecraft:enchanted_book', 
+            'apotheosis:gem_dust', 
+            'irons_spellbooks:arcane_essence'
+        ], 
+        'goety:mystic_core', 
+        'kubejs:mystic_core'
+    )
+    event.remove({id:'goety:focus/biting_focus'})
+    ritualCraft(
+        'goety:mystic_core', 'magic', 25, 40, 
         [
             'goety:magic_emerald', 
             'goety:magic_emerald',
@@ -4770,9 +4801,9 @@ function goetyRecipes(event) {
         'goety:biting_focus', 
         'kubejs:biting_focus'
     )
-    event.remove({id:'goety:feast_focus'})
+    event.remove({id:'goety:focus/feast_focus'})
     ritualCraft(
-        'goety:biting_focus', 'magic', 25, 40, 
+        'goety:biting_focus', 'magic', 30, 40, 
         [
             'minecraft:ender_pearl', 
             'minecraft:ender_pearl',
@@ -4782,7 +4813,39 @@ function goetyRecipes(event) {
         'goety:feast_focus', 
         'kubejs:feast_focus'
     )
-    event.remove({id:'goety:vexing_focus'})
+    event.remove({id:'goety:focus/teeth_focus'})
+    ritualCraft(
+        'goety:biting_focus', 'magic', 30, 40,
+        [
+            'goety:savage_tooth',
+            'goety:savage_tooth',
+            'goety:savage_tooth',
+            'goety:savage_tooth'
+        ],
+        'goety:teeth_focus',
+        'kubejs:teeth_focus'
+    )
+    event.remove({id:'goety:focus/barricade_focus'})
+    ritualCraft(
+        'goety:mystic_core', 'magic', 30, 60,
+        [
+            '#forge:stone',
+            '#forge:stone',
+            '#forge:stone',
+            '#forge:stone',
+            'supplementaries:bomb',
+            'supplementaries:bomb',
+            'supplementaries:bomb_spiky',
+            'supplementaries:bomb_spiky',
+            'minecraft:amethyst_block',
+            'minecraft:amethyst_block',
+            'minecraft:obsidian',
+            'minecraft:obsidian'
+        ],
+        'goety:barricade_focus',
+        'kubejs:barricade_focus'
+    )
+    event.remove({id:'goety:focus/vexing_focus'})
     ritualCraft(
         'goety:animation_core', 'animation', 50, 60,
         [
@@ -4802,7 +4865,27 @@ function goetyRecipes(event) {
         'goety:vexing_focus',
         'kubejs:vexing_focus'
     )
-    event.remove({id:'goety:iceology_focus'})
+    event.remove({id:'goety:focus/fire_breath_focus'})
+    ritualCraft(
+        'goety:empty_focus', 'magic', 25, 40,
+        [
+            '#minecraft:coals',
+            '#minecraft:coals',
+            '#minecraft:coals',
+            '#minecraft:coals',
+            'minecraft:gunpowder',
+            'minecraft:gunpowder',
+            'minecraft:gunpowder',
+            'minecraft:gunpowder',
+            'minecraft:campfire',
+            'minecraft:campfire',
+            'minecraft:flint_and_steel',
+            'minecraft:flint_and_steel'
+        ],
+        'goety:fire_breath_focus',
+        'kubejs:fire_breath_focus'
+    )
+    event.remove({id:'goety:focus/iceology_focus'})
     ritualCraft(
         'goety:wind_core', 'storm', 25, 60,
         [
@@ -4822,7 +4905,7 @@ function goetyRecipes(event) {
         'goety:iceology_focus',
         'kubejs:iceology_focus'
     )
-    event.remove({id:'goety:illusion_focus'})
+    event.remove({id:'goety:focus/illusion_focus'})
     ritualCraftSacrifice(
         'goety:animation_core', 'animation', 25, 60,
         [
@@ -4843,7 +4926,7 @@ function goetyRecipes(event) {
         'goety:illusion_focus',
         'kubejs:illusion_focus'
     )
-    event.remove({id:'goety:soul_bolt_focus'})
+    event.remove({id:'goety:focus/soul_bolt_focus'})
     ritualCraft(
         'goety:soul_light_focus', 'magic', 25, 40,
         [
@@ -4863,7 +4946,7 @@ function goetyRecipes(event) {
         'goety:soul_bolt_focus',
         'kubejs:soul_bolt_focus'
     )
-    event.remove({id:'goety:soul_light_focus'})
+    event.remove({id:'goety:focus/soul_light_focus'})
     ritualCraft(
         'goety:empty_focus', 'magic', 50, 10,
         [
@@ -4879,7 +4962,7 @@ function goetyRecipes(event) {
         'goety:soul_light_focus',
         'kubejs:soul_light_focus'
     )
-    event.remove({id:'goety:glow_light_focus'})
+    event.remove({id:'goety:focus/glow_light_focus'})
     ritualCraft(
         'goety:empty_focus', 'magic', 50, 10,
         [
@@ -4895,7 +4978,7 @@ function goetyRecipes(event) {
         'goety:glow_light_focus',
         'kubejs:glow_light_focus'
     )
-    event.remove({id:'goety:lightning_focus'})
+    event.remove({id:'goety:focus/lightning_focus'})
     ritualCraft(
         'goety:wind_core', 'storm', 50, 100,
         [
@@ -4915,7 +4998,7 @@ function goetyRecipes(event) {
         'goety:lightning_focus',
         'kubejs:lightning_focus'
     )
-    event.remove({id:'goety:sonic_boom_focus'})
+    event.remove({id:'goety:focus/sonic_boom_focus'})
     ritualCraft(
         'goety:hunger_core', 'magic', 50, 100,
         [
@@ -4935,9 +5018,9 @@ function goetyRecipes(event) {
         'goety:sonic_boom_focus',
         'kubejs:sonic_boom_focus'
     )
-    event.remove({id:'goety:launch_focus'})
+    event.remove({id:'goety:focus/launch_focus'})
     ritualCraft(
-        'goety:wind_core', 'air', 50, 100,
+        'goety:wind_core', 'sky', 50, 100,
         [
             '#custom:aircraft',
             'minecraft:phantom_membrane',
@@ -4947,7 +5030,7 @@ function goetyRecipes(event) {
         'goety:launch_focus',
         'kubejs:launch_focus'
     )
-    event.remove({id:'goety:rotting_focus'})
+    event.remove({id:'goety:focus/rotting_focus'})
     ritualCraftSacrifice(
         'goety:animation_core', 'necroturgy', 25, 40,
         [
@@ -4968,7 +5051,7 @@ function goetyRecipes(event) {
         'goety:rotting_focus',
         'kubejs:rotting_focus'
     )
-    event.remove({id:'goety:osseous_focus'})
+    event.remove({id:'goety:focus/osseous_focus'})
     ritualCraftSacrifice(
         'goety:animation_core', 'necroturgy', 25, 40,
         [
@@ -4989,7 +5072,7 @@ function goetyRecipes(event) {
         'goety:osseous_focus',
         'kubejs:osseous_focus'
     )
-    event.remove({id:'goety:spooky_focus'})
+    event.remove({id:'goety:focus/spooky_focus'})
     ritualCraftSacrifice(
         'goety:animation_core', 'necroturgy', 50, 40,
         [
@@ -5010,6 +5093,7 @@ function goetyRecipes(event) {
         'goety:spooky_focus',
         'kubejs:spooky_focus'
     )
+
     event.remove({id:'goety:dark_scythe'})
     ritualCraft(
         'minecraft:iron_hoe', 'forge', 25, 60,
@@ -5071,8 +5155,6 @@ function goetyRecipes(event) {
         'goety:undeath_potion',
         'kubejs:undeath_potion'
     )
-    event.remove({id:'goety:cursed_ingot_burner'})
-    cursedInfuser('graveyard:dark_iron_ingot', 'goety:cursed_ingot', 60, 'kubejs:cursed_ingot')
     event.remove({id:'goety:dark_fabric'})
     event.shaped(
         'goety:dark_fabric',
@@ -5130,9 +5212,10 @@ function goetyRecipes(event) {
         }
     ).id('kubejs:spirit_fabric')
     event.remove({id:'goety:cursed_metal_block_burner'})
+    event.remove({id:'goety:totem_of_roots'})
     event.remove({id:'goety:totem_of_souls'})
     event.shaped(
-        'goety:totem_of_souls',
+        'goety:totem_of_roots',
         [
             'GEG',
             'ETE',
@@ -5143,7 +5226,8 @@ function goetyRecipes(event) {
             E: 'goety:magic_emerald',
             T: 'minecraft:totem_of_undying'
         }
-    ).id('kubejs:totem_of_souls')
+    ).id('kubejs:totem_of_roots')
+    cursedInfuser('goety:totem_of_roots', 'goety:totem_of_souls', 200, 'kubejs:totem_of_souls')
     event.remove({id:'goety:dark_wand'})
     event.recipes.summoningrituals
         .altar(Ingredient.of('minecraft:stick'))
@@ -5407,4 +5491,25 @@ function goetyRecipes(event) {
         'goety:necro_crown',
         'kubejs:necro_crown'
     )
+    event.custom({
+        type: 'apotheosis:enchanting',
+        input: {
+            item: 'minecraft:amethyst_shard'
+        },
+        requirements: {
+            eterna: 10.0,
+            quanta: 20.0,
+            arcana: 0.0
+        },
+        max_requirements: {
+            eterna: 50.0,
+            quanta: 100.0,
+            arcana: 0.0
+        },
+        display_level: 5,
+        result: {
+            item: 'goety:empty_focus',
+            count: 1
+        }
+    }).id('kubejs:empty_focus_enchanting')
 }

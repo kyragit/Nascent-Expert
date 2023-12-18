@@ -6,5 +6,21 @@
 	"tooltip.gateways.list1": "- ???",
 	"tooltip.gateways.list2": "- ???",
 	"enchantment.feathers.lightweight.desc": "Makes your armor weigh less.",
-	"nethersdelight.block.feast.use_knife": "This requires a knife to eat!"
+	"nethersdelight.block.feast.use_knife": "This requires a knife to eat!",
+	"sdrp.logo": "Nascent: Expert",
+	"sdrp.mainmenu": "Main Menu",
+	"sdrp.overworld.in": "Traversing the Overworld",
+	"sdrp.overworld": "Overworld",
+	"sdrp.the_nether.in": "Enduring the Nether",
+	"sdrp.the_nether": "The Nether",
+	"sdrp.the_end.in": "Ascending Through the End",
+	"sdrp.the_end": "The End",
+	"sdrp.tent.in": "Taking Refuge in a Tent",
+	"sdrp.tent": "Tent",
+	"sdrp.the_bumblezone.in": "Getting Stung in the Bumblezone",
+	"sdrp.the_bumblezone": "The Bumblezone",
+	"sdrp.build_dimension.in": "At Home in Their Own Personal Dimension",
+	"sdrp.build_dimension": "Building Dimension",
+	"sdrp.dungeon_dimension.in": "Getting Lost in the Dungeon Dimension",
+	"sdrp.dungeon_dimension": "Dungeon Dimension"
 }

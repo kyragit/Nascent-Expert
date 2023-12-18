@@ -1,65 +1,62 @@
 {
-	id: "13662E651588A17C"
-	group: "52DC2EC078E51292"
-	order_index: 3
-	filename: "transporting_to_and_fro"
-	title: "Transporting To and Fro"
-	icon: "create:track"
-	subtitle: ["Getting all that X from point A to point B."]
-	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "transporting_to_and_fro"
+	group: "52DC2EC078E51292"
+	icon: "create:track"
+	id: "13662E651588A17C"
+	order_index: 3
+	quest_links: [ ]
 	quests: [
 		{
-			title: "Little Logistics"
-			icon: "littlelogistics:seater_car"
-			x: 0.0d
-			y: 0.0d
+			dependencies: ["1C329DDA761BAD72"]
 			description: [
 				"The Little Logistics mod will be your first foray into automated transportation. It provides simple, yet powerful tools for creating minecart and boat networks."
 				""
 				"This manual will explain the basics of the mod, but if you are still confused, many Little Logistic items can be \"pondered\" by holding 'w' on them."
 			]
-			dependencies: ["1C329DDA761BAD72"]
 			hide: true
+			icon: "littlelogistics:seater_car"
 			id: "5E27DA8FE0B6F18B"
-			tasks: [{
-				id: "7A335FA1B9C10F56"
-				type: "item"
-				item: "littlelogistics:conductors_wrench"
-			}]
 			rewards: [{
 				id: "4A877684B3643143"
-				type: "item"
 				item: {
-					id: "patchouli:guide_book"
 					Count: 1b
+					id: "patchouli:guide_book"
 					tag: {
 						"patchouli:book": "littlelogistics:guide"
 					}
 				}
+				type: "item"
 			}]
+			tasks: [{
+				id: "7A335FA1B9C10F56"
+				item: "littlelogistics:conductors_wrench"
+				type: "item"
+			}]
+			title: "Little Logistics"
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			title: "Locomotives"
-			x: 0.0d
-			y: -2.0d
+			dependencies: ["5E27DA8FE0B6F18B"]
 			description: [
 				"Locomotives are the ground-based medium distance transport system of choice. To get started, place some rails, and then a locomotive docking rail where you'd like to load/unload. "
 				""
 				"Then, right-click the docking rails with a locomotive route, and insert it into the train. Locomotives require fuel to run."
 			]
-			dependencies: ["5E27DA8FE0B6F18B"]
 			id: "5DE84E3DF972346F"
 			tasks: [{
 				id: "54AA07F0A3BB4864"
-				type: "item"
 				item: "littlelogistics:steam_locomotive"
+				type: "item"
 			}]
+			title: "Locomotives"
+			x: 0.0d
+			y: -2.0d
 		}
 		{
-			title: "Barges"
-			x: 0.0d
-			y: 2.0d
+			dependencies: ["5E27DA8FE0B6F18B"]
 			description: [
 				"Sometimes, you need to transport over water, and it would be inconvenient to build a bridge. Barges are ideal for this purpose."
 				""
@@ -67,31 +64,31 @@
 				""
 				"One major benefit of using barges is that they don't require any infrastructure to run; they will pathfind to each of their destinations automatically."
 			]
-			dependencies: ["5E27DA8FE0B6F18B"]
 			id: "0325B3F849B8B173"
 			tasks: [{
 				id: "20BB77E83D5075B1"
-				type: "item"
 				item: "littlelogistics:tug"
+				type: "item"
 			}]
+			title: "Barges"
+			x: 0.0d
+			y: 2.0d
 		}
 		{
-			icon: "minecraft:ender_eye"
-			x: -2.0d
-			y: 0.0d
-			description: ["Barges and Locomotives have the ability to load chunks as to run without anyone nearby. To do this, simply right-click and click the \"register\" button. Each player can only have a limited number of registered vehicles."]
 			dependencies: ["5E27DA8FE0B6F18B"]
+			description: ["Barges and Locomotives have the ability to load chunks as to run without anyone nearby. To do this, simply right-click and click the \"register\" button. Each player can only have a limited number of registered vehicles."]
+			icon: "minecraft:ender_eye"
 			id: "5D3969A5BEFE9F25"
 			tasks: [{
 				id: "5294FDF949C0C43E"
-				type: "checkmark"
 				title: "Loading Chunks with Barges/Locomotives"
+				type: "checkmark"
 			}]
+			x: -2.0d
+			y: 0.0d
 		}
 		{
-			title: "Trains"
-			x: 2.0d
-			y: 0.0d
+			dependencies: ["3398AA7353EEC6C8"]
 			description: [
 				"Soon, you will need to transport thousands of items across the lands. You will need more permanent infrastructure."
 				""
@@ -99,32 +96,31 @@
 				""
 				"Make a train casing to get started. "
 			]
-			dependencies: ["3398AA7353EEC6C8"]
 			id: "5CC96150E830E856"
 			tasks: [{
 				id: "2A94E1231D958602"
-				type: "item"
 				item: "create:railway_casing"
+				type: "item"
 			}]
+			title: "Trains"
+			x: 2.0d
+			y: 0.0d
 		}
 		{
-			title: "Deep Storage"
-			x: 2.0d
-			y: -2.0d
-			description: ["While not exclusive to trains, item vaults are particularly useful for them. They can store a large amount of items, but cannot be interfaced with manually."]
 			dependencies: ["5CC96150E830E856"]
+			description: ["While not exclusive to trains, item vaults are particularly useful for them. They can store a large amount of items, but cannot be interfaced with manually."]
 			id: "797951E905A4B09F"
 			tasks: [{
 				id: "69C72BF34D076406"
-				type: "item"
 				item: "create:item_vault"
+				type: "item"
 			}]
+			title: "Deep Storage"
+			x: 2.0d
+			y: -2.0d
 		}
 		{
-			title: "Train Basics"
-			icon: "create:track"
-			x: 4.0d
-			y: 0.0d
+			dependencies: ["5CC96150E830E856"]
 			description: [
 				"Create has excellent tutorials with its \"ponder\" feature, so this will be brief. "
 				""
@@ -134,31 +130,35 @@
 				""
 				"You can either drive the trains manually or seat a mob of some variety behind the controls and give them a schedule."
 			]
-			dependencies: ["5CC96150E830E856"]
+			icon: "create:track"
 			id: "730CCCAB340DAE71"
 			tasks: [{
 				id: "6F123A3CD36C3FC7"
-				type: "checkmark"
 				title: "Train Basics"
+				type: "checkmark"
 			}]
+			title: "Train Basics"
+			x: 4.0d
+			y: 0.0d
 		}
 		{
-			icon: "create:train_door"
-			x: 2.0d
-			y: 2.0d
+			dependencies: ["5CC96150E830E856"]
 			description: [
 				"To all the talented builders out there, trains can be decorated to your heart's content. Train doors placed on them will open when the train stops."
 				""
 				"Any steam whistles on it will also go off when the train stops. Make your boring logistics lively!"
 			]
-			dependencies: ["5CC96150E830E856"]
+			icon: "create:train_door"
 			id: "361CDCC4F417E304"
 			tasks: [{
 				id: "4A1365E899600D32"
-				type: "checkmark"
 				title: "Beautify"
+				type: "checkmark"
 			}]
+			x: 2.0d
+			y: 2.0d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["Getting all that X from point A to point B."]
+	title: "Transporting To and Fro"
 }

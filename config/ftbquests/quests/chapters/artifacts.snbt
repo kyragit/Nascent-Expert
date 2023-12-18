@@ -1,36 +1,34 @@
 {
-	id: "093925FD17179C97"
-	group: "36C3CA17FE4F12AD"
-	order_index: 3
-	filename: "artifacts"
-	title: "Artifacts"
-	icon: "enigmaticlegacy:enigmatic_item"
-	subtitle: ["Catalogue your legendary discoveries."]
-	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "artifacts"
+	group: "36C3CA17FE4F12AD"
+	icon: "enigmaticlegacy:enigmatic_item"
+	id: "093925FD17179C97"
+	order_index: 3
+	quest_links: [ ]
 	quests: [
 		{
-			title: "Spellstones"
-			icon: "enigmaticlegacy:the_cube"
-			x: 0.0d
-			y: 0.0d
 			description: [
 				"You have discovered a hidden Spellstone, a pearl of crystallized energy from another plane."
 				""
 				"Each spellstone has a unique and powerful effect, and some have an active ability that can be activated using the \"spellstone active ability\" keybind."
 			]
-			invisible: true
+			icon: "enigmaticlegacy:the_cube"
 			id: "1388F5F86DFEF300"
+			invisible: true
 			tasks: [{
-				id: "63E10C63CE43D0FF"
-				type: "advancement"
 				advancement: "enigmaticlegacy:main/discover_spellstone"
 				criterion: ""
+				id: "63E10C63CE43D0FF"
+				type: "advancement"
 			}]
+			title: "Spellstones"
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			x: -2.0d
-			y: -2.0d
+			dependencies: ["1388F5F86DFEF300"]
 			description: [
 				"Deep in the oceans of the Overworld, in a grand underwater monument, you have found the Will of the Ocean."
 				""
@@ -38,18 +36,18 @@
 				""
 				"It would seem that it works in much the same way as enchanting with seashelves, but letting the energy pass through your body instead of an item. "
 			]
-			dependencies: ["1388F5F86DFEF300"]
-			invisible: true
 			id: "1172FA0499AA6DAE"
+			invisible: true
 			tasks: [{
 				id: "5CA5F636025DE948"
-				type: "item"
 				item: "enigmaticlegacy:ocean_stone"
+				type: "item"
 			}]
+			x: -2.0d
+			y: -2.0d
 		}
 		{
-			x: 2.0d
-			y: -2.0d
+			dependencies: ["1388F5F86DFEF300"]
 			description: [
 				"Miles underground, you have discovered the legendary Heart of the Golem. It appears ancient, so ancient as to appear timeless. "
 				""
@@ -57,18 +55,18 @@
 				""
 				"Being from Before, it seems to slow time around the wearer's body, causing weapons and projectiles to slow to near-harmless speeds. This effect seems less potent when wearing armor, however."
 			]
-			dependencies: ["1388F5F86DFEF300"]
-			invisible: true
 			id: "1D8E3CC69CB268E8"
+			invisible: true
 			tasks: [{
 				id: "48AA38995594729C"
-				type: "item"
 				item: "enigmaticlegacy:golem_heart"
+				type: "item"
 			}]
+			x: 2.0d
+			y: -2.0d
 		}
 		{
-			x: -2.0d
-			y: 2.0d
+			dependencies: ["1388F5F86DFEF300"]
 			description: [
 				"High above the clouds, in stunning aircraft from another time, you have found the Angel's Blessing."
 				""
@@ -78,59 +76,58 @@
 				""
 				"By expending a bit of energy from the stone, you can accelerate very quickly for a moment, resulting in something like a double jump."
 			]
-			dependencies: ["1388F5F86DFEF300"]
-			invisible: true
 			id: "2C6B884D6FF6E926"
+			invisible: true
 			tasks: [{
 				id: "5AB2757E8A8F3571"
-				type: "item"
 				item: "enigmaticlegacy:angel_blessing"
+				type: "item"
 			}]
+			x: -2.0d
+			y: 2.0d
 		}
 		{
-			x: 2.0d
-			y: 2.0d
+			dependencies: ["1388F5F86DFEF300"]
 			description: [
 				"You have searched through the bowels of Hell, and found the Blazing Core. It is uncomfortably hot, and it appears to vibrate violently with the energy from Beyond."
 				""
 				"Wielding it seems to shield the wearer from other sources of heat; it seems like it redirects that heat to Beyond from whence it came. "
 			]
-			dependencies: ["1388F5F86DFEF300"]
-			invisible: true
 			id: "74F37D0FC5DBAEDE"
+			invisible: true
 			tasks: [{
 				id: "19FA127800BD8BB2"
-				type: "item"
 				item: "enigmaticlegacy:blazing_core"
+				type: "item"
 			}]
+			x: 2.0d
+			y: 2.0d
 		}
 		{
-			x: 0.0d
-			y: -3.0d
 			dependencies: ["1388F5F86DFEF300"]
-			invisible: true
 			id: "1CA24F9721F822B5"
+			invisible: true
 			tasks: [{
 				id: "33FDCD4659849BC5"
-				type: "item"
 				item: "enigmaticlegacy:eye_of_nebula"
+				type: "item"
 			}]
+			x: 0.0d
+			y: -3.0d
 		}
 		{
-			x: 0.0d
-			y: 3.0d
 			dependencies: ["1388F5F86DFEF300"]
-			invisible: true
 			id: "573D1BB425FE1D7C"
+			invisible: true
 			tasks: [{
 				id: "127D7A5067184037"
-				type: "item"
 				item: "enigmaticlegacy:void_pearl"
+				type: "item"
 			}]
+			x: 0.0d
+			y: 3.0d
 		}
 		{
-			x: 3.0d
-			y: 0.0d
 			description: [
 				"The price he asked; The cost of death:"
 				""
@@ -149,166 +146,169 @@
 				"And with this darkness you have shrouded"
 				"Our deep and wooded home"
 			]
-			invisible: true
 			id: "07A6D4920F1EE551"
+			invisible: true
 			tasks: [{
 				id: "655E50962AB99D1F"
-				type: "item"
 				item: {
-					id: "simplyswords:soulrender"
 					Count: 1b
+					id: "simplyswords:soulrender"
 					tag: {
 						Damage: 0
 					}
 				}
+				type: "item"
 			}]
+			x: 3.0d
+			y: 0.0d
 		}
 		{
-			x: -3.0d
-			y: 0.0d
 			description: ["Keep Kayra's enormity hid a weapon truly legendary. Its opposing energies are somehow entwined, Before and After colliding within itself. It's a miracle it doesn't tear itself apart from its own power."]
-			invisible: true
 			id: "4928A981087D6076"
+			invisible: true
 			tasks: [{
 				id: "35572844D948B02C"
-				type: "item"
 				item: {
-					id: "simplyswords:soulpyre"
 					Count: 1b
+					id: "simplyswords:soulpyre"
 					tag: {
 						Damage: 0
 					}
 				}
+				type: "item"
 			}]
+			x: -3.0d
+			y: 0.0d
 		}
 		{
-			x: -5.0d
-			y: 0.0d
 			description: ["The restless workers of the Foundry have constructed a weapon out of the flame itself. Its energy empowers the wielder, making them an unstoppable vortex from Beyond."]
-			invisible: true
 			id: "6E47947DF88CE614"
+			invisible: true
 			tasks: [{
 				id: "1ECBCE0C5862505C"
-				type: "item"
 				item: {
-					id: "simplyswords:molten_edge"
 					Count: 1b
+					id: "simplyswords:molten_edge"
 					tag: {
 						Damage: 0
 					}
 				}
+				type: "item"
 			}]
+			x: -5.0d
+			y: 0.0d
 		}
 		{
-			x: 5.0d
-			y: 0.0d
 			description: [
 				"Guarded by the prismatic towers of Shiraz Palace, the Thunderbrand crackles with power."
 				""
 				"Wield it and strike your foes like lightning."
 			]
-			invisible: true
 			id: "5F9BC06EA8548C29"
+			invisible: true
 			tasks: [{
 				id: "40EF4EF0D44C8F97"
-				type: "item"
 				item: {
-					id: "simplyswords:thunderbrand"
 					Count: 1b
+					id: "simplyswords:thunderbrand"
 					tag: {
 						Damage: 0
 					}
 				}
+				type: "item"
 			}]
+			x: 5.0d
+			y: 0.0d
 		}
 		{
-			x: 0.0d
-			y: -5.0d
 			description: [
 				"A truly terrifying artifact, this device creates a portal to... somewhere, before intentionally collapsing it. This results in an explosion of spacetime."
 				""
 				"While its power is devastating, it cares not if it kills its user; which it most likely will."
 			]
-			invisible: true
 			id: "48C312D6014E32A3"
+			invisible: true
 			tasks: [{
 				id: "22BA81C74063FCB4"
-				type: "item"
 				item: "kubejs:portable_black_hole"
+				type: "item"
 			}]
+			x: 0.0d
+			y: -5.0d
 		}
 		{
-			x: 0.0d
-			y: 5.0d
 			description: ["A wholly Overworldian creation, this staff dissolves leaves and seeds into their pure life essence and distributes it in a wide area around the user."]
-			invisible: true
 			id: "27404F1A21AF173D"
+			invisible: true
 			tasks: [{
 				id: "701151D93E7EE71A"
-				type: "item"
 				item: "kubejs:staff_of_gaea"
+				type: "item"
 			}]
+			x: 0.0d
+			y: 5.0d
 		}
 		{
-			x: 7.0d
-			y: 0.0d
 			description: ["The Infested Temple truly lives up to its name, hiding this venomous weapon at its peak. Its sting is potent; use it with care."]
-			invisible: true
 			id: "37D9E5B61AB227B3"
+			invisible: true
 			tasks: [{
 				id: "4189B37699833D68"
-				type: "item"
 				item: {
-					id: "simplyswords:bramblethorn"
 					Count: 1b
+					id: "simplyswords:bramblethorn"
 					tag: {
 						Damage: 0
 					}
 				}
+				type: "item"
 			}]
+			x: 7.0d
+			y: 0.0d
 		}
 		{
-			x: -7.0d
-			y: 0.0d
 			description: ["The pharaohs of ancients past created a weapon that pierces the very soul. Even the thickest of armor will not protect you from its sting."]
-			invisible: true
 			id: "0D203FD64819B062"
+			invisible: true
 			tasks: [{
 				id: "582296B5EB2E4B9F"
-				type: "item"
 				item: {
-					id: "simplyswords:shadowsting"
 					Count: 1b
+					id: "simplyswords:shadowsting"
 					tag: {
 						Damage: 0
 					}
 				}
+				type: "item"
 			}]
+			x: -7.0d
+			y: 0.0d
 		}
 		{
-			x: 0.0d
-			y: -7.0d
 			description: ["This curious device creates simple space vortices. The user and anyone nearby seem to have their places shuffled around at random. The purpose of such an artifact is certainly vexing; though, I'm sure you'll find some use for it."]
-			invisible: true
 			id: "708F7B8205AB5A96"
+			invisible: true
 			tasks: [{
 				id: "0A244B4D3C453799"
-				type: "item"
 				item: "kubejs:unstable_vortex_generator"
+				type: "item"
 			}]
+			x: 0.0d
+			y: -7.0d
 		}
 		{
-			x: 0.0d
-			y: 7.0d
 			description: ["ITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOUITSWATCHINGYOU"]
-			invisible: true
 			id: "0408EACDCA73D854"
+			invisible: true
 			tasks: [{
 				id: "003894957206BE16"
-				type: "item"
 				item: "kubejs:unsettling_eye"
+				type: "item"
 			}]
+			x: 0.0d
+			y: 7.0d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["Catalogue your legendary discoveries."]
+	title: "Artifacts"
 }

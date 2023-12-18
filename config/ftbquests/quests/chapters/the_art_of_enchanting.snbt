@@ -1,64 +1,60 @@
 {
-	id: "05DA9FBFB7C2088A"
-	group: "36C3CA17FE4F12AD"
-	order_index: 4
-	filename: "the_art_of_enchanting"
-	title: "The Art of Enchanting"
-	icon: "minecraft:enchanting_table"
-	subtitle: ["Enchanting, but better."]
-	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "the_art_of_enchanting"
+	group: "36C3CA17FE4F12AD"
+	icon: "minecraft:enchanting_table"
+	id: "05DA9FBFB7C2088A"
+	order_index: 4
+	quest_links: [ ]
 	quests: [
 		{
-			title: "Enchanting"
-			x: 0.0d
-			y: 0.0d
 			description: [
 				"Enchanting has been entirely overhauled. There is no more simply getting 15 bookshelves and calling it a day."
 				""
 				"Enchanting is governed by three main statistics: Eterna, Quanta, and Arcana; as well as the minor statistics of Rectification and Clues."
 			]
-			invisible: true
 			id: "5277E4CA96FA02EC"
-			tasks: [{
-				id: "4A5A7D01A3E566B6"
-				type: "item"
-				item: "minecraft:enchanting_table"
-			}]
+			invisible: true
 			rewards: [{
 				id: "6964E3710979D304"
-				type: "item"
 				item: {
-					id: "patchouli:guide_book"
 					Count: 1b
+					id: "patchouli:guide_book"
 					tag: {
 						"patchouli:book": "apotheosis:apoth_chronicle"
 					}
 				}
+				type: "item"
 			}]
+			tasks: [{
+				id: "4A5A7D01A3E566B6"
+				item: "minecraft:enchanting_table"
+				type: "item"
+			}]
+			title: "Enchanting"
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			icon: "quark:mangrove_bookshelf"
-			x: 0.0d
-			y: -2.0d
+			dependencies: ["5277E4CA96FA02EC"]
 			description: [
 				"Eterna is probably the most important statistic, and it will be the most familiar. Eterna governs the raw power available to the enchanter. Higher Eterna values give higher level enchantments, but cost more levels."
 				""
 				"Sources of Eterna have a maximum value they can contribute. Such sources will never bring your Eterna level above their maximum."
 			]
-			dependencies: ["5277E4CA96FA02EC"]
+			icon: "quark:mangrove_bookshelf"
 			id: "32345DCD5C46C136"
 			tasks: [{
 				id: "00DFDE05535FDCC7"
-				type: "checkmark"
 				title: "Eterna"
+				type: "checkmark"
 			}]
+			x: 0.0d
+			y: -2.0d
 		}
 		{
-			title: "Quanta \\& Rectification"
-			icon: "minecraft:wither_skeleton_skull"
-			x: 2.0d
-			y: 2.0d
+			dependencies: ["5277E4CA96FA02EC"]
 			description: [
 				"Quanta represents the flux of the Universe; the hand of Lady Luck with or against you."
 				""
@@ -68,19 +64,19 @@
 				""
 				"Rectification makes it less likely that Quanta will influence your enchanting negatively; that is, it biases the luck in your favor."
 			]
-			dependencies: ["5277E4CA96FA02EC"]
+			icon: "minecraft:wither_skeleton_skull"
 			id: "63988BA96C8A5E90"
 			tasks: [{
 				id: "6E0E13A7DB3F5280"
-				type: "checkmark"
 				title: "Quanta"
+				type: "checkmark"
 			}]
+			title: "Quanta \\& Rectification"
+			x: 2.0d
+			y: 2.0d
 		}
 		{
-			title: "Arcana \\& Enchanting Clues"
-			icon: "minecraft:purple_candle"
-			x: -2.0d
-			y: 2.0d
+			dependencies: ["5277E4CA96FA02EC"]
 			description: [
 				"Arcana represents the magical potential of enchanting. Specifically, it affects the rarity of enchantments as well as how many enchantments are obtained."
 				""
@@ -88,135 +84,139 @@
 				""
 				"There is also another minor stat: Enchanting Clues. This simply increases the number of enchantments that are visible before enchanting an item."
 			]
-			dependencies: ["5277E4CA96FA02EC"]
+			icon: "minecraft:purple_candle"
 			id: "65C3F5369BBA3EA7"
 			tasks: [{
 				id: "1F494109735F080F"
-				type: "checkmark"
 				title: "Arcana"
+				type: "checkmark"
 			}]
+			title: "Arcana \\& Enchanting Clues"
+			x: -2.0d
+			y: 2.0d
 		}
 		{
-			x: 3.0d
-			y: 0.0d
+			dependencies: ["5277E4CA96FA02EC"]
 			description: ["The violent energies of Hell are perfect for channeling Quanta. It creates something like a vortex, bypassing the Aether entirely."]
 			hide_dependency_lines: true
-			dependencies: ["5277E4CA96FA02EC"]
 			id: "264E3CD91A0BC3C6"
 			tasks: [{
 				id: "4E67F83B09C106B6"
-				type: "item"
 				item: "apotheosis:hellshelf"
+				type: "item"
 			}]
+			x: 3.0d
+			y: 0.0d
 		}
 		{
-			x: 5.0d
-			y: 0.0d
-			description: ["Infusing the Hellshelf seems to have only magnified its chaotic power. It seems to vibrate ever so slightly, as if being pushed from energies Beyond."]
 			dependencies: ["264E3CD91A0BC3C6"]
+			description: ["Infusing the Hellshelf seems to have only magnified its chaotic power. It seems to vibrate ever so slightly, as if being pushed from energies Beyond."]
 			hide: true
 			id: "4E0F9A7A1E75F2DF"
 			tasks: [{
 				id: "04956E35D47B77AE"
-				type: "item"
 				item: "apotheosis:infused_hellshelf"
+				type: "item"
 			}]
+			x: 5.0d
+			y: 0.0d
 		}
 		{
-			x: 7.0d
-			y: -1.0d
-			description: ["Now one with the soul of a Blaze, the power of this shelf is frightening. It seems to create a sort of channel between the Overworld and beyond the Aether. One can only imagine what sort of beings must thrive in a place so full of Quanta."]
 			dependencies: ["4E0F9A7A1E75F2DF"]
+			description: ["Now one with the soul of a Blaze, the power of this shelf is frightening. It seems to create a sort of channel between the Overworld and beyond the Aether. One can only imagine what sort of beings must thrive in a place so full of Quanta."]
 			hide: true
 			id: "1B9F9D1BBFD24E73"
 			tasks: [{
 				id: "497185F0FF15FAB9"
-				type: "item"
 				item: "apotheosis:blazing_hellshelf"
+				type: "item"
 			}]
+			x: 7.0d
+			y: -1.0d
 		}
 		{
-			x: 7.0d
-			y: 1.0d
-			description: ["By reflecting Quantum energy off of glowstone, it's possible to magnify the Quanta to even greater heights. This seems to have a detrimental effect on Eterna, however. Perhaps it's somehow being burned away in the heat of all that Quanta."]
 			dependencies: ["4E0F9A7A1E75F2DF"]
+			description: ["By reflecting Quantum energy off of glowstone, it's possible to magnify the Quanta to even greater heights. This seems to have a detrimental effect on Eterna, however. Perhaps it's somehow being burned away in the heat of all that Quanta."]
 			hide: true
 			id: "5B9CB64285544223"
 			tasks: [{
 				id: "5052D3681731AA53"
-				type: "item"
 				item: "apotheosis:glowing_hellshelf"
+				type: "item"
 			}]
+			x: 7.0d
+			y: 1.0d
 		}
 		{
-			icon: "minecraft:diamond_block"
-			x: 0.0d
-			y: 3.0d
+			dependencies: ["5277E4CA96FA02EC"]
 			description: [
 				"Some items can only be obtained via Infusion in the enchanting table. Infusion crafting is fairly straightforward, if somewhat difficult."
 				""
 				"Each Infusion recipe has certain requirements for Eterna, Quanta, and Arcana that can be seen viewing the recipe. If the table meets these requirements, then simply place the item to be infused in. An option to infuse will appear, costing some levels in the process."
 			]
-			dependencies: ["5277E4CA96FA02EC"]
+			icon: "minecraft:diamond_block"
 			id: "2B8F94360E6A4244"
 			tasks: [{
 				id: "6A074428A12793C5"
-				type: "checkmark"
 				title: "Infusion"
+				type: "checkmark"
 			}]
+			x: 0.0d
+			y: 3.0d
 		}
 		{
-			x: -3.0d
-			y: 0.0d
+			dependencies: ["5277E4CA96FA02EC"]
 			description: ["The marine life of the Overworld seem to be deeply connected with the primal magic Arcana draws from. It seems to flow up to this world in waves, and can be directed into certain energy mediums, like prismarine."]
 			hide_dependency_lines: true
-			dependencies: ["5277E4CA96FA02EC"]
 			id: "67B9B09A5211E422"
 			tasks: [{
 				id: "0DA33E910E6E076C"
-				type: "item"
 				item: "apotheosis:seashelf"
+				type: "item"
 			}]
+			x: -3.0d
+			y: 0.0d
 		}
 		{
-			x: -5.0d
-			y: 0.0d
-			description: ["By filtering out any Quanta during the Infusion process, the prismarine in the seashelf can be made even more... \"sticky\" to any passing Arcana. It acts something like a filter, only allowing Arcana to pass through."]
 			dependencies: ["67B9B09A5211E422"]
+			description: ["By filtering out any Quanta during the Infusion process, the prismarine in the seashelf can be made even more... \"sticky\" to any passing Arcana. It acts something like a filter, only allowing Arcana to pass through."]
 			hide: true
 			id: "134BE35DCD086C14"
 			tasks: [{
 				id: "779B9FC386C40BE4"
-				type: "item"
 				item: "apotheosis:infused_seashelf"
+				type: "item"
 			}]
+			x: -5.0d
+			y: 0.0d
 		}
 		{
-			x: -7.0d
-			y: -1.0d
-			description: ["By dissolving the soul of a Guardian, this shelf has truly staggering magical energy. It feels barely solid, almost like water held in place. This seems to magnify its ability to accept Arcana; it merely acts as a vessel for the energies from Within."]
 			dependencies: ["134BE35DCD086C14"]
+			description: ["By dissolving the soul of a Guardian, this shelf has truly staggering magical energy. It feels barely solid, almost like water held in place. This seems to magnify its ability to accept Arcana; it merely acts as a vessel for the energies from Within."]
 			hide: true
 			id: "03D4843910238343"
 			tasks: [{
 				id: "4EB15690D0046D68"
-				type: "item"
 				item: "apotheosis:heart_seashelf"
+				type: "item"
 			}]
+			x: -7.0d
+			y: -1.0d
 		}
 		{
-			x: -7.0d
-			y: 1.0d
-			description: ["Prismarine crystals have a different behavior, it would seem. They reflect Arcana, directing it more strongly into a single point. This seems to have the opposite effect for Eterna, however... evidently the forces Within aren't pleased when meddled with like this."]
 			dependencies: ["134BE35DCD086C14"]
+			description: ["Prismarine crystals have a different behavior, it would seem. They reflect Arcana, directing it more strongly into a single point. This seems to have the opposite effect for Eterna, however... evidently the forces Within aren't pleased when meddled with like this."]
 			hide: true
 			id: "4D8CEB7537842876"
 			tasks: [{
 				id: "356D792FE5C043FF"
-				type: "item"
 				item: "apotheosis:crystal_seashelf"
+				type: "item"
 			}]
+			x: -7.0d
+			y: 1.0d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["Enchanting, but better."]
+	title: "The Art of Enchanting"
 }

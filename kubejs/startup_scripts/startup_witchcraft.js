@@ -1,5 +1,6 @@
 const LivingEquipmentChangeEvent = Java.loadClass('net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent')
 const EquipmentSlot = Java.loadClass('net.minecraft.world.entity.EquipmentSlot')
+const EntityJoinLevelEvent = Java.loadClass('net.minecraftforge.event.entity.EntityJoinLevelEvent')
 
 ForgeEvents.onEvent(LivingEquipmentChangeEvent, event => {
     if (event.getEntity().getTags().contains('recieved_curse_mark')) {
@@ -27,4 +28,14 @@ ForgeEvents.onEvent(LivingEquipmentChangeEvent, event => {
 
 StartupEvents.registry('sound_event', event => {
     event.create('music.wither')
+})
+
+ForgeEvents.onEvent(EntityJoinLevelEvent, (event) => {
+    if (event.getEntity().isPlayer()) {
+        if (event.getLevel().isClientSide()) {
+            if (event.getLevel().getDimension().getNamespace() === 'nomadictents') {
+                SDRP.setState('sdrp.tent.in', 'sdrp.tent', 'overworld')
+            }
+        }
+    }
 })

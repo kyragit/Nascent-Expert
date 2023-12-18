@@ -1,84 +1,84 @@
 {
-	id: "107663CAA48E8258"
-	group: "52DC2EC078E51292"
-	order_index: 1
-	filename: "generating_resources"
-	title: "Generating Resources"
-	icon: "create:crushed_iron_ore"
-	subtitle: ["Producing everything, automatically."]
-	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "generating_resources"
+	group: "52DC2EC078E51292"
+	icon: "create:crushed_raw_iron"
+	id: "107663CAA48E8258"
+	order_index: 1
+	quest_links: [ ]
 	quests: [
 		{
-			icon: "minecraft:cobblestone"
-			x: 0.0d
-			y: 0.0d
+			dependencies: ["1C329DDA761BAD72"]
 			description: [
 				"Many basic resources originate from some sort of stone. Each stone type has specific conditions to generate, such as biome or blocks nearby. This information can be found in JEI."
 				""
 				"You will need to find ways to collect and transport these back to your base."
 			]
-			dependencies: ["1C329DDA761BAD72"]
 			hide: true
+			icon: "minecraft:cobblestone"
 			id: "4774EB5A4FC967B1"
 			tasks: [{
 				id: "7C6A2DD00AD506DF"
-				type: "checkmark"
 				title: "Generating Stone Types"
+				type: "checkmark"
 			}]
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			title: "Chunk Loaders"
-			x: 1.5d
-			y: 0.0d
-			description: ["While trains and tugs can load chunks by themselves as they travel, you'll most likely want to load your resource production areas all the time. These items will do just that."]
 			dependencies: ["1C329DDA761BAD72"]
+			description: ["While trains and tugs can load chunks by themselves as they travel, you'll most likely want to load your resource production areas all the time. These items will do just that."]
 			hide: true
 			id: "1BBDF9A2F2E479D0"
 			tasks: [{
 				id: "4295F9A67B5E3F75"
-				type: "item"
-				title: "Any Chunk Loader"
 				item: {
-					id: "itemfilters:or"
 					Count: 1b
+					id: "itemfilters:or"
 					tag: {
 						items: [
 							{
+								Count: 1b
 								id: "chunkloaders:ultimate_chunk_loader"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "chunkloaders:advanced_chunk_loader"
-								Count: 1b
 							}
 							{
-								id: "chunkloaders:basic_chunk_loader"
 								Count: 1b
+								id: "chunkloaders:basic_chunk_loader"
 							}
 						]
 					}
 				}
+				title: "Any Chunk Loader"
+				type: "item"
 			}]
+			title: "Chunk Loaders"
+			x: 1.5d
+			y: 0.0d
 		}
 		{
-			icon: "byg:blue_sand"
-			x: -1.5d
-			y: 0.0d
+			dependencies: ["1C329DDA761BAD72"]
 			description: [
 				"Many of the stone types can be processed in multiple ways. You can either crush them with crushing wheels, or mill them to get a certain type of sand. This sand can be washed for different resources."
 				""
 				"You'll probably want to do both for the extra materials."
 			]
-			dependencies: ["1C329DDA761BAD72"]
 			hide: true
+			icon: "byg:blue_sand"
 			id: "04DAD932D956EDB1"
 			tasks: [{
 				id: "2A733354CC5975C4"
-				type: "checkmark"
 				title: "Stone vs. Sand"
+				type: "checkmark"
 			}]
+			x: -1.5d
+			y: 0.0d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["Producing everything, automatically."]
+	title: "Generating Resources"
 }

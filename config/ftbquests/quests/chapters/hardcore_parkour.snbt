@@ -1,210 +1,210 @@
 {
-	id: "510F1BB5C0071454"
-	group: "36C3CA17FE4F12AD"
-	order_index: 6
-	filename: "hardcore_parkour"
-	title: "Hardcore Parkour"
-	icon: "minecraft:feather"
-	subtitle: ["Not just jumping."]
-	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "hardcore_parkour"
+	group: "36C3CA17FE4F12AD"
+	icon: "minecraft:feather"
+	id: "510F1BB5C0071454"
+	order_index: 6
+	quest_links: [ ]
 	quests: [
 		{
-			x: 0.0d
-			y: -3.0d
-			description: ["Run along walls like it's Titanfall! To wallrun, jump toward a wall and hold the Wallrun keybind ('r' by default)."]
 			dependencies: ["1334297720A52D95"]
-			invisible: true
+			description: ["Run along walls like it's Titanfall! To wallrun, jump toward a wall and hold the Wallrun keybind ('r' by default)."]
 			id: "2387131DF7254725"
+			invisible: true
 			tasks: [{
 				id: "57E641C7790EDB7D"
-				type: "item"
 				item: "kubejs:parkour_guide_wallrun"
+				type: "item"
 			}]
+			x: 0.0d
+			y: -3.0d
 		}
 		{
-			x: 1.0d
-			y: -2.0d
-			description: ["This dodge doesn't go as far as the one you already knew how to do, so it's better for more precise maneuvering. To perform one, simply press the Dodge keybind ('r' by default) while moving."]
 			dependencies: ["1334297720A52D95"]
-			invisible: true
+			description: ["This dodge doesn't go as far as the one you already knew how to do, so it's better for more precise maneuvering. To perform one, simply press the Dodge keybind ('r' by default) while moving."]
 			id: "4923EF1E0BAC2A41"
+			invisible: true
 			tasks: [{
 				id: "137A6906B504412D"
-				type: "item"
 				item: "kubejs:parkour_guide_dodge"
+				type: "item"
 			}]
+			x: 1.0d
+			y: -2.0d
 		}
 		{
-			x: -1.0d
-			y: -2.0d
-			description: ["Kick off and slide down walls! To do a wall jump, press the jump key while looking away from a wall (this is easier with a Quick Turn). To wall slide, hold the Wall Slide keybind (right click by default) while falling next to a wall. You'll gracefully glide down it rather than plunging to your death."]
 			dependencies: ["1334297720A52D95"]
-			invisible: true
+			description: ["Kick off and slide down walls! To do a wall jump, press the jump key while looking away from a wall (this is easier with a Quick Turn). To wall slide, hold the Wall Slide keybind (right click by default) while falling next to a wall. You'll gracefully glide down it rather than plunging to your death."]
 			id: "5D7FFCE165A2F52D"
+			invisible: true
 			tasks: [{
 				id: "77F5739EDAF2CAD3"
-				type: "item"
 				item: "kubejs:parkour_guide_wall_jump"
+				type: "item"
 			}]
+			x: -1.0d
+			y: -2.0d
 		}
 		{
-			x: 2.0d
-			y: -1.0d
-			description: ["Do a flip! To do a front flip, press both left and right movement keys at the same time."]
 			dependencies: ["1334297720A52D95"]
-			invisible: true
+			description: ["Do a flip! To do a front flip, press both left and right movement keys at the same time."]
 			id: "25B03E48CBD68C5F"
+			invisible: true
 			tasks: [{
 				id: "37C4F559ED05D5A1"
-				type: "item"
 				item: "kubejs:parkour_guide_flip"
+				type: "item"
 			}]
+			x: 2.0d
+			y: -1.0d
 		}
 		{
-			x: -2.0d
-			y: -1.0d
-			description: ["Crawling and sliding let you enter one block high spaces at will! To crawl, simply hold the Crawl keybind ('c' by default). To to a slide, hold the Crawl keybind while sprinting."]
 			dependencies: ["1334297720A52D95"]
-			invisible: true
+			description: ["Crawling and sliding let you enter one block high spaces at will! To crawl, simply hold the Crawl keybind ('c' by default). To to a slide, hold the Crawl keybind while sprinting."]
 			id: "0754A25ECB7AA237"
+			invisible: true
 			tasks: [{
 				id: "00AEC6F30E34968D"
-				type: "item"
 				item: "kubejs:parkour_guide_crawl"
+				type: "item"
 			}]
+			x: -2.0d
+			y: -1.0d
 		}
 		{
-			x: 0.0d
-			y: 3.0d
+			dependencies: ["1334297720A52D95"]
 			description: [
 				"Breakfalls are a way to mitigate fall damage. These come in two forms: rolls and taps. Both involve holding the Breakfall keybind ('r' by default) while hitting the ground; for a roll, hold forward, and for a tap, don't."
 				""
 				"A successful Breakfall will reduce fall damage by half."
 			]
-			dependencies: ["1334297720A52D95"]
-			invisible: true
 			id: "4275D40731F2CC63"
+			invisible: true
 			tasks: [{
 				id: "0B989448B26441D0"
-				type: "item"
 				item: "kubejs:parkour_guide_breakfall"
+				type: "item"
 			}]
+			x: 0.0d
+			y: 3.0d
 		}
 		{
-			x: 1.0d
-			y: 2.0d
-			description: ["The Cat Leap is a very long jump, perfect for a quick escape. To do one, tap and release the sneak key while sprinting."]
 			dependencies: ["1334297720A52D95"]
-			invisible: true
+			description: ["The Cat Leap is a very long jump, perfect for a quick escape. To do one, tap and release the sneak key while sprinting."]
 			id: "035E23B128B58CC5"
+			invisible: true
 			tasks: [{
 				id: "045911234C26E6EA"
-				type: "item"
 				item: "kubejs:parkour_guide_catleap"
+				type: "item"
 			}]
+			x: 1.0d
+			y: 2.0d
 		}
 		{
-			x: -1.0d
-			y: 2.0d
-			description: ["For when you just barely missed that jump! Cling to a ledge by holding the Cling keybind (right click by default) while approaching a ledge. You can then either shimmy along or press space to jump up the ledge."]
 			dependencies: ["1334297720A52D95"]
-			invisible: true
+			description: ["For when you just barely missed that jump! Cling to a ledge by holding the Cling keybind (right click by default) while approaching a ledge. You can then either shimmy along or press space to jump up the ledge."]
 			id: "3592F37B7EE4619E"
+			invisible: true
 			tasks: [{
 				id: "53C57B6B09C51A23"
-				type: "item"
 				item: "kubejs:parkour_guide_cling"
+				type: "item"
 			}]
+			x: -1.0d
+			y: 2.0d
 		}
 		{
-			x: -2.0d
-			y: 1.0d
-			description: ["Vaults let you quickly hop over one block high obstacles! To perform, sprint at a block and press the Vault keybind (right click by default)."]
 			dependencies: ["1334297720A52D95"]
-			invisible: true
+			description: ["Vaults let you quickly hop over one block high obstacles! To perform, sprint at a block and press the Vault keybind (right click by default)."]
 			id: "55058DE631F25B04"
+			invisible: true
 			tasks: [{
 				id: "5B6A3093B1293ABA"
-				type: "item"
 				item: "kubejs:parkour_guide_vault"
+				type: "item"
 			}]
+			x: -2.0d
+			y: 1.0d
 		}
 		{
-			x: 2.0d
-			y: 1.0d
-			description: ["A Quick Turn lets you do an effortless 180. Simply press the Quick Turn keybind (not bound by default)."]
 			dependencies: ["1334297720A52D95"]
-			invisible: true
+			description: ["A Quick Turn lets you do an effortless 180. Simply press the Quick Turn keybind (not bound by default)."]
 			id: "528E6C675566A0DA"
+			invisible: true
 			tasks: [{
 				id: "6BC2079A1C959735"
-				type: "item"
 				item: "kubejs:parkour_guide_quick_turn"
+				type: "item"
 			}]
+			x: 2.0d
+			y: 1.0d
 		}
 		{
-			title: "Parkour"
-			icon: "minecraft:feather"
-			x: 0.0d
-			y: 0.0d
 			description: ["You've found a note teaching you how to perform a special parkour move. These moves expand your mobility options, and all require feathers to perform."]
-			invisible: true
+			icon: "minecraft:feather"
 			id: "1334297720A52D95"
+			invisible: true
 			tasks: [{
 				id: "52FF8882243D6E63"
-				type: "item"
-				title: "Any Parkour Note"
 				item: {
-					id: "itemfilters:or"
 					Count: 1b
+					id: "itemfilters:or"
 					tag: {
 						items: [
 							{
+								Count: 1b
 								id: "kubejs:parkour_guide_wallrun"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "kubejs:parkour_guide_dodge"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "kubejs:parkour_guide_wall_jump"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "kubejs:parkour_guide_flip"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "kubejs:parkour_guide_crawl"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "kubejs:parkour_guide_breakfall"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "kubejs:parkour_guide_catleap"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "kubejs:parkour_guide_vault"
-								Count: 1b
 							}
 							{
+								Count: 1b
 								id: "kubejs:parkour_guide_quick_turn"
-								Count: 1b
 							}
 							{
-								id: "kubejs:parkour_guide_cling"
 								Count: 1b
+								id: "kubejs:parkour_guide_cling"
 							}
 						]
 					}
 				}
+				title: "Any Parkour Note"
+				type: "item"
 			}]
+			title: "Parkour"
+			x: 0.0d
+			y: 0.0d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["Not just jumping."]
+	title: "Hardcore Parkour"
 }

@@ -1,398 +1,398 @@
 {
-	id: "2A26B6FF085E4328"
-	group: "52DC2EC078E51292"
-	order_index: 0
-	filename: "industrial_progression"
-	title: "Towards Enlightenment"
-	icon: "create:andesite_alloy"
-	subtitle: ["Progressing through the Age of Industry."]
-	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "industrial_progression"
+	group: "52DC2EC078E51292"
+	icon: "create:andesite_alloy"
+	id: "2A26B6FF085E4328"
+	order_index: 0
+	quest_links: [ ]
 	quests: [
 		{
-			title: "Into the Depths"
+			description: ["The alloy looks so mundane, yet - sublime. There must be a way to make more."]
 			icon: "create:andesite_alloy"
+			id: "1C329DDA761BAD72"
+			invisible: true
+			size: 1.25d
+			tasks: [{
+				icon: "create:andesite_alloy"
+				id: "58946F53EE48A44B"
+				stage: "create"
+				title: "You are determined."
+				type: "gamestage"
+			}]
+			title: "Into the Depths"
 			x: 0.0d
 			y: 0.0d
-			description: ["The alloy looks so mundane, yet - sublime. There must be a way to make more."]
-			size: 1.25d
-			invisible: true
-			id: "1C329DDA761BAD72"
-			tasks: [{
-				id: "58946F53EE48A44B"
-				type: "gamestage"
-				title: "You are determined."
-				icon: "create:andesite_alloy"
-				stage: "create"
-			}]
 		}
 		{
-			title: "Tools of the Future"
-			x: 2.0d
-			y: 0.0d
-			description: ["Alloy creates alloy creates alloy. Create a Press and a Basin and crush metal and andesite into some more alloy."]
 			dependencies: ["1C329DDA761BAD72"]
+			description: ["Alloy creates alloy creates alloy. Create a Press and a Basin and crush metal and andesite into some more alloy."]
 			hide: true
 			id: "76EC4E944E3A2F52"
 			tasks: [
 				{
 					id: "71F25906C86DED48"
-					type: "item"
 					item: "create:mechanical_press"
+					type: "item"
 				}
 				{
 					id: "514441430F01A6AF"
-					type: "item"
 					item: "create:basin"
+					type: "item"
 				}
 				{
-					id: "218817752C8960E5"
-					type: "item"
-					item: "create:andesite_alloy"
 					count: 32L
+					id: "218817752C8960E5"
+					item: "create:andesite_alloy"
+					type: "item"
 				}
 			]
+			title: "Tools of the Future"
+			x: 2.0d
+			y: 0.0d
 		}
 		{
-			title: "Brass"
-			x: -1.0d
-			y: 2.0d
-			description: ["Copper and zinc, when mixed, create a much stronger metal than either alone. This should be suitable for more heavy-duty applications."]
 			dependencies: ["0C6F9619EA1ADA37"]
+			description: ["Copper and zinc, when mixed, create a much stronger metal than either alone. This should be suitable for more heavy-duty applications."]
 			id: "3398AA7353EEC6C8"
 			tasks: [{
 				id: "51D58128368390A8"
-				type: "item"
 				item: "create:brass_ingot"
+				type: "item"
 			}]
+			title: "Brass"
+			x: -1.0d
+			y: 2.0d
 		}
 		{
-			title: "Melting Metals"
-			x: -2.0d
-			y: 0.0d
-			description: ["Yes, this \"cake\" is perfect. Perhaps by mixing some of the molten metals, another new alloy could be created?"]
 			dependencies: [
 				"7CD43708D886C8CA"
 				"2BF743F918E08838"
 			]
+			description: ["Yes, this \"cake\" is perfect. Perhaps by mixing some of the molten metals, another new alloy could be created?"]
 			id: "0C6F9619EA1ADA37"
 			tasks: [{
 				id: "0D63AE330824AC83"
-				type: "item"
 				item: "create:blaze_cake"
+				type: "item"
 			}]
+			title: "Melting Metals"
+			x: -2.0d
+			y: 0.0d
 		}
 		{
-			title: "Lava Production"
-			x: -1.0d
-			y: -0.5d
+			dependencies: ["7F492ECCA9E3A777"]
 			description: [
 				"You'll need a lot of lava to feed those Blaze Burners. For now, siphoning lava from the Nether will work, but a more renewable solution would be desirable."
 				""
 				"Melting stone in the very Blaze Burners you're trying to feed will likely work - the Blaze has enough energy from Beyond to produce more lava than it consumes."
 			]
-			hide_dependency_lines: true
-			dependencies: ["7F492ECCA9E3A777"]
 			hide: true
-			size: 0.75d
+			hide_dependency_lines: true
 			id: "2BF743F918E08838"
+			size: 0.75d
 			tasks: [{
 				id: "52EA7D4F1893677B"
-				type: "item"
 				item: "minecraft:lava_bucket"
+				type: "item"
 			}]
+			title: "Lava Production"
+			x: -1.0d
+			y: -0.5d
 		}
 		{
-			title: "Cake Base"
-			icon: "create:blaze_cake_base"
-			x: -1.0d
-			y: -2.0d
+			dependencies: ["7F492ECCA9E3A777"]
 			description: [
 				"The Blaze Burner does not get hot enough by itself to liquify metal. You'll have to give the trapped Blaze inside something stimulating."
 				""
 				"A sort of cake made out of lava should work. You'll need to automate sugar, eggs, and cinder flour."
 			]
-			dependencies: ["7F492ECCA9E3A777"]
 			hide: true
+			icon: "create:blaze_cake_base"
 			id: "7CD43708D886C8CA"
 			tasks: [
 				{
 					id: "303D149326658B42"
-					type: "item"
 					item: "minecraft:sugar"
+					type: "item"
 				}
 				{
 					id: "79282AFA1EFA477F"
-					type: "item"
-					title: "Any #forge:eggs"
 					item: {
-						id: "itemfilters:tag"
 						Count: 1b
+						id: "itemfilters:tag"
 						tag: {
 							value: "forge:eggs"
 						}
 					}
+					title: "Any #forge:eggs"
+					type: "item"
 				}
 				{
 					id: "11E38FF73046FF0C"
-					type: "item"
 					item: "create:cinder_flour"
+					type: "item"
 				}
 			]
+			title: "Cake Base"
+			x: -1.0d
+			y: -2.0d
 		}
 		{
-			x: 1.0d
-			y: -2.0d
-			description: ["A sturdy frame is required to make more complicated machinery. This newly developed alloy will suffice, along with wood and various metals."]
 			dependencies: ["76EC4E944E3A2F52"]
+			description: ["A sturdy frame is required to make more complicated machinery. This newly developed alloy will suffice, along with wood and various metals."]
 			hide: true
 			id: "7F492ECCA9E3A777"
 			tasks: [{
 				id: "2B634CD344080145"
-				type: "item"
 				item: "create:andesite_casing"
+				type: "item"
 			}]
+			x: 1.0d
+			y: -2.0d
 		}
 		{
-			title: "A Better Method"
-			icon: "create:spout"
-			x: -2.25d
-			y: -1.125d
-			description: ["Now that you can liquify metal, much more effecient methods to create andesite alloy and casings have become available. "]
 			dependencies: ["0C6F9619EA1ADA37"]
-			size: 0.75d
+			description: ["Now that you can liquify metal, much more effecient methods to create andesite alloy and casings have become available. "]
+			icon: "create:spout"
 			id: "10B684AECE2EDBDC"
+			size: 0.75d
 			tasks: [{
 				id: "63E1BB357D420614"
-				type: "checkmark"
 				title: "A Better Method"
+				type: "checkmark"
 			}]
+			title: "A Better Method"
+			x: -2.25d
+			y: -1.125d
 		}
 		{
-			x: 1.0d
-			y: 2.0d
+			dependencies: ["0C6F9619EA1ADA37"]
 			description: [
 				"Rose quartz appears to have a strong connection to After, giving it a \"smart\" quality. When polished and socketed into a metal frame, it seems to be able to control basic machinery."
 				""
 				"Perhaps it could be used to make a machine that crafts for you?"
 			]
-			dependencies: ["0C6F9619EA1ADA37"]
 			id: "0053B0B4569828A0"
 			tasks: [{
 				id: "6523A3882593803A"
-				type: "item"
 				item: "create:electron_tube"
+				type: "item"
 			}]
+			x: 1.0d
+			y: 2.0d
 		}
 		{
-			title: "Crushing Wheels"
-			x: 3.0d
-			y: 2.0d
-			description: ["The newly built Mechanical Crafters can create much larger and more complicated machines than you could by hand. Use them to craft a pair of wheels to pulverize various materials."]
 			dependencies: [
 				"3398AA7353EEC6C8"
 				"0053B0B4569828A0"
 			]
+			description: ["The newly built Mechanical Crafters can create much larger and more complicated machines than you could by hand. Use them to craft a pair of wheels to pulverize various materials."]
 			id: "70A7F1694E29C8D4"
 			tasks: [{
 				id: "30652C60D5E9297D"
-				type: "item"
 				item: "create:crushing_wheel"
+				type: "item"
 			}]
+			title: "Crushing Wheels"
+			x: 3.0d
+			y: 2.0d
 		}
 		{
-			icon: "create:mechanical_drill"
-			x: 1.875d
-			y: 1.125d
-			description: ["These Crushing Wheels can pulverize stone and extract the minerals they have stored within. Different stone types have different metal content, and can be generated in different ways. This could negate the need to go mine for ores manually at all."]
 			dependencies: ["70A7F1694E29C8D4"]
-			size: 0.75d
+			description: ["These Crushing Wheels can pulverize stone and extract the minerals they have stored within. Different stone types have different metal content, and can be generated in different ways. This could negate the need to go mine for ores manually at all."]
+			icon: "create:mechanical_drill"
 			id: "201CBD92C01012BF"
+			size: 0.75d
 			tasks: [{
 				id: "4619FB5B711754E2"
-				type: "checkmark"
 				title: "Automating Ores"
+				type: "checkmark"
 			}]
+			x: 1.875d
+			y: 1.125d
 		}
 		{
-			x: 4.0d
-			y: 0.0d
-			description: ["To proceed, you'll need to make a highly thermally insulating material. Standard ceramics are a good start, and mixing them with powdered aluminum and quartz ought to work."]
 			dependencies: ["70A7F1694E29C8D4"]
+			description: ["To proceed, you'll need to make a highly thermally insulating material. Standard ceramics are a good start, and mixing them with powdered aluminum and quartz ought to work."]
 			id: "1EA0CC7ACBE3F10A"
 			tasks: [{
 				id: "6134D8BD80FC4D77"
-				type: "item"
 				item: "kubejs:high_temperature_ceramic_dust"
+				type: "item"
 			}]
+			x: 4.0d
+			y: 0.0d
 		}
 		{
-			x: 3.0d
-			y: -2.0d
-			description: ["Condense that high-temperature powder into a solid brick. "]
 			dependencies: ["1EA0CC7ACBE3F10A"]
+			description: ["Condense that high-temperature powder into a solid brick. "]
 			id: "1A7BDAA1485FD02B"
 			tasks: [{
 				id: "30170A755F360E88"
-				type: "item"
 				item: "kubejs:high_temperature_brick"
+				type: "item"
 			}]
+			x: 3.0d
+			y: -2.0d
 		}
 		{
-			x: 2.8125d
-			y: -3.1875d
-			description: ["You'll have to generate limestone to make mortar."]
-			hide_dependency_lines: true
 			dependencies: ["7F492ECCA9E3A777"]
+			description: ["You'll have to generate limestone to make mortar."]
 			hide: true
-			size: 0.75d
+			hide_dependency_lines: true
 			id: "1BB50F00B13E6B71"
+			size: 0.75d
 			tasks: [{
 				id: "5071F9B776B79CDC"
-				type: "item"
 				item: "kubejs:lime"
+				type: "item"
 			}]
+			x: 2.8125d
+			y: -3.1875d
 		}
 		{
-			title: "Mortar Production"
-			x: 1.75d
-			y: -3.5d
-			description: ["A mixture of sand, water, and lime can be used to stick bricks together. "]
 			dependencies: ["1BB50F00B13E6B71"]
+			description: ["A mixture of sand, water, and lime can be used to stick bricks together. "]
 			id: "29680BCB94A8D5FF"
 			tasks: [{
 				id: "04384172B54A94A4"
-				type: "item"
 				item: "kubejs:mortar_bucket"
+				type: "item"
 			}]
+			title: "Mortar Production"
+			x: 1.75d
+			y: -3.5d
 		}
 		{
-			x: 0.5d
-			y: -3.25d
+			dependencies: [
+				"1A7BDAA1485FD02B"
+				"29680BCB94A8D5FF"
+			]
 			description: [
 				"In order to make steel, you'll need a very pure source of fuel. "
 				""
 				"Create a Coke Oven with the high-temperature bricks and mortar, and create some coal coke."
 			]
-			dependencies: [
-				"1A7BDAA1485FD02B"
-				"29680BCB94A8D5FF"
-			]
 			id: "0A78393596DBA4CD"
-			tasks: [{
-				id: "78F206B47EFE1600"
-				type: "item"
-				item: "immersiveengineering:cokebrick"
-				count: 27L
-			}]
 			rewards: [{
 				id: "17AA7E31A66BF6E9"
-				type: "item"
 				item: {
-					id: "immersiveengineering:hammer"
 					Count: 1b
+					id: "immersiveengineering:hammer"
 					tag: {
 						Damage: 0
 					}
 				}
+				type: "item"
 			}]
+			tasks: [{
+				count: 27L
+				id: "78F206B47EFE1600"
+				item: "immersiveengineering:cokebrick"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -3.25d
 		}
 		{
-			x: -1.0d
-			y: -4.0d
-			description: ["Even higher temperatures are required to forge steel. Use the Quantum power of Blazes to remove the impurities from high-temperature bricks."]
 			dependencies: [
 				"1A7BDAA1485FD02B"
 				"4EC7B1E0618DDFAE"
 			]
+			description: ["Even higher temperatures are required to forge steel. Use the Quantum power of Blazes to remove the impurities from high-temperature bricks."]
 			id: "2E4E8EC6B04C1126"
 			tasks: [{
 				id: "43BB99DFAC687009"
-				type: "item"
 				item: "kubejs:lavaproof_brick"
+				type: "item"
 			}]
+			x: -1.0d
+			y: -4.0d
 		}
 		{
-			title: "Artificial Blaze Rods"
-			x: 0.0d
-			y: -4.5d
+			dependencies: ["2BF743F918E08838"]
 			description: [
 				"A very accurate reproduction of blaze rods can be made from gold, lava, and potent fire resistant potions. This is much easier than killing the Nether's native blazes."
 				""
 				"Perhaps this is what blazes are made from in the first place? "
 			]
 			hide_dependency_lines: true
-			dependencies: ["2BF743F918E08838"]
-			size: 0.75d
 			id: "4EC7B1E0618DDFAE"
+			size: 0.75d
 			tasks: [{
 				id: "1A610E238892209A"
-				type: "item"
 				item: "minecraft:blaze_rod"
+				type: "item"
 			}]
+			title: "Artificial Blaze Rods"
+			x: 0.0d
+			y: -4.5d
 		}
 		{
-			x: -3.5d
-			y: -2.5d
-			description: ["All that work is finally coalescing. Construct a blast furnace."]
 			dependencies: ["2E4E8EC6B04C1126"]
+			description: ["All that work is finally coalescing. Construct a blast furnace."]
 			id: "47C1139AAEE451E1"
 			tasks: [{
-				id: "7A98C86FA9F15369"
-				type: "item"
-				item: "immersiveengineering:blastbrick"
 				count: 27L
+				id: "7A98C86FA9F15369"
+				item: "immersiveengineering:blastbrick"
+				type: "item"
 			}]
+			x: -3.5d
+			y: -2.5d
 		}
 		{
-			x: -4.0d
-			y: 0.0d
-			description: ["Your determination is rewarded. This steel is stronger than you could ever imagine."]
 			dependencies: ["47C1139AAEE451E1"]
+			description: ["Your determination is rewarded. This steel is stronger than you could ever imagine."]
 			id: "1EE9D624EEA5F4AA"
 			tasks: [{
 				id: "7208A6A65216E1F4"
-				type: "item"
 				item: "immersiveengineering:ingot_steel"
+				type: "item"
 			}]
+			x: -4.0d
+			y: 0.0d
 		}
 		{
-			x: -2.25d
-			y: -3.25d
-			description: ["Coal, it would seem, is incoveniently non-renewable. Perhaps you could infuse some blaze powder into charcoal to create a suitable fuel?"]
 			dependencies: [
 				"0A78393596DBA4CD"
 				"4EC7B1E0618DDFAE"
 			]
-			size: 0.75d
-			optional: true
+			description: ["Coal, it would seem, is incoveniently non-renewable. Perhaps you could infuse some blaze powder into charcoal to create a suitable fuel?"]
 			id: "5AB089ACA5275D6E"
+			optional: true
+			size: 0.75d
 			tasks: [{
 				id: "45F8FCBC72DA7F8A"
-				type: "item"
 				item: "kubejs:industrial_fuel"
+				type: "item"
 			}]
+			x: -2.25d
+			y: -3.25d
 		}
 		{
-			x: -1.0d
-			y: 3.5d
+			dependencies: ["0053B0B4569828A0"]
 			description: [
 				"By giving the electron tube a casing and a hand, it can construct parts smaller than is possible with your shaky hands."
 				""
 				"These mechanisms will be vital where more precision is required."
 			]
-			dependencies: ["0053B0B4569828A0"]
 			id: "54224A49EF86E0B3"
 			tasks: [{
 				id: "7463988C4D411766"
-				type: "item"
 				item: "create:precision_mechanism"
+				type: "item"
 			}]
+			x: -1.0d
+			y: 3.5d
 		}
 		{
-			x: -3.125d
-			y: 2.5d
-			shape: "diamond"
+			dependencies: [
+				"1EE9D624EEA5F4AA"
+				"54224A49EF86E0B3"
+			]
 			description: [
 				"A gift from After, a revelation. You now understand the nature of lightning; it is but a manifestation of the collision of planes. "
 				""
@@ -402,18 +402,18 @@
 				""
 				"The work must continue; the inertia of determination is too great to be halted by the petty grievances of the Past."
 			]
-			dependencies: [
-				"1EE9D624EEA5F4AA"
-				"54224A49EF86E0B3"
-			]
-			size: 1.25d
 			id: "7C2192213DC59AD8"
+			shape: "diamond"
+			size: 1.25d
 			tasks: [{
 				id: "2CF1C76B0C3A9956"
-				type: "item"
 				item: "createaddition:alternator"
+				type: "item"
 			}]
+			x: -3.125d
+			y: 2.5d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["Progressing through the Age of Industry."]
+	title: "Towards Enlightenment"
 }

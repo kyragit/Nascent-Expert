@@ -1,24 +1,20 @@
 {
-	id: "42B3A9B56C722391"
-	group: "36C3CA17FE4F12AD"
-	order_index: 1
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
 	filename: "handy_items"
-	title: "Handy Items"
+	group: "36C3CA17FE4F12AD"
 	icon: {
-		id: "chalk:light_gray_chalk"
 		Count: 1b
+		id: "chalk:light_gray_chalk"
 		tag: {
 			Damage: 0
 		}
 	}
-	subtitle: ["Some useful items you should know about."]
-	default_quest_shape: ""
-	default_hide_dependency_lines: false
+	id: "42B3A9B56C722391"
+	order_index: 1
+	quest_links: [ ]
 	quests: [
 		{
-			title: "Chalk"
-			x: 0.0d
-			y: 0.0d
 			description: [
 				"Getting lost in a dungeon? Can't figure out if you've already been down this hallway before? Make some chalk!"
 				""
@@ -29,37 +25,38 @@
 			id: "3BB3EE59823E9EDC"
 			tasks: [{
 				id: "12BD4337C0382C75"
-				type: "item"
-				title: "Any #chalk:chalk"
 				item: {
-					id: "itemfilters:tag"
 					Count: 1b
+					id: "itemfilters:tag"
 					tag: {
-						value: "chalk:chalk"
+						value: "chalk:chalks"
 					}
 				}
+				title: "Any #chalk:chalks"
+				type: "item"
 			}]
+			title: "Chalk"
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			x: 2.0d
-			y: 0.0d
 			description: ["Throw bees at your enemies! Make a bunch of these and gear up in the Bumblezone and you'll really bee on your way to something unbeelievable."]
 			id: "3E78BE3906130AD3"
+			rewards: [{
+				count: 8
+				id: "5D37630EA224D57D"
+				item: "minecraft:honeycomb_block"
+				type: "item"
+			}]
 			tasks: [{
 				id: "7FDCFB0660A186E8"
-				type: "item"
 				item: "potionofbees:splash_potion_of_bees"
-			}]
-			rewards: [{
-				id: "5D37630EA224D57D"
 				type: "item"
-				item: "minecraft:honeycomb_block"
-				count: 8
 			}]
+			x: 2.0d
+			y: 0.0d
 		}
 		{
-			x: -2.0d
-			y: 0.0d
 			description: [
 				"Create a backpack for all that loot you can't carry! Backpacks have a wide variety of upgrades, both to their storage capacity and functionality."
 				""
@@ -68,33 +65,32 @@
 			id: "0E77EBC1B6011503"
 			tasks: [{
 				id: "52A798A24B00FE4C"
-				type: "item"
 				item: "sophisticatedbackpacks:backpack"
+				type: "item"
 			}]
+			x: -2.0d
+			y: 0.0d
 		}
 		{
-			title: "Paragliders"
-			x: 0.0d
-			y: -2.0d
 			description: ["Make (or find) a paraglider to gracefully glide down to earth! Just make sure you're not wearing anything too heavy, since gliding now uses feathers!"]
 			id: "36869C5833105540"
 			tasks: [{
 				id: "46AD79C1E8ECEC22"
-				type: "item"
-				title: "Any #paraglider:paragliders"
 				item: {
-					id: "itemfilters:tag"
 					Count: 1b
+					id: "itemfilters:tag"
 					tag: {
 						value: "paraglider:paragliders"
 					}
 				}
+				title: "Any #paraglider:paragliders"
+				type: "item"
 			}]
+			title: "Paragliders"
+			x: 0.0d
+			y: -2.0d
 		}
 		{
-			title: "Small Backpack"
-			x: 0.0d
-			y: 2.0d
 			description: [
 				"Easier to get than a regular backpack, this will ease your inventory struggles in the early game."
 				""
@@ -103,11 +99,9 @@
 			id: "46F570061CAB0D9F"
 			tasks: [{
 				id: "0400D28A1B2E7D50"
-				type: "item"
-				title: "Small Backpack"
 				item: {
-					id: "quark:backpack"
 					Count: 1b
+					id: "quark:backpack"
 					tag: {
 						Inventory: [
 							{ }
@@ -140,33 +134,39 @@
 						]
 					}
 				}
+				title: "Small Backpack"
+				type: "item"
 			}]
+			title: "Small Backpack"
+			x: 0.0d
+			y: 2.0d
 		}
 		{
-			x: 3.5d
-			y: 0.0d
+			dependencies: [
+				"3E78BE3906130AD3"
+				"091F68B339B98F49"
+			]
 			description: [
 				"BEES"
 				""
 				"SO MANY BEES"
 			]
-			dependencies: [
-				"3E78BE3906130AD3"
-				"091F68B339B98F49"
-			]
 			hide: true
 			id: "2F58E0E7E4EE7C2A"
-			tasks: [{
-				id: "604C4905EFAC389F"
-				type: "item"
-				item: "potionofbees:lingering_potion_of_bees"
-			}]
 			rewards: [{
 				id: "79435572592AF363"
-				type: "item"
 				item: "minecraft:dragon_breath"
+				type: "item"
 			}]
+			tasks: [{
+				id: "604C4905EFAC389F"
+				item: "potionofbees:lingering_potion_of_bees"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 0.0d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["Some useful items you should know about."]
+	title: "Handy Items"
 }

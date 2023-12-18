@@ -1,54 +1,51 @@
 {
-	id: "20A1C88D67B1AFCF"
-	group: "36C3CA17FE4F12AD"
-	order_index: 5
-	filename: "planar_magicks"
-	title: "Planar Magicks"
-	icon: "minecraft:nether_star"
-	subtitle: ["Harnessing extraplanar magicks to your own ends."]
-	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "planar_magicks"
+	group: "36C3CA17FE4F12AD"
+	icon: "minecraft:nether_star"
+	id: "20A1C88D67B1AFCF"
+	order_index: 5
+	quest_links: [ ]
 	quests: [
 		{
-			title: "Pyromancy"
-			icon: {
-				id: "pyromancer:blazing_journal"
-				Count: 1b
-				tag: {
-					Damage: 0
-				}
-			}
-			x: 2.0d
-			y: 0.0d
 			description: [
 				"The Nether itself is brimming with potiental energy. Pyromancy is the art of harnessing and directing it."
 				""
 				"In order to begin, you'll need two things: a Blazing Journal, and a Pyromancer's Table. The Journal can either be made or looted in the Nether, and the Table is made from Pyrowood; ancient trees found rarely in deserts or in the Nether."
 			]
+			icon: {
+				Count: 1b
+				id: "pyromancer:blazing_journal"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "46B56DBD4BBE2BFF"
 			tasks: [
 				{
 					id: "210A32039165A206"
-					type: "item"
 					item: {
-						id: "pyromancer:blazing_journal"
 						Count: 1b
+						id: "pyromancer:blazing_journal"
 						tag: {
 							Damage: 0
 						}
 					}
+					type: "item"
 				}
 				{
 					id: "614EE32E5DEEF1D6"
-					type: "item"
 					item: "pyromancer:pyromancer_table"
+					type: "item"
 				}
 			]
+			title: "Pyromancy"
+			x: 2.0d
+			y: 0.0d
 		}
 		{
-			icon: "minecraft:blaze_powder"
-			x: 4.0d
-			y: 0.0d
+			dependencies: ["46B56DBD4BBE2BFF"]
 			description: [
 				"The Blazing Journal uses Blaze Powder as fuel. Fuel it inside of a Pyromancer's Table. "
 				""
@@ -56,31 +53,23 @@
 				""
 				"Its other use is to power certain Pyromancy Artifacts. These all have a unique spell-like effect that uses blaze from an offhanded Journal."
 			]
-			dependencies: ["46B56DBD4BBE2BFF"]
+			icon: "minecraft:blaze_powder"
 			id: "102808F22A27EE1B"
+			rewards: [{
+				count: 16
+				id: "09716341889EA3F0"
+				item: "minecraft:blaze_powder"
+				type: "item"
+			}]
 			tasks: [{
 				id: "5DFF060CE6E6933A"
-				type: "checkmark"
 				title: "Using the Journal"
+				type: "checkmark"
 			}]
-			rewards: [{
-				id: "09716341889EA3F0"
-				type: "item"
-				item: "minecraft:blaze_powder"
-				count: 16
-			}]
+			x: 4.0d
+			y: 0.0d
 		}
 		{
-			title: "Staves"
-			icon: {
-				id: "enchantable_staffs:gold_staff"
-				Count: 1b
-				tag: {
-					Damage: 0
-				}
-			}
-			x: -2.0d
-			y: 0.0d
 			description: [
 				"Staves are special tools that use the enchanting process to create spell-like effects."
 				""
@@ -90,37 +79,45 @@
 				""
 				"Different staves have different durability and enchantability values. Gold is the most enchantable, and netherite is the most durable."
 			]
+			icon: {
+				Count: 1b
+				id: "enchantable_staffs:gold_staff"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "43E4BB038781FD68"
 			tasks: [{
 				id: "25E45DDE5D969490"
-				type: "item"
-				title: "Any Staff"
 				item: {
-					id: "itemfilters:tag"
 					Count: 1b
+					id: "itemfilters:tag"
 					tag: {
 						value: "enchantable_staffs:staffs"
 					}
 				}
+				title: "Any Staff"
+				type: "item"
 			}]
+			title: "Staves"
+			x: -2.0d
+			y: 0.0d
 		}
 		{
-			title: "Scrolls"
-			x: -4.0d
-			y: -1.0d
-			description: ["Scrolls function exactly like enchanted books, but only accept staff enchantments. Very useful for getting the spell you want!"]
 			dependencies: ["43E4BB038781FD68"]
+			description: ["Scrolls function exactly like enchanted books, but only accept staff enchantments. Very useful for getting the spell you want!"]
 			id: "5608FE9D92E0D227"
 			tasks: [{
 				id: "09CA1C36A7D70B8C"
-				type: "item"
 				item: "enchantable_staffs:scroll"
+				type: "item"
 			}]
+			title: "Scrolls"
+			x: -4.0d
+			y: -1.0d
 		}
 		{
-			icon: "minecraft:cake"
-			x: -4.0d
-			y: 1.0d
+			dependencies: ["43E4BB038781FD68"]
 			description: [
 				"Certain items, when combined with a staff in a smithing table, will give the staff a modifier."
 				""
@@ -139,25 +136,17 @@
 				"Eye of Ender: Envy"
 				"Adds charge when attacking an entity with the staff, based on the max health of the entity."
 			]
-			dependencies: ["43E4BB038781FD68"]
+			icon: "minecraft:cake"
 			id: "4D5DA2D80A5B9044"
 			tasks: [{
 				id: "6AD016B7FB86729A"
-				type: "checkmark"
 				title: "Staff Modifiers"
+				type: "checkmark"
 			}]
+			x: -4.0d
+			y: 1.0d
 		}
 		{
-			title: "Alchemy"
-			icon: {
-				id: "minecraft:potion"
-				Count: 1b
-				tag: {
-					Potion: "minecraft:leaping"
-				}
-			}
-			x: 0.0d
-			y: -2.0d
 			description: [
 				"Many tweaks have been made to making and using potions. Potions now stack for easier use (up to 16 for regular potions and 4 for splash potions)."
 				""
@@ -165,33 +154,41 @@
 				""
 				"The intrepid alchemist also has a few new tools at their disposal."
 			]
+			icon: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:leaping"
+				}
+			}
 			id: "02AA7B55F4EC5E2E"
 			tasks: [{
 				id: "4FEA687C1036F874"
-				type: "checkmark"
 				title: "Alchemy"
+				type: "checkmark"
 			}]
+			title: "Alchemy"
+			x: 0.0d
+			y: -2.0d
 		}
 		{
-			x: 0.0d
-			y: -4.0d
+			dependencies: ["02AA7B55F4EC5E2E"]
 			description: [
 				"The Compound Brewing Stand is an upgrade to the standard brewing stand. "
 				""
 				"It can make double the amount of potions at once, up to six. It can also store additional ingredients that will be applied in sequence. Additionally, it is twice as fast as a regular brewing stand."
 			]
-			dependencies: ["02AA7B55F4EC5E2E"]
 			id: "7EA39BE8353C86C1"
 			tasks: [{
 				id: "457CD75640A0491D"
-				type: "item"
 				item: "davespotioneering:compound_brewing_stand"
+				type: "item"
 			}]
+			x: 0.0d
+			y: -4.0d
 		}
 		{
-			title: "Coating Weapons"
-			x: 1.0d
-			y: -4.0d
+			dependencies: ["02AA7B55F4EC5E2E"]
 			description: [
 				"The Reinforced Cauldron can be used to coat weapons with a potion effect."
 				""
@@ -199,22 +196,18 @@
 				""
 				"The weapon will apply the potion effect upon hitting an enemy. It has limited uses, and limited time (though the time only ticks down while you are holding it)."
 			]
-			dependencies: ["02AA7B55F4EC5E2E"]
 			id: "2F27E3FC7864ED2C"
 			tasks: [{
 				id: "2EA460A3C6FE4C43"
-				type: "item"
 				item: "davespotioneering:reinforced_cauldron"
+				type: "item"
 			}]
+			title: "Coating Weapons"
+			x: 1.0d
+			y: -4.0d
 		}
 		{
-			icon: {
-				id: "davespotioneering:potioneer_gauntlet"
-				Count: 1b
-				tag: { }
-			}
-			x: -1.0d
-			y: -4.0d
+			dependencies: ["02AA7B55F4EC5E2E"]
 			description: [
 				"The Potioneer's Gauntlet is a special melee weapon that applies potion effects on hit."
 				""
@@ -222,57 +215,61 @@
 				""
 				"The Gauntlet will then use blaze to apply the potions to entities you hit. The potions are not consumed. Read the item's description for its controls."
 			]
-			dependencies: ["02AA7B55F4EC5E2E"]
+			icon: {
+				Count: 1b
+				id: "davespotioneering:potioneer_gauntlet"
+				tag: { }
+			}
 			id: "3FC2AB9CEF5869E7"
 			tasks: [
 				{
 					id: "4582EB1010A51BE1"
-					type: "item"
 					item: {
-						id: "davespotioneering:potioneer_gauntlet"
 						Count: 1b
+						id: "davespotioneering:potioneer_gauntlet"
 						tag: { }
 					}
+					type: "item"
 				}
 				{
 					id: "2C6609D7044E1CC2"
-					type: "item"
 					item: "davespotioneering:potion_injector"
+					type: "item"
 				}
 			]
+			x: -1.0d
+			y: -4.0d
 		}
 		{
-			title: "Dragon's Breath Early"
-			x: 0.0d
-			y: -6.0d
-			description: ["Dragon's Breath can be obtained before going to the End. You'll need to scrap some affix items and crush some gems. "]
 			dependencies: [
 				"2F27E3FC7864ED2C"
 				"3FC2AB9CEF5869E7"
 			]
 			dependency_requirement: "one_started"
+			description: ["Dragon's Breath can be obtained before going to the End. You'll need to scrap some affix items and crush some gems. "]
 			id: "091F68B339B98F49"
 			tasks: [{
 				id: "47DA124EC926EE92"
-				type: "item"
 				item: "minecraft:dragon_breath"
+				type: "item"
 			}]
+			title: "Dragon's Breath Early"
+			x: 0.0d
+			y: -6.0d
 		}
 		{
-			x: 0.0d
-			y: 2.0d
 			description: ["Across the world you will find elemental shrines. These shrines, when activated with a specific ritual, will give you a buff that lasts until death. You cannot have buffs from opposing elements at the same time, however."]
 			id: "6E037E2BEAC02455"
 			tasks: [{
 				id: "53AAC3B3DB36D4DB"
-				type: "checkmark"
 				title: "Elemental Shrines"
+				type: "checkmark"
 			}]
+			x: 0.0d
+			y: 2.0d
 		}
 		{
-			title: "Air Shrine"
-			x: 1.5d
-			y: 3.5d
+			dependencies: ["6E037E2BEAC02455"]
 			description: [
 				"The soaring winds of the plains hide an Air Shrine. You can feel its pull; both physically and mentally."
 				""
@@ -280,191 +277,194 @@
 				""
 				"Note: this shrine is very finicky. Keep trying, you'll eventually get it."
 			]
-			dependencies: ["6E037E2BEAC02455"]
 			id: "4962374EE7EAE446"
 			tasks: [{
-				id: "14C8F821600F4652"
-				type: "advancement"
 				advancement: "trolldom:discovery/air_shrine"
 				criterion: ""
+				id: "14C8F821600F4652"
+				type: "advancement"
 			}]
+			title: "Air Shrine"
+			x: 1.5d
+			y: 3.5d
 		}
 		{
-			title: "Earth Shrine"
-			x: 0.5d
-			y: 3.5d
+			dependencies: ["6E037E2BEAC02455"]
 			description: [
 				"You've found an ancient Earth Shrine, buried deep underground. It feels... serene."
 				""
 				"Perhaps you should contemplate upon it."
 			]
-			dependencies: ["6E037E2BEAC02455"]
 			id: "6001CE574EC162CD"
 			tasks: [{
-				id: "4852937E3077799A"
-				type: "advancement"
 				advancement: "trolldom:discovery/earth_shrine"
 				criterion: ""
+				id: "4852937E3077799A"
+				type: "advancement"
 			}]
+			title: "Earth Shrine"
+			x: 0.5d
+			y: 3.5d
 		}
 		{
-			title: "Fire Shrine"
-			x: -0.5d
-			y: 3.5d
+			dependencies: ["6E037E2BEAC02455"]
 			description: [
 				"You've found a Fire Shrine in the Nether. You can feel its strong connection to Beyond."
 				""
 				"It seems to be demanding some kind of sacrifice. Some fuel, perhaps? "
 			]
-			dependencies: ["6E037E2BEAC02455"]
 			id: "269EAA13860D6147"
 			tasks: [{
-				id: "5766AAF65B45DD30"
-				type: "advancement"
 				advancement: "trolldom:discovery/fire_shrine"
 				criterion: ""
+				id: "5766AAF65B45DD30"
+				type: "advancement"
 			}]
+			title: "Fire Shrine"
+			x: -0.5d
+			y: 3.5d
 		}
 		{
-			title: "Water Shrine"
-			x: -1.5d
-			y: 3.5d
+			dependencies: ["6E037E2BEAC02455"]
 			description: [
 				"You've found a Water Shrine, deep on the floor of the ocean."
 				""
 				"It shines invitingly... as if begging you to let it carry you."
 			]
-			dependencies: ["6E037E2BEAC02455"]
 			id: "52C71D348804EBB8"
 			tasks: [{
-				id: "5D538D889FB24EBB"
-				type: "advancement"
 				advancement: "trolldom:discovery/water_shrine"
 				criterion: ""
+				id: "5D538D889FB24EBB"
+				type: "advancement"
 			}]
+			title: "Water Shrine"
+			x: -1.5d
+			y: 3.5d
 		}
 		{
-			title: "Fire Boon"
-			x: -1.0d
-			y: 5.0d
+			dependencies: ["269EAA13860D6147"]
 			description: [
 				"Your chest fills with Its rage. Is this how It feels? That they all must burn? "
 				""
 				"It's best not to think about that right now."
 			]
-			dependencies: ["269EAA13860D6147"]
-			invisible: true
 			id: "777AACC25A7E4934"
+			invisible: true
+			rewards: [{
+				count: 4
+				id: "7122984303C44DB6"
+				item: "minecraft:blaze_rod"
+				type: "item"
+			}]
 			tasks: [{
-				id: "2E7D6E00D6015DCC"
-				type: "advancement"
 				advancement: "trolldom:discovery/fire_boon"
 				criterion: ""
+				id: "2E7D6E00D6015DCC"
+				type: "advancement"
 			}]
-			rewards: [{
-				id: "7122984303C44DB6"
-				type: "item"
-				item: "minecraft:blaze_rod"
-				count: 4
-			}]
+			title: "Fire Boon"
+			x: -1.0d
+			y: 5.0d
 		}
 		{
-			title: "Air Boon"
-			x: 2.5d
-			y: 4.5d
+			dependencies: ["4962374EE7EAE446"]
 			description: [
 				"You can feel your whole being accelerate forward, as if pulled by an extraplanar source. Your mind feels... free. "
 				""
 				"If only this feeling could last forever."
 			]
-			dependencies: ["4962374EE7EAE446"]
-			invisible: true
 			id: "411F5F8981CEC99C"
+			invisible: true
+			rewards: [{
+				count: 8
+				id: "5D9A5D6EB1D4AD15"
+				item: "quark:bottled_cloud"
+				type: "item"
+			}]
 			tasks: [{
-				id: "69782B8670AC949F"
-				type: "advancement"
 				advancement: "trolldom:discovery/air_boon"
 				criterion: ""
+				id: "69782B8670AC949F"
+				type: "advancement"
 			}]
-			rewards: [{
-				id: "5D9A5D6EB1D4AD15"
-				type: "item"
-				item: "quark:bottled_cloud"
-				count: 8
-			}]
+			title: "Air Boon"
+			x: 2.5d
+			y: 4.5d
 		}
 		{
-			title: "Earth Boon"
-			x: 1.0d
-			y: 5.0d
+			dependencies: ["6001CE574EC162CD"]
 			description: [
 				"Your contemplation was rewarded. You can feel Before crystallizing your skin, like a shield of gemstones."
 				""
 				"You suddenly long for a time long ago... when exactly, you're not sure."
 			]
-			dependencies: ["6001CE574EC162CD"]
-			invisible: true
 			id: "266FD9EFA4A5E7A2"
-			tasks: [{
-				id: "74F187EDB3994DE4"
-				type: "advancement"
-				advancement: "trolldom:discovery/earth_boon"
-				criterion: ""
-			}]
+			invisible: true
 			rewards: [
 				{
+					count: 4
 					id: "52F2556E33CAD6F2"
-					type: "item"
 					item: "minecraft:diamond"
-					count: 4
+					type: "item"
 				}
 				{
+					count: 4
 					id: "4B376B06AB6FBEF3"
-					type: "item"
 					item: "minecraft:emerald"
-					count: 4
+					type: "item"
 				}
 				{
+					count: 4
 					id: "7AD579576C0D5DB8"
-					type: "item"
 					item: "minecraft:iron_ingot"
-					count: 4
+					type: "item"
 				}
 				{
-					id: "48BCC3F89C95034A"
-					type: "item"
-					item: "minecraft:gold_ingot"
 					count: 4
+					id: "48BCC3F89C95034A"
+					item: "minecraft:gold_ingot"
+					type: "item"
 				}
 			]
+			tasks: [{
+				advancement: "trolldom:discovery/earth_boon"
+				criterion: ""
+				id: "74F187EDB3994DE4"
+				type: "advancement"
+			}]
+			title: "Earth Boon"
+			x: 1.0d
+			y: 5.0d
 		}
 		{
-			x: -2.5d
-			y: 4.5d
-			description: ["You feel the power surge from Within. Your momentum carries you; each movement into the next, flowing like water."]
 			dependencies: ["52C71D348804EBB8"]
-			invisible: true
+			description: ["You feel the power surge from Within. Your momentum carries you; each movement into the next, flowing like water."]
 			id: "4B4FDC9CAE319B85"
-			tasks: [{
-				id: "1CD326A8F16EA85E"
-				type: "advancement"
-				title: "Water Boon"
-				advancement: "trolldom:discovery/water_boon"
-				criterion: ""
-			}]
+			invisible: true
 			rewards: [{
 				id: "02C163D7DFF1B09F"
-				type: "item"
 				item: {
-					id: "apotheosis:potion_charm"
 					Count: 1b
+					id: "apotheosis:potion_charm"
 					tag: {
 						Damage: 0
 						Potion: "minecraft:long_water_breathing"
 					}
 				}
+				type: "item"
 			}]
+			tasks: [{
+				advancement: "trolldom:discovery/water_boon"
+				criterion: ""
+				id: "1CD326A8F16EA85E"
+				title: "Water Boon"
+				type: "advancement"
+			}]
+			x: -2.5d
+			y: 4.5d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["Harnessing extraplanar magicks to your own ends."]
+	title: "Planar Magicks"
 }

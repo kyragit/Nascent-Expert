@@ -127,6 +127,7 @@ LootJS.modifiers(event => {
     event.addLootTableModifier('immersiveengineering:chests/engineers_house').removeLoot(/.*/)
     event.addLootTableModifier(/immersiveengineering:gameplay.*/).removeLoot(/.*/)
     event.addLootTableModifier(/treasurebags:entity_group.*/).removeLoot(/.*/)
+    event.addLootTableModifier('irons_spellbooks:patchouli_book').removeLoot(/.*/)
     // i hate this so much
     event.addLootTableModifier(/^wabi_sabi_structures:chests.*/).apply(ctx => {
         ctx.server.lootTables.get('custom:loot_common').getRandomItems(new Builder(ctx.server.getLevel(ctx.level.dimension)).create(LootContextParamSets.EMPTY)).forEach(item => {

@@ -1,4 +1,9 @@
 {
+  "enableDropsForNonPlayer": true,
+  "enableCrashExplosion": false,
+  "enableCrashBlockDestruction": true,
+  "enableCrashFire": true,
+  "crashExplosionRadius": 2.0,
   "separateCamera": true,
   "useThirdPersonByDefault": true,
   "enableTrails": true,
@@ -13,8 +18,15 @@
   "burnFuelInCreative": false,
   "acceptVanillaFuel": true,
   "useCustomKeybindSystem": true,
+  "crashDamage": 2.0,
+  "preventKillThroughCrash": true,
   "fuelList": {
     "minecraft:blaze_powder": 1200
+  },
+  "validDimensions": {
+    "minecraft:overworld": true,
+    "minecraft:the_end": true,
+    "minecraft:the_nether": true
   },
   "version": 1
 }

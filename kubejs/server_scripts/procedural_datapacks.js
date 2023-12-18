@@ -1072,7 +1072,7 @@ function affixes(event) {
         armor
     )
     addEffectAffix(
-        'vanilla_scent',
+        'knockback_resistance',
         'alexmobs:knockback_resistance',
         targets.hurt_self,
         800,

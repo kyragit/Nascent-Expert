@@ -1,149 +1,149 @@
 {
-	id: "05ED50DA12C6B6B3"
-	group: "52DC2EC078E51292"
-	order_index: 2
-	filename: "centralized_storage"
-	title: "Centralized Storage"
-	icon: "toms_storage:ts.inventory_connector"
-	subtitle: ["AE2 but like, worse"]
-	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "centralized_storage"
+	group: "52DC2EC078E51292"
+	icon: "toms_storage:ts.inventory_connector"
+	id: "05ED50DA12C6B6B3"
+	order_index: 2
+	quest_links: [ ]
 	quests: [
 		{
-			x: 0.0d
-			y: 0.0d
-			description: ["Tom's Simple Storage is the next step towards a unified storage system. It does not add any storage blocks itself, but rather connects many different inventories together."]
 			dependencies: ["1C329DDA761BAD72"]
+			description: ["Tom's Simple Storage is the next step towards a unified storage system. It does not add any storage blocks itself, but rather connects many different inventories together."]
 			id: "0533650EF56B95B0"
 			tasks: [{
 				id: "360850482CD9FDAC"
-				type: "checkmark"
 				title: "Tom's Simple Storage"
+				type: "checkmark"
 			}]
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			x: 1.5d
-			y: 0.0d
-			description: ["The Connector is the heart of your storage system. Any terminals must be placed on these."]
 			dependencies: ["0533650EF56B95B0"]
+			description: ["The Connector is the heart of your storage system. Any terminals must be placed on these."]
 			id: "2338FDA84F5B22EA"
 			tasks: [{
 				id: "7D3B8D0046B40CFE"
-				type: "item"
 				item: "toms_storage:ts.inventory_connector"
+				type: "item"
 			}]
+			x: 1.5d
+			y: 0.0d
 		}
 		{
-			x: 0.0d
-			y: -1.5d
-			description: ["Inventory cables extend your network over distance. "]
 			dependencies: ["0533650EF56B95B0"]
+			description: ["Inventory cables extend your network over distance. "]
 			id: "3633E916F584C49E"
 			tasks: [{
 				id: "7495F4799F4AC86C"
-				type: "item"
 				item: "toms_storage:ts.inventory_cable"
+				type: "item"
 			}]
+			x: 0.0d
+			y: -1.5d
 		}
 		{
-			x: 0.0d
-			y: -3.0d
-			description: ["Connectors open adjacent inventories, like chests or drawers, to the storage network. "]
 			dependencies: ["3633E916F584C49E"]
+			description: ["Connectors open adjacent inventories, like chests or drawers, to the storage network. "]
 			id: "244362DBC3F26A83"
 			tasks: [{
 				id: "74C09E4E6115ECD0"
-				type: "item"
 				item: "toms_storage:ts.inventory_cable_connector"
+				type: "item"
 			}]
+			x: 0.0d
+			y: -3.0d
 		}
 		{
-			title: "Terminals"
-			x: -1.5d
-			y: 0.0d
+			dependencies: ["0533650EF56B95B0"]
 			description: [
 				"Terminals are your interface to the storage network. They must be placed on a connector block."
 				""
 				"Items can be inserted and extracted from all the inventories connected to the network. The crafting terminal even lets you autofill items from JEI for crafting!"
 			]
-			dependencies: ["0533650EF56B95B0"]
 			id: "55FDF007690FB157"
 			tasks: [{
 				id: "5ACD81B5D6C9C845"
-				type: "item"
-				title: "Any Terminal"
 				item: {
-					id: "itemfilters:or"
 					Count: 1b
+					id: "itemfilters:or"
 					tag: {
 						items: [
 							{
-								id: "toms_storage:ts.storage_terminal"
 								Count: 1b
+								id: "toms_storage:ts.storage_terminal"
 							}
 							{
-								id: "toms_storage:ts.crafting_terminal"
 								Count: 1b
+								id: "toms_storage:ts.crafting_terminal"
 							}
 						]
 					}
 				}
+				title: "Any Terminal"
+				type: "item"
 			}]
+			title: "Terminals"
+			x: -1.5d
+			y: 0.0d
 		}
 		{
-			title: "Framing"
-			x: 0.0d
-			y: 1.5d
-			description: ["The paint kit can be used to frame cables and connectors, disguising them as a different block. Shift-right click a block to select that texture, then right-click the framed connector or cable to paint."]
 			dependencies: ["0533650EF56B95B0"]
+			description: ["The paint kit can be used to frame cables and connectors, disguising them as a different block. Shift-right click a block to select that texture, then right-click the framed connector or cable to paint."]
 			id: "37EC3C7708D46AA0"
 			tasks: [{
 				id: "384BF581D3DC70D7"
-				type: "item"
 				item: {
-					id: "toms_storage:ts.paint_kit"
 					Count: 1b
+					id: "toms_storage:ts.paint_kit"
 					tag: {
 						Damage: 0
 						block: {
+							Name: "minecraft:grass_block"
 							Properties: {
-								fertile: "true"
 								age: "0"
+								fertile: "true"
 								snowy: "false"
 							}
-							Name: "minecraft:grass_block"
 						}
 					}
 				}
+				type: "item"
 			}]
+			title: "Framing"
+			x: 0.0d
+			y: 1.5d
 		}
 		{
-			icon: "create:item_vault"
-			x: 3.5d
-			y: 0.0d
+			dependencies: ["0533650EF56B95B0"]
 			description: ["Item vaults are perfect for storing items in your storage network. I highly recommend these as your main general storage blocks."]
 			hide_dependency_lines: true
-			dependencies: ["0533650EF56B95B0"]
+			icon: "create:item_vault"
 			id: "59341270DD6D2B48"
 			tasks: [{
 				id: "1E80C8348D205B7A"
-				type: "checkmark"
 				title: "Item Vaults"
+				type: "checkmark"
 			}]
+			x: 3.5d
+			y: 0.0d
 		}
 		{
-			x: -3.5d
-			y: 0.0d
+			dependencies: ["0533650EF56B95B0"]
 			description: ["Drawer controllers act as a proxy to any connecting drawers. They're perfect for when you need deep storage for farms and the like."]
 			hide_dependency_lines: true
-			dependencies: ["0533650EF56B95B0"]
 			id: "4963B891A96DDD29"
 			tasks: [{
 				id: "14ED825E1DAFCFC3"
-				type: "item"
 				item: "storagedrawers:controller"
+				type: "item"
 			}]
+			x: -3.5d
+			y: 0.0d
 		}
 	]
-	quest_links: [ ]
+	subtitle: ["AE2 but like, worse"]
+	title: "Centralized Storage"
 }
